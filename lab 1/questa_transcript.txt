@@ -1,0 +1,67 @@
+vlib work
+** Warning: (vlib-34) Library already exists at "work".
+Errors: 0, Warnings: 1
+vmap work work
+QuestaSim vmap 2022.4 Lib Mapping Utility 2022.10 Oct 18 2022
+vmap work work
+Modifying modelsim.ini
+vlog +acc datapath.v controller.v top.v tb_top.v
+QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 15:25:48 on Sep 01,2026
+vlog "+acc" datapath.v controller.v top.v tb_top.v
+-- Compiling module datapath
+-- Compiling module controller
+-- Compiling module top
+-- Compiling module tb_top
+
+Top level modules:
+        tb_top
+End time: 15:25:48 on Sep 01,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+vsim -c -do "run -all; exit" tb_top
+Reading pref.tcl
+
+# 2022.4
+
+# vsim -c -do "run -all; exit" tb_top
+# Start time: 15:25:49 on Sep 01,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  Questa Sim
+# //  Version 2022.4 linux Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.tb_top(fast)
+# Loading work.top(fast)
+# Loading work.controller(fast)
+# Loading work.datapath(fast)
+# run -all
+# =================================================================================
+#                      LAB 1: SEQUENTIAL MULTIPLIER TESTBENCH
+# =================================================================================
+# Test:  0 x  0 | Exp Prod:   0, Act Prod:   0 | Exp Cycles:  2, Act Cycles:  2 | [ PASS ]
+# Test:  0 x  5 | Exp Prod:   0, Act Prod:   0 | Exp Cycles:  7, Act Cycles:  7 | [ PASS ]
+# Test:  5 x  0 | Exp Prod:   0, Act Prod:   0 | Exp Cycles:  2, Act Cycles:  2 | [ PASS ]
+# Test:  1 x  1 | Exp Prod:   1, Act Prod:   1 | Exp Cycles:  3, Act Cycles:  3 | [ PASS ]
+# Test:  1 x 15 | Exp Prod:  15, Act Prod:  15 | Exp Cycles: 17, Act Cycles: 17 | [ PASS ]
+# Test: 15 x  1 | Exp Prod:  15, Act Prod:  15 | Exp Cycles:  3, Act Cycles:  3 | [ PASS ]
+# Test:  3 x  4 | Exp Prod:  12, Act Prod:  12 | Exp Cycles:  6, Act Cycles:  6 | [ PASS ]
+# Test: 15 x 15 | Exp Prod: 225, Act Prod: 225 | Exp Cycles: 17, Act Cycles: 17 | [ PASS ]
+# Test:  3 x 12 | Exp Prod:  36, Act Prod:  36 | Exp Cycles: 14, Act Cycles: 14 | [ PASS ]
+# Test: 12 x  3 | Exp Prod:  36, Act Prod:  36 | Exp Cycles:  5, Act Cycles:  5 | [ PASS ]
+# =================================================================================
+#                            TESTBENCH COMPLETE
+# =================================================================================
+# ** Note: $finish    : tb_top.v(125)
+#    Time: 1220 ns  Iteration: 1  Instance: /tb_top
+# End time: 15:25:53 on Sep 01,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0

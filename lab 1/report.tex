@@ -174,6 +174,18 @@ Commutativity 2 & 12 & 3 & 36 & 36 & PASS \\ \hline
 \end{tabular}
 \end{table}
 
+\subsection{Simulation Waveform}
+The following waveform demonstrates the functionality of the sequential multiplier.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{waveform.jpeg}
+    \caption{QuestaSim Simulation Waveform}
+\end{figure}
+
+\subsection{QuestaSim Transcript}
+The following is the transcript output from the simulation run, verifying the correctness of the test cases.
+\lstinputlisting{questa_transcript.txt}
+
 \subsection{Cycle-Count Verification}
 \textbf{Expected total cycles:} $B + 2$ (Consists of 1 LOAD cycle + B COMPUTE cycles + 1 DONE cycle)
 
