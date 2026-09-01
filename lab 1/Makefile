@@ -22,7 +22,7 @@ sim: compile
 	$(VSIM) -c -do "run -all; exit" $(TOP_TB)
 
 gui: compile
-	$(VSIM) -gui -do "add wave -r /*; run -all;" $(TOP_TB) &
+	$(VSIM) -gui -do "add wave /*; run -all;" $(TOP_TB) &
 
 clean:
 	rm -rf work transcript vsim.wlf *.log
