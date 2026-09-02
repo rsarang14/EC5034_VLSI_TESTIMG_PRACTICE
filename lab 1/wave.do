@@ -1,4 +1,3 @@
-# wave.do - Simulation Waveform Configuration
 
 add wave -label clk /tb_top/clk
 add wave -label reset /tb_top/reset
