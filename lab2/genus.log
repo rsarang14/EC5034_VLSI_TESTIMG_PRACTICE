@@ -1,0 +1,53 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 20.11-s111_1, built Mon Apr 26 02:27:38 PDT 2021
+Options: -files syn/genus_syn.tcl 
+Date:    Sun Sep 06 00:08:12 2026
+Host:    l213.c2slab.iiitdm.ac.in (x86_64 w/Linux 4.18.0-425.3.1.el8.x86_64) (24cores*32cpus*1physical cpu*13th Gen Intel(R) Core(TM) i9-13900 36864KB) (15884476KB)
+PID:     3730345
+OS:      Red Hat Enterprise Linux release 8.7 (Ootpa)
+
+Checking out license: Genus_Synthesis (3 seconds elapsed).
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (14 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source syn/genus_syn.tcl
+#@ Begin verbose source ./syn/genus_syn.tcl
+@file(genus_syn.tcl) 5: set DESIGN top
+@file(genus_syn.tcl) 6: set RTL_DIR ../rtl
+@file(genus_syn.tcl) 7: set OUT_DIR ../work
+@file(genus_syn.tcl) 9: set LIB_PATH "/home/l210/L210/work/EC23I2015/LAB2_SUBMISSION/lib/LIB/"
+@file(genus_syn.tcl) 10: set LIB_FILE "/home/l210/L210/work/EC23I2015/LAB2_SUBMISSION/lib/LIB/slow_vdd1v0_basiccells.lib"
+@file(genus_syn.tcl) 13: set OUT "/home/l210/L210/work/EC23I2015/LAB2_SUBMISSION/syn/work"
+@file(genus_syn.tcl) 14: set SDC "/home/l210/L210/work/EC23I2015/LAB2_SUBMISSION/syn/constraints.sdc"
+@file(genus_syn.tcl) 16: file mkdir $OUT_DIR
+@file(genus_syn.tcl) 17: file mkdir $OUT_DIR/reports
+@file(genus_syn.tcl) 19: set_db init_lib_search_path $LIB_PATH
+  Setting attribute of root '/': 'init_lib_search_path' = /home/l210/L210/work/EC23I2015/LAB2_SUBMISSION/lib/LIB/
+@file(genus_syn.tcl) 20: set_db library $LIB_FILE
+Error   : File error. [FILE-100] [set_db]
+        : Cannot open file '/home/l210/L210/work/EC23I2015/LAB2_SUBMISSION/lib/LIB/slow_vdd1v0_basiccells.lib'. File not found.
+        : Make sure that the file is a readable regular file and has the specified name.
+Error   : A library file does not exist. [LBR-68] [set_db]
+        : File '/home/l210/L210/work/EC23I2015/LAB2_SUBMISSION/lib/LIB/slow_vdd1v0_basiccells.lib' could not be found. File '<none>' was the last file that was successfully read in.
+        : Make sure that the library file exists or check for a typo in the file name.
+Error   : The data value for this attribute is invalid. [TUI-24] [set_db]
+        : The value '/home/l210/L210/work/EC23I2015/LAB2_SUBMISSION/lib/LIB/slow_vdd1v0_basiccells.lib' cannot be set for attribute 'library'.
+        : To see the usage/description for this attribute, type '::legacy::set_attribute -h <attr_name> *' (in legacy UI mode) or 'help * <attr_name> -detail' (in CUI mode).
+#@ End verbose source ./syn/genus_syn.tcl
+1
+Encountered problems processing file: syn/genus_syn.tcl
+WARNING: This version of the tool is 1958 days old.
+@genus:root: 2> exit
+Normal exit.

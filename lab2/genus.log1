@@ -1,0 +1,85 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 20.11-s111_1, built Mon Apr 26 02:27:38 PDT 2021
+Options: -files syn/genus_syn.tcl 
+Date:    Sun Sep 06 00:10:03 2026
+Host:    l213.c2slab.iiitdm.ac.in (x86_64 w/Linux 4.18.0-425.3.1.el8.x86_64) (24cores*32cpus*1physical cpu*13th Gen Intel(R) Core(TM) i9-13900 36864KB) (15884476KB)
+PID:     3731528
+OS:      Red Hat Enterprise Linux release 8.7 (Ootpa)
+
+Checking out license: Genus_Synthesis (4 seconds elapsed).
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (10 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source syn/genus_syn.tcl
+#@ Begin verbose source ./syn/genus_syn.tcl
+@file(genus_syn.tcl) 5: set DESIGN top
+@file(genus_syn.tcl) 6: set RTL_DIR ../rtl
+@file(genus_syn.tcl) 7: set OUT_DIR ../work
+@file(genus_syn.tcl) 9: set LIB_PATH "/home/l210/L210/work/EC23I2015/LAB2_Submission/lib/LIB/"
+@file(genus_syn.tcl) 10: set LIB_FILE "/home/l210/L210/work/EC23I2015/LAB2_Submission/lib/LIB/slow_vdd1v0_basiccells.lib"
+@file(genus_syn.tcl) 13: set OUT "/home/l210/L210/work/EC23I2015/LAB2_SUBMISSION/syn/work"
+@file(genus_syn.tcl) 14: set SDC "/home/l210/L210/work/EC23I2015/LAB2_SUBMISSION/syn/constraints.sdc"
+@file(genus_syn.tcl) 16: file mkdir $OUT_DIR
+@file(genus_syn.tcl) 17: file mkdir $OUT_DIR/reports
+@file(genus_syn.tcl) 19: set_db init_lib_search_path $LIB_PATH
+  Setting attribute of root '/': 'init_lib_search_path' = /home/l210/L210/work/EC23I2015/LAB2_Submission/lib/LIB/
+@file(genus_syn.tcl) 20: set_db library $LIB_FILE
+
+Threads Configured:3
+
+  Message Summary for Library slow_vdd1v0_basiccells.lib:
+  *******************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  *******************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_basiccells.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+  Setting attribute of root '/': 'library' = /home/l210/L210/work/EC23I2015/LAB2_Submission/lib/LIB/slow_vdd1v0_basiccells.lib
+@file(genus_syn.tcl) 27: read_hdl [list \
+    $RTL_DIR/controller.v \
+    $RTL_DIR/datapath.v \
+    $RTL_DIR/top.v \
+]
+Warning : Cannot open file. [VLOGPT-650]
+        : File '../rtl/controller.v'.
+        : The specified file could not be opened.  Check the value of the init_hdl_search_path attribute.
+Warning : Cannot open file. [VLOGPT-650]
+        : File '../rtl/datapath.v'.
+Warning : Cannot open file. [VLOGPT-650]
+        : File '../rtl/top.v'.
+@file(genus_syn.tcl) 34: elaborate $DESIGN
+  Library has 324 usable logic and 128 usable sequential lib-cells.
+Error   : Could not find an HDL design. [CDFG-210] [elaborate]
+        : The design is 'top'.
+        : This error may happen if you read a set of files, and you try to elaborate a design which description is not part of the files read. To fix this, check the name of the design you want to elaborate, or check if you have read all the expected RTL files.
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+#@ End verbose source ./syn/genus_syn.tcl
+1
+Encountered problems processing file: syn/genus_syn.tcl
+WARNING: This version of the tool is 1958 days old.
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 48s, ST: 5s, FG: 5s, CPU: 2.3%}, MEM {curr: 0.8G, peak: 0.9G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 3.3, cpu: 32, total: 15.1G, free: 5.8G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 54s, ST: 5s, FG: 5s, CPU: 2.4%}, MEM {curr: 0.8G, peak: 0.9G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 3.2, cpu: 32, total: 15.1G, free: 5.6G}
+Abnormal exit.

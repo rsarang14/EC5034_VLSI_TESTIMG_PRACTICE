@@ -1,0 +1,41 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 20.11-s111_1, built Mon Apr 26 02:27:38 PDT 2021
+Options: -files genus_syn.tcl 
+Date:    Sun Sep 06 13:33:38 2026
+Host:    l213.c2slab.iiitdm.ac.in (x86_64 w/Linux 4.18.0-425.3.1.el8.x86_64) (24cores*32cpus*1physical cpu*13th Gen Intel(R) Core(TM) i9-13900 36864KB) (15884476KB)
+PID:     3820432
+OS:      Red Hat Enterprise Linux release 8.7 (Ootpa)
+
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (4 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source genus_syn.tcl
+File 'genus_syn.tcl' does not exist.
+Encountered problems processing file: genus_syn.tcl
+WARNING: This version of the tool is 1958 days old.
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 19s, ST: 3s, FG: 3s, CPU: 31.9%}, MEM {curr: 0.7G, peak: 0.7G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 0.0, cpu: 32, total: 15.1G, free: 9.4G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 120s, ST: 4s, FG: 4s, CPU: 2.6%}, MEM {curr: 0.7G, peak: 0.7G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 0.0, cpu: 32, total: 15.1G, free: 9.4G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 301s, ST: 5s, FG: 5s, CPU: 2.9%}, MEM {curr: 0.7G, peak: 0.7G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 0.0, cpu: 32, total: 15.1G, free: 9.3G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 302s, ST: 5s, FG: 5s, CPU: 2.9%}, MEM {curr: 0.7G, peak: 0.7G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 0.0, cpu: 32, total: 15.1G, free: 9.3G}
+Abnormal exit.

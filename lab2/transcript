@@ -1,0 +1,79 @@
+# vsim -c -do "run -all; exit" tb_top 
+# Start time: 23:33:38 on Sep 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim
+# //  Version 2022.4 linux Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.tb_top(fast)
+# Loading work.top(fast)
+# Loading work.DFFQXL(fast)
+# Loading work._HDFF_verplex(fast)
+# Loading work.DFFHQX1(fast)
+# Loading work.OAI211X1(fast)
+# Loading work.OAI2BB1X1(fast)
+# Loading work.NAND3XL(fast)
+# Loading work.NAND2X1(fast)
+# Loading work.OAI31X1(fast)
+# Loading work.OAI22X1(fast)
+# Loading work.OR4X1(fast)
+# Loading work.AOI21X1(fast)
+# Loading work.AOI22X1(fast)
+# Loading work.AO22XL(fast)
+# Loading work.NOR2X1(fast)
+# Loading work.AOI31X1(fast)
+# Loading work.NAND4X1(fast)
+# Loading work.NOR3X1(fast)
+# Loading work.OAI21XL(fast)
+# Loading work.NAND2BXL(fast)
+# Loading work.INVX1(fast)
+# Loading work.NOR2BX1(fast)
+# Loading work.AND2X1(fast)
+# Loading work.SDFFQX1(fast)
+# Loading work.XNOR2X1(fast)
+# Loading work.INVX2(fast)
+# Loading work.NOR4X1(fast)
+# Loading work.NAND2XL(fast)
+# Loading work.NAND2X4(fast)
+# Loading work.NAND2X2(fast)
+# Loading work.OAI21X1(fast)
+# Loading work.NOR2XL(fast)
+# Loading work.MX2XL(fast)
+# Loading work.NAND2BX1(fast)
+# Loading work.OR2XL(fast)
+# Loading work.CLKAND2X2(fast)
+# Loading work.XOR2XL(fast)
+# Loading work.AO21XL(fast)
+# run -all
+# =================================================================================
+#                      LAB 1: SEQUENTIAL MULTIPLIER TESTBENCH                      
+# =================================================================================
+# Test:  0 x  0 | Exp Prod:   0, Act Prod:  32 | Exp Cycles:  2, Act Cycles:  2 | [ FAIL ]
+# Test:  0 x  5 | Exp Prod:   0, Act Prod:  32 | Exp Cycles:  7, Act Cycles:  7 | [ FAIL ]
+# Test:  5 x  0 | Exp Prod:   0, Act Prod:  32 | Exp Cycles:  2, Act Cycles:  2 | [ FAIL ]
+# Test:  1 x  1 | Exp Prod:   1, Act Prod:  33 | Exp Cycles:  3, Act Cycles:  3 | [ FAIL ]
+# Test:  1 x 15 | Exp Prod:  15, Act Prod:  47 | Exp Cycles: 17, Act Cycles: 17 | [ FAIL ]
+# Test: 15 x  1 | Exp Prod:  15, Act Prod:  47 | Exp Cycles:  3, Act Cycles:  3 | [ FAIL ]
+# Test:  3 x  4 | Exp Prod:  12, Act Prod:  44 | Exp Cycles:  6, Act Cycles:  6 | [ FAIL ]
+# Test: 15 x 15 | Exp Prod: 225, Act Prod: 225 | Exp Cycles: 17, Act Cycles: 17 | [ PASS ]
+# Test:  3 x 12 | Exp Prod:  36, Act Prod: 100 | Exp Cycles: 14, Act Cycles: 14 | [ FAIL ]
+# Test: 12 x  3 | Exp Prod:  36, Act Prod: 100 | Exp Cycles:  5, Act Cycles:  5 | [ FAIL ]
+# =================================================================================
+#                            TESTBENCH COMPLETE                                   
+# =================================================================================
+# ** Note: $finish    : rtl/tb_top.v(125)
+#    Time: 1220 ns  Iteration: 1  Instance: /tb_top
+# End time: 23:33:39 on Sep 11,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
