@@ -9,13 +9,6 @@ This repository contains a custom-built, bit-parallel sequential fault simulator
 - **Greedy / Fast Compaction Algorithm**: Reduces exhaustive test vector sets down to the mathematical minimum required for 100% fault coverage on an ATE machine.
 
 ## Results
-*Screenshots and detailed results will be added here.*
+Here is the complete output from the terminal, showing the 100% coverage, test compaction, and the exact vector trace for fault propagation on n_76:
 
-### 1. Fault Coverage
-(Add screenshot of the terminal output showing 100% coverage across exhaustive vectors here)
-
-### 2. Test Compaction
-(Add screenshot of the 134M vectors compacted down to 61 vectors here)
-
-### 3. Fault Detection & Propagation
-(Add screenshot of the solve_part3.py output showing n_76/sa0 propagation to n_95 here)
+![Lab 4 Results](lab4_results.jpeg)
