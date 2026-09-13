@@ -11,4 +11,4 @@ This repository contains a custom-built, bit-parallel sequential fault simulator
 ## Results
 Here is the complete output from the terminal, showing the 100% coverage, test compaction, and the exact vector trace for fault propagation on n_76:
 
-![Lab 4 Results](lab4_results.jpeg)
+![Lab 2 Results](lab2_results.png)
