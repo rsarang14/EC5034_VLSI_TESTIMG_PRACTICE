@@ -8,6 +8,9 @@ This repository contains a custom-built, bit-parallel sequential fault simulator
 - **Bit-Parallel Simulation**: Uses Python's arbitrary-precision integers to simulate millions of test vectors (e.g., all 134,217,728 possible states for a 27-input circuit) simultaneously.
 - **Greedy / Fast Compaction Algorithm**: Reduces exhaustive test vector sets down to the mathematical minimum required for 100% fault coverage on an ATE machine.
 
+## Final Lab Report
+📄 **[Download the Complete Lab Report (EC23I2015_Lab_2.pdf)](EC23I2015_Lab_2.pdf)**
+
 ## Results
 Here is the complete output from the terminal, showing the 100% coverage, test compaction, and the exact vector trace for fault propagation on n_76:
 
