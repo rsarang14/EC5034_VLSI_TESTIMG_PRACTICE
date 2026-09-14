@@ -1,0 +1,115 @@
+                          CONFORMAL (R)
+                   Version 20.20-s200 (01-Feb-2021) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2020. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 2050 days old. You can download the latest version from http://downloads.cadence.com.
+
+CPU time     : 0.26    seconds
+Elapse time  : 11      seconds
+Memory usage : 99.41   M bytes
+// Command: read library ../lib/LIB/slow_vdd1v0_basiccells.lib -liberty -both
+// Parsing file ../lib/LIB/slow_vdd1v0_basiccells.lib ...
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:1)
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:16)
+// Note: Read Liberty library successfully
+// Command: read design ../rtl/controller.v ../rtl/datapath.v ../rtl/top.v -verilog -golden
+// Parsing file ../rtl/controller.v ...
+// Parsing file ../rtl/datapath.v ...
+// Parsing file ../rtl/top.v ...
+// Golden root module is set to 'top'
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:2)
+// Note: (RTL5.6) Case statement with no default (occurrence:1)
+// Note: Read VERILOG design successfully
+// Command: read design ../work_cg/top_gates_buggy.v -verilog -revised
+// Parsing file ../work_cg/top_gates_buggy.v ...
+// Revised root module is set to 'top'
+// Note: Read VERILOG design successfully
+// Command: set flatten model -gated_clock
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// (F14) Remodeled 16 gated-clock DFF/DLAT(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 38
+// Revised key points = 40
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            11     9      18        38      
+--------------------------------------------------------------------------------
+Revised           11     9      18        38      
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+// Command: add compared point -all
+// 27 compared points added to compare list
+// Command: compare
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           9      18        27      
+================================================================================
+// Command: report verification -verbose
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      0
+     Tri-stated output:                                        checked
+     Revised X signals set to E:                               yes
+     Floating signals tied to Z:                               yes
+     Command "add clock" for clock-gating:                     not used
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 0
+     All primary outputs are mapped:                           yes
+     Not-mapped DFF/DLAT is detected:                          no
+     All mapped points are added as compare points:            yes
+     All compared points are compared:                         yes
+     User added black box:                                     no
+     Black box mapped with different module name:              no
+     Empty module is not black boxed:                          no
+     Command "add ignore outputs" used:                        no
+     Always false constraints detected:                        no
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+     Change gate type:                                         no
+     Change wire:                                              no
+     Primary input added by user:                              no
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  0
+     Multiple clocks in the design:                            no
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        0
+     Duplicate module definition:                              no
+     Black box due to undefined cells:                         no
+     Golden design has abnormal ratio of unreachable gates:    no
+     Ratio of golden unreachable gates:                        2%
+     Revised design has abnormal ratio of unreachable gates:   no
+     Ratio of revised unreachable gates:                       1%
+     All primary input bus ordering is consistent:             yes
+     All primary output bus ordering is consistent:            yes
+     DFF/DLAT not compared due to disabled clock port(s):        0
+--------------------------------------------------------------------------------
+6. Compare Results:                                                        PASS
+     Number of EQ compare points:                              27
+     Number of NON-EQ compare points:                          0
+     Number of Aborted compare points:                         0
+     Number of Uncompared compare points :                     0
+================================================================================
