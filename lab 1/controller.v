@@ -38,9 +38,8 @@ module controller (
     end
 
     // Next State & Output Logic
-    // EC23I2015
+    
     always @(*) begin
-        // Default outputs
         load_inputs    = 1'b0;
         clear_prod     = 1'b0;
         enable_prod    = 1'b0;
