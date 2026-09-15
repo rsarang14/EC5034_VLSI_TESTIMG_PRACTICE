@@ -43,22 +43,19 @@ module tb_top;
             multiplicand_in = A;
             multiplier_in   = B;
             expected_product = A * B;
-            expected_cycles  = B + 2; 
+            expected_cycles  = B + 2;
             cycle_count      = 0;
             start = 1'b1;
 
-            
             @(negedge clk);
-            start = 1'b0; 
+            start = 1'b0;
 
-           
             while (!mult_complete) begin
                 @(negedge clk);
                 cycle_count = cycle_count + 1;
             end
 
-           
-            $write("Test: %2d x %2d | Exp Prod: %3d, Act Prod: %3d | Exp Cycles: %2d, Act Cycles: %2d | ", 
+            $write("Test: %2d x %2d | Exp Prod: %3d, Act Prod: %3d | Exp Cycles: %2d, Act Cycles: %2d | ",
                    A, B, expected_product, accumulated_prod, expected_cycles, cycle_count);
 
             if (accumulated_prod == expected_product && cycle_count == expected_cycles) begin
@@ -67,14 +64,11 @@ module tb_top;
                 $display("[ FAIL ]");
             end
 
-          
             repeat (2) @(negedge clk);
         end
     endtask
 
-  
     initial begin
-        
         reset = 1'b1;
         start = 1'b0;
         multiplicand_in = 4'd0;
