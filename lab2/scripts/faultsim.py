@@ -12,7 +12,7 @@ INPUT_ORDER = ["start",
                "multiplier_in[0]", "multiplier_in[1]", "multiplier_in[2]", "multiplier_in[3]"]
 
 def fast_column(bit, nv):
-    """Generating test vectors instantly using bitwise math."""
+    """Generating test vectors"""
     block = (1 << (1 << bit)) - 1
     pattern = block << (1 << bit)
     length = 1 << (bit + 1)
@@ -39,7 +39,6 @@ def extract_flip_flops(insts, inputs, outputs):
     return comb_insts, inputs, outputs
 
 def levelise(insts, inputs, cells):
-    """Sorts the logic gates so we compute things in the correct order."""
     known = set(inputs) | {"1'b0", "1'b1", "reset", "clk"}
     pending = list(insts)
     order = []
@@ -68,7 +67,6 @@ def levelise(insts, inputs, cells):
     return order
 
 def get_all_nets(insts, cells):
-    """Finds every single wire in the circuit to test for faults."""
     nets = set()
     for _, cell, conns in insts:
         out_pin, in_pins, _ = cells[split_cell(cell)]
@@ -79,18 +77,16 @@ def get_all_nets(insts, cells):
     return sorted(nets)
 
 def simulate(inputs, outputs, order, aliases, cells, nv, mask, force=None):
-    """Simulates the entire circuit for ALL test vectors at the exact same time."""
     env = {"1'b0": 0, "1'b1": mask, "clk": 0, "reset": 0}
     
-    # 1. Apply inputs
+    
     for i, nm in enumerate(inputs):
         env[nm] = fast_column(i, nv)
         
-    # 2. Inject fault on a specific wire (if requested)
+
     if force and force[0] in env:
         env[force[0]] = mask if force[1] else 0
 
-    # 3. Simulate all gates in order
     for name, cell, conns in order:
         out_pin, in_pins, fn = cells[split_cell(cell)]
         net = conns[out_pin]
@@ -101,7 +97,7 @@ def simulate(inputs, outputs, order, aliases, cells, nv, mask, force=None):
             p = {pin: env[conns.get(pin, "1'b0")] for pin in in_pins}
             env[net] = fn(p) & mask
             
-    # 4. Handle aliases
+  
     for dst, src in aliases:
         env[dst] = env.get(src, 0)
         
@@ -138,7 +134,7 @@ def run(path, input_order):
         for sa in (0, 1):
             faulty = simulate(inputs, outputs, order, aliases, cells, nv, mask, force=(net, sa))
             
-            # Check if faulty outputs differ from golden outputs
+        
             diff = 0
             for g, f in zip(golden, faulty):
                 diff |= (g ^ f)
@@ -172,7 +168,7 @@ def run(path, input_order):
         best_vector = max(count, key=count.get)
         chosen.append(best_vector)
         
-        # Remove faults that are caught by this vector
+     
         remaining = {k: v for k, v in remaining.items() if not (v >> best_vector) & 1}
 
     print("\nExhaustive set     :", nv, "vectors")
