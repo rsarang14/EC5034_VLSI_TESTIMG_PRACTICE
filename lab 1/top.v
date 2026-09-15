@@ -17,7 +17,6 @@ module top (
     wire loops_zero_flag;
 
     // Instantiation for the controller
-    // EC23I2015
     controller u_controller (
         .clk             (clk),
         .reset           (reset),
