@@ -1,19 +1,11 @@
-"""
-netlist.py -- read a structural Verilog netlist of Nangate cells.
+# netlist.py -- read a structural Verilog netlist of Nangate/Genus cells.
+# Turns instance lines like:
+#     NAND2X1 U17 ( .A1(n12), .A2(n9), .ZN(n21) );
+# into a list of (instance, cell, {pin: net}) plus the port list.
 
-Design Compiler writes instances, not equations:
-
-    NAND2_X1 U17 ( .A1(n12), .A2(n9), .ZN(n21) );
-
-This module turns that text into a list of (instance, cell, {pin: net}) and a
-port list. It is deliberately small enough to read in one sitting.
-"""
 import re
 
 INST_RE = re.compile(
-    # Cadence/Genus cell-type names have NO underscore before the drive
-    # strength suffix (NAND2X1, AOI2BB1XL) -- unlike DC's NAND2_X1 style.
-    # Suffix is "X" + digits (X1, X2, X12, ...) or the literal "XL".
     r"\b([A-Z][A-Z0-9]*(?:X\d+|XL))\s+(\\?\S+?)\s*\(\s*(.*?)\s*\)\s*;",
     re.DOTALL)
 CONN_RE = re.compile(r"\.(\w+)\s*\(\s*([^)]*?)\s*\)")
@@ -29,28 +21,37 @@ def parse(path):
 
     ports = {}
     for direction, hi, lo, names in PORT_RE.findall(text):
-        for nm in [n.strip() for n in names.split(",") if n.strip()]:
+        for name in names.split(","):
+            name = name.strip()
+            if not name:
+                continue
             if hi:
-                for b in range(int(lo), int(hi) + 1):
-                    ports[f"{nm}[{b}]"] = direction
+                for bit in range(int(lo), int(hi) + 1):
+                    key = name + "[" + str(bit) + "]"
+                    ports[key] = direction
             else:
-                ports[nm] = direction
+                ports[name] = direction
 
     insts = []
     for cell, name, body in INST_RE.findall(text):
-        conns = {pin: net.strip() for pin, net in CONN_RE.findall(body)}
+        conns = {}
+        for pin, net in CONN_RE.findall(body):
+            conns[pin] = net.strip()
         insts.append((name, cell, conns))
 
-    aliases = ASSIGN_RE.findall(text)     # DC emits a few plain assigns
+    aliases = ASSIGN_RE.findall(text)
     return ports, insts, aliases
 
 
 if __name__ == "__main__":
     import sys
-    p, i, a = parse(sys.argv[1])
-    print(f"ports     : {len(p)}")
-    print(f"instances : {len(i)}")
-    print(f"aliases   : {len(a)}")
     from collections import Counter
-    for cell, n in Counter(c for _, c, _ in i).most_common():
-        print(f"   {cell:14s} {n}")
+
+    ports, insts, aliases = parse(sys.argv[1])
+    print("ports     :", len(ports))
+    print("instances :", len(insts))
+    print("aliases   :", len(aliases))
+
+    counts = Counter(cell for _, cell, _ in insts)
+    for cell, n in counts.most_common():
+        print("   " + cell.ljust(14), n)

@@ -12,19 +12,19 @@ INPUT_ORDER = ["start",
                "multiplier_in[0]", "multiplier_in[1]", "multiplier_in[2]", "multiplier_in[3]"]
 
 def fast_column(bit, nv):
-    """Generating test vectors instantly using bitwise math."""
+    # generate one input column for all nv vectors at once, bitwise
     block = (1 << (1 << bit)) - 1
     pattern = block << (1 << bit)
     length = 1 << (bit + 1)
-    
+
     while length < nv:
         pattern = pattern | (pattern << length)
         length *= 2
-        
+
     return pattern
 
 def extract_flip_flops(insts, inputs, outputs):
-    """Making flip flops in to psuedo inputs and psuedo outputs"""
+    # turn flip-flops into pseudo inputs (Q) and pseudo outputs (D)
     comb_insts = []
     for inst in insts:
         name, cell, conns = inst
@@ -39,7 +39,7 @@ def extract_flip_flops(insts, inputs, outputs):
     return comb_insts, inputs, outputs
 
 def levelise(insts, inputs, cells):
-    """Sorts the logic gates so we compute things in the correct order."""
+    # sort gates so every gate is computed after its inputs are known
     known = set(inputs) | {"1'b0", "1'b1", "reset", "clk"}
     pending = list(insts)
     order = []
@@ -69,7 +69,7 @@ def levelise(insts, inputs, cells):
     return order
 
 def get_all_nets(insts, cells):
-    """Finds every single wire in the circuit to test for faults."""
+    # every wire in the circuit, so each one can be fault-tested
     nets = set()
     for _, cell, conns in insts:
         out_pin, in_pins, _ = cells[split_cell(cell)]
@@ -80,18 +80,15 @@ def get_all_nets(insts, cells):
     return sorted(nets)
 
 def simulate(inputs, outputs, order, aliases, cells, nv, mask, force=None):
-    """Simulates the entire circuit for ALL test vectors at the exact same time."""
+    # simulate all nv test vectors together, one machine word per net
     env = {"1'b0": 0, "1'b1": mask, "clk": 0, "reset": 0}
-    
-    # 1. Apply inputs
+
     for i, nm in enumerate(inputs):
         env[nm] = fast_column(i, nv)
-        
-    # 2. Inject fault on a specific wire (if requested)
+
     if force and force[0] in env:
         env[force[0]] = mask if force[1] else 0
 
-    # 3. Simulate all gates in order
     for name, cell, conns in order:
         out_pin, in_pins, fn = cells[split_cell(cell)]
         net = conns[out_pin]
@@ -101,17 +98,15 @@ def simulate(inputs, outputs, order, aliases, cells, nv, mask, force=None):
         else:
             p = {pin: env[conns.get(pin, "1'b0")] for pin in in_pins}
             env[net] = fn(p) & mask
-            
-    # 4. Handle aliases
+
     for dst, src in aliases:
         if force and force[0] == dst:
             env[dst] = mask if force[1] else 0
         elif force and force[0] == src:
-            pass 
+            pass
         else:
             env[dst] = env.get(src, 0)
-            
-    # 5. Extract results
+
     return {nm: env.get(nm, 0) for nm in outputs}
 
 def run(path, input_order):
