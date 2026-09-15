@@ -87,6 +87,41 @@ Additionally, a report was generated to track the flip-flops that were optimized
 \begin{lstlisting}[language=Tcl]
 report_sequential -deleted > work_cg/deleted_flops.rpt
 \end{lstlisting}
+\texttt{work\_cg/top\_deleted\_flops.rpt} came back empty (header only) -- Genus did not remove any
+flip-flops outright; instead it inserted integrated clock-gating cells (\texttt{RC\_CG\_MOD}) ahead
+of the existing flops to gate their clock, rather than deleting any register.
+
+\subsection*{Synthesis Comparison: Baseline vs. Clock-Gated}
+The clock-gated synthesis (\texttt{work\_cg/top\_qor.rpt}) is compared below against the Lab~2
+baseline synthesis at the same 5.0\,ns clock period (\texttt{work/top\_qor.rpt}).
+
+\begin{center}
+\begin{tabular}{|l|c|p{6.5cm}|}
+\hline
+\textbf{Metric} & \textbf{Baseline (Lab~2)} & \textbf{Clock-Gated} \\ \hline
+Clock period & 5.0\,ns & 5.0\,ns \\ \hline
+Critical path slack (WNS) & 3105.9\,ps & 3184.0\,ps (clk group) \\ \hline
+TNS / Violating paths & 0 / 0 & 0 / 0 \\ \hline
+Total cell area & 200.412 & 181.944 ($-9.2\%$) \\ \hline
+Leaf instance count & 76 & 58 \\ \hline
+Combinational instance count & 58 & 38 \\ \hline
+Sequential instance count & 18 & 20 (+2 clock-gating integrated cells) \\ \hline
+Maximum fanout & 18 (\texttt{clk}) & 12 (\texttt{rc\_gclk}) \\ \hline
+Average fanout & 2.3 & 2.0 \\ \hline
+Power (dynamic/leakage/total) & Not available & Not available (power analysis not enabled in this flow) \\ \hline
+\end{tabular}
+\end{center}
+
+\noindent\textbf{Inference:} Enabling automatic clock gating reduces the synthesized cell area by
+about 9.2\% (200.412~$\rightarrow$~181.944) and cuts the leaf instance count from 76 to 58, mainly
+by collapsing combinational enable/mux logic that used to feed each register's clock-enable path
+(58~$\rightarrow$~38 combinational cells) into dedicated integrated clock-gating cells placed on a
+gated clock network. No flip-flops were deleted (see the empty \texttt{deleted\_flops.rpt} above);
+instead 2 extra hierarchical clock-gating instances appear, which is why the sequential instance
+count rises slightly (18~$\rightarrow$~20). Timing is essentially unaffected -- the clock-domain
+slack is not worse than baseline -- so this area saving comes at negligible timing cost for this
+design. No power numbers are available to quantify the expected power benefit, since power
+analysis was not enabled in the supplied flow (consistent with Lab~2, Part~B).
 
 \subsection*{LEC without Constraint (Demonstration of Failure)}
 When running standard LEC on the clock-gated netlist, the verification fails because Conformal cannot map the new clock gating cells (\texttt{RC\_CG\_MOD}) present in the Revised netlist to the Golden RTL. 
@@ -110,6 +145,19 @@ After applying this constraint, Conformal was able to correctly compare the logi
     \includegraphics[width=0.9\textwidth]{images/Image_LEC_TASK_2_PASS.jpeg}
     \caption{Task 2: LEC PASS with flattened clock gating models}
 \end{figure}
+
+\subsection*{Are All Flip-Flops Mapped?}
+Yes. The \texttt{multiplier\_cg\_lec.log} verification summary explicitly reports:
+\begin{center}
+\texttt{All primary outputs are mapped: yes} \\
+\texttt{Not-mapped DFF/DLAT is detected: no} \\
+\texttt{Number of NON-EQ compare points: 0}
+\end{center}
+Every flip-flop in the Golden RTL was mapped one-to-one to a flip-flop in the Revised (clock-gated)
+netlist, with no unmapped DFF/DLAT points -- consistent with the deleted-flops report above, which
+confirms Genus did not remove or merge any register during clock-gating insertion (it only added
+integrated clock-gating cells ahead of the existing flops). There are therefore no unmapped points
+to justify.
 
 %------------------------------------------------
 
