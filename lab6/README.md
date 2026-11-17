@@ -174,10 +174,8 @@ The equivalence check is partitioned into two guided verification stages:
 ```
 lab6/
 ├── README.md                          # Comprehensive documentation of complete lab flow
-├── lab6_final_report.pdf              # 12-page compiled formal laboratory report
-├── lab6_final_report.tex              # LaTeX source code with embedded figures & tables
-├── lab6_mbist_two_stage_lec.pdf       # Supplementary deep-dive report on two-stage LEC theory
-├── lab6_mbist_two_stage_lec.tex       # LaTeX source code for two-stage LEC explanation
+├── lab6_report_v2.pdf                 # Final lab report (compiled)
+├── lab6_report_v2.tex                 # LaTeX source of the report
 └── images/                            # Verification proof screenshots
     ├── mbist insertion.png            # Tessent signoff simulation (pass 3 fail 0)
     ├── waveform.png                   # QuestaSim P1 simulation waveform
