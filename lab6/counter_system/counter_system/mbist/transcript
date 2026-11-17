@@ -1,0 +1,105 @@
+# //  Questa Sim
+# //  Version 2022.4 linux Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# simulation_outdir/counter_system_rtl1.simulation_signoff/MemoryBist_P1.simulation/vsim.wlf opened as dataset "vsim"
+# 1. Clocks and Resets
+add wave -divider "Clocks & Reset"
+add wave /vsim/TB/clk
+# (vish-4014) No objects found matching '/vsim/TB/clk'.
+add wave /vsim/TB/DUT/reset_n
+# (vish-4014) No objects found matching '/vsim/TB/DUT/reset_n'.
+add wave /vsim/TB/DUT/ijtag_reset
+# (vish-4014) No objects found matching '/vsim/TB/DUT/ijtag_reset'.
+
+# 2. MBIST Controller Status Signals (The core deliverable!)
+add wave -divider "MBIST Controller Status"
+add wave /vsim/TB/DUT/*c1_controller*/*MBISTPG_EN*
+# (vish-4014) No objects found matching '/vsim/TB/DUT/*c1_controller*/*MBISTPG_EN*'.
+add wave /vsim/TB/DUT/*c1_controller*/*MBISTPG_GO*
+# (vish-4014) No objects found matching '/vsim/TB/DUT/*c1_controller*/*MBISTPG_GO*'.
+add wave /vsim/TB/DUT/*c1_controller*/*MBISTPG_DONE*
+# (vish-4014) No objects found matching '/vsim/TB/DUT/*c1_controller*/*MBISTPG_DONE*'.
+add wave /vsim/TB/DUT/*c1_controller*/*COLLAR_EN*
+# (vish-4014) No objects found matching '/vsim/TB/DUT/*c1_controller*/*COLLAR_EN*'.
+
+# 3. Memory 1 (u1) Signals
+add wave -divider "Memory u1 (256x16)"
+add wave /vsim/TB/DUT/u1/CLK
+# (vish-4014) No objects found matching '/vsim/TB/DUT/u1/CLK'.
+add wave /vsim/TB/DUT/u1/CEN
+# (vish-4014) No objects found matching '/vsim/TB/DUT/u1/CEN'.
+add wave /vsim/TB/DUT/u1/WEN
+# (vish-4014) No objects found matching '/vsim/TB/DUT/u1/WEN'.
+add wave /vsim/TB/DUT/u1/A
+# (vish-4014) No objects found matching '/vsim/TB/DUT/u1/A'.
+add wave /vsim/TB/DUT/u1/D
+# (vish-4014) No objects found matching '/vsim/TB/DUT/u1/D'.
+add wave /vsim/TB/DUT/u1/Q
+# (vish-4014) No objects found matching '/vsim/TB/DUT/u1/Q'.
+
+# 4. Memory 2 (u2) Signals
+add wave -divider "Memory u2 (64Kx8)"
+add wave /vsim/TB/DUT/u2/CLK
+# (vish-4014) No objects found matching '/vsim/TB/DUT/u2/CLK'.
+add wave /vsim/TB/DUT/u2/CEN
+# (vish-4014) No objects found matching '/vsim/TB/DUT/u2/CEN'.
+add wave /vsim/TB/DUT/u2/WEN
+# (vish-4014) No objects found matching '/vsim/TB/DUT/u2/WEN'.
+add wave /vsim/TB/DUT/u2/A
+# (vish-4014) No objects found matching '/vsim/TB/DUT/u2/A'.
+add wave /vsim/TB/DUT/u2/D
+# (vish-4014) No objects found matching '/vsim/TB/DUT/u2/D'.
+add wave /vsim/TB/DUT/u2/Q
+# (vish-4014) No objects found matching '/vsim/TB/DUT/u2/Q'.
+
+# Zoom to full simulation duration
+wave zoomfull
+# {0 ps} {1 ns}
+
+find instances *
+# {} {/TB/DUT_inst (counter_system)}
+
+add wave -divider "Clocks & Reset"
+add wave /TB/clk
+add wave /TB/DUT_inst/clk
+add wave /TB/DUT_inst/reset_n
+add wave /TB/DUT_inst/ijtag_reset
+
+add wave -divider "MBIST Controller Status"
+add wave /TB/DUT_inst/*controller*/*MBISTPG_EN*
+# (vish-4014) No objects found matching '/TB/DUT_inst/*controller*/*MBISTPG_EN*'.
+add wave /TB/DUT_inst/*controller*/*MBISTPG_GO*
+# (vish-4014) No objects found matching '/TB/DUT_inst/*controller*/*MBISTPG_GO*'.
+add wave /TB/DUT_inst/*controller*/*MBISTPG_DONE*
+# (vish-4014) No objects found matching '/TB/DUT_inst/*controller*/*MBISTPG_DONE*'.
+add wave /TB/DUT_inst/*controller*/*COLLAR_EN*
+# (vish-4014) No objects found matching '/TB/DUT_inst/*controller*/*COLLAR_EN*'.
+
+add wave -divider "Memory u1 (256x16)"
+add wave /TB/DUT_inst/u1/*
+
+add wave -divider "Memory u2 (64Kx8)"
+add wave /TB/DUT_inst/u2/*
+
+wave zoomfull
+# {0 ps} {1 ns}
+
+find instances /TB/DUT_inst/*
+# {/TB/DUT_inst/u_counter_lfsr (counter_lfsr)} {/TB/DUT_inst/u1 (SYNC_1RW_256x16)} {/TB/DUT_inst/u_counter_shift (counter_shift)} {/TB/DUT_inst/u2 (SYNC_1RW_64Kx8)} {/TB/DUT_inst/counter_system_rtl1_tessent_sib_sti_inst (counter_system_rtl1_tessent_sib_1)} {/TB/DUT_inst/counter_system_rtl1_tessent_sib_mbist_inst (counter_system_rtl1_tessent_sib_2)} {/TB/DUT_inst/counter_system_rtl1_tessent_mbist_bap_inst (counter_system_rtl1_tessent_mbist_bap)} {/TB/DUT_inst/counter_system_rtl1_tessent_mbist_c1_controller_inst (counter_system_rtl1_tessent_mbist_c1_controller)} {/TB/DUT_inst/u1_interface_inst (counter_system_rtl1_tessent_mbist_c1_interface_m1)} {/TB/DUT_inst/u2_interface_inst (counter_system_rtl1_tessent_mbist_c1_interface_m2)}
+
+add wave -divider "MBIST Controller c1"
+add wave /TB/DUT_inst/counter_system_rtl1_tessent_mbist_c1_controller_inst/*
+wave zoomfull
+# {0 ps} {1 ns}
+

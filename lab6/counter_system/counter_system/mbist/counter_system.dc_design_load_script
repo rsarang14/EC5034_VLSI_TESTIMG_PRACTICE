@@ -1,0 +1,27 @@
+set_db hdl_language v2001
+set_db hdl_use_current_dir_before_hdl_search_path true
+
+# From file ../mbist/tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/counter_system.design_source_dictionary
+
+read_hdl -language v2001 -library work { \
+      "../rtl/updown_counter.v" \
+      "../rtl/shift_register.v" \
+      "../rtl/lfsr.v" \
+      "../mbist/tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/modified_rtl_files/counter_system.v" \
+      "../rtl/counter_shift.v" \
+      "../rtl/counter_lfsr.v" \
+   } 
+
+read_hdl -language v2001 -library work { \
+      "../mbist/tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_1.v" \
+      "../mbist/tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_2.v" \
+   } 
+
+read_hdl -language v2001 -library work { \
+      "../mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_bap.v" \
+      "../mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_c1_controller.v" \
+      "../mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_c1_interface_m1.v" \
+      "../mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_c1_interface_m2.v" \
+   } 
+
+ 

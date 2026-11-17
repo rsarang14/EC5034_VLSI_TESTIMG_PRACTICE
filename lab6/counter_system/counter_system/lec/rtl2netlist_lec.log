@@ -1,0 +1,132 @@
+                          CONFORMAL (R)
+                   Version 20.20-s200 (01-Feb-2021) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2020. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 2089 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Command: read library ../../library/standard_cells/liberty/adk.lib -liberty -both
+// Parsing file ../../library/standard_cells/liberty/adk.lib ...
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:4)
+// Warning: (UDP3.2) Primitive has unspecified term(s) (occurrence:8)
+// Note: Read Liberty library successfully
+// Command: read design -file ../mbist/mbist_file_list ../../library/memories/SYNC_1RW_256x16.v_interface ../../library/memories/SYNC_1RW_64Kx8.v_interface -verilog -golden
+// Note: Process verilog command file ../mbist/mbist_file_list
+// Parsing file ../rtl/updown_counter.v ...
+// Parsing file ../rtl/shift_register.v ...
+// Parsing file ../rtl/lfsr.v ...
+// Parsing file ../mbist/tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/modified_rtl_files/counter_system.v ...
+// Parsing file ../rtl/counter_shift.v ...
+// Parsing file ../rtl/counter_lfsr.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_1.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_2.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_bap.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_c1_controller.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_c1_interface_m1.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_c1_interface_m2.v ...
+// Parsing file ../../library/memories/SYNC_1RW_256x16.v_interface ...
+// Parsing file ../../library/memories/SYNC_1RW_64Kx8.v_interface ...
+// Golden root module is set to 'counter_system'
+// Warning: (RTL1.5a) Assignment with RHS bit width is greater than LHS bit width (occurrence:1)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:4)
+// Warning: (RTL2.13a) Undriven pin is detected. Module is empty (occurrence:10)
+// Warning: (RTL3.3) Non-constant value assignment is in asynchronous set/reset value (occurrence:1)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:4)
+// Note: (RTL5.6) Case statement with no default (occurrence:17)
+// Warning: (RTL7.10a) Comparison with different data sizes (occurrence:2)
+// Note: (RTL8.2) Latch(es) are inferred due to self assignment (occurrence:4)
+// Warning: (RTL10) Both posedge and negedge are used in different always/process (occurrence:30)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:19)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:18)
+// Note: (VLG6.4) Supported system datapath function call (occurrence:1)
+// Warning: (DIR4.1) Design includes one or more HDL directives or pragmas that Conformal does not support (occurrence:35)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:4)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:4)
+// Warning: (IGN2.1) Delay value(s) are ignored (occurrence:10)
+// Warning: (IGN3.2) Duplicate modules/entities are detected. Subsequent modules/entities are ignored (occurrence:1)
+// Warning: (HRC1.4) Module/entity is empty (blackboxed) (occurrence:2)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:6)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:15)
+// Warning: (HRC3.10b) An input port is declared, but it is not used. Module is empty (occurrence:10)
+// Warning: (HRC3.16) A wire is declared, but not used in the module (occurrence:29)
+// Warning: Total black box modules referenced in Golden = 2
+// Note: Read VERILOG design successfully
+// Command: read design ../synth/counter_system.vg ../../library/memories/SYNC_1RW_256x16.v_interface ../../library/memories/SYNC_1RW_64Kx8.v_interface -verilog -revised
+// Parsing file ../synth/counter_system.vg ...
+// Parsing file ../../library/memories/SYNC_1RW_256x16.v_interface ...
+// Parsing file ../../library/memories/SYNC_1RW_64Kx8.v_interface ...
+// Revised root module is set to 'counter_system'
+// Warning: (RTL2.5) Net is referenced without an assignment. Design verification will be based on set_undriven_signal setting (occurrence:58)
+// Warning: (RTL2.13) Undriven pin is detected (occurrence:40)
+// Warning: (RTL2.13a) Undriven pin is detected. Module is empty (occurrence:10)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:314)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:2)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:4)
+// Warning: (IGN3.2) Duplicate modules/entities are detected. Subsequent modules/entities are ignored (occurrence:2)
+// Warning: (HRC1.4) Module/entity is empty (blackboxed) (occurrence:2)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:64)
+// Warning: (HRC3.10b) An input port is declared, but it is not used. Module is empty (occurrence:10)
+// Warning: Total black box modules referenced in Revised = 2
+// Warning: There are 40 undriven nets in Revised
+// Warning: There are 40 undriven pins in Revised
+// Note: Read VERILOG design successfully
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// (F13) Converted 4 DFF(s) to DLAT(s) due to direct feedback
+// (F12) Converted 2 DFF(s) to DLAT(s) due to disabled clock port(s)
+// Processing Revised ...
+// Modeling Revised ...
+// (F13) Converted 4 DFF(s) to DLAT(s) due to direct feedback
+// (F12) Converted 2 DFF(s) to DLAT(s) due to disabled clock port(s)
+// (F28) Converted 40 internal output port(s) to inout port(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 426
+// Revised key points = 409
+// Mapping key points ...
+// Warning: Golden has 17 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            41     52     288    9      2         392     
+--------------------------------------------------------------------------------
+Revised           41     52     288    9      2         392     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       11     6         17      
+Not-mapped        17     0         17      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       11     6         17      
+================================================================================
+// Warning: Key point mapping is incomplete
+// Command: add compared point -all
+// Warning: Golden has 17 unmapped key points which will not be compared
+// 351 compared points added to compare list
+// Command: compare
+================================================================================
+Compared points      PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           52     223    9      2         286     
+--------------------------------------------------------------------------------
+Non-equivalent       0      65     0      0         65      
+================================================================================
+// Warning: 4 DFFs/DLATs have 1 disabled clock port: skipped data cone comparison
+CPU time     : 0.36    seconds
+Elapse time  : 2       seconds
+Memory usage : 156.57  M bytes
+// Command: exit

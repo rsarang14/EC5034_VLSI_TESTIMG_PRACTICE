@@ -1,0 +1,7 @@
+../rtl/updown_counter.v
+../rtl/shift_register.v
+../rtl/lfsr.v
+../rtl/counter_system.v
+../rtl/counter_shift.v
+../rtl/counter_lfsr.v
+

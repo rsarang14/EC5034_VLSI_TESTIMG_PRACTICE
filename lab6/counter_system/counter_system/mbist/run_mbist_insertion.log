@@ -1,0 +1,229 @@
+/home/mentor/Tessent2022.4/bin/tessent -shell -log ./run_mbist_insertion.log -replace -dofile ./run_mbist_insertion
+//  Tessent Shell  2022.4    Tue Nov 29 21:19:37 GMT 2022
+//                Unpublished work. Copyright 2022 Siemens
+//
+//      This material contains trade secrets or otherwise confidential 
+//  information owned by Siemens Industry Software Inc. or its affiliates 
+//   (collectively, "SISW"), or its licensors. Access to and use of this 
+//     information is strictly limited as set forth in the Customer's 
+//                   applicable agreements with SISW. 
+//
+//  Siemens software executing under x86-64 Linux on Sat Oct 24 01:20:28 IST 2026.
+//  64 bit version
+//  Host: l213.c2slab.iiitdm.ac.in (15512 MB RAM, 65535 MB Swap)
+//
+//  command: #! /bin/sh -f
+//  command: # exec tessent -shell -log $0.log -replace -dofile "$0"
+//  command: # Set the context to insert DFT into RTL-level design
+//  command: set_context dft -rtl -design_id rtl1
+//  command: # Set the location of TSDB. Default is at the current working directory
+//  command: set_tsdb_output_directory tsdb_outdir
+//  command: # Read cell library 
+//  command: read_cell_library ../../library/standard_cells/tessent/adk.tcelllib
+//  Reading DFT Library file ../../library/standard_cells/tessent/adk.tcelllib
+//  Finished reading file ../../library/standard_cells/tessent/adk.tcelllib
+//  command: # Read the memory library model
+//  command: set_design_sources -format tcd_memory -y ../../library/memories -extension tcd_memory
+//  command: # Read memory verilog model
+//  command: read_verilog ../../library/memories/*.v -exclude_from_file_dictionary
+//  command: # Read the design
+//  command: read_verilog -f rtl_file_list
+//  Warning: File ../rtl/counter_shift.v, Line 59: Redefinition of module ( counter_shift ), previous definition is module in ../rtl/counter_shift.v line 7. Using module definition in ../rtl/counter_shift.v line 59.
+//  command: set_current_design counter_system
+//  command: # Set the design level as physical_block
+//  command: set_design_level physical_block
+//  command: # Specify DFT requirements to insert memory test
+//  command: set_dft_specification_requirements -memory_test on 
+//  command: # Specify the clocks feeding memories
+//  command: add_clocks 0 clk -period 10.0ns
+//  command: check_design_rules 
+//  Flattening process completed, cell instances=2, gates=142, PIs=34, POs=51, CPU time=0.09 sec.
+//  ---------------------------------------------------------------------------
+//  Begin circuit learning analyses.
+//  --------------------------------
+//  Learning completed, CPU time=0.00 sec.
+//  command: report_memory_instances 
+//
+// Memory Instance: 'u1'
+// ----------------------------------------------
+// bist_data_in_pipelining              : auto
+// physical_cluster_override            : 
+// memory_content_after_test            : 
+// power_domain_island                  : 
+// test_clock_override                  : 
+// use_in_memory_bist_dft_specification : on
+// use_in_memory_bisr_dft_specification : off
+// parent_cluster_module                : 
+// partitioning_group                   : 
+// repair_sharing                       : off
+//
+// Memory Instance: 'u2'
+// ----------------------------------------------
+// bist_data_in_pipelining              : auto
+// physical_cluster_override            : 
+// memory_content_after_test            : 
+// power_domain_island                  : 
+// test_clock_override                  : 
+// use_in_memory_bist_dft_specification : on
+// use_in_memory_bisr_dft_specification : off
+// parent_cluster_module                : 
+// partitioning_group                   : 
+// repair_sharing                       : off
+//  command: # Create and report DFT Specfication that can be modified if necessary
+//  command: set spec [create_dft_specification]
+//  sub-command: create_dft_specification 
+//  
+//  Begin creation of DftSpecification(counter_system,rtl1)
+//    Creation of RtlCells wrapper
+//    Creation of IjtagNetwork wrapper
+//    Creation of MemoryBist wrapper
+//    Creation of MemoryBisr wrapper
+//  
+//  Done  creation of DftSpecification(counter_system,rtl1)
+//  
+//  command: report_config_data $spec
+
+DftSpecification(counter_system,rtl1) {
+  IjtagNetwork {
+    HostScanInterface(ijtag) {
+      Sib(sti) {
+        Attributes {
+          tessent_dft_function : scan_tested_instrument_host;
+        }
+        Sib(mbist) {
+        }
+      }
+    }
+  }
+  MemoryBist {
+    ijtag_host_interface : Sib(mbist);
+    Controller(c1) {
+      clock_domain_label : clk;
+      Step {
+        MemoryInterface(m1) {
+          instance_name : u1;
+        }
+        MemoryInterface(m2) {
+          instance_name : u2;
+        }
+      }
+    }
+  }
+}
+//  command: # Generate and insert the hardware
+//  command: process_dft_specification 
+//  
+//  Begin processing of /DftSpecification(counter_system,rtl1)
+//    --- IP generation phase ---
+//    Validation of IjtagNetwork
+//    Validation of MemoryBist
+//    Processing of IjtagNetwork
+//      Generating design files for IJTAG SIB module counter_system_rtl1_tessent_sib_1
+//        Verilog RTL : ./tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_1.v
+//        IJTAG ICL   : ./tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_1.icl
+//        TCD Scan    : ./tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_1.tcd_scan
+//        CTL         : ./tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_1.ctl
+//        TCD         : ./tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_1.tcd
+//        PDL         : ./tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_1.pdl
+//      Generating design files for IJTAG SIB module counter_system_rtl1_tessent_sib_2
+//        Verilog RTL : ./tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_2.v
+//        IJTAG ICL   : ./tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_2.icl
+//
+//      Loading the generated RTL verilog files (2) to enable instantiating the contained modules
+//      into the design.
+//    Processing of MemoryBist
+//      Generating the IJTAG ICL for the memories.
+//      Generating design files for MemoryBist Controller(c1)
+//  Warning: There are warnings issued while generating design files for MemoryBist controller(s).
+//           Review the messages in the following generation log files:
+//           ./tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_c1.generation_log
+//      Generating design files for Bist Access Port
+//
+//      Loading the generated RTL verilog files (4) to enable instantiating the contained modules
+//      into the design.
+//      Generating design files for MemoryBist controller assembly
+//    --- Instrument insertion phase ---
+//   Inserting instruments of type 'ijtag'
+//   Inserting instruments of type 'memory_bist'
+//  
+//    Writing out modified source design in ./tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design
+//    Writing out specification in ./tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_spec
+//  
+//  Done  processing of DftSpecification(counter_system,rtl1)
+//  
+//  command: # Extract IJTAG network and create ICL file for the design
+//  command: extract_icl 
+//  Note: Updating the hierarchical data model to reflect RTL design changes.
+//  Writing design source dictionary : ./tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/counter_system.design_source_dictionary
+//  Warning: Rule FN1 violation occurs 529417 times
+//  Warning: Rule FN4 violation occurs 11 times
+//  Warning: Rule FP13 violation occurs 52 times
+//  Flattening process completed, cell instances=110, gates=601, PIs=41, POs=52, CPU time=0.10 sec.
+//  ---------------------------------------------------------------------------
+//  Begin circuit learning analyses.
+//  --------------------------------
+//  Learning completed, CPU time=0.00 sec.
+//  ---------------------------------------------------------------------------
+//  Begin ICL extraction.
+//  ---------------------
+//  ICL extraction completed, ICL instances=8, CPU time=0.03 sec.
+//  ---------------------------------------------------------------------------
+//  ---------------------------------------------------------------------------
+//  Begin ICL elaboration and checking.
+//  -----------------------------------
+//  ICL elaboration completed, CPU time=0.02 sec.
+//  ---------------------------------------------------------------------------
+//  Writing ICL file : ./tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/counter_system.icl
+//  Writing consolidated PDL file: ./tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/counter_system.pdl
+//  Extracting SDC...
+//  Writing SDC file: ./tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/counter_system.sdc
+//  Writing DFT info dictionary: ./tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/counter_system.dft_info_dictionary
+//  Writing IJTAG graybox files in directory: ./tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/ijtag_graybox
+//  command: write_design_import_script counter_system.dc_design_load_script -use_relative_path_to ../synth -replace -format genus
+//  Writing file 'counter_system.dc_design_load_script'.
+//  command: # Generate patterns to verify the inserted DFT logic
+//  command: create_patterns_specification 
+//  Creating '/PatternsSpecification(counter_system,rtl1,signoff)'
+//    Getting patterns specifications for the 'ijtag' instrument type
+//    Getting patterns specifications for the 'memory_bist' instrument type
+//  command: process_patterns_specification 
+//  
+//  Begin processing of /PatternsSpecification(counter_system,rtl1,signoff)
+//  
+//    Processing of /PatternsSpecification(counter_system,rtl1,signoff)/Patterns(ICLNetwork)
+//  
+//      Creation of pattern 'ICLNetwork'
+//        Solving ICLNetworkVerify(counter_system)
+//  
+//      Writing pattern file './tsdb_outdir/patterns/counter_system_rtl1.patterns_signoff/ICLNetwork.v'
+//  
+//    Processing of /PatternsSpecification(counter_system,rtl1,signoff)/Patterns(MemoryBist_P1)
+//      Processing of TestStep(go_nogo) instrument 'memory_bist'
+//  
+//      Creation of pattern 'MemoryBist_P1'
+//        Solving TestStep(go_nogo)
+//  
+//      Writing pattern file './tsdb_outdir/patterns/counter_system_rtl1.patterns_signoff/MemoryBist_P1.v'
+//  
+//    Processing of /PatternsSpecification(counter_system,rtl1,signoff)/Patterns(MemoryBist_ParallelRetentionTest_P1)
+//      Processing of TestStep(ParallelRetentionTest) instrument 'memory_bist'
+//  
+//      Creation of pattern 'MemoryBist_ParallelRetentionTest_P1'
+//        Solving TestStep(ParallelRetentionTest)
+//  
+//      Writing pattern file './tsdb_outdir/patterns/counter_system_rtl1.patterns_signoff/MemoryBist_ParallelRetentionTest_P1.v'
+//      Writing simulation data dictionary file './tsdb_outdir/patterns/counter_system_rtl1.patterns_signoff/simulation.data_dictionary'
+//  
+//  Done  processing of /PatternsSpecification(counter_system,rtl1,signoff)
+//  
+//  Writing configuration data file './tsdb_outdir/patterns/counter_system_rtl1.patterns_spec_signoff'.
+//  command: set_simulation_library_sources -v ../../library/standard_cells/verilog/adk.v -v ../../library/memories/*.v
+//  command: # Point to the libraries and run the simulation
+//  command: run_testbench_simulations -store_simulation_waveforms on
+Starting 3 simulations for ./simulation_outdir/counter_system_rtl1.simulation_signoff
+//  Waiting for the simulation(s) to complete
+
+unscheduled 0 queued 0 running 0 pass 3 fail 0
+//  command: # If simulation fails use the command to see which pattern failed
+//  command: #check_testbench_simulations -report_status
+//  command: exit 
