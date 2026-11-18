@@ -1,0 +1,23 @@
+rm design.v
+rm -rf outDir
+rm -rf scanCertify
+rm -rf scanModels
+rm -rf verilog_lib
+rm etlibcertify.log
+rm fastscan.do.cat
+rm fault_coverage_100_percent_models
+rm libcomp.atpglib
+rm libcomp.log
+rm modelsim.ini
+rm -rf padCertify
+rm pat.ascii
+rm pat.v
+rm pat.v.0.vec
+rm pat.v.cfg
+rm pat.v.po.name
+rm sim.log
+rm verify.results
+rm -rf work
+rm au_uc_uo_faults.libcomp
+rm adk.tcelllib
+

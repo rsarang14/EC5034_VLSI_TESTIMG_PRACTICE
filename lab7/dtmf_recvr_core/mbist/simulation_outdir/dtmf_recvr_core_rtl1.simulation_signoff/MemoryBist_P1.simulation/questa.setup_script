@@ -1,0 +1,10 @@
+#!/bin/sh
+export PATH='.:/home/mentor/Tessent2022.4/bin:/home/mentor/tanner/tanner-2022-2-rhel6-64/bin:/home/mentor/questa2022.4/questasim/linux_x86_64/bin:/home/mentor/questa2022.4/questasim/bin:/home/mentor/calibre/aoi_cal_2022.4_37.20/bin:/home/l210/.local/bin:/home/l210/bin:/usr/share/Modules/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin'
+export MTI_VCO_MODE='64'
+export LD_LIBRARY_PATH='/home/mentor/Tessent2022.4/lnx-x86/lib64:/lib64'
+export JAGUAR_HOME='/home/mentor/Tessent2022.4'
+export MGLS_HOME='/home/mentor/Tessent2022.4/lnx-x86/bin64/mgls/'
+export QUESTA_HOME='/home/mentor/questa2022.4/questasim/linux_x86_64'
+export MODULES_USE_COMPAT_VERSION='0'
+export LM_LICENSE_FILE='1717@14.139.1.126'
+if [ "$TESSENT_HOME" = "" ] ; then export TESSENT_HOME='/home/mentor/Tessent2022.4'; fi

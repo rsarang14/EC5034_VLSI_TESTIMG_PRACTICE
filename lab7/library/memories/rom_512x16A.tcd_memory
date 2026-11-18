@@ -1,0 +1,39 @@
+MemoryTemplate (rom_512x16A) {
+
+   MemoryType      : ROM;
+   CellName        : rom_512x16A;
+   Algorithm       : ReadOnly;
+   transparentMode : SyncMux;
+   logicalPorts    : 1r;
+   MinHold         : 2;
+   NumberOfWords   : 512;
+   MilliWattsPerMegaHertz : 1.2;
+   DataOutStage    : None;
+      Port (CLK)  {
+                    Function    : Clock;
+                    Polarity    : ActiveHigh;
+      } 
+      Port (Q[15:0]) { 
+                    Function    : Data; 
+                    Direction   : Output; 
+      }
+      port (A[8:0]) {
+                    function    : Address;
+      }
+      port (CEN) {
+                    function    : Select;
+                    Polarity    : ActiveLow; 
+      }
+
+      AddressCounter {
+           Function (Address) {
+               LogicalAddressMap {
+                   RowAddress[4:0]    : Address [8:4];
+                   ColumnAddress[3:0] : Address [3:0];  
+               }
+           }
+      }
+
+     OperationSet : rom;
+
+}

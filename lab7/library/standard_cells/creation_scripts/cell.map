@@ -1,0 +1,182 @@
+regexp_verbosity = verbose; // Helps debug regexp mismatch issues in cell_attributes
+
+cell_attributes {
+        cell ("dff(|s|r|sr)"){
+                cell_type = dff;
+                input ("D") (data_in;)
+                input ("CLK") (posedge_clock;)
+                input ("R") (active_high_reset;)
+                input ("S") (active_high_set;)
+                output ("Q") (data_out;)
+                output ("QB") (data_out_inv;)
+        }
+        cell ("nck_dff(|s|r|sr)"){
+                cell_type = dff;
+                input ("D") (data_in;)
+                input ("CLK") (negedge_clock;)
+                output ("Q") (data_out;)
+                output ("QB") (data_out_inv;)
+        }             
+        cell ("sff(|s|r|sr)"){
+                cell_type = scan_cell;
+                nonscan_model = "dff\1";
+                input ("SE") (scan_enable;)
+                input ("SI") (scan_in;)
+                input ("D") (data_in;)
+                input ("CLK") (posedge_clock;)
+                input ("R") (active_high_reset;)
+                input ("S") (active_high_set;)
+                output ("Q") (scan_out;)
+                output ("QB") (scan_out_inv;)
+        }
+        cell ("nck_sff(|s|r|sr)"){
+                cell_type = scan_cell;
+                nonscan_model = "nck_dff\1";
+                input ("SE") (scan_enable;)
+                input ("SI") (scan_in;)
+                input ("D") (data_in;)
+                input ("CLK") (negedge_clock;)
+                input ("R") (active_high_reset;)
+                input ("S") (active_high_set;)
+                output ("Q") (scan_out;)
+                output ("QB") (scan_out_inv;)
+        }
+        cell ("scan_sync_cell(.*)"){
+                nonscan_model = "sync_cell\1";
+                cell_type = synchronizer_cell;
+                input ("SE") (scan_enable;)
+                input ("SI") (scan_in;)
+                input ("D") (data_in;)
+                input ("R") (active_high_reset;)
+                input ("S") (active_high_set;)
+                input ("CK") (posedge_clock;)
+                output ("O") (scan_out;)
+        }
+        cell ("nck_scan_sync_cell(.*)"){
+                nonscan_model = "nck_sync_cell\1";
+                cell_type = synchronizer_cell;
+                input ("SE") (scan_enable;)
+                input ("SI") (scan_in;)
+                input ("D") (data_in;)
+                input ("R") (active_high_reset;)
+                input ("S") (active_high_set;)
+                input ("CK") (negedge_clock;)
+                output ("O") (scan_out;)
+        }
+
+
+// *****************************************************
+// Clock Path Cells
+// *****************************************************
+        cell ("clock_buf02"){
+                cell_type = clock_buffer;
+        }             
+        cell ("clock_inv01"){
+                cell_type = clock_inverter;
+        }             
+        cell ("clock_mux21"){
+                cell_type = clock_mux;
+        }             
+        cell ("clock_and02"){
+                cell_type = clock_and;
+        }             
+        cell ("clock_or02"){
+                cell_type = clock_or;
+        }             
+
+// *****************************************************
+// Clock Gating latchs
+// *****************************************************
+        cell ("cgand"){
+                cell_type = clock_gating_and; 
+                input ("FE") (func_enable;)
+                input ("TE") (test_enable;)
+                input ("CK") (clock_in;)
+                output ("GCK") (clock_out;)
+        }             
+        cell ("cgor"){
+                cell_type = clock_gating_or; 
+                input ("FE") (func_enable;)
+                input ("TE") (test_enable;)
+                input ("CK") (clock_in;)
+                output ("GCK") (clock_out;)
+        }             
+// *****************************************************
+// Sync_cell
+// *****************************************************
+        cell ("sync_cell.*"){
+                cell_type = synchronizer_cell;
+                input ("D") (data_in;)
+                input ("CK") (posedge_clock;)
+                input ("R") (active_high_reset;)
+                input ("S") (active_high_set;)
+                output ("O") (data_out;)
+        }
+        cell ("nck_sync_cell.*"){
+                cell_type = synchronizer_cell;
+                input ("D") (data_in;)
+                input ("CK") (negedge_clock;)
+                input ("R") (active_high_reset;)
+                input ("S") (active_high_set;)
+                output ("O") (data_out;)
+        }
+// *****************************************************
+// Test logic
+// *****************************************************
+        cell("buf02"){
+                cell_type = BUF;
+        }
+        cell("inv01"){
+                cell_type = INV;
+        }
+        cell("mux21"){
+                cell_type = mux;
+                input ("S0") (mux_select;)
+                input ("A0") (mux_in0;)
+                input ("A1") (mux_in1;)
+        }
+        cell("and02"){
+                cell_type = and;
+        }
+        cell (nand02) {
+            cell_type = nand;
+        }
+        cell("or02"){
+                cell_type = or;
+        }
+        cell (nor02) {
+            cell_type = nor;
+        }
+        cell (xor02) {
+            cell_type = xor;
+        }
+
+
+// *****************************************************
+// Pads
+// *****************************************************
+        cell("ipad"){
+                cell_type = pad;
+                input ("PAD") (pad_from_io;)
+                output("C") (pad_from_pad;)
+        }
+        cell("opad"){
+                cell_type = pad;
+                output ("PAD") (pad_to_io;)
+                input("OEN") (pad_enable_high;)
+                input ("I") (pad_to_pad;)
+        }
+        cell("iopad"){
+                cell_type = pad;
+                inout ("PAD") (pad_pad_io;)
+                input("OEN") (pad_enable_high;)
+                input ("I") (pad_to_pad;)
+                output ("C") (pad_from_pad;)
+        }
+        cell("ipad_buf"){
+                cell_type = pad;
+                input ("PAD") (pad_from_io;)
+                output("C") (pad_from_pad;)
+        }
+
+}

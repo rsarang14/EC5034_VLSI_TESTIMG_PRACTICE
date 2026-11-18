@@ -1,0 +1,2 @@
+fastscan -dofile fs_tessent.do -log fs_tessent.log -replace \
+  -lib libcomp.atpglib cell.map -model all 

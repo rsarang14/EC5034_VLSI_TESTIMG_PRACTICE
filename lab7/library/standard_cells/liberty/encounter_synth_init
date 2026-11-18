@@ -1,0 +1,52 @@
+set adkVersion [expr {[info exists ::env(ADK_VERSION)] ? $::env(ADK_VERSION) : "current"}]
+
+suppress_messages {LBR-504} -quiet
+suppress_messages {LBR-146} -quiet
+suppress_messages {LBR-43} -quiet
+
+set libSubDirName liberty
+set libSubPathList [list]
+lappend libSubPathList [file join prerequisites techlib_adk.tnt $adkVersion $libSubDirName]
+lappend libSubPathList [file join techlib_adk liberty]
+set libDir ""
+foreach libSubPath $libSubPathList {
+  set wd [lpwd]
+  while { $wd ne "/" } {
+    set wd [file dirname $wd]
+    set libDirTmp [file join $wd $libSubPath]
+    if { [file exists [file join $libDirTmp adk.lib]] } {
+      set libDir $libDirTmp
+      break
+    }
+  }
+  if { $libDir ne "" } {
+    break
+  }
+}
+if { $libDir eq "" } {
+  puts "The sub-directory '$libSubDirName' was not found."
+  puts "It was searched in the following sub-directory paths:"
+  puts "  [join $libSubPathList "\n  "]"
+  puts "The search started in the parent directory of the current directory:"
+  put  "  [lpwd]"
+  puts "Aborting synthesis."
+  exit 1
+}
+
+foreach {attrName attrValue} [list \
+    lib_search_path [list $libDir] \
+    library adk.lib \
+    hdl_preserve_unused_flop true \
+    hdl_preserve_unused_latch true \
+    hdl_preserve_unused_registers true \
+    delete_flops_on_preserved_net false \
+    delete_hier_insts_on_preserved_net false \
+    delete_unloaded_insts false \
+    delete_unloaded_seqs false \
+    information_level 2 \
+ ] {
+  set_attribute $attrName $attrValue /
+}
+
+set_attribute avoid true [find -libcell *sff*]
+

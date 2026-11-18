@@ -1,0 +1,13 @@
+
+The version of ADK located here has been modified for use in the STS Product flow.
+Only the files required to run the tools are provided. 
+
+The following directories contain the libraries. 
+
+tessent     <-- Tessent Library with attributes
+verilog     <-- Verilog library
+synopsys    <-- Synopsys synthesis library
+liberty     <-- Liberty used to create Synopsys .db and Tessent BIST Libraries
+leonardo    <-- Leonardo synthesis library
+
+

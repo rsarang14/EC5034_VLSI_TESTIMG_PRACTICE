@@ -1,0 +1,203 @@
+# vsim -c -lib dut_work -L dut_work -L tsdb_ijtag_graybox -do "log -r /*;run -all; exit" -voptargs="+acc" "+nowarnTFMPC" "+NEWPATH=./patterns_directory" ICLNetwork_configuration 
+# Start time: 03:03:39 on Oct 24,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim-64
+# //  Version 2022.4 linux_x86_64 Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.ICLNetwork_configuration(fast)
+# Loading work.TB(fast)
+# Loading tsdb_ijtag_graybox.dtmf_recvr_core(fast)
+# Loading tsdb_ijtag_graybox.dtmf_recvr_core_ts_graybox_ram_128x16_test_1(fast)
+# Loading tsdb_ijtag_graybox.dtmf_recvr_core_ts_graybox_dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_1(fast)
+# Loading tsdb_ijtag_graybox.buf02(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_sib_1(fast)
+# Loading work.mux21(fast)
+# Loading work.clock_buf02(fast)
+# Loading work.cgand(fast)
+# Loading work.clock_mux21(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_sib_2(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_sib_3(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_tdr_sri_ctrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_sib_4(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_bap(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_bap_tdr(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_bap_sib(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_bap_ctl_sib(fast)
+# Loading tsdb_ijtag_graybox.dtmf_recvr_core_ts_graybox_dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_1(fast)
+# Loading tsdb_ijtag_graybox.dtmf_recvr_core_ts_graybox_dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_1(fast)
+# log -r /*
+# run -all
+# Found New Path ./patterns_directory
+# 
+# Loading ./patterns_directory/ICLNetwork.v.po.name
+# 
+# Loading ./patterns_directory/ICLNetwork.v.0.vec
+# 
+# 0ns: Pattern_set dtmf_recvr_core
+# 200ns:  Activate selection of the following scan muxes:
+# 200ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 200ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.scan_in_mux, selection 1: sib, ltest_en = 2'bxx -> scan_in_mux = ijtag_si
+# 300ns:  Scan in verification pattern to the following scan registers:
+# 300ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.sib, load value = 0
+# 300ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.sib, load value = 1
+# 800ns:  Scan out verification pattern from the following scan registers:
+# 800ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.sib, expected value = 0
+# 800ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.sib, expected value = 1
+# 1300ns:  Activate selection of the following scan muxes:
+# 1300ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 1300ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 1300ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.scan_in_mux, selection 1: sib, ltest_en = 2'bxx -> scan_in_mux = ijtag_si
+# 1400ns:  Scan in verification pattern to the following scan registers:
+# 1400ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.sib, load value = 1
+# 1400ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 1400ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.sib, load value = 1
+# 2000ns:  Scan out verification pattern from the following scan registers:
+# 2000ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.sib, expected value = 1
+# 2000ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 2000ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.sib, expected value = 1
+# 2600ns:  Activate selection of the following scan muxes:
+# 2600ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 2600ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 2600ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.scan_in_mux, selection 1: sib, ltest_en = 2'bxx -> scan_in_mux = ijtag_si
+# 2700ns:  Scan in verification pattern to the following scan registers:
+# 2700ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.sib, load value = 0
+# 2700ns:   dtmf_recvr_core_rtl1_tessent_tdr_sri_ctrl_inst.tdr[1:0], load value = 11
+# 2700ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 2700ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.sib, load value = 1
+# 3500ns:  Scan out verification pattern from the following scan registers:
+# 3500ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.sib, expected value = 0
+# 3500ns:   dtmf_recvr_core_rtl1_tessent_tdr_sri_ctrl_inst.tdr[1:0], expected value = 11
+# 3500ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 3500ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.sib, expected value = 1
+# 4300ns:  Activate selection of the following scan muxes:
+# 4300ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 4300ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so
+# 4300ns:   dtmf_recvr_core_rtl1_tessent_sib_mbist_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 4400ns:  Scan in verification pattern to the following scan registers:
+# 4400ns:   dtmf_recvr_core_rtl1_tessent_sib_mbist_inst.sib, load value = 1
+# 4400ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.sib, load value = 0
+# 4400ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.sib, load value = 1
+# 5000ns:  Scan out verification pattern from the following scan registers:
+# 5000ns:   dtmf_recvr_core_rtl1_tessent_sib_mbist_inst.sib, expected value = 1
+# 5000ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.sib, expected value = 0
+# 5000ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.sib, expected value = 1
+# 5600ns:  Activate selection of the following scan muxes:
+# 5600ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 5600ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so
+# 5600ns:   dtmf_recvr_core_rtl1_tessent_sib_mbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 5600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.ctl_sib_mux_inst, selection 0: ctl_group_sib = 1'b0 -> ctl_sib_mux_inst = tdr_bypass_sib_inst
+# 5600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.tdr_bypass_sib_mux_inst, selection 0: tdr_bypass_sib_inst = 1'b0 -> tdr_bypass_sib_mux_inst = si
+# 5700ns:  Scan in verification pattern to the following scan registers:
+# 5700ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.tdr_bypass_sib_inst, load value = 0
+# 5700ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.ctl_group_sib, load value = 1
+# 5700ns:   dtmf_recvr_core_rtl1_tessent_sib_mbist_inst.sib, load value = 1
+# 5700ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.sib, load value = 0
+# 5700ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.sib, load value = 1
+# 6500ns:  Scan out verification pattern from the following scan registers:
+# 6500ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.tdr_bypass_sib_inst, expected value = 0
+# 6500ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.ctl_group_sib, expected value = 1
+# 6500ns:   dtmf_recvr_core_rtl1_tessent_sib_mbist_inst.sib, expected value = 1
+# 6500ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.sib, expected value = 0
+# 6500ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.sib, expected value = 1
+# 7300ns:  Activate selection of the following scan muxes:
+# 7300ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 7300ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so
+# 7300ns:   dtmf_recvr_core_rtl1_tessent_sib_mbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 7300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.ctl_sib_mux_inst, selection 1: ctl_group_sib = 1'b1 -> ctl_sib_mux_inst = mbist_go_0
+# 7300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.fromBistMux_0, selection 1: bistEn_int[0], BIST_SETUP_tdr[1], ChainBypassMode = 3'bxxx -> fromBistMux_0 = mbist_go_1
+# 7300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.fromBistMux_1, selection 1: bistEn_int[1], BIST_SETUP_tdr[1], ChainBypassMode = 3'bxxx -> fromBistMux_1 = mbist_go_2
+# 7300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.fromBistMux_2, selection 1: bistEn_int[2], BIST_SETUP_tdr[1], ChainBypassMode = 3'bxxx -> fromBistMux_2 = tdr_bypass_sib_inst
+# 7300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.tdr_bypass_sib_mux_inst, selection 0: tdr_bypass_sib_inst = 1'b0 -> tdr_bypass_sib_mux_inst = si
+# 7400ns:  Scan in verification pattern to the following scan registers:
+# 7400ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.tdr_bypass_sib_inst, load value = 0
+# 7400ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.mbist_done_2, load value = 1
+# 7400ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.mbist_go_2, load value = 1
+# 7400ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.mbist_done_1, load value = 1
+# 7400ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.mbist_go_1, load value = 1
+# 7400ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.mbist_done_0, load value = 0
+# 7400ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.mbist_go_0, load value = 0
+# 7400ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.ctl_group_sib, load value = 1
+# 7400ns:   dtmf_recvr_core_rtl1_tessent_sib_mbist_inst.sib, load value = 1
+# 7400ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.sib, load value = 0
+# 7400ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.sib, load value = 1
+# 8800ns:  Scan out verification pattern from the following scan registers:
+# 8800ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.tdr_bypass_sib_inst, expected value = 0
+# 8800ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.mbist_done_2, expected value = 1
+# 8800ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.mbist_go_2, expected value = 1
+# 8800ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.mbist_done_1, expected value = 1
+# 8800ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.mbist_go_1, expected value = 1
+# 8800ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.mbist_done_0, expected value = 0
+# 8800ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.mbist_go_0, expected value = 0
+# 8800ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.ctl_group_sib, expected value = 1
+# 8800ns:   dtmf_recvr_core_rtl1_tessent_sib_mbist_inst.sib, expected value = 1
+# 8800ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.sib, expected value = 0
+# 8800ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.sib, expected value = 1
+# 10200ns:  Activate selection of the following scan muxes:
+# 10200ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 10200ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so
+# 10200ns:   dtmf_recvr_core_rtl1_tessent_sib_mbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 10200ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.ctl_sib_mux_inst, selection 0: ctl_group_sib = 1'b0 -> ctl_sib_mux_inst = tdr_bypass_sib_inst
+# 10200ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.tdr_bypass_sib_mux_inst, selection 1: tdr_bypass_sib_inst = 1'b1 -> tdr_bypass_sib_mux_inst = ENABLE_MEM_RESET_tdr
+# 10300ns:  Scan in verification pattern to the following scan registers:
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0], load value = 111
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.TCK_MODE_tdr, load value = 1
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr, load value = 1
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr, load value = 1
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr, load value = 0
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr, load value = 0
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr, load value = 0
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr, load value = 0
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr, load value = 1
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr, load value = 1
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr, load value = 1
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr, load value = 1
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr, load value = 0
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.tdr_bypass_sib_inst, load value = 0
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.ctl_group_sib, load value = 1
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_sib_mbist_inst.sib, load value = 1
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.sib, load value = 0
+# 10300ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.sib, load value = 1
+# 12600ns:  Scan out verification pattern from the following scan registers:
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0], expected value = 111
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.TCK_MODE_tdr, expected value = 1
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr, expected value = 1
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr, expected value = 1
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr, expected value = 0
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr, expected value = 0
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr, expected value = 0
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr, expected value = 0
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr, expected value = 1
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr, expected value = 1
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr, expected value = 1
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr, expected value = 1
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr, expected value = 0
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.tdr_bypass_sib_inst, expected value = 0
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_mbist_bap_inst.ctl_group_sib, expected value = 1
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_sib_mbist_inst.sib, expected value = 1
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_sib_sti_inst.sib, expected value = 0
+# 12600ns:   dtmf_recvr_core_rtl1_tessent_sib_sri_inst.sib, expected value = 1
+# 
+# Simulation finished at time 15001
+# Number of miscompares            =           0
+# Number of 0/1 compares           =          77
+# Number of Z compares             =           0
+# 
+# No error between simulated and expected patterns
+# 
+# ** Note: $finish    : ./patterns_directory/ICLNetwork.v(1377)
+#    Time: 15002 ns  Iteration: 1  Instance: /TB
+# End time: 03:03:40 on Oct 24,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1

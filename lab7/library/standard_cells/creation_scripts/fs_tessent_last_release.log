@@ -1,0 +1,527 @@
+/home/dftbld/nightly/latest_tot/installDir-adt/inhouse/bin/fastscan -dofile fs_tessent.do -log fs_tessent.log -replace -lib libcomp.atpglib cell.map -model all
+//  Tessent FastScan  2017.1-snapshot_2017.01.16_04.01    Mon Jan 16 04:09:18 GMT 2017
+//                Copyright 1992-2017 Mentor Graphics Corporation
+//
+//                           All Rights Reserved.
+//
+//    THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION WHICH
+//  IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS AND IS
+//                        SUBJECT TO LICENSE TERMS.
+//
+//  Mentor Graphics software executing under x86-64 Linux on Mon Jan 16 17:24:49 PST 2017.
+//  64 bit version
+//  Host: stssled03 (16 x 2.7 GHz, 48258 MB RAM, 119999 MB Swap)
+//
+//  Compiling library  ...
+//  Reading DFT Library file libcomp.atpglib
+//  Finished reading file libcomp.atpglib
+//  Reading DFT Library file cell.map
+//  Finished reading file cell.map
+//  Full match of model_attribute {..  model expression '^and02$' on line 138
+//       of file 'cell.map',
+//    with model 'and02' on line 372
+//       of file 'libcomp.atpglib'.
+//  Full match of model_attribute {..  model expression '^buf02$' on line 126
+//       of file 'cell.map',
+//    with model 'buf02' on line 734
+//       of file 'libcomp.atpglib'.
+//  Full match of model_attribute {..  model expression '^cgand$' on line 90
+//       of file 'cell.map',
+//    with model 'cgand' on line 789
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^GCK$' with model port name 'GCK'.
+//    Full match of attribute port name '^FE$' with model port name 'FE'.
+//    Full match of attribute port name '^TE$' with model port name 'TE'.
+//    Full match of attribute port name '^CK$' with model port name 'CK'.
+//  Full match of model_attribute {..  model expression '^cgor$' on line 97
+//       of file 'cell.map',
+//    with model 'cgor' on line 819
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^GCK$' with model port name 'GCK'.
+//    Full match of attribute port name '^FE$' with model port name 'FE'.
+//    Full match of attribute port name '^TE$' with model port name 'TE'.
+//    Full match of attribute port name '^CK$' with model port name 'CK'.
+//  Full match of model_attribute {..  model expression '^clock_and02$' on line 80
+//       of file 'cell.map',
+//    with model 'clock_and02' on line 849
+//       of file 'libcomp.atpglib'.
+//  Full match of model_attribute {..  model expression '^clock_buf02$' on line 71
+//       of file 'cell.map',
+//    with model 'clock_buf02' on line 861
+//       of file 'libcomp.atpglib'.
+//  Full match of model_attribute {..  model expression '^clock_inv01$' on line 74
+//       of file 'cell.map',
+//    with model 'clock_inv01' on line 872
+//       of file 'libcomp.atpglib'.
+//  Full match of model_attribute {..  model expression '^clock_mux21$' on line 77
+//       of file 'cell.map',
+//    with model 'clock_mux21' on line 883
+//       of file 'libcomp.atpglib'.
+//  Full match of model_attribute {..  model expression '^clock_or02$' on line 83
+//       of file 'cell.map',
+//    with model 'clock_or02' on line 896
+//       of file 'libcomp.atpglib'.
+//  Full match of model_attribute {..  model expression '^dff(|s|r|sr)$' on line 4
+//       of file 'cell.map',
+//    with model 'dff' on line 908
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Warning: Cell expression '^dff(|s|r|sr)$' matched model 'dff', but there was no pin
+//    match for pinname expression '^R$' for any pin on that model, beginning on line 4
+//    of file 'cell.map'
+//  Warning: Cell expression '^dff(|s|r|sr)$' matched model 'dff', but there was no pin
+//    match for pinname expression '^S$' for any pin on that model, beginning on line 4
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^dff(|s|r|sr)$' on line 4
+//       of file 'cell.map',
+//    with model 'dffr' on line 922
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^R$' with model port name 'R'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Warning: Cell expression '^dff(|s|r|sr)$' matched model 'dffr', but there was no pin
+//    match for pinname expression '^S$' for any pin on that model, beginning on line 4
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^dff(|s|r|sr)$' on line 4
+//       of file 'cell.map',
+//    with model 'dffs' on line 937
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^S$' with model port name 'S'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Warning: Cell expression '^dff(|s|r|sr)$' matched model 'dffs', but there was no pin
+//    match for pinname expression '^R$' for any pin on that model, beginning on line 4
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^dff(|s|r|sr)$' on line 4
+//       of file 'cell.map',
+//    with model 'dffsr' on line 952
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^S$' with model port name 'S'.
+//    Full match of attribute port name '^R$' with model port name 'R'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Full match of model_attribute {..  model expression '^inv01$' on line 129
+//       of file 'cell.map',
+//    with model 'inv01' on line 1002
+//       of file 'libcomp.atpglib'.
+//  Full match of model_attribute {..  model expression '^ipad$' on line 158
+//       of file 'cell.map',
+//    with model 'ipad' on line 1068
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^PAD$' with model port name 'PAD'.
+//    Full match of attribute port name '^C$' with model port name 'C'.
+//  Full match of model_attribute {..  model expression '^opad$' on line 163
+//       of file 'cell.map',
+//    with model 'opad' on line 1091
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^I$' with model port name 'I'.
+//    Full match of attribute port name '^OEN$' with model port name 'OEN'.
+//    Full match of attribute port name '^PAD$' with model port name 'PAD'.
+//  Full match of model_attribute {..  model expression '^iopad$' on line 169
+//       of file 'cell.map',
+//    with model 'iopad' on line 1103
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^OEN$' with model port name 'OEN'.
+//    Full match of attribute port name '^PAD$' with model port name 'PAD'.
+//    Full match of attribute port name '^I$' with model port name 'I'.
+//    Full match of attribute port name '^C$' with model port name 'C'.
+//  Full match of model_attribute {..  model expression '^ipad_buf$' on line 176
+//       of file 'cell.map',
+//    with model 'ipad_buf' on line 1117
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^PAD$' with model port name 'PAD'.
+//    Full match of attribute port name '^C$' with model port name 'C'.
+//  Full match of model_attribute {..  model expression '^mux21$' on line 132
+//       of file 'cell.map',
+//    with model 'mux21' on line 1181
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^A0$' with model port name 'A0'.
+//    Full match of attribute port name '^A1$' with model port name 'A1'.
+//    Full match of attribute port name '^S0$' with model port name 'S0'.
+//  Full match of model_attribute {..  model expression '^nand02$' on line 141
+//       of file 'cell.map',
+//    with model 'nand02' on line 1194
+//       of file 'libcomp.atpglib'.
+//  Full match of model_attribute {..  model expression '^nck_dff(|s|r|sr)$' on line 13
+//       of file 'cell.map',
+//    with model 'nck_dff' on line 1272
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Full match of model_attribute {..  model expression '^nck_dff(|s|r|sr)$' on line 13
+//       of file 'cell.map',
+//    with model 'nck_dffr' on line 1286
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Full match of model_attribute {..  model expression '^nck_dff(|s|r|sr)$' on line 13
+//       of file 'cell.map',
+//    with model 'nck_dffs' on line 1301
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Full match of model_attribute {..  model expression '^nck_dff(|s|r|sr)$' on line 13
+//       of file 'cell.map',
+//    with model 'nck_dffsr' on line 1316
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Full match of model_attribute {..  model expression '^nck_scan_sync_cell(.*)$' on line 55
+//       of file 'cell.map',
+//    with model 'nck_scan_sync_cell' on line 1334
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Warning: Cell expression '^nck_scan_sync_cell(.*)$' matched model 'nck_scan_sync_cell', but there was no pin
+//    match for pinname expression '^R$' for any pin on that model, beginning on line 55
+//    of file 'cell.map'
+//  Warning: Cell expression '^nck_scan_sync_cell(.*)$' matched model 'nck_scan_sync_cell', but there was no pin
+//    match for pinname expression '^S$' for any pin on that model, beginning on line 55
+//    of file 'cell.map'
+//  Warning: Cell expression '^nck_scan_sync_cell(.*)$' matched model 'nck_scan_sync_cell', but there was no pin
+//    match for pinname expression '^CK$' for any pin on that model, beginning on line 55
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^nck_scan_sync_cell(.*)$' on line 55
+//       of file 'cell.map',
+//    with model 'nck_scan_sync_cell_rst' on line 1350
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^R$' with model port name 'R'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Warning: Cell expression '^nck_scan_sync_cell(.*)$' matched model 'nck_scan_sync_cell_rst', but there was no pin
+//    match for pinname expression '^S$' for any pin on that model, beginning on line 55
+//    of file 'cell.map'
+//  Warning: Cell expression '^nck_scan_sync_cell(.*)$' matched model 'nck_scan_sync_cell_rst', but there was no pin
+//    match for pinname expression '^CK$' for any pin on that model, beginning on line 55
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^nck_scan_sync_cell(.*)$' on line 55
+//       of file 'cell.map',
+//    with model 'nck_scan_sync_cell_set' on line 1368
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^S$' with model port name 'S'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Warning: Cell expression '^nck_scan_sync_cell(.*)$' matched model 'nck_scan_sync_cell_set', but there was no pin
+//    match for pinname expression '^R$' for any pin on that model, beginning on line 55
+//    of file 'cell.map'
+//  Warning: Cell expression '^nck_scan_sync_cell(.*)$' matched model 'nck_scan_sync_cell_set', but there was no pin
+//    match for pinname expression '^CK$' for any pin on that model, beginning on line 55
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^nck_scan_sync_cell(.*)$' on line 55
+//       of file 'cell.map',
+//    with model 'nck_scan_sync_cell_set_rst' on line 1386
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^S$' with model port name 'S'.
+//    Full match of attribute port name '^R$' with model port name 'R'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Warning: Cell expression '^nck_scan_sync_cell(.*)$' matched model 'nck_scan_sync_cell_set_rst', but there was no pin
+//    match for pinname expression '^CK$' for any pin on that model, beginning on line 55
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^nck_sff(|s|r|sr)$' on line 32
+//       of file 'cell.map',
+//    with model 'nck_sff' on line 1407
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Warning: Cell expression '^nck_sff(|s|r|sr)$' matched model 'nck_sff', but there was no pin
+//    match for pinname expression '^R$' for any pin on that model, beginning on line 32
+//    of file 'cell.map'
+//  Warning: Cell expression '^nck_sff(|s|r|sr)$' matched model 'nck_sff', but there was no pin
+//    match for pinname expression '^S$' for any pin on that model, beginning on line 32
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^nck_sff(|s|r|sr)$' on line 32
+//       of file 'cell.map',
+//    with model 'nck_sffr' on line 1425
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^R$' with model port name 'R'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Warning: Cell expression '^nck_sff(|s|r|sr)$' matched model 'nck_sffr', but there was no pin
+//    match for pinname expression '^S$' for any pin on that model, beginning on line 32
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^nck_sff(|s|r|sr)$' on line 32
+//       of file 'cell.map',
+//    with model 'nck_sffs' on line 1444
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^S$' with model port name 'S'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Warning: Cell expression '^nck_sff(|s|r|sr)$' matched model 'nck_sffs', but there was no pin
+//    match for pinname expression '^R$' for any pin on that model, beginning on line 32
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^nck_sff(|s|r|sr)$' on line 32
+//       of file 'cell.map',
+//    with model 'nck_sffsr' on line 1463
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^S$' with model port name 'S'.
+//    Full match of attribute port name '^R$' with model port name 'R'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Full match of model_attribute {..  model expression '^nck_sync_cell.*$' on line 115
+//       of file 'cell.map',
+//    with model 'nck_sync_cell' on line 1484
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Warning: Cell expression '^nck_sync_cell.*$' matched model 'nck_sync_cell', but there was no pin
+//    match for pinname expression '^CK$' for any pin on that model, beginning on line 115
+//    of file 'cell.map'
+//  Warning: Cell expression '^nck_sync_cell.*$' matched model 'nck_sync_cell', but there was no pin
+//    match for pinname expression '^R$' for any pin on that model, beginning on line 115
+//    of file 'cell.map'
+//  Warning: Cell expression '^nck_sync_cell.*$' matched model 'nck_sync_cell', but there was no pin
+//    match for pinname expression '^S$' for any pin on that model, beginning on line 115
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^nck_sync_cell.*$' on line 115
+//       of file 'cell.map',
+//    with model 'nck_sync_cell_rst' on line 1497
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^R$' with model port name 'R'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Warning: Cell expression '^nck_sync_cell.*$' matched model 'nck_sync_cell_rst', but there was no pin
+//    match for pinname expression '^CK$' for any pin on that model, beginning on line 115
+//    of file 'cell.map'
+//  Warning: Cell expression '^nck_sync_cell.*$' matched model 'nck_sync_cell_rst', but there was no pin
+//    match for pinname expression '^S$' for any pin on that model, beginning on line 115
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^nck_sync_cell.*$' on line 115
+//       of file 'cell.map',
+//    with model 'nck_sync_cell_set' on line 1511
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^S$' with model port name 'S'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Warning: Cell expression '^nck_sync_cell.*$' matched model 'nck_sync_cell_set', but there was no pin
+//    match for pinname expression '^CK$' for any pin on that model, beginning on line 115
+//    of file 'cell.map'
+//  Warning: Cell expression '^nck_sync_cell.*$' matched model 'nck_sync_cell_set', but there was no pin
+//    match for pinname expression '^R$' for any pin on that model, beginning on line 115
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^nck_sync_cell.*$' on line 115
+//       of file 'cell.map',
+//    with model 'nck_sync_cell_set_rst' on line 1525
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^S$' with model port name 'S'.
+//    Full match of attribute port name '^R$' with model port name 'R'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Warning: Cell expression '^nck_sync_cell.*$' matched model 'nck_sync_cell_set_rst', but there was no pin
+//    match for pinname expression '^CK$' for any pin on that model, beginning on line 115
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^nor02$' on line 147
+//       of file 'cell.map',
+//    with model 'nor02' on line 1595
+//       of file 'libcomp.atpglib'.
+//  Full match of model_attribute {..  model expression '^or02$' on line 144
+//       of file 'cell.map',
+//    with model 'or02' on line 1955
+//       of file 'libcomp.atpglib'.
+//  Full match of model_attribute {..  model expression '^scan_sync_cell(.*)$' on line 44
+//       of file 'cell.map',
+//    with model 'scan_sync_cell' on line 1994
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^CK$' with model port name 'CK'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Warning: Cell expression '^scan_sync_cell(.*)$' matched model 'scan_sync_cell', but there was no pin
+//    match for pinname expression '^R$' for any pin on that model, beginning on line 44
+//    of file 'cell.map'
+//  Warning: Cell expression '^scan_sync_cell(.*)$' matched model 'scan_sync_cell', but there was no pin
+//    match for pinname expression '^S$' for any pin on that model, beginning on line 44
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^scan_sync_cell(.*)$' on line 44
+//       of file 'cell.map',
+//    with model 'scan_sync_cell_rst' on line 2010
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^CK$' with model port name 'CK'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^R$' with model port name 'R'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Warning: Cell expression '^scan_sync_cell(.*)$' matched model 'scan_sync_cell_rst', but there was no pin
+//    match for pinname expression '^S$' for any pin on that model, beginning on line 44
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^scan_sync_cell(.*)$' on line 44
+//       of file 'cell.map',
+//    with model 'scan_sync_cell_set' on line 2028
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^CK$' with model port name 'CK'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^S$' with model port name 'S'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Warning: Cell expression '^scan_sync_cell(.*)$' matched model 'scan_sync_cell_set', but there was no pin
+//    match for pinname expression '^R$' for any pin on that model, beginning on line 44
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^scan_sync_cell(.*)$' on line 44
+//       of file 'cell.map',
+//    with model 'scan_sync_cell_set_rst' on line 2046
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^CK$' with model port name 'CK'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^S$' with model port name 'S'.
+//    Full match of attribute port name '^R$' with model port name 'R'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Full match of model_attribute {..  model expression '^sff(|s|r|sr)$' on line 20
+//       of file 'cell.map',
+//    with model 'sff' on line 2067
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Warning: Cell expression '^sff(|s|r|sr)$' matched model 'sff', but there was no pin
+//    match for pinname expression '^R$' for any pin on that model, beginning on line 20
+//    of file 'cell.map'
+//  Warning: Cell expression '^sff(|s|r|sr)$' matched model 'sff', but there was no pin
+//    match for pinname expression '^S$' for any pin on that model, beginning on line 20
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^sff(|s|r|sr)$' on line 20
+//       of file 'cell.map',
+//    with model 'sffr' on line 2085
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^R$' with model port name 'R'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Warning: Cell expression '^sff(|s|r|sr)$' matched model 'sffr', but there was no pin
+//    match for pinname expression '^S$' for any pin on that model, beginning on line 20
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^sff(|s|r|sr)$' on line 20
+//       of file 'cell.map',
+//    with model 'sffs' on line 2104
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^S$' with model port name 'S'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Warning: Cell expression '^sff(|s|r|sr)$' matched model 'sffs', but there was no pin
+//    match for pinname expression '^R$' for any pin on that model, beginning on line 20
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^sff(|s|r|sr)$' on line 20
+//       of file 'cell.map',
+//    with model 'sffsr' on line 2123
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^SI$' with model port name 'SI'.
+//    Full match of attribute port name '^SE$' with model port name 'SE'.
+//    Full match of attribute port name '^CLK$' with model port name 'CLK'.
+//    Full match of attribute port name '^S$' with model port name 'S'.
+//    Full match of attribute port name '^R$' with model port name 'R'.
+//    Full match of attribute port name '^Q$' with model port name 'Q'.
+//    Full match of attribute port name '^QB$' with model port name 'QB'.
+//  Full match of model_attribute {..  model expression '^sync_cell.*$' on line 107
+//       of file 'cell.map',
+//    with model 'sync_cell' on line 2144
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^CK$' with model port name 'CK'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Warning: Cell expression '^sync_cell.*$' matched model 'sync_cell', but there was no pin
+//    match for pinname expression '^R$' for any pin on that model, beginning on line 107
+//    of file 'cell.map'
+//  Warning: Cell expression '^sync_cell.*$' matched model 'sync_cell', but there was no pin
+//    match for pinname expression '^S$' for any pin on that model, beginning on line 107
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^sync_cell.*$' on line 107
+//       of file 'cell.map',
+//    with model 'sync_cell_rst' on line 2157
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^CK$' with model port name 'CK'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^R$' with model port name 'R'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Warning: Cell expression '^sync_cell.*$' matched model 'sync_cell_rst', but there was no pin
+//    match for pinname expression '^S$' for any pin on that model, beginning on line 107
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^sync_cell.*$' on line 107
+//       of file 'cell.map',
+//    with model 'sync_cell_set' on line 2171
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^CK$' with model port name 'CK'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^S$' with model port name 'S'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Warning: Cell expression '^sync_cell.*$' matched model 'sync_cell_set', but there was no pin
+//    match for pinname expression '^R$' for any pin on that model, beginning on line 107
+//    of file 'cell.map'
+//  Full match of model_attribute {..  model expression '^sync_cell.*$' on line 107
+//       of file 'cell.map',
+//    with model 'sync_cell_set_rst' on line 2185
+//       of file 'libcomp.atpglib'.
+//    Full match of attribute port name '^CK$' with model port name 'CK'.
+//    Full match of attribute port name '^D$' with model port name 'D'.
+//    Full match of attribute port name '^S$' with model port name 'S'.
+//    Full match of attribute port name '^R$' with model port name 'R'.
+//    Full match of attribute port name '^O$' with model port name 'O'.
+//  Full match of model_attribute {..  model expression '^xor02$' on line 150
+//       of file 'cell.map',
+//    with model 'xor02' on line 2250
+//       of file 'libcomp.atpglib'.
+//  Reading Model 'all' ...
+//  command: ##
+//  command: ##  The attributes have now been added to the 
+//  command: ##  library and the Tessent Library is now
+//  command: ##  written out.
+//  command: ##
+//  command: write_cell_library adk.tcelllib -replace -include_default_dft_cell_selection
+//  command: write_cell_library ../adk.tcelllib -replace -include_default_dft_cell_selection
+//  command: ##
+//  command: exit -d

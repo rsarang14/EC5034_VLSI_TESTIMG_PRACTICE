@@ -1,0 +1,4638 @@
+                          CONFORMAL (R)
+                   Version 20.20-s200 (01-Feb-2021) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2020. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 2089 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Command: read library ../../library/standard_cells/liberty/adk.lib -liberty -both
+// Parsing file ../../library/standard_cells/liberty/adk.lib ...
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:4)
+// Warning: (UDP3.2) Primitive has unspecified term(s) (occurrence:8)
+// Note: Read Liberty library successfully
+// Command: read design -file ../mbist/rtl_file_list ../../library/memories/ram_256x16A.v_interface ../../library/memories/rom_512x16A.v ../../library/memories/pllclk.v -verilog -golden
+// Note: Process verilog command file ../mbist/rtl_file_list
+// Parsing file ../rtl/timescale.h ...
+// Parsing file ../rtl/accum_stat.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/alu_32.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/arb.v ...
+// Parsing file ../rtl/conv_subreg.v ...
+// Parsing file ../rtl/results_conv.h ...
+// Parsing file ../rtl/data_bus_mach.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/data_bus_mach.h ...
+// Parsing file ../rtl/data_sample_mux.v ...
+// Parsing file ../rtl/decode_i.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/digit_reg.v ...
+// Parsing file ../rtl/dma.v ...
+// Parsing file ../rtl/dma.h ...
+// Parsing file ../rtl/dtmf_recvr_core.v ...
+// Parsing file ../rtl/execute_i.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/m16x16.v ...
+// Parsing file ../rtl/mult_32_dp.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/port_bus_mach.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/port_bus_mach.h ...
+// Parsing file ../rtl/power_manager.v ...
+// Parsing file ../rtl/prog_bus_mach.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/prog_bus_mach.h ...
+// Parsing file ../rtl/ram_128x16_test.v ...
+// Parsing file ../rtl/ram_256x16_test.v ...
+// Parsing file ../rtl/results_conv.v ...
+// Parsing file ../rtl/results_conv.h ...
+// Parsing file ../rtl/spi.v ...
+// Parsing file ../rtl/tdsp_core_glue.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/tdsp_core_mach.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/tdsp_core.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/tdsp_data_mux.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/tdsp_ds_cs.v ...
+// Parsing file ../rtl/test_control.v ...
+// Parsing file ../rtl/ulaw_lin_conv.v ...
+// Parsing file ../../library/memories/ram_256x16A.v_interface ...
+// Parsing file ../../library/memories/rom_512x16A.v ...
+// Parsing file ../../library/memories/pllclk.v ...
+// Golden root module is set to 'dtmf_recvr_core'
+// Warning: (RTL1.1) Variable/signal is assigned by more than one concurrent statement (occurrence:2)
+// Warning: (RTL1.2) Variable/signal is assigned by multiple non-blocking assignments (occurrence:61)
+// Warning: (RTL1.4) Assignment with LHS bit width is greater than RHS bit width (occurrence:4)
+// Warning: (RTL1.5a) Assignment with RHS bit width is greater than LHS bit width (occurrence:9)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:13)
+// Warning: (RTL1.6) Blocking assignment is in sequential always block (occurrence:12)
+// Warning: (RTL1.7) Non-blocking assignment is in combinational always block (occurrence:128)
+// Warning: (RTL2.2) Variable is referenced but never assigned (occurrence:1)
+// Warning: (RTL2.5) Net is referenced without an assignment. Design verification will be based on set_undriven_signal setting (occurrence:8195)
+// Warning: (RTL2.13) Undriven pin is detected (occurrence:9)
+// Warning: (RTL2.13a) Undriven pin is detected. Module is empty (occurrence:5)
+// Warning: (RTL3.1) Variable/signal is unassigned in asynchronous set/reset (occurrence:16)
+// Warning: (RTL5.3) Case expressions/items are resized (occurrence:1)
+// Note: (RTL5.4) Partial case items are in full case statement (occurrence:1)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:67)
+// Note: (RTL5.6) Case statement with no default (occurrence:3)
+// Note: (RTL5.7) Default case item with inconsistent assignment(s). (occurrence:47)
+// Warning: (RTL6.1a) X created due to default case item with X assignment(s) (occurrence:1)
+// Warning: (RTL7.10a) Comparison with different data sizes (occurrence:2)
+// Warning: (RTL7.10b) Ternary branches have different data sizes (occurrence:10)
+// Warning: (RTL8.3) Unreachable DFF/DLAT is removed (occurrence:4)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:118)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:20)
+// Warning: (RTL19.1) Identifier is a reserved keyword and might conflict in designs with mixed languages (occurrence:11)
+// Warning: (RTL23) Flop with asynchronous hold might cause non-equivalence with synthesized netlist (occurrence:16)
+// Warning: (RTL25) Non-automatic task/function (occurrence:2)
+// Note: (VLG2.2a) Non-binary case item is used in casex statement (occurrence:5)
+// Note: (VLG9.2) The `define macro is used (occurrence:2533)
+// Warning: (DIR2.1) full_case directive is detected (occurrence:48)
+// Warning: (DIR2.2) parallel_case directive is detected (occurrence:48)
+// Warning: (DIR4.2) Design includes one or more HDL directives or pragmas that Conformal supports (occurrence:96)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:3)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:6)
+// Warning: (IGN1.1) Initial construct is not supported. The entire initial construct will be ignored (occurrence:2)
+// Warning: (IGN2.1) Delay value(s) are ignored (occurrence:54)
+// Warning: (HRC1.4) Module/entity is empty (blackboxed) (occurrence:1)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:1)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:55)
+// Warning: (HRC3.10b) An input port is declared, but it is not used. Module is empty (occurrence:5)
+// Warning: (HRC3.16) A wire is declared, but not used in the module (occurrence:18)
+// Warning: Total black box modules referenced in Golden = 1
+// Warning: There are 8201 undriven nets in Golden
+// Warning: There are 9 undriven pins in Golden
+// Note: Read VERILOG design successfully
+// Command: read design -file ../mbist/mbist_file_list ../../library/memories/ram_256x16A.v_interface ../../library/memories/rom_512x16A.v ../../library/memories/pllclk.v -verilog -revised
+// Note: Process verilog command file ../mbist/mbist_file_list
+// Parsing file ../rtl/timescale.h ...
+// Parsing file ../rtl/accum_stat.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/alu_32.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/arb.v ...
+// Parsing file ../rtl/conv_subreg.v ...
+// Parsing file ../rtl/results_conv.h ...
+// Parsing file ../rtl/data_bus_mach.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/data_bus_mach.h ...
+// Parsing file ../rtl/data_sample_mux.v ...
+// Parsing file ../rtl/decode_i.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/digit_reg.v ...
+// Parsing file ../rtl/dma.v ...
+// Parsing file ../rtl/dma.h ...
+// Parsing file ../mbist/tsdb_outdir/dft_inserted_designs/dtmf_recvr_core_rtl1.dft_inserted_design/modified_rtl_files/dtmf_recvr_core.v ...
+// Parsing file ../rtl/execute_i.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/m16x16.v ...
+// Parsing file ../rtl/mult_32_dp.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/port_bus_mach.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/port_bus_mach.h ...
+// Parsing file ../rtl/power_manager.v ...
+// Parsing file ../rtl/prog_bus_mach.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/prog_bus_mach.h ...
+// Parsing file ../mbist/tsdb_outdir/dft_inserted_designs/dtmf_recvr_core_rtl1.dft_inserted_design/modified_rtl_files/ram_128x16_test.v ...
+// Parsing file ../mbist/tsdb_outdir/dft_inserted_designs/dtmf_recvr_core_rtl1.dft_inserted_design/modified_rtl_files/ram_256x16_test.v ...
+// Parsing file ../rtl/results_conv.v ...
+// Parsing file ../rtl/results_conv.h ...
+// Parsing file ../rtl/spi.v ...
+// Parsing file ../rtl/tdsp_core_glue.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/tdsp_core_mach.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/tdsp_core.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/tdsp_data_mux.v ...
+// Parsing file ../rtl/tdsp.h ...
+// Parsing file ../rtl/tdsp_ds_cs.v ...
+// Parsing file ../rtl/test_control.v ...
+// Parsing file ../rtl/ulaw_lin_conv.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_1.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_2.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_3.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_4.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_tdr_sri_ctrl.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_bap.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c1_controller.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c2_controller.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1.v ...
+// Parsing file ../mbist/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1_MISR_STRAP.v ...
+// Parsing file ../../library/memories/ram_256x16A.v_interface ...
+// Parsing file ../../library/memories/rom_512x16A.v ...
+// Parsing file ../../library/memories/pllclk.v ...
+// Revised root module is set to 'dtmf_recvr_core'
+// Warning: (RTL1.1) Variable/signal is assigned by more than one concurrent statement (occurrence:2)
+// Warning: (RTL1.2) Variable/signal is assigned by multiple non-blocking assignments (occurrence:61)
+// Warning: (RTL1.4) Assignment with LHS bit width is greater than RHS bit width (occurrence:4)
+// Warning: (RTL1.5a) Assignment with RHS bit width is greater than LHS bit width (occurrence:9)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:13)
+// Warning: (RTL1.6) Blocking assignment is in sequential always block (occurrence:12)
+// Warning: (RTL1.7) Non-blocking assignment is in combinational always block (occurrence:128)
+// Warning: (RTL2.2) Variable is referenced but never assigned (occurrence:2)
+// Warning: (RTL2.5) Net is referenced without an assignment. Design verification will be based on set_undriven_signal setting (occurrence:8195)
+// Warning: (RTL2.13) Undriven pin is detected (occurrence:9)
+// Warning: (RTL2.13a) Undriven pin is detected. Module is empty (occurrence:5)
+// Warning: (RTL3.1) Variable/signal is unassigned in asynchronous set/reset (occurrence:16)
+// Warning: (RTL5.3) Case expressions/items are resized (occurrence:1)
+// Note: (RTL5.4) Partial case items are in full case statement (occurrence:1)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:77)
+// Note: (RTL5.6) Case statement with no default (occurrence:37)
+// Note: (RTL5.7) Default case item with inconsistent assignment(s). (occurrence:47)
+// Warning: (RTL6.1a) X created due to default case item with X assignment(s) (occurrence:1)
+// Warning: (RTL7.10a) Comparison with different data sizes (occurrence:2)
+// Warning: (RTL7.10b) Ternary branches have different data sizes (occurrence:10)
+// Note: (RTL8.2) Latch(es) are inferred due to self assignment (occurrence:7)
+// Warning: (RTL8.3) Unreachable DFF/DLAT is removed (occurrence:4)
+// Warning: (RTL10) Both posedge and negedge are used in different always/process (occurrence:39)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:186)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:71)
+// Warning: (RTL19.1) Identifier is a reserved keyword and might conflict in designs with mixed languages (occurrence:11)
+// Warning: (RTL23) Flop with asynchronous hold might cause non-equivalence with synthesized netlist (occurrence:16)
+// Warning: (RTL25) Non-automatic task/function (occurrence:2)
+// Note: (VLG2.2a) Non-binary case item is used in casex statement (occurrence:5)
+// Note: (VLG9.2) The `define macro is used (occurrence:2533)
+// Warning: (DIR2.1) full_case directive is detected (occurrence:48)
+// Warning: (DIR2.2) parallel_case directive is detected (occurrence:48)
+// Warning: (DIR4.1) Design includes one or more HDL directives or pragmas that Conformal does not support (occurrence:68)
+// Warning: (DIR4.2) Design includes one or more HDL directives or pragmas that Conformal supports (occurrence:96)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:7)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:6)
+// Warning: (IGN1.1) Initial construct is not supported. The entire initial construct will be ignored (occurrence:2)
+// Warning: (IGN2.1) Delay value(s) are ignored (occurrence:67)
+// Warning: (HRC1.4) Module/entity is empty (blackboxed) (occurrence:1)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:7)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:112)
+// Warning: (HRC3.10b) An input port is declared, but it is not used. Module is empty (occurrence:5)
+// Warning: (HRC3.16) A wire is declared, but not used in the module (occurrence:93)
+// Warning: Total black box modules referenced in Revised = 1
+// Warning: There are 8201 undriven nets in Revised
+// Warning: There are 9 undriven pins in Revised
+// Note: Read VERILOG design successfully
+CPU time     : 0.27    seconds
+Elapse time  : 2       seconds
+Memory usage : 147.59  M bytes
+// Command: add pin constraints 0 scan_enable -both
+// Warning: 'scan_enable' is not a primary input in module 'dtmf_recvr_core' in Golden
+// Warning: 'scan_enable' is not a primary input in module 'dtmf_recvr_core' in Revised
+// Command: add pin constraints 0 scan_mode -both
+// Warning: 'scan_mode' is not a primary input in module 'dtmf_recvr_core' in Golden
+// Warning: 'scan_mode' is not a primary input in module 'dtmf_recvr_core' in Revised
+// Command: add pin constraints 0 ijtag_reset -revised
+// Command: add ignored outputs ijtag_so -revised
+// Command:   add primary input RAM_128x16_TEST_INST/RAM_128x16_INST_interface_inst/BIST_INPUT_SELECT_reg/Q -pin -revised
+// Command:   add primary input RAM_256x16_TEST_INST_1/RAM_256x16_INST_interface_inst/BIST_INPUT_SELECT_reg/Q -pin -revised
+// Command:   add primary input RAM_256x16_TEST_INST_2/RAM_256x16_INST_interface_inst/BIST_INPUT_SELECT_reg/Q -pin -revised
+// Command:   add primary input RAM_256x16_TEST_INST_3/RAM_256x16_INST_interface_inst/BIST_INPUT_SELECT_reg/Q -pin -revised
+// Command:   add primary input ROM_512x16_0_INST_interface_inst/BIST_INPUT_SELECT_reg/Q -pin -revised
+// Command:   add pin constraints 0 RAM_128x16_TEST_INST/RAM_128x16_INST_interface_inst/BIST_INPUT_SELECT_reg/Q -revised
+// Command:   add pin constraints 0 RAM_256x16_TEST_INST_1/RAM_256x16_INST_interface_inst/BIST_INPUT_SELECT_reg/Q -revised
+// Command:   add pin constraints 0 RAM_256x16_TEST_INST_2/RAM_256x16_INST_interface_inst/BIST_INPUT_SELECT_reg/Q -revised
+// Command:   add pin constraints 0 RAM_256x16_TEST_INST_3/RAM_256x16_INST_interface_inst/BIST_INPUT_SELECT_reg/Q -revised
+// Command:   add pin constraints 0 ROM_512x16_0_INST_interface_inst/BIST_INPUT_SELECT_reg/Q -revised
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Warning: (F34) Converted 77 X assignment(s) as don't care(s)
+// (F39) Added 5 output Z gates
+// (F32) Created 8198 Z gate(s) for floating net(s) and floating pin(s)
+// (F28) Converted 5 internal output port(s) to inout port(s)
+// Processing Revised ...
+// Modeling Revised ...
+// Warning: (F34.3) Converted 77 X assignment(s) as E(s)
+// (F39) Added 5 output Z gates
+// (F13) Converted 4 DFF(s) to DLAT(s) due to direct feedback
+// (F12) Converted 2 DFF(s) to DLAT(s) due to disabled clock port(s)
+// (F32) Created 8198 Z gate(s) for floating net(s) and floating pin(s)
+// (F28) Converted 5 internal output port(s) to inout port(s)
+CPU time     : 0.49    seconds
+Elapse time  : 2       seconds
+Memory usage : 186.78  M bytes
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 8871
+// Revised key points = 9569
+// Mapping key points ...
+// Warning: Primary input 'ijtag_tck' in Revised has no correspondence in Golden
+// Warning: Primary input 'ijtag_ce' in Revised has no correspondence in Golden
+// Warning: Primary input 'ijtag_se' in Revised has no correspondence in Golden
+// Warning: Primary input 'ijtag_ue' in Revised has no correspondence in Golden
+// Warning: Primary input 'ijtag_sel' in Revised has no correspondence in Golden
+// Warning: Primary input 'ijtag_si' in Revised has no correspondence in Golden
+// Warning: Revised has 584 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    Z      BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            41     36     533    8208   4         8822    
+--------------------------------------------------------------------------------
+Revised           41     36     533    8208   4         8822    
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       49        49      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   PI     DFF    DLAT   E         Total   
+--------------------------------------------------------------------------------
+Extra             6      0      0      0         6       
+Unreachable       0      146    10     1         157     
+Not-mapped        0      495    13     76        584     
+================================================================================
+// Warning: Key point mapping is incomplete
+CPU time     : 0.59    seconds
+Elapse time  : 2       seconds
+Memory usage : 193.90  M bytes
+// Command: add compared point -all
+// Warning: Revised has 508 unmapped key points which will not be compared
+// 573 compared points added to compare list
+// Command: compare
+================================================================================
+Compared points      PO     DFF    BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           36     1      0         37      
+--------------------------------------------------------------------------------
+Non-equivalent       0      532    4         536     
+================================================================================
+CPU time     : 1.26    seconds
+Elapse time  : 3       seconds
+Memory usage : 226.96  M bytes
+// Command: report unmapped points -extra
+Unmapped point (extra):
+  (R)   32    PI   /ijtag_tck
+Unmapped point (extra):
+  (R)   33    PI   /ijtag_ce
+Unmapped point (extra):
+  (R)   34    PI   /ijtag_se
+Unmapped point (extra):
+  (R)   35    PI   /ijtag_ue
+Unmapped point (extra):
+  (R)   36    PI   /ijtag_sel
+Unmapped point (extra):
+  (R)   37    PI   /ijtag_si
+
+6 unmapped points reported
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Extra             6         6       
+================================================================================
+// Command: report compare data -class nonequivalent
+Compared points are: Non-equivalent (reachable)
+  (G) + 104   DFF  /ROM_512x16_0_INST/Q_REG_reg[15]
+  (R) + 110   DFF  /ROM_512x16_0_INST/Q_REG_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 105   DFF  /ROM_512x16_0_INST/Q_REG_reg[14]
+  (R) + 111   DFF  /ROM_512x16_0_INST/Q_REG_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 106   DFF  /ROM_512x16_0_INST/Q_REG_reg[13]
+  (R) + 112   DFF  /ROM_512x16_0_INST/Q_REG_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 107   DFF  /ROM_512x16_0_INST/Q_REG_reg[12]
+  (R) + 113   DFF  /ROM_512x16_0_INST/Q_REG_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 108   DFF  /ROM_512x16_0_INST/Q_REG_reg[11]
+  (R) + 114   DFF  /ROM_512x16_0_INST/Q_REG_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 109   DFF  /ROM_512x16_0_INST/Q_REG_reg[10]
+  (R) + 115   DFF  /ROM_512x16_0_INST/Q_REG_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 110   DFF  /ROM_512x16_0_INST/Q_REG_reg[9]
+  (R) + 116   DFF  /ROM_512x16_0_INST/Q_REG_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 111   DFF  /ROM_512x16_0_INST/Q_REG_reg[8]
+  (R) + 117   DFF  /ROM_512x16_0_INST/Q_REG_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 112   DFF  /ROM_512x16_0_INST/Q_REG_reg[7]
+  (R) + 118   DFF  /ROM_512x16_0_INST/Q_REG_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 113   DFF  /ROM_512x16_0_INST/Q_REG_reg[6]
+  (R) + 119   DFF  /ROM_512x16_0_INST/Q_REG_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 114   DFF  /ROM_512x16_0_INST/Q_REG_reg[5]
+  (R) + 120   DFF  /ROM_512x16_0_INST/Q_REG_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 115   DFF  /ROM_512x16_0_INST/Q_REG_reg[4]
+  (R) + 121   DFF  /ROM_512x16_0_INST/Q_REG_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 116   DFF  /ROM_512x16_0_INST/Q_REG_reg[3]
+  (R) + 122   DFF  /ROM_512x16_0_INST/Q_REG_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 117   DFF  /ROM_512x16_0_INST/Q_REG_reg[2]
+  (R) + 123   DFF  /ROM_512x16_0_INST/Q_REG_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 118   DFF  /ROM_512x16_0_INST/Q_REG_reg[1]
+  (R) + 124   DFF  /ROM_512x16_0_INST/Q_REG_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 119   DFF  /ROM_512x16_0_INST/Q_REG_reg[0]
+  (R) + 125   DFF  /ROM_512x16_0_INST/Q_REG_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 120   DFF  /TDSP_DS_CS_INST/t_bit_7_reg
+  (R) + 416   DFF  /TDSP_DS_CS_INST/t_bit_7_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 20190 MUX  /TDSP_DS_CS_INST/U$11
+  (R) + 28880 MUX  /TDSP_DS_CS_INST/U$11
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 121   DFF  /TDSP_DS_CS_INST/t_sel_7_reg
+  (R) + 417   DFF  /TDSP_DS_CS_INST/t_sel_7_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 20194 MUX  /TDSP_DS_CS_INST/U$16
+  (R) + 28884 MUX  /TDSP_DS_CS_INST/U$16
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 122   DFF  /DIGIT_REG_INST/digit_out_reg[7]
+  (R) + 418   DFF  /DIGIT_REG_INST/digit_out_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11335 MUX  /TEST_CONTROL_INST/U$5
+  (R) + 16381 MUX  /TEST_CONTROL_INST/U$5
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 123   DFF  /DIGIT_REG_INST/digit_out_reg[6]
+  (R) + 419   DFF  /DIGIT_REG_INST/digit_out_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11335 MUX  /TEST_CONTROL_INST/U$5
+  (R) + 16381 MUX  /TEST_CONTROL_INST/U$5
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 124   DFF  /DIGIT_REG_INST/digit_out_reg[5]
+  (R) + 420   DFF  /DIGIT_REG_INST/digit_out_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11335 MUX  /TEST_CONTROL_INST/U$5
+  (R) + 16381 MUX  /TEST_CONTROL_INST/U$5
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 125   DFF  /DIGIT_REG_INST/digit_out_reg[4]
+  (R) + 421   DFF  /DIGIT_REG_INST/digit_out_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11335 MUX  /TEST_CONTROL_INST/U$5
+  (R) + 16381 MUX  /TEST_CONTROL_INST/U$5
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 126   DFF  /DIGIT_REG_INST/digit_out_reg[3]
+  (R) + 422   DFF  /DIGIT_REG_INST/digit_out_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11335 MUX  /TEST_CONTROL_INST/U$5
+  (R) + 16381 MUX  /TEST_CONTROL_INST/U$5
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 127   DFF  /DIGIT_REG_INST/digit_out_reg[2]
+  (R) + 423   DFF  /DIGIT_REG_INST/digit_out_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11335 MUX  /TEST_CONTROL_INST/U$5
+  (R) + 16381 MUX  /TEST_CONTROL_INST/U$5
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 128   DFF  /DIGIT_REG_INST/digit_out_reg[1]
+  (R) + 424   DFF  /DIGIT_REG_INST/digit_out_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11335 MUX  /TEST_CONTROL_INST/U$5
+  (R) + 16381 MUX  /TEST_CONTROL_INST/U$5
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 129   DFF  /DIGIT_REG_INST/digit_out_reg[0]
+  (R) + 425   DFF  /DIGIT_REG_INST/digit_out_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11335 MUX  /TEST_CONTROL_INST/U$5
+  (R) + 16381 MUX  /TEST_CONTROL_INST/U$5
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 130   DFF  /DIGIT_REG_INST/flag_out_reg
+  (R) + 426   DFF  /DIGIT_REG_INST/flag_out_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11335 MUX  /TEST_CONTROL_INST/U$5
+  (R) + 16381 MUX  /TEST_CONTROL_INST/U$5
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 131   DFF  /RESULTS_CONV_INST/high_mag_reg[15]
+  (R) + 427   DFF  /RESULTS_CONV_INST/high_mag_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 132   DFF  /RESULTS_CONV_INST/high_mag_reg[14]
+  (R) + 428   DFF  /RESULTS_CONV_INST/high_mag_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 133   DFF  /RESULTS_CONV_INST/high_mag_reg[13]
+  (R) + 429   DFF  /RESULTS_CONV_INST/high_mag_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 134   DFF  /RESULTS_CONV_INST/high_mag_reg[12]
+  (R) + 430   DFF  /RESULTS_CONV_INST/high_mag_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 135   DFF  /RESULTS_CONV_INST/high_mag_reg[11]
+  (R) + 431   DFF  /RESULTS_CONV_INST/high_mag_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 136   DFF  /RESULTS_CONV_INST/high_mag_reg[10]
+  (R) + 432   DFF  /RESULTS_CONV_INST/high_mag_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 137   DFF  /RESULTS_CONV_INST/high_mag_reg[9]
+  (R) + 433   DFF  /RESULTS_CONV_INST/high_mag_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 138   DFF  /RESULTS_CONV_INST/high_mag_reg[8]
+  (R) + 434   DFF  /RESULTS_CONV_INST/high_mag_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 139   DFF  /RESULTS_CONV_INST/high_mag_reg[7]
+  (R) + 435   DFF  /RESULTS_CONV_INST/high_mag_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 140   DFF  /RESULTS_CONV_INST/high_mag_reg[6]
+  (R) + 436   DFF  /RESULTS_CONV_INST/high_mag_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 141   DFF  /RESULTS_CONV_INST/high_mag_reg[5]
+  (R) + 437   DFF  /RESULTS_CONV_INST/high_mag_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 142   DFF  /RESULTS_CONV_INST/high_mag_reg[4]
+  (R) + 438   DFF  /RESULTS_CONV_INST/high_mag_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 143   DFF  /RESULTS_CONV_INST/high_mag_reg[3]
+  (R) + 439   DFF  /RESULTS_CONV_INST/high_mag_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 144   DFF  /RESULTS_CONV_INST/high_mag_reg[2]
+  (R) + 440   DFF  /RESULTS_CONV_INST/high_mag_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 145   DFF  /RESULTS_CONV_INST/high_mag_reg[1]
+  (R) + 441   DFF  /RESULTS_CONV_INST/high_mag_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 146   DFF  /RESULTS_CONV_INST/high_mag_reg[0]
+  (R) + 442   DFF  /RESULTS_CONV_INST/high_mag_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 147   DFF  /RESULTS_CONV_INST/low_mag_reg[15]
+  (R) + 443   DFF  /RESULTS_CONV_INST/low_mag_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 148   DFF  /RESULTS_CONV_INST/low_mag_reg[14]
+  (R) + 444   DFF  /RESULTS_CONV_INST/low_mag_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 149   DFF  /RESULTS_CONV_INST/low_mag_reg[13]
+  (R) + 445   DFF  /RESULTS_CONV_INST/low_mag_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 150   DFF  /RESULTS_CONV_INST/low_mag_reg[12]
+  (R) + 446   DFF  /RESULTS_CONV_INST/low_mag_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 151   DFF  /RESULTS_CONV_INST/low_mag_reg[11]
+  (R) + 447   DFF  /RESULTS_CONV_INST/low_mag_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 152   DFF  /RESULTS_CONV_INST/low_mag_reg[10]
+  (R) + 448   DFF  /RESULTS_CONV_INST/low_mag_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 153   DFF  /RESULTS_CONV_INST/low_mag_reg[9]
+  (R) + 449   DFF  /RESULTS_CONV_INST/low_mag_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 154   DFF  /RESULTS_CONV_INST/low_mag_reg[8]
+  (R) + 450   DFF  /RESULTS_CONV_INST/low_mag_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 155   DFF  /RESULTS_CONV_INST/low_mag_reg[7]
+  (R) + 451   DFF  /RESULTS_CONV_INST/low_mag_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 156   DFF  /RESULTS_CONV_INST/low_mag_reg[6]
+  (R) + 452   DFF  /RESULTS_CONV_INST/low_mag_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 157   DFF  /RESULTS_CONV_INST/low_mag_reg[5]
+  (R) + 453   DFF  /RESULTS_CONV_INST/low_mag_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 158   DFF  /RESULTS_CONV_INST/low_mag_reg[4]
+  (R) + 454   DFF  /RESULTS_CONV_INST/low_mag_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 159   DFF  /RESULTS_CONV_INST/low_mag_reg[3]
+  (R) + 455   DFF  /RESULTS_CONV_INST/low_mag_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 160   DFF  /RESULTS_CONV_INST/low_mag_reg[2]
+  (R) + 456   DFF  /RESULTS_CONV_INST/low_mag_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 161   DFF  /RESULTS_CONV_INST/low_mag_reg[1]
+  (R) + 457   DFF  /RESULTS_CONV_INST/low_mag_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 162   DFF  /RESULTS_CONV_INST/low_mag_reg[0]
+  (R) + 458   DFF  /RESULTS_CONV_INST/low_mag_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 163   DFF  /RESULTS_CONV_INST/r1633_reg[15]
+  (R) + 459   DFF  /RESULTS_CONV_INST/r1633_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 164   DFF  /RESULTS_CONV_INST/r1633_reg[14]
+  (R) + 460   DFF  /RESULTS_CONV_INST/r1633_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 165   DFF  /RESULTS_CONV_INST/r1633_reg[13]
+  (R) + 461   DFF  /RESULTS_CONV_INST/r1633_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 166   DFF  /RESULTS_CONV_INST/r1633_reg[12]
+  (R) + 462   DFF  /RESULTS_CONV_INST/r1633_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 167   DFF  /RESULTS_CONV_INST/r1633_reg[11]
+  (R) + 463   DFF  /RESULTS_CONV_INST/r1633_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 168   DFF  /RESULTS_CONV_INST/r1633_reg[10]
+  (R) + 464   DFF  /RESULTS_CONV_INST/r1633_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 169   DFF  /RESULTS_CONV_INST/r1633_reg[9]
+  (R) + 465   DFF  /RESULTS_CONV_INST/r1633_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 170   DFF  /RESULTS_CONV_INST/r1633_reg[8]
+  (R) + 466   DFF  /RESULTS_CONV_INST/r1633_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 171   DFF  /RESULTS_CONV_INST/r1633_reg[7]
+  (R) + 467   DFF  /RESULTS_CONV_INST/r1633_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 172   DFF  /RESULTS_CONV_INST/r1633_reg[6]
+  (R) + 468   DFF  /RESULTS_CONV_INST/r1633_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 173   DFF  /RESULTS_CONV_INST/r1633_reg[5]
+  (R) + 469   DFF  /RESULTS_CONV_INST/r1633_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 174   DFF  /RESULTS_CONV_INST/r1633_reg[4]
+  (R) + 470   DFF  /RESULTS_CONV_INST/r1633_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 175   DFF  /RESULTS_CONV_INST/r1633_reg[3]
+  (R) + 471   DFF  /RESULTS_CONV_INST/r1633_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 176   DFF  /RESULTS_CONV_INST/r1633_reg[2]
+  (R) + 472   DFF  /RESULTS_CONV_INST/r1633_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 177   DFF  /RESULTS_CONV_INST/r1633_reg[1]
+  (R) + 473   DFF  /RESULTS_CONV_INST/r1633_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 178   DFF  /RESULTS_CONV_INST/r1633_reg[0]
+  (R) + 474   DFF  /RESULTS_CONV_INST/r1633_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 179   DFF  /RESULTS_CONV_INST/r1477_reg[15]
+  (R) + 475   DFF  /RESULTS_CONV_INST/r1477_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 180   DFF  /RESULTS_CONV_INST/r1477_reg[14]
+  (R) + 476   DFF  /RESULTS_CONV_INST/r1477_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 181   DFF  /RESULTS_CONV_INST/r1477_reg[13]
+  (R) + 477   DFF  /RESULTS_CONV_INST/r1477_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 182   DFF  /RESULTS_CONV_INST/r1477_reg[12]
+  (R) + 478   DFF  /RESULTS_CONV_INST/r1477_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 183   DFF  /RESULTS_CONV_INST/r1477_reg[11]
+  (R) + 479   DFF  /RESULTS_CONV_INST/r1477_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 184   DFF  /RESULTS_CONV_INST/r1477_reg[10]
+  (R) + 480   DFF  /RESULTS_CONV_INST/r1477_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 185   DFF  /RESULTS_CONV_INST/r1477_reg[9]
+  (R) + 481   DFF  /RESULTS_CONV_INST/r1477_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 186   DFF  /RESULTS_CONV_INST/r1477_reg[8]
+  (R) + 482   DFF  /RESULTS_CONV_INST/r1477_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 187   DFF  /RESULTS_CONV_INST/r1477_reg[7]
+  (R) + 483   DFF  /RESULTS_CONV_INST/r1477_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 188   DFF  /RESULTS_CONV_INST/r1477_reg[6]
+  (R) + 484   DFF  /RESULTS_CONV_INST/r1477_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 189   DFF  /RESULTS_CONV_INST/r1477_reg[5]
+  (R) + 485   DFF  /RESULTS_CONV_INST/r1477_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 190   DFF  /RESULTS_CONV_INST/r1477_reg[4]
+  (R) + 486   DFF  /RESULTS_CONV_INST/r1477_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 191   DFF  /RESULTS_CONV_INST/r1477_reg[3]
+  (R) + 487   DFF  /RESULTS_CONV_INST/r1477_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 192   DFF  /RESULTS_CONV_INST/r1477_reg[2]
+  (R) + 488   DFF  /RESULTS_CONV_INST/r1477_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 193   DFF  /RESULTS_CONV_INST/r1477_reg[1]
+  (R) + 489   DFF  /RESULTS_CONV_INST/r1477_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 194   DFF  /RESULTS_CONV_INST/r1477_reg[0]
+  (R) + 490   DFF  /RESULTS_CONV_INST/r1477_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 195   DFF  /RESULTS_CONV_INST/r1200_reg[15]
+  (R) + 491   DFF  /RESULTS_CONV_INST/r1200_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 196   DFF  /RESULTS_CONV_INST/r1200_reg[14]
+  (R) + 492   DFF  /RESULTS_CONV_INST/r1200_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 197   DFF  /RESULTS_CONV_INST/r1200_reg[13]
+  (R) + 493   DFF  /RESULTS_CONV_INST/r1200_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 198   DFF  /RESULTS_CONV_INST/r1200_reg[12]
+  (R) + 494   DFF  /RESULTS_CONV_INST/r1200_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 199   DFF  /RESULTS_CONV_INST/r1200_reg[11]
+  (R) + 495   DFF  /RESULTS_CONV_INST/r1200_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 200   DFF  /RESULTS_CONV_INST/r1200_reg[10]
+  (R) + 496   DFF  /RESULTS_CONV_INST/r1200_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 201   DFF  /RESULTS_CONV_INST/r1200_reg[9]
+  (R) + 497   DFF  /RESULTS_CONV_INST/r1200_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 202   DFF  /RESULTS_CONV_INST/r1200_reg[8]
+  (R) + 498   DFF  /RESULTS_CONV_INST/r1200_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 203   DFF  /RESULTS_CONV_INST/r1200_reg[7]
+  (R) + 499   DFF  /RESULTS_CONV_INST/r1200_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 204   DFF  /RESULTS_CONV_INST/r1200_reg[6]
+  (R) + 500   DFF  /RESULTS_CONV_INST/r1200_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 205   DFF  /RESULTS_CONV_INST/r1200_reg[5]
+  (R) + 501   DFF  /RESULTS_CONV_INST/r1200_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 206   DFF  /RESULTS_CONV_INST/r1200_reg[4]
+  (R) + 502   DFF  /RESULTS_CONV_INST/r1200_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 207   DFF  /RESULTS_CONV_INST/r1200_reg[3]
+  (R) + 503   DFF  /RESULTS_CONV_INST/r1200_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 208   DFF  /RESULTS_CONV_INST/r1200_reg[2]
+  (R) + 504   DFF  /RESULTS_CONV_INST/r1200_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 209   DFF  /RESULTS_CONV_INST/r1200_reg[1]
+  (R) + 505   DFF  /RESULTS_CONV_INST/r1200_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 210   DFF  /RESULTS_CONV_INST/r1200_reg[0]
+  (R) + 506   DFF  /RESULTS_CONV_INST/r1200_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 211   DFF  /RESULTS_CONV_INST/r941_reg[15]
+  (R) + 507   DFF  /RESULTS_CONV_INST/r941_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 212   DFF  /RESULTS_CONV_INST/r941_reg[14]
+  (R) + 508   DFF  /RESULTS_CONV_INST/r941_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 213   DFF  /RESULTS_CONV_INST/r941_reg[13]
+  (R) + 509   DFF  /RESULTS_CONV_INST/r941_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 214   DFF  /RESULTS_CONV_INST/r941_reg[12]
+  (R) + 510   DFF  /RESULTS_CONV_INST/r941_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 215   DFF  /RESULTS_CONV_INST/r941_reg[11]
+  (R) + 511   DFF  /RESULTS_CONV_INST/r941_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 216   DFF  /RESULTS_CONV_INST/r941_reg[10]
+  (R) + 512   DFF  /RESULTS_CONV_INST/r941_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 217   DFF  /RESULTS_CONV_INST/r941_reg[9]
+  (R) + 513   DFF  /RESULTS_CONV_INST/r941_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 218   DFF  /RESULTS_CONV_INST/r941_reg[8]
+  (R) + 514   DFF  /RESULTS_CONV_INST/r941_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 219   DFF  /RESULTS_CONV_INST/r941_reg[7]
+  (R) + 515   DFF  /RESULTS_CONV_INST/r941_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 220   DFF  /RESULTS_CONV_INST/r941_reg[6]
+  (R) + 516   DFF  /RESULTS_CONV_INST/r941_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 221   DFF  /RESULTS_CONV_INST/r941_reg[5]
+  (R) + 517   DFF  /RESULTS_CONV_INST/r941_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 222   DFF  /RESULTS_CONV_INST/r941_reg[4]
+  (R) + 518   DFF  /RESULTS_CONV_INST/r941_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 223   DFF  /RESULTS_CONV_INST/r941_reg[3]
+  (R) + 519   DFF  /RESULTS_CONV_INST/r941_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 224   DFF  /RESULTS_CONV_INST/r941_reg[2]
+  (R) + 520   DFF  /RESULTS_CONV_INST/r941_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 225   DFF  /RESULTS_CONV_INST/r941_reg[1]
+  (R) + 521   DFF  /RESULTS_CONV_INST/r941_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 226   DFF  /RESULTS_CONV_INST/r941_reg[0]
+  (R) + 522   DFF  /RESULTS_CONV_INST/r941_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 227   DFF  /RESULTS_CONV_INST/r852_reg[15]
+  (R) + 523   DFF  /RESULTS_CONV_INST/r852_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 228   DFF  /RESULTS_CONV_INST/r852_reg[14]
+  (R) + 524   DFF  /RESULTS_CONV_INST/r852_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 229   DFF  /RESULTS_CONV_INST/r852_reg[13]
+  (R) + 525   DFF  /RESULTS_CONV_INST/r852_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 230   DFF  /RESULTS_CONV_INST/r852_reg[12]
+  (R) + 526   DFF  /RESULTS_CONV_INST/r852_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 231   DFF  /RESULTS_CONV_INST/r852_reg[11]
+  (R) + 527   DFF  /RESULTS_CONV_INST/r852_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 232   DFF  /RESULTS_CONV_INST/r852_reg[10]
+  (R) + 528   DFF  /RESULTS_CONV_INST/r852_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 233   DFF  /RESULTS_CONV_INST/r852_reg[9]
+  (R) + 529   DFF  /RESULTS_CONV_INST/r852_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 234   DFF  /RESULTS_CONV_INST/r852_reg[8]
+  (R) + 530   DFF  /RESULTS_CONV_INST/r852_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 235   DFF  /RESULTS_CONV_INST/r852_reg[7]
+  (R) + 531   DFF  /RESULTS_CONV_INST/r852_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 236   DFF  /RESULTS_CONV_INST/r852_reg[6]
+  (R) + 532   DFF  /RESULTS_CONV_INST/r852_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 237   DFF  /RESULTS_CONV_INST/r852_reg[5]
+  (R) + 533   DFF  /RESULTS_CONV_INST/r852_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 238   DFF  /RESULTS_CONV_INST/r852_reg[4]
+  (R) + 534   DFF  /RESULTS_CONV_INST/r852_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 239   DFF  /RESULTS_CONV_INST/r852_reg[3]
+  (R) + 535   DFF  /RESULTS_CONV_INST/r852_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 240   DFF  /RESULTS_CONV_INST/r852_reg[2]
+  (R) + 536   DFF  /RESULTS_CONV_INST/r852_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 241   DFF  /RESULTS_CONV_INST/r852_reg[1]
+  (R) + 537   DFF  /RESULTS_CONV_INST/r852_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 242   DFF  /RESULTS_CONV_INST/r852_reg[0]
+  (R) + 538   DFF  /RESULTS_CONV_INST/r852_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 243   DFF  /RESULTS_CONV_INST/r697_reg[15]
+  (R) + 539   DFF  /RESULTS_CONV_INST/r697_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 244   DFF  /RESULTS_CONV_INST/r697_reg[14]
+  (R) + 540   DFF  /RESULTS_CONV_INST/r697_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 245   DFF  /RESULTS_CONV_INST/r697_reg[13]
+  (R) + 541   DFF  /RESULTS_CONV_INST/r697_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 246   DFF  /RESULTS_CONV_INST/r697_reg[12]
+  (R) + 542   DFF  /RESULTS_CONV_INST/r697_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 247   DFF  /RESULTS_CONV_INST/r697_reg[11]
+  (R) + 543   DFF  /RESULTS_CONV_INST/r697_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 248   DFF  /RESULTS_CONV_INST/r697_reg[10]
+  (R) + 544   DFF  /RESULTS_CONV_INST/r697_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 249   DFF  /RESULTS_CONV_INST/r697_reg[9]
+  (R) + 545   DFF  /RESULTS_CONV_INST/r697_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 250   DFF  /RESULTS_CONV_INST/r697_reg[8]
+  (R) + 546   DFF  /RESULTS_CONV_INST/r697_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 251   DFF  /RESULTS_CONV_INST/r697_reg[7]
+  (R) + 547   DFF  /RESULTS_CONV_INST/r697_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 252   DFF  /RESULTS_CONV_INST/r697_reg[6]
+  (R) + 548   DFF  /RESULTS_CONV_INST/r697_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 253   DFF  /RESULTS_CONV_INST/r697_reg[5]
+  (R) + 549   DFF  /RESULTS_CONV_INST/r697_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 254   DFF  /RESULTS_CONV_INST/r697_reg[4]
+  (R) + 550   DFF  /RESULTS_CONV_INST/r697_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 255   DFF  /RESULTS_CONV_INST/r697_reg[3]
+  (R) + 551   DFF  /RESULTS_CONV_INST/r697_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 256   DFF  /RESULTS_CONV_INST/r697_reg[2]
+  (R) + 552   DFF  /RESULTS_CONV_INST/r697_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 257   DFF  /RESULTS_CONV_INST/r697_reg[1]
+  (R) + 553   DFF  /RESULTS_CONV_INST/r697_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 258   DFF  /RESULTS_CONV_INST/r697_reg[0]
+  (R) + 554   DFF  /RESULTS_CONV_INST/r697_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25707 INV  /RESULTS_CONV_INST/U$212
+  (R) + 34397 INV  /RESULTS_CONV_INST/U$212
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 259   DFF  /RESULTS_CONV_INST/out_p2_reg[7]
+  (R) + 555   DFF  /RESULTS_CONV_INST/out_p2_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 260   DFF  /RESULTS_CONV_INST/out_p2_reg[6]
+  (R) + 556   DFF  /RESULTS_CONV_INST/out_p2_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 261   DFF  /RESULTS_CONV_INST/out_p2_reg[5]
+  (R) + 557   DFF  /RESULTS_CONV_INST/out_p2_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 262   DFF  /RESULTS_CONV_INST/out_p2_reg[4]
+  (R) + 558   DFF  /RESULTS_CONV_INST/out_p2_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 263   DFF  /RESULTS_CONV_INST/out_p2_reg[3]
+  (R) + 559   DFF  /RESULTS_CONV_INST/out_p2_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 264   DFF  /RESULTS_CONV_INST/out_p2_reg[2]
+  (R) + 560   DFF  /RESULTS_CONV_INST/out_p2_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 265   DFF  /RESULTS_CONV_INST/out_p2_reg[1]
+  (R) + 561   DFF  /RESULTS_CONV_INST/out_p2_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 266   DFF  /RESULTS_CONV_INST/out_p2_reg[0]
+  (R) + 562   DFF  /RESULTS_CONV_INST/out_p2_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 267   DFF  /RESULTS_CONV_INST/out_p1_reg[7]
+  (R) + 563   DFF  /RESULTS_CONV_INST/out_p1_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 268   DFF  /RESULTS_CONV_INST/out_p1_reg[6]
+  (R) + 564   DFF  /RESULTS_CONV_INST/out_p1_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 269   DFF  /RESULTS_CONV_INST/out_p1_reg[5]
+  (R) + 565   DFF  /RESULTS_CONV_INST/out_p1_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 270   DFF  /RESULTS_CONV_INST/out_p1_reg[4]
+  (R) + 566   DFF  /RESULTS_CONV_INST/out_p1_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 271   DFF  /RESULTS_CONV_INST/out_p1_reg[3]
+  (R) + 567   DFF  /RESULTS_CONV_INST/out_p1_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 272   DFF  /RESULTS_CONV_INST/out_p1_reg[2]
+  (R) + 568   DFF  /RESULTS_CONV_INST/out_p1_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 273   DFF  /RESULTS_CONV_INST/out_p1_reg[1]
+  (R) + 569   DFF  /RESULTS_CONV_INST/out_p1_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 274   DFF  /RESULTS_CONV_INST/out_p1_reg[0]
+  (R) + 570   DFF  /RESULTS_CONV_INST/out_p1_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 275   DFF  /RESULTS_CONV_INST/dout_reg[7]
+  (R) + 571   DFF  /RESULTS_CONV_INST/dout_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 276   DFF  /RESULTS_CONV_INST/dout_reg[6]
+  (R) + 572   DFF  /RESULTS_CONV_INST/dout_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 277   DFF  /RESULTS_CONV_INST/dout_reg[5]
+  (R) + 573   DFF  /RESULTS_CONV_INST/dout_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 278   DFF  /RESULTS_CONV_INST/dout_reg[4]
+  (R) + 574   DFF  /RESULTS_CONV_INST/dout_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 279   DFF  /RESULTS_CONV_INST/dout_reg[3]
+  (R) + 575   DFF  /RESULTS_CONV_INST/dout_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 280   DFF  /RESULTS_CONV_INST/dout_reg[2]
+  (R) + 576   DFF  /RESULTS_CONV_INST/dout_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 281   DFF  /RESULTS_CONV_INST/dout_reg[1]
+  (R) + 577   DFF  /RESULTS_CONV_INST/dout_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 282   DFF  /RESULTS_CONV_INST/dout_reg[0]
+  (R) + 578   DFF  /RESULTS_CONV_INST/dout_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 283   DFF  /RESULTS_CONV_INST/state_reg[3]
+  (R) + 579   DFF  /RESULTS_CONV_INST/state_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 284   DFF  /RESULTS_CONV_INST/state_reg[2]
+  (R) + 580   DFF  /RESULTS_CONV_INST/state_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 285   DFF  /RESULTS_CONV_INST/state_reg[1]
+  (R) + 581   DFF  /RESULTS_CONV_INST/state_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 286   DFF  /RESULTS_CONV_INST/state_reg[0]
+  (R) + 582   DFF  /RESULTS_CONV_INST/state_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 287   DFF  /RESULTS_CONV_INST/high_reg[2]
+  (R) + 583   DFF  /RESULTS_CONV_INST/high_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 288   DFF  /RESULTS_CONV_INST/high_reg[1]
+  (R) + 584   DFF  /RESULTS_CONV_INST/high_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 289   DFF  /RESULTS_CONV_INST/high_reg[0]
+  (R) + 585   DFF  /RESULTS_CONV_INST/high_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 290   DFF  /RESULTS_CONV_INST/low_reg[2]
+  (R) + 586   DFF  /RESULTS_CONV_INST/low_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 291   DFF  /RESULTS_CONV_INST/low_reg[1]
+  (R) + 587   DFF  /RESULTS_CONV_INST/low_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 292   DFF  /RESULTS_CONV_INST/low_reg[0]
+  (R) + 588   DFF  /RESULTS_CONV_INST/low_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 293   DFF  /RESULTS_CONV_INST/clear_flag_reg
+  (R) + 589   DFF  /RESULTS_CONV_INST/clear_flag_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 294   DFF  /RESULTS_CONV_INST/ok_reg
+  (R) + 590   DFF  /RESULTS_CONV_INST/ok_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 295   DFF  /RESULTS_CONV_INST/gt_reg
+  (R) + 591   DFF  /RESULTS_CONV_INST/gt_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 296   DFF  /RESULTS_CONV_INST/go_reg
+  (R) + 592   DFF  /RESULTS_CONV_INST/go_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 35802 DC   /RESULTS_CONV_INST/go_reg
+  (R) + 47646 DC   /RESULTS_CONV_INST/go_reg
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 297   DFF  /RESULTS_CONV_INST/dout_flag_reg
+  (R) + 593   DFF  /RESULTS_CONV_INST/dout_flag_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 298   DFF  /RESULTS_CONV_INST/digit_clk_reg
+  (R) + 594   DFF  /RESULTS_CONV_INST/digit_clk_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 299   DFF  /RESULTS_CONV_INST/lower770/dout_reg[7]
+  (R) + 595   DFF  /RESULTS_CONV_INST/lower770/dout_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25725 INV  /RESULTS_CONV_INST/lower770/U$2
+  (R) + 34415 INV  /RESULTS_CONV_INST/lower770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 300   DFF  /RESULTS_CONV_INST/lower770/dout_reg[6]
+  (R) + 596   DFF  /RESULTS_CONV_INST/lower770/dout_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25725 INV  /RESULTS_CONV_INST/lower770/U$2
+  (R) + 34415 INV  /RESULTS_CONV_INST/lower770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 301   DFF  /RESULTS_CONV_INST/lower770/dout_reg[5]
+  (R) + 597   DFF  /RESULTS_CONV_INST/lower770/dout_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25725 INV  /RESULTS_CONV_INST/lower770/U$2
+  (R) + 34415 INV  /RESULTS_CONV_INST/lower770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 302   DFF  /RESULTS_CONV_INST/lower770/dout_reg[4]
+  (R) + 598   DFF  /RESULTS_CONV_INST/lower770/dout_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25725 INV  /RESULTS_CONV_INST/lower770/U$2
+  (R) + 34415 INV  /RESULTS_CONV_INST/lower770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 303   DFF  /RESULTS_CONV_INST/lower770/dout_reg[3]
+  (R) + 599   DFF  /RESULTS_CONV_INST/lower770/dout_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25725 INV  /RESULTS_CONV_INST/lower770/U$2
+  (R) + 34415 INV  /RESULTS_CONV_INST/lower770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 304   DFF  /RESULTS_CONV_INST/lower770/dout_reg[2]
+  (R) + 600   DFF  /RESULTS_CONV_INST/lower770/dout_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25725 INV  /RESULTS_CONV_INST/lower770/U$2
+  (R) + 34415 INV  /RESULTS_CONV_INST/lower770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 305   DFF  /RESULTS_CONV_INST/lower770/dout_reg[1]
+  (R) + 601   DFF  /RESULTS_CONV_INST/lower770/dout_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25725 INV  /RESULTS_CONV_INST/lower770/U$2
+  (R) + 34415 INV  /RESULTS_CONV_INST/lower770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 306   DFF  /RESULTS_CONV_INST/lower770/dout_reg[0]
+  (R) + 602   DFF  /RESULTS_CONV_INST/lower770/dout_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25725 INV  /RESULTS_CONV_INST/lower770/U$2
+  (R) + 34415 INV  /RESULTS_CONV_INST/lower770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 307   DFF  /RESULTS_CONV_INST/upper770/dout_reg[7]
+  (R) + 603   DFF  /RESULTS_CONV_INST/upper770/dout_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25734 INV  /RESULTS_CONV_INST/upper770/U$2
+  (R) + 34424 INV  /RESULTS_CONV_INST/upper770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 308   DFF  /RESULTS_CONV_INST/upper770/dout_reg[6]
+  (R) + 604   DFF  /RESULTS_CONV_INST/upper770/dout_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25734 INV  /RESULTS_CONV_INST/upper770/U$2
+  (R) + 34424 INV  /RESULTS_CONV_INST/upper770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 309   DFF  /RESULTS_CONV_INST/upper770/dout_reg[5]
+  (R) + 605   DFF  /RESULTS_CONV_INST/upper770/dout_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25734 INV  /RESULTS_CONV_INST/upper770/U$2
+  (R) + 34424 INV  /RESULTS_CONV_INST/upper770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 310   DFF  /RESULTS_CONV_INST/upper770/dout_reg[4]
+  (R) + 606   DFF  /RESULTS_CONV_INST/upper770/dout_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25734 INV  /RESULTS_CONV_INST/upper770/U$2
+  (R) + 34424 INV  /RESULTS_CONV_INST/upper770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 311   DFF  /RESULTS_CONV_INST/upper770/dout_reg[3]
+  (R) + 607   DFF  /RESULTS_CONV_INST/upper770/dout_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25734 INV  /RESULTS_CONV_INST/upper770/U$2
+  (R) + 34424 INV  /RESULTS_CONV_INST/upper770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 312   DFF  /RESULTS_CONV_INST/upper770/dout_reg[2]
+  (R) + 608   DFF  /RESULTS_CONV_INST/upper770/dout_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25734 INV  /RESULTS_CONV_INST/upper770/U$2
+  (R) + 34424 INV  /RESULTS_CONV_INST/upper770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 313   DFF  /RESULTS_CONV_INST/upper770/dout_reg[1]
+  (R) + 609   DFF  /RESULTS_CONV_INST/upper770/dout_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25734 INV  /RESULTS_CONV_INST/upper770/U$2
+  (R) + 34424 INV  /RESULTS_CONV_INST/upper770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 314   DFF  /RESULTS_CONV_INST/upper770/dout_reg[0]
+  (R) + 610   DFF  /RESULTS_CONV_INST/upper770/dout_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25734 INV  /RESULTS_CONV_INST/upper770/U$2
+  (R) + 34424 INV  /RESULTS_CONV_INST/upper770/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 315   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[7]
+  (R) + 611   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25743 INV  /RESULTS_CONV_INST/lower1336/U$2
+  (R) + 34433 INV  /RESULTS_CONV_INST/lower1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 316   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[6]
+  (R) + 612   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25743 INV  /RESULTS_CONV_INST/lower1336/U$2
+  (R) + 34433 INV  /RESULTS_CONV_INST/lower1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 317   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[5]
+  (R) + 613   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25743 INV  /RESULTS_CONV_INST/lower1336/U$2
+  (R) + 34433 INV  /RESULTS_CONV_INST/lower1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 318   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[4]
+  (R) + 614   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25743 INV  /RESULTS_CONV_INST/lower1336/U$2
+  (R) + 34433 INV  /RESULTS_CONV_INST/lower1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 319   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[3]
+  (R) + 615   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25743 INV  /RESULTS_CONV_INST/lower1336/U$2
+  (R) + 34433 INV  /RESULTS_CONV_INST/lower1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 320   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[2]
+  (R) + 616   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25743 INV  /RESULTS_CONV_INST/lower1336/U$2
+  (R) + 34433 INV  /RESULTS_CONV_INST/lower1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 321   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[1]
+  (R) + 617   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25743 INV  /RESULTS_CONV_INST/lower1336/U$2
+  (R) + 34433 INV  /RESULTS_CONV_INST/lower1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 322   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[0]
+  (R) + 618   DFF  /RESULTS_CONV_INST/lower1336/dout_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25743 INV  /RESULTS_CONV_INST/lower1336/U$2
+  (R) + 34433 INV  /RESULTS_CONV_INST/lower1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 323   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[7]
+  (R) + 619   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25752 INV  /RESULTS_CONV_INST/upper1336/U$2
+  (R) + 34442 INV  /RESULTS_CONV_INST/upper1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 324   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[6]
+  (R) + 620   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25752 INV  /RESULTS_CONV_INST/upper1336/U$2
+  (R) + 34442 INV  /RESULTS_CONV_INST/upper1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 325   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[5]
+  (R) + 621   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25752 INV  /RESULTS_CONV_INST/upper1336/U$2
+  (R) + 34442 INV  /RESULTS_CONV_INST/upper1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 326   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[4]
+  (R) + 622   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25752 INV  /RESULTS_CONV_INST/upper1336/U$2
+  (R) + 34442 INV  /RESULTS_CONV_INST/upper1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 327   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[3]
+  (R) + 623   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25752 INV  /RESULTS_CONV_INST/upper1336/U$2
+  (R) + 34442 INV  /RESULTS_CONV_INST/upper1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 328   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[2]
+  (R) + 624   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25752 INV  /RESULTS_CONV_INST/upper1336/U$2
+  (R) + 34442 INV  /RESULTS_CONV_INST/upper1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 329   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[1]
+  (R) + 625   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25752 INV  /RESULTS_CONV_INST/upper1336/U$2
+  (R) + 34442 INV  /RESULTS_CONV_INST/upper1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 330   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[0]
+  (R) + 626   DFF  /RESULTS_CONV_INST/upper1336/dout_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 25752 INV  /RESULTS_CONV_INST/upper1336/U$2
+  (R) + 34442 INV  /RESULTS_CONV_INST/upper1336/U$2
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 331   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/tdsp_state_reg[2]
+  (R) + 627   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/tdsp_state_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 332   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/tdsp_state_reg[1]
+  (R) + 628   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/tdsp_state_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 333   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/tdsp_state_reg[0]
+  (R) + 629   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/tdsp_state_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 334   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/phi_6_reg
+  (R) + 630   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/phi_6_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 335   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/phi_5_reg
+  (R) + 631   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/phi_5_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 336   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/phi_4_reg
+  (R) + 632   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/phi_4_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 337   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/phi_3_reg
+  (R) + 633   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/phi_3_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 339   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/phi_1_reg
+  (R) + 635   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/phi_1_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 341   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/samp_bio_reg
+  (R) + 637   DFF  /TDSP_CORE_INST/TDSP_CORE_MACH_INST/samp_bio_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 342   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[15]
+  (R) + 638   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 343   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[14]
+  (R) + 639   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 344   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[13]
+  (R) + 640   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 345   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[12]
+  (R) + 641   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 346   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[11]
+  (R) + 642   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 347   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[10]
+  (R) + 643   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 348   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[9]
+  (R) + 644   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 349   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[8]
+  (R) + 645   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 350   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[7]
+  (R) + 646   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 351   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[6]
+  (R) + 647   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 352   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[5]
+  (R) + 648   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 353   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[4]
+  (R) + 649   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 354   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[3]
+  (R) + 650   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 355   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[2]
+  (R) + 651   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 356   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[1]
+  (R) + 652   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 357   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[0]
+  (R) + 653   DFF  /TDSP_CORE_INST/DECODE_INST/ir_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 358   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[15]
+  (R) + 654   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 359   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[14]
+  (R) + 655   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 360   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[13]
+  (R) + 656   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 361   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[12]
+  (R) + 657   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 362   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[11]
+  (R) + 658   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 363   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[10]
+  (R) + 659   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 364   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[9]
+  (R) + 660   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 365   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[8]
+  (R) + 661   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 366   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[7]
+  (R) + 662   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 367   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[6]
+  (R) + 663   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 368   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[5]
+  (R) + 664   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 369   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[4]
+  (R) + 665   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 370   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[3]
+  (R) + 666   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 371   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[2]
+  (R) + 667   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 372   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[1]
+  (R) + 668   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 373   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[0]
+  (R) + 669   DFF  /TDSP_CORE_INST/DECODE_INST/decode_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 374   DFF  /TDSP_CORE_INST/DECODE_INST/two_cycle_reg
+  (R) + 670   DFF  /TDSP_CORE_INST/DECODE_INST/two_cycle_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 375   DFF  /TDSP_CORE_INST/DECODE_INST/decode_skip_one_reg
+  (R) + 671   DFF  /TDSP_CORE_INST/DECODE_INST/decode_skip_one_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 376   DFF  /TDSP_CORE_INST/DECODE_INST/go_port_reg
+  (R) + 672   DFF  /TDSP_CORE_INST/DECODE_INST/go_port_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 377   DFF  /TDSP_CORE_INST/DECODE_INST/read_port_reg
+  (R) + 673   DFF  /TDSP_CORE_INST/DECODE_INST/read_port_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 378   DFF  /TDSP_CORE_INST/DECODE_INST/go_data_reg
+  (R) + 674   DFF  /TDSP_CORE_INST/DECODE_INST/go_data_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 379   DFF  /TDSP_CORE_INST/DECODE_INST/read_data_reg
+  (R) + 675   DFF  /TDSP_CORE_INST/DECODE_INST/read_data_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 380   DFF  /TDSP_CORE_INST/DECODE_INST/go_prog_reg
+  (R) + 676   DFF  /TDSP_CORE_INST/DECODE_INST/go_prog_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 381   DFF  /TDSP_CORE_INST/DECODE_INST/read_prog_reg
+  (R) + 677   DFF  /TDSP_CORE_INST/DECODE_INST/read_prog_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 382   DFF  /TDSP_CORE_INST/EXECUTE_INST/update_stall_reg
+  (R) + 678   DFF  /TDSP_CORE_INST/EXECUTE_INST/update_stall_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 383   DFF  /TDSP_CORE_INST/EXECUTE_INST/update_it_reg
+  (R) + 679   DFF  /TDSP_CORE_INST/EXECUTE_INST/update_it_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 384   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[15]
+  (R) + 680   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 385   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[14]
+  (R) + 681   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 386   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[13]
+  (R) + 682   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 387   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[12]
+  (R) + 683   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 388   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[11]
+  (R) + 684   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 389   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[10]
+  (R) + 685   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 390   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[9]
+  (R) + 686   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 391   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[8]
+  (R) + 687   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 392   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[7]
+  (R) + 688   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 393   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[6]
+  (R) + 689   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 394   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[5]
+  (R) + 690   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 395   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[4]
+  (R) + 691   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 396   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[3]
+  (R) + 692   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 397   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[2]
+  (R) + 693   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 398   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[1]
+  (R) + 694   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 399   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[0]
+  (R) + 695   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar1_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 400   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[15]
+  (R) + 696   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 401   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[14]
+  (R) + 697   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 402   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[13]
+  (R) + 698   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 403   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[12]
+  (R) + 699   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 404   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[11]
+  (R) + 700   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 405   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[10]
+  (R) + 701   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 406   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[9]
+  (R) + 702   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 407   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[8]
+  (R) + 703   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 408   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[7]
+  (R) + 704   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 409   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[6]
+  (R) + 705   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 410   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[5]
+  (R) + 706   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 411   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[4]
+  (R) + 707   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 412   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[3]
+  (R) + 708   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 413   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[2]
+  (R) + 709   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 414   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[1]
+  (R) + 710   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 415   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[0]
+  (R) + 711   DFF  /TDSP_CORE_INST/EXECUTE_INST/ar0_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 416   DFF  /TDSP_CORE_INST/EXECUTE_INST/ov_flag_reg
+  (R) + 712   DFF  /TDSP_CORE_INST/EXECUTE_INST/ov_flag_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 417   DFF  /TDSP_CORE_INST/EXECUTE_INST/branch_stall_delay_reg
+  (R) + 713   DFF  /TDSP_CORE_INST/EXECUTE_INST/branch_stall_delay_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 418   DFF  /TDSP_CORE_INST/EXECUTE_INST/three_cycle_reg
+  (R) + 714   DFF  /TDSP_CORE_INST/EXECUTE_INST/three_cycle_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 419   DFF  /TDSP_CORE_INST/EXECUTE_INST/two_cycle_reg
+  (R) + 715   DFF  /TDSP_CORE_INST/EXECUTE_INST/two_cycle_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 420   DFF  /TDSP_CORE_INST/EXECUTE_INST/sel_op_b_reg[2]
+  (R) + 716   DFF  /TDSP_CORE_INST/EXECUTE_INST/sel_op_b_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 421   DFF  /TDSP_CORE_INST/EXECUTE_INST/sel_op_b_reg[1]
+  (R) + 717   DFF  /TDSP_CORE_INST/EXECUTE_INST/sel_op_b_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 422   DFF  /TDSP_CORE_INST/EXECUTE_INST/sel_op_b_reg[0]
+  (R) + 718   DFF  /TDSP_CORE_INST/EXECUTE_INST/sel_op_b_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 423   DFF  /TDSP_CORE_INST/EXECUTE_INST/sel_op_a_reg[2]
+  (R) + 719   DFF  /TDSP_CORE_INST/EXECUTE_INST/sel_op_a_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 424   DFF  /TDSP_CORE_INST/EXECUTE_INST/sel_op_a_reg[1]
+  (R) + 720   DFF  /TDSP_CORE_INST/EXECUTE_INST/sel_op_a_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 425   DFF  /TDSP_CORE_INST/EXECUTE_INST/sel_op_a_reg[0]
+  (R) + 721   DFF  /TDSP_CORE_INST/EXECUTE_INST/sel_op_a_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 426   DFF  /TDSP_CORE_INST/EXECUTE_INST/alu_cmd_reg[3]
+  (R) + 722   DFF  /TDSP_CORE_INST/EXECUTE_INST/alu_cmd_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 427   DFF  /TDSP_CORE_INST/EXECUTE_INST/alu_cmd_reg[2]
+  (R) + 723   DFF  /TDSP_CORE_INST/EXECUTE_INST/alu_cmd_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 428   DFF  /TDSP_CORE_INST/EXECUTE_INST/alu_cmd_reg[1]
+  (R) + 724   DFF  /TDSP_CORE_INST/EXECUTE_INST/alu_cmd_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 429   DFF  /TDSP_CORE_INST/EXECUTE_INST/alu_cmd_reg[0]
+  (R) + 725   DFF  /TDSP_CORE_INST/EXECUTE_INST/alu_cmd_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 430   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[15]
+  (R) + 726   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 431   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[14]
+  (R) + 727   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 432   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[13]
+  (R) + 728   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 433   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[12]
+  (R) + 729   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 434   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[11]
+  (R) + 730   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 435   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[10]
+  (R) + 731   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 436   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[9]
+  (R) + 732   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 437   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[8]
+  (R) + 733   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 438   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[7]
+  (R) + 734   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 439   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[6]
+  (R) + 735   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 440   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[5]
+  (R) + 736   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 441   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[4]
+  (R) + 737   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 442   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[3]
+  (R) + 738   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 443   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[2]
+  (R) + 739   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 444   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[1]
+  (R) + 740   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 445   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[0]
+  (R) + 741   DFF  /TDSP_CORE_INST/EXECUTE_INST/top_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 446   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[31]
+  (R) + 742   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[31]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 447   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[30]
+  (R) + 743   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[30]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 448   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[29]
+  (R) + 744   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[29]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 449   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[28]
+  (R) + 745   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[28]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 450   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[27]
+  (R) + 746   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[27]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 451   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[26]
+  (R) + 747   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[26]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 452   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[25]
+  (R) + 748   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[25]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 453   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[24]
+  (R) + 749   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[24]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 454   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[23]
+  (R) + 750   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[23]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 455   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[22]
+  (R) + 751   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[22]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 456   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[21]
+  (R) + 752   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[21]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 457   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[20]
+  (R) + 753   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[20]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 458   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[19]
+  (R) + 754   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[19]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 459   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[18]
+  (R) + 755   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[18]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 460   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[17]
+  (R) + 756   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[17]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 461   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[16]
+  (R) + 757   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[16]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 462   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[15]
+  (R) + 758   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 463   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[14]
+  (R) + 759   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 464   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[13]
+  (R) + 760   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 465   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[12]
+  (R) + 761   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 466   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[11]
+  (R) + 762   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 467   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[10]
+  (R) + 763   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 468   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[9]
+  (R) + 764   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 469   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[8]
+  (R) + 765   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 470   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[7]
+  (R) + 766   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 471   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[6]
+  (R) + 767   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 472   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[5]
+  (R) + 768   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 473   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[4]
+  (R) + 769   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 474   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[3]
+  (R) + 770   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 475   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[2]
+  (R) + 771   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 476   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[1]
+  (R) + 772   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 477   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[0]
+  (R) + 773   DFF  /TDSP_CORE_INST/EXECUTE_INST/p_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 479   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[31]
+  (R) + 775   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[31]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 480   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[30]
+  (R) + 776   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[30]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 481   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[29]
+  (R) + 777   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[29]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 482   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[28]
+  (R) + 778   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[28]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 483   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[27]
+  (R) + 779   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[27]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 484   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[26]
+  (R) + 780   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[26]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 485   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[25]
+  (R) + 781   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[25]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 486   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[24]
+  (R) + 782   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[24]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 487   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[23]
+  (R) + 783   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[23]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 488   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[22]
+  (R) + 784   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[22]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 489   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[21]
+  (R) + 785   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[21]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 490   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[20]
+  (R) + 786   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[20]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 491   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[19]
+  (R) + 787   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[19]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 492   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[18]
+  (R) + 788   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[18]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 493   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[17]
+  (R) + 789   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[17]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 494   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[16]
+  (R) + 790   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[16]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 495   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[15]
+  (R) + 791   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 496   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[14]
+  (R) + 792   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 497   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[13]
+  (R) + 793   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 498   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[12]
+  (R) + 794   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 499   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[11]
+  (R) + 795   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 500   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[10]
+  (R) + 796   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 501   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[9]
+  (R) + 797   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 502   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[8]
+  (R) + 798   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 503   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[7]
+  (R) + 799   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 504   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[6]
+  (R) + 800   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 505   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[5]
+  (R) + 801   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 506   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[4]
+  (R) + 802   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 507   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[3]
+  (R) + 803   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 508   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[2]
+  (R) + 804   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 509   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[1]
+  (R) + 805   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 510   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[0]
+  (R) + 806   DFF  /TDSP_CORE_INST/EXECUTE_INST/acc_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 518   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[8]
+  (R) + 814   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 519   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[7]
+  (R) + 815   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 520   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[6]
+  (R) + 816   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 521   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[5]
+  (R) + 817   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 522   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[4]
+  (R) + 818   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 523   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[3]
+  (R) + 819   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 524   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[2]
+  (R) + 820   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 525   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[1]
+  (R) + 821   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 526   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[0]
+  (R) + 822   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 527   DFF  /TDSP_CORE_INST/EXECUTE_INST/ovm_reg
+  (R) + 823   DFF  /TDSP_CORE_INST/EXECUTE_INST/ovm_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 528   DFF  /TDSP_CORE_INST/EXECUTE_INST/go_port_reg
+  (R) + 824   DFF  /TDSP_CORE_INST/EXECUTE_INST/go_port_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 529   DFF  /TDSP_CORE_INST/EXECUTE_INST/read_port_reg
+  (R) + 825   DFF  /TDSP_CORE_INST/EXECUTE_INST/read_port_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 530   DFF  /TDSP_CORE_INST/EXECUTE_INST/go_data_reg
+  (R) + 826   DFF  /TDSP_CORE_INST/EXECUTE_INST/go_data_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 531   DFF  /TDSP_CORE_INST/EXECUTE_INST/read_data_reg
+  (R) + 827   DFF  /TDSP_CORE_INST/EXECUTE_INST/read_data_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 532   DFF  /TDSP_CORE_INST/EXECUTE_INST/go_prog_reg
+  (R) + 828   DFF  /TDSP_CORE_INST/EXECUTE_INST/go_prog_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 533   DFF  /TDSP_CORE_INST/EXECUTE_INST/read_prog_reg
+  (R) + 829   DFF  /TDSP_CORE_INST/EXECUTE_INST/read_prog_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 534   DFF  /TDSP_CORE_INST/EXECUTE_INST/arp_reg
+  (R) + 830   DFF  /TDSP_CORE_INST/EXECUTE_INST/arp_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 535   DFF  /TDSP_CORE_INST/EXECUTE_INST/dp_reg
+  (R) + 831   DFF  /TDSP_CORE_INST/EXECUTE_INST/dp_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 536   DFF  /TDSP_CORE_INST/EXECUTE_INST/dmov_inc_reg
+  (R) + 832   DFF  /TDSP_CORE_INST/EXECUTE_INST/dmov_inc_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 537   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_acc_reg
+  (R) + 833   DFF  /TDSP_CORE_INST/EXECUTE_INST/pc_acc_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 538   DFF  /TDSP_CORE_INST/EXECUTE_INST/branch_stall_reg
+  (R) + 834   DFF  /TDSP_CORE_INST/EXECUTE_INST/branch_stall_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 540   DFF  /TDSP_CORE_INST/EXECUTE_INST/skip_one_reg
+  (R) + 836   DFF  /TDSP_CORE_INST/EXECUTE_INST/skip_one_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 541   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/present_state_reg[2]
+  (R) + 837   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/present_state_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 542   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/present_state_reg[1]
+  (R) + 838   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/present_state_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 543   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/present_state_reg[0]
+  (R) + 839   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/present_state_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 544   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[15]
+  (R) + 840   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 545   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[14]
+  (R) + 841   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 546   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[13]
+  (R) + 842   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 547   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[12]
+  (R) + 843   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 548   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[11]
+  (R) + 844   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 549   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[10]
+  (R) + 845   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 550   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[9]
+  (R) + 846   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 551   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[8]
+  (R) + 847   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 552   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[7]
+  (R) + 848   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 553   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[6]
+  (R) + 849   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 554   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[5]
+  (R) + 850   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 555   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[4]
+  (R) + 851   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 556   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[3]
+  (R) + 852   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 557   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[2]
+  (R) + 853   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 558   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[1]
+  (R) + 854   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 559   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[0]
+  (R) + 855   DFF  /TDSP_CORE_INST/PROG_BUS_MACH_INST/data_out_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 565   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/present_state_reg[2]
+  (R) + 861   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/present_state_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 566   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/present_state_reg[1]
+  (R) + 862   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/present_state_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 567   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/present_state_reg[0]
+  (R) + 863   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/present_state_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 568   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[15]
+  (R) + 864   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 569   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[14]
+  (R) + 865   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 570   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[13]
+  (R) + 866   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 571   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[12]
+  (R) + 867   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 572   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[11]
+  (R) + 868   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 573   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[10]
+  (R) + 869   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 574   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[9]
+  (R) + 870   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 575   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[8]
+  (R) + 871   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 576   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[7]
+  (R) + 872   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 577   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[6]
+  (R) + 873   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 578   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[5]
+  (R) + 874   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 579   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[4]
+  (R) + 875   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 580   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[3]
+  (R) + 876   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 581   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[2]
+  (R) + 877   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 582   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[1]
+  (R) + 878   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 583   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[0]
+  (R) + 879   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/data_out_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 584   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/bus_request_reg
+  (R) + 880   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/bus_request_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 586   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/as_reg
+  (R) + 882   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/as_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 588   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/write_reg
+  (R) + 884   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/write_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 589   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/read_reg
+  (R) + 885   DFF  /TDSP_CORE_INST/DATA_BUS_MACH_INST/read_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 590   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/present_state_reg[2]
+  (R) + 886   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/present_state_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 591   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/present_state_reg[1]
+  (R) + 887   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/present_state_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 592   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/present_state_reg[0]
+  (R) + 888   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/present_state_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 593   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[15]
+  (R) + 889   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[15]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 594   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[14]
+  (R) + 890   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[14]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 595   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[13]
+  (R) + 891   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[13]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 596   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[12]
+  (R) + 892   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[12]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 597   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[11]
+  (R) + 893   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[11]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 598   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[10]
+  (R) + 894   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[10]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 599   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[9]
+  (R) + 895   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[9]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 600   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[8]
+  (R) + 896   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[8]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 601   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[7]
+  (R) + 897   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 602   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[6]
+  (R) + 898   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 603   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[5]
+  (R) + 899   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 604   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[4]
+  (R) + 900   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 605   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[3]
+  (R) + 901   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 606   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[2]
+  (R) + 902   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 607   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[1]
+  (R) + 903   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 608   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[0]
+  (R) + 904   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/data_out_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 610   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/as_reg
+  (R) + 906   DFF  /TDSP_CORE_INST/PORT_BUS_MACH_INST/as_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 614   DFF  /ARB_INST/present_state_reg[2]
+  (R) + 910   DFF  /ARB_INST/present_state_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 615   DFF  /ARB_INST/present_state_reg[1]
+  (R) + 911   DFF  /ARB_INST/present_state_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 616   DFF  /ARB_INST/present_state_reg[0]
+  (R) + 912   DFF  /ARB_INST/present_state_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 617   DFF  /ARB_INST/tdsp_grant_reg
+  (R) + 913   DFF  /ARB_INST/tdsp_grant_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 618   DFF  /ARB_INST/dma_grant_reg
+  (R) + 914   DFF  /ARB_INST/dma_grant_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 619   DFF  /DMA_INST/present_state_reg[3]
+  (R) + 915   DFF  /DMA_INST/present_state_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 620   DFF  /DMA_INST/present_state_reg[2]
+  (R) + 916   DFF  /DMA_INST/present_state_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 621   DFF  /DMA_INST/present_state_reg[1]
+  (R) + 917   DFF  /DMA_INST/present_state_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 622   DFF  /DMA_INST/present_state_reg[0]
+  (R) + 918   DFF  /DMA_INST/present_state_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 623   DFF  /DMA_INST/a_reg[7]
+  (R) + 919   DFF  /DMA_INST/a_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 624   DFF  /DMA_INST/a_reg[6]
+  (R) + 920   DFF  /DMA_INST/a_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 625   DFF  /DMA_INST/a_reg[5]
+  (R) + 921   DFF  /DMA_INST/a_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 626   DFF  /DMA_INST/a_reg[4]
+  (R) + 922   DFF  /DMA_INST/a_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 627   DFF  /DMA_INST/a_reg[3]
+  (R) + 923   DFF  /DMA_INST/a_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 628   DFF  /DMA_INST/a_reg[2]
+  (R) + 924   DFF  /DMA_INST/a_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 629   DFF  /DMA_INST/a_reg[1]
+  (R) + 925   DFF  /DMA_INST/a_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 630   DFF  /DMA_INST/a_reg[0]
+  (R) + 926   DFF  /DMA_INST/a_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 631   DFF  /DMA_INST/top_buf_flag_reg
+  (R) + 927   DFF  /DMA_INST/top_buf_flag_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 634   DFF  /DMA_INST/breq_reg
+  (R) + 930   DFF  /DMA_INST/breq_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 635   DFF  /DMA_INST/read_spi_reg
+  (R) + 931   DFF  /DMA_INST/read_spi_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 636   DFF  /SPI_INST/dout_reg[7]
+  (R) + 932   DFF  /SPI_INST/dout_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 637   DFF  /SPI_INST/dout_reg[6]
+  (R) + 933   DFF  /SPI_INST/dout_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 638   DFF  /SPI_INST/dout_reg[5]
+  (R) + 934   DFF  /SPI_INST/dout_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 639   DFF  /SPI_INST/dout_reg[4]
+  (R) + 935   DFF  /SPI_INST/dout_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 640   DFF  /SPI_INST/dout_reg[3]
+  (R) + 936   DFF  /SPI_INST/dout_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 641   DFF  /SPI_INST/dout_reg[2]
+  (R) + 937   DFF  /SPI_INST/dout_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 642   DFF  /SPI_INST/dout_reg[1]
+  (R) + 938   DFF  /SPI_INST/dout_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 643   DFF  /SPI_INST/dout_reg[0]
+  (R) + 939   DFF  /SPI_INST/dout_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 644   DFF  /SPI_INST/spi_sr_reg[7]
+  (R) + 940   DFF  /SPI_INST/spi_sr_reg[7]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11334 MUX  /TEST_CONTROL_INST/U$4
+  (R) + 16380 MUX  /TEST_CONTROL_INST/U$4
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 645   DFF  /SPI_INST/spi_sr_reg[6]
+  (R) + 941   DFF  /SPI_INST/spi_sr_reg[6]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11334 MUX  /TEST_CONTROL_INST/U$4
+  (R) + 16380 MUX  /TEST_CONTROL_INST/U$4
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 646   DFF  /SPI_INST/spi_sr_reg[5]
+  (R) + 942   DFF  /SPI_INST/spi_sr_reg[5]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11334 MUX  /TEST_CONTROL_INST/U$4
+  (R) + 16380 MUX  /TEST_CONTROL_INST/U$4
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 647   DFF  /SPI_INST/spi_sr_reg[4]
+  (R) + 943   DFF  /SPI_INST/spi_sr_reg[4]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11334 MUX  /TEST_CONTROL_INST/U$4
+  (R) + 16380 MUX  /TEST_CONTROL_INST/U$4
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 648   DFF  /SPI_INST/spi_sr_reg[3]
+  (R) + 944   DFF  /SPI_INST/spi_sr_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11334 MUX  /TEST_CONTROL_INST/U$4
+  (R) + 16380 MUX  /TEST_CONTROL_INST/U$4
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 649   DFF  /SPI_INST/spi_sr_reg[2]
+  (R) + 945   DFF  /SPI_INST/spi_sr_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11334 MUX  /TEST_CONTROL_INST/U$4
+  (R) + 16380 MUX  /TEST_CONTROL_INST/U$4
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 650   DFF  /SPI_INST/spi_sr_reg[1]
+  (R) + 946   DFF  /SPI_INST/spi_sr_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11334 MUX  /TEST_CONTROL_INST/U$4
+  (R) + 16380 MUX  /TEST_CONTROL_INST/U$4
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 651   DFF  /SPI_INST/spi_sr_reg[0]
+  (R) + 947   DFF  /SPI_INST/spi_sr_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11334 MUX  /TEST_CONTROL_INST/U$4
+  (R) + 16380 MUX  /TEST_CONTROL_INST/U$4
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 652   DFF  /SPI_INST/bit_cnt_reg[3]
+  (R) + 948   DFF  /SPI_INST/bit_cnt_reg[3]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11334 MUX  /TEST_CONTROL_INST/U$4
+  (R) + 16380 MUX  /TEST_CONTROL_INST/U$4
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 653   DFF  /SPI_INST/bit_cnt_reg[2]
+  (R) + 949   DFF  /SPI_INST/bit_cnt_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11334 MUX  /TEST_CONTROL_INST/U$4
+  (R) + 16380 MUX  /TEST_CONTROL_INST/U$4
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 654   DFF  /SPI_INST/bit_cnt_reg[1]
+  (R) + 950   DFF  /SPI_INST/bit_cnt_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11334 MUX  /TEST_CONTROL_INST/U$4
+  (R) + 16380 MUX  /TEST_CONTROL_INST/U$4
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 655   DFF  /SPI_INST/bit_cnt_reg[0]
+  (R) + 951   DFF  /SPI_INST/bit_cnt_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11334 MUX  /TEST_CONTROL_INST/U$4
+  (R) + 16380 MUX  /TEST_CONTROL_INST/U$4
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 656   DFF  /SPI_INST/present_state_reg[2]
+  (R) + 952   DFF  /SPI_INST/present_state_reg[2]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 657   DFF  /SPI_INST/present_state_reg[1]
+  (R) + 953   DFF  /SPI_INST/present_state_reg[1]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 658   DFF  /SPI_INST/present_state_reg[0]
+  (R) + 954   DFF  /SPI_INST/present_state_reg[0]
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 11331 MUX  /TEST_CONTROL_INST/U$1
+  (R) + 16377 MUX  /TEST_CONTROL_INST/U$1
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 659   DFF  /SPI_INST/dflag_reg
+  (R) + 955   DFF  /SPI_INST/dflag_reg
+Due to these Non-equivalent points:
+[CLOCK]
+  (G) + 35803 DC   /SPI_INST/dflag_reg
+  (R) + 47647 DC   /SPI_INST/dflag_reg
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 660   BBOX /RAM_128x16_TEST_INST/RAM_128x16_INST
+  (R) + 1281  BBOX /RAM_128x16_TEST_INST/RAM_128x16_INST
+Due to these Non-equivalent points:
+[INPUT]
+  (G) + 19812 BUF  /RAM_128x16_TEST_INST/RAM_128x16_INST/CLK
+  (R) + 24883 BUF  /RAM_128x16_TEST_INST/RAM_128x16_INST/CLK
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 661   BBOX /RAM_256x16_TEST_INST_1/RAM_256x16_INST
+  (R) + 1282  BBOX /RAM_256x16_TEST_INST_1/RAM_256x16_INST
+Due to these Non-equivalent points:
+[INPUT]
+  (G) + 20069 BUF  /RAM_256x16_TEST_INST_1/RAM_256x16_INST/CLK
+  (R) + 27668 BUF  /RAM_256x16_TEST_INST_1/RAM_256x16_INST/CLK
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 662   BBOX /RAM_256x16_TEST_INST_2/RAM_256x16_INST
+  (R) + 1283  BBOX /RAM_256x16_TEST_INST_2/RAM_256x16_INST
+Due to these Non-equivalent points:
+[INPUT]
+  (G) + 20120 BUF  /RAM_256x16_TEST_INST_2/RAM_256x16_INST/CLK
+  (R) + 28198 BUF  /RAM_256x16_TEST_INST_2/RAM_256x16_INST/CLK
+
+Compared points are: Non-equivalent (reachable)
+  (G) + 663   BBOX /RAM_256x16_TEST_INST_3/RAM_256x16_INST
+  (R) + 1284  BBOX /RAM_256x16_TEST_INST_3/RAM_256x16_INST
+Due to these Non-equivalent points:
+[INPUT]
+  (G) + 20161 BUF  /RAM_256x16_TEST_INST_3/RAM_256x16_INST/CLK
+  (R) + 28553 BUF  /RAM_256x16_TEST_INST_3/RAM_256x16_INST/CLK
+
+536 Non-equivalent point(s) reported
+536 compared point(s) reported
+================================================================================
+Compared points      PO     DFF    BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           36     1      0         37      
+--------------------------------------------------------------------------------
+Non-equivalent       0      532    4         536     
+================================================================================
+// Command: exit -force

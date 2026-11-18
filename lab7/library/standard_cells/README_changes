@@ -1,0 +1,31 @@
+Changes to 4.5 from 4.4
+
+synchronizer_cell changes :
+4.4 had only posedge asynchless (1 nonscan and its scan equivalent), and Liberty was incorrect, 
+    so scan_sync_cell could have a test_cell
+
+4.5 has both posedge and negedge, asynchless, set, reset, both (8 nonscan and their scan equivalents),
+    and Liberty is correct.  However test_cell is commented out because statetable scan cell with
+    test_cell causes DC Error (it wants the cell to be LSSD with latch, or flop tray like cell).
+
+4.4 had only no asynch sequential cells in tessent/adk.tcelllib dft_cell_selection
+
+4.5 has no asynch, only set, only reset, and both asynchs sequential cells in tessent/adk.tcelllib dft_cell_selection.
+
+Liberty changes :
+4.4 and earlier
+Cell tri01  output pin Y  function did not match verilog/adk.v module (Liberty datapath inverting -- Verilog non-inverting).
+Changed tri01 from function !A to function A.
+
+opad_and  output pin PAD  had three_state !OEN but function was "I&OEN" and verilog/adk.v  was also logical And of I, OEN.
+Removed three_state statement leaving Liberty as simple And of I, OEN as Verilog and module/cell name "opad_and" implied.
+
+Verilog changes
+4.4 nck_dff had 2 $width but both for negedge
+4.5 changed one negedge to posedge
+
+4.4 and earlier
+timing checks to 0 in library models
+
+4.5 
+added 0.1 delay for timing checks

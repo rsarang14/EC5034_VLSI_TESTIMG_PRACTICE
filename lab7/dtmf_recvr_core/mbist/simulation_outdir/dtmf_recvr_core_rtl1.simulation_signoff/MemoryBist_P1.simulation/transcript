@@ -1,0 +1,82 @@
+# //  Questa Sim
+# //  Version 2022.4 linux Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim.wlf opened as dataset "vsim"
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst/MBISTPG_EN
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst/MBISTPG_GO
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst/MBISTPG_DONE
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst/MBISTPG_EN
+add wave -position insertpoint vsim:/TB/DUT_inst/RAM_128x16_TEST_INST/dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst/tessent_persistent_cell_MBISTPG_DONE/*
+add wave -position insertpoint vsim:/TB/DUT_inst/RAM_128x16_TEST_INST/dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst/tessent_persistent_cell_MBISTPG_DONE/*
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/RAM_128x16_TEST_INST/dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_EN
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/RAM_128x16_TEST_INST/dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_GO
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/RAM_128x16_TEST_INST/dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_DONE
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_DONE
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_GO
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_EN
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst/BIST_COLLAR_EN0
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst/BIST_COLLAR_EN1
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst/BIST_COLLAR_EN2
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/RAM_128x16_TEST_INST/dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst/BIST_COLLAR_EN0
+# couldn't load file "/home/mentor/questa2022.4/questasim/linux/ScintillaTk/libScintillaTk1.14.so": libstdc++.so.6: wrong ELF class: ELFCLASS64
+# couldn't load file "/home/mentor/questa2022.4/questasim/linux/ScintillaTk/libScintillaTk1.14.so": libstdc++.so.6: wrong ELF class: ELFCLASS64
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/BIST_COLLAR_EN0
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/RAM_128x16_TEST_INST/RAM_128x16_INST/Q \
+vsim:/TB/DUT_inst/RAM_128x16_TEST_INST/RAM_128x16_INST/CLK \
+vsim:/TB/DUT_inst/RAM_128x16_TEST_INST/RAM_128x16_INST/CEN \
+vsim:/TB/DUT_inst/RAM_128x16_TEST_INST/RAM_128x16_INST/WEN \
+vsim:/TB/DUT_inst/RAM_128x16_TEST_INST/RAM_128x16_INST/A \
+vsim:/TB/DUT_inst/RAM_128x16_TEST_INST/RAM_128x16_INST/D
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_1/RAM_256x16_INST/Q \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_1/RAM_256x16_INST/CLK \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_1/RAM_256x16_INST/CEN \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_1/RAM_256x16_INST/WEN \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_1/RAM_256x16_INST/A \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_1/RAM_256x16_INST/D
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_2/RAM_256x16_INST/Q \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_2/RAM_256x16_INST/CLK \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_2/RAM_256x16_INST/CEN \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_2/RAM_256x16_INST/WEN \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_2/RAM_256x16_INST/A \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_2/RAM_256x16_INST/D
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_3/RAM_256x16_INST/Q \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_3/RAM_256x16_INST/CLK \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_3/RAM_256x16_INST/CEN \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_3/RAM_256x16_INST/WEN \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_3/RAM_256x16_INST/A \
+vsim:/TB/DUT_inst/RAM_256x16_TEST_INST_3/RAM_256x16_INST/D
+add wave -position insertpoint  \
+vsim:/TB/DUT_inst/ROM_512x16_0_INST/Q \
+vsim:/TB/DUT_inst/ROM_512x16_0_INST/CLK \
+vsim:/TB/DUT_inst/ROM_512x16_0_INST/CEN \
+vsim:/TB/DUT_inst/ROM_512x16_0_INST/A

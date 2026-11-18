@@ -1,0 +1,468 @@
+Number of expected miscompares = 0
+
+
+vlib dut_work
+vmap dut_work dut_work
+QuestaSim-64 vmap 2022.4 Lib Mapping Utility 2022.10 Oct 18 2022
+vmap dut_work dut_work 
+Copying /home/mentor/questa2022.4/questasim/linux_x86_64/../modelsim.ini to modelsim.ini
+Modifying modelsim.ini
+
+
+# Entry 1
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f file_lists/questa.list_1 \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 19:31:37 on Nov 17,2026
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu -f file_lists/questa.list_1 -f questa.arguments_1 
+-- Compiling module accum_stat
+-- Compiling module alu_32
+-- Compiling module arb
+-- Compiling module conv_subreg
+-- Compiling module data_bus_mach
+-- Compiling module data_sample_mux
+-- Compiling module decode_i
+-- Compiling module digit_reg
+-- Compiling module dma
+-- Compiling module dtmf_recvr_core
+-- Compiling module execute_i
+-- Compiling module m16x16
+-- Compiling module mult_32
+-- Compiling module port_bus_mach
+-- Compiling module counter
+-- Compiling module state
+-- Compiling module power_manager
+-- Compiling module pd_control
+-- Compiling module power_state
+-- Compiling module prog_bus_mach
+-- Compiling module ram_128x16_test
+-- Compiling module ram_256x16_test
+-- Compiling module ram_256x16_test_1
+-- Compiling module ram_256x16_test_2
+-- Compiling module results_conv
+-- Compiling module spi
+-- Compiling module tdsp_core_glue
+-- Compiling module tdsp_core_mach
+-- Compiling module tdsp_core
+-- Compiling module tdsp_data_mux
+-- Compiling module tdsp_ds_cs
+-- Compiling module test_control
+-- Compiling module ulaw_lin_conv
+-- Scanning library file '../../../../../library/standard_cells/verilog/adk.v'
+-- Compiling module mux21
+-- Scanning library file '../../../../../library/memories/SYNC_1RW_256x16.v'
+-- Scanning library file '../../../../../library/memories/SYNC_1RW_256x16_defect.v'
+-- Scanning library file '../../../../../library/memories/SYNC_1RW_64Kx8.v'
+-- Scanning library file '../../../../../library/memories/SYNC_1RW_8Kx16.v'
+-- Scanning library file '../../../../../library/memories/pllclk.v'
+-- Compiling module pllclk
+-- Scanning library file '../../../../../library/memories/ram_256x16A.v'
+-- Compiling module ram_256x16A
+-- Scanning library file '../../../../../library/memories/rom_512x16A.v'
+-- Compiling module rom_512x16A
+-- Scanning library file '/home/mentor/Tessent2022.4/lnx-x86/lib64/hdleng/lib/dft_sim.v'
+-- Scanning library file '../../../../../library/standard_cells/verilog/adk.v'
+-- Compiling UDP mux2
+
+Referenced (but uncompiled) modules or primitives:
+	dtmf_recvr_core_rtl1_tessent_sib_1
+	dtmf_recvr_core_rtl1_tessent_sib_2
+	dtmf_recvr_core_rtl1_tessent_sib_3
+	dtmf_recvr_core_rtl1_tessent_tdr_sri_ctrl
+	dtmf_recvr_core_rtl1_tessent_sib_4
+	dtmf_recvr_core_rtl1_tessent_mbist_bap
+	dtmf_recvr_core_rtl1_tessent_mbist_c3_controller
+	dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1
+	dtmf_recvr_core_rtl1_tessent_mbist_c4_controller
+	dtmf_recvr_core_rtl1_tessent_mbist_c1_controller
+	dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1
+	dtmf_recvr_core_rtl1_tessent_mbist_c2_controller
+	dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1
+	dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m2
+	dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m1
+
+Top level modules:
+	dtmf_recvr_core
+End time: 19:31:37 on Nov 17,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 1"; fi
+
+# Entry 2
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "../../../tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_1.v" \
+      "../../../tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_2.v" \
+      "../../../tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_3.v" \
+      "../../../tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_4.v" \
+      "../../../tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_tdr_sri_ctrl.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 19:31:37 on Nov 17,2026
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu ../../../tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_1.v ../../../tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_2.v ../../../tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_3.v ../../../tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_4.v ../../../tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_tdr_sri_ctrl.v -f questa.arguments_1 
+-- Compiling module dtmf_recvr_core_rtl1_tessent_sib_1
+-- Compiling module dtmf_recvr_core_rtl1_tessent_sib_2
+-- Compiling module dtmf_recvr_core_rtl1_tessent_sib_3
+-- Compiling module dtmf_recvr_core_rtl1_tessent_sib_4
+-- Compiling module dtmf_recvr_core_rtl1_tessent_tdr_sri_ctrl
+-- Scanning library file '../../../../../library/standard_cells/verilog/adk.v'
+-- Compiling module buf02
+-- Compiling module cgand
+-- Compiling module clock_buf02
+-- Compiling module clock_mux21
+-- Scanning library file '../../../../../library/memories/SYNC_1RW_256x16.v'
+-- Scanning library file '../../../../../library/memories/SYNC_1RW_256x16_defect.v'
+-- Scanning library file '../../../../../library/memories/SYNC_1RW_64Kx8.v'
+-- Scanning library file '../../../../../library/memories/SYNC_1RW_8Kx16.v'
+-- Scanning library file '../../../../../library/memories/pllclk.v'
+-- Scanning library file '../../../../../library/memories/ram_256x16A.v'
+-- Scanning library file '../../../../../library/memories/rom_512x16A.v'
+-- Scanning library file '/home/mentor/Tessent2022.4/lnx-x86/lib64/hdleng/lib/dft_sim.v'
+-- Scanning library file '../../../../../library/standard_cells/verilog/adk.v'
+-- Compiling UDP latch_n
+
+Top level modules:
+	dtmf_recvr_core_rtl1_tessent_sib_1
+	dtmf_recvr_core_rtl1_tessent_sib_2
+	dtmf_recvr_core_rtl1_tessent_sib_3
+	dtmf_recvr_core_rtl1_tessent_sib_4
+	dtmf_recvr_core_rtl1_tessent_tdr_sri_ctrl
+End time: 19:31:37 on Nov 17,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 2"; fi
+
+# Entry 3
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f file_lists/questa.list_2 \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 19:31:37 on Nov 17,2026
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu -f file_lists/questa.list_2 -f questa.arguments_1 
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_bap
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_bap_tdr
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_bap_sib
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_bap_ctl_sib
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c1_controller
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_ctl_comp
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_pointer_cntrl
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_add_format
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_add_gen
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_fsm
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_signal_gen
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_data_gen
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1_STATUS
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c2_controller
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_ctl_comp
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_pointer_cntrl
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_add_format
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_add_gen
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_fsm
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_signal_gen
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_repeat_loop_cntrl
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_data_gen
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1_STATUS
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c3_controller
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_pointer_cntrl
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_add_format
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_add_gen
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_fsm
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_signal_gen
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_repeat_loop_cntrl
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1_MISR
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1_MISR_STRAP
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c4_controller
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_ctl_comp
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_pointer_cntrl
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_add_format
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_add_gen
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_fsm
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_signal_gen
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_repeat_loop_cntrl
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_data_gen
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_step_counter
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m1
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m1_STATUS
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m2
+-- Compiling module dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m2_STATUS
+-- Scanning library file '../../../../../library/standard_cells/verilog/adk.v'
+-- Compiling module and02
+-- Compiling module sync_cell_rst
+-- Scanning library file '../../../../../library/memories/SYNC_1RW_256x16.v'
+-- Scanning library file '../../../../../library/memories/SYNC_1RW_256x16_defect.v'
+-- Scanning library file '../../../../../library/memories/SYNC_1RW_64Kx8.v'
+-- Scanning library file '../../../../../library/memories/SYNC_1RW_8Kx16.v'
+-- Scanning library file '../../../../../library/memories/pllclk.v'
+-- Scanning library file '../../../../../library/memories/ram_256x16A.v'
+-- Scanning library file '../../../../../library/memories/rom_512x16A.v'
+-- Scanning library file '/home/mentor/Tessent2022.4/lnx-x86/lib64/hdleng/lib/dft_sim.v'
+-- Scanning library file '../../../../../library/standard_cells/verilog/adk.v'
+-- Compiling module dffr
+-- Scanning library file '../../../../../library/standard_cells/verilog/adk.v'
+-- Compiling UDP dff_p_r
+
+Top level modules:
+	dtmf_recvr_core_rtl1_tessent_mbist_bap
+	dtmf_recvr_core_rtl1_tessent_mbist_c1_controller
+	dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1
+	dtmf_recvr_core_rtl1_tessent_mbist_c2_controller
+	dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1
+	dtmf_recvr_core_rtl1_tessent_mbist_c3_controller
+	dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1
+	dtmf_recvr_core_rtl1_tessent_mbist_c4_controller
+	dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m1
+	dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m2
+End time: 19:31:37 on Nov 17,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 3"; fi
+
+# Entry 4
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "./patterns_directory/MemoryBist_P1.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 19:31:37 on Nov 17,2026
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu ./patterns_directory/MemoryBist_P1.v -f questa.arguments_1 
+-- Compiling module TB
+-- Scanning library file '../../../../../library/standard_cells/verilog/adk.v'
+
+Top level modules:
+	TB
+End time: 19:31:37 on Nov 17,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 4"; fi
+
+# Entry 5
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "./patterns.configuration"
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 19:31:37 on Nov 17,2026
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu ./patterns.configuration 
+-- Compiling configuration MemoryBist_P1_configuration
+
+Top level modules:
+	MemoryBist_P1_configuration
+End time: 19:31:37 on Nov 17,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 5"; fi
+
+if [ $xitval -ne 0 ]; then
+  echo "Compilation failed"
+  exit $xitval
+fi
+
+vsim -c -lib "dut_work" -L dut_work -do 'log -r /*;run -all; exit' -voptargs="+acc" +nowarnTFMPC +NEWPATH=./patterns_directory \
+      MemoryBist_P1_configuration
+Reading pref.tcl
+
+# 2022.4
+
+# vsim -c -lib dut_work -L dut_work -do "log -r /*;run -all; exit" -voptargs="+acc" "+nowarnTFMPC" "+NEWPATH=./patterns_directory" MemoryBist_P1_configuration 
+# Start time: 19:31:56 on Nov 17,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "spi(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "arb(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_fsm(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_fsm(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_fsm(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_fsm(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "data_bus_mach(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "tdsp_core_mach(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "power_state(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "port_bus_mach(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "state(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "prog_bus_mach(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "dma(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "results_conv(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim-64
+# //  Version 2022.4 linux_x86_64 Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.MemoryBist_P1_configuration(fast)
+# Loading work.TB(fast)
+# Loading work.dtmf_recvr_core(fast)
+# Loading work.power_manager(fast)
+# Loading work.state(fast)
+# Loading work.counter(fast)
+# Loading work.pd_control(fast)
+# Loading work.power_state(fast)
+# Loading work.pllclk(fast)
+# Loading work.test_control(fast)
+# Loading work.rom_512x16A(fast)
+# Loading work.ram_128x16_test(fast)
+# Loading work.ram_256x16A(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller(fast)
+# Loading work.sync_cell_rst(fast)
+# Loading work.dffr(fast)
+# Loading work.cgand(fast)
+# Loading work.clock_mux21(fast)
+# Loading work.and02(fast)
+# Loading work.buf02(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_fsm(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_pointer_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_add_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_add_format(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_signal_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_data_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_ctl_comp(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1_STATUS(fast)
+# Loading work.mux21(fast)
+# Loading work.ram_256x16_test(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_fsm(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_pointer_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_add_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_add_format(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_signal_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_data_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_repeat_loop_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_ctl_comp(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1_STATUS(fast)
+# Loading work.ram_256x16_test_2(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m1(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m1_STATUS(fast)
+# Loading work.ram_256x16_test_1(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m2(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m2_STATUS(fast)
+# Loading work.tdsp_ds_cs(fast)
+# Loading work.data_sample_mux(fast)
+# Loading work.digit_reg(fast)
+# Loading work.results_conv(fast)
+# Loading work.conv_subreg(fast)
+# Loading work.tdsp_data_mux(fast)
+# Loading work.tdsp_core(fast)
+# Loading work.tdsp_core_glue(fast)
+# Loading work.tdsp_core_mach(fast)
+# Loading work.decode_i(fast)
+# Loading work.execute_i(fast)
+# Loading work.prog_bus_mach(fast)
+# Loading work.data_bus_mach(fast)
+# Loading work.port_bus_mach(fast)
+# Loading work.alu_32(fast)
+# Loading work.accum_stat(fast)
+# Loading work.mult_32(fast)
+# Loading work.m16x16(fast)
+# Loading work.ulaw_lin_conv(fast)
+# Loading work.arb(fast)
+# Loading work.dma(fast)
+# Loading work.spi(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_sib_1(fast)
+# Loading work.clock_buf02(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_sib_2(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_sib_3(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_tdr_sri_ctrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_sib_4(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_bap(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_bap_tdr(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_bap_sib(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_bap_ctl_sib(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_controller(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_fsm(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_pointer_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_add_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_add_format(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_signal_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_repeat_loop_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1_MISR(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1_MISR_STRAP(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_fsm(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_pointer_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_add_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_add_format(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_signal_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_data_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_repeat_loop_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_ctl_comp(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_step_counter(fast)
+# log -r /*
+# run -all
+# Found New Path ./patterns_directory
+# 
+# Loading ./patterns_directory/MemoryBist_P1.v.po.name
+# 
+# ROM0 ec8e
+# ROM3 9435
+# Loading ./patterns_directory/MemoryBist_P1.v.0.vec
+# 
+# 0ns: Pattern_set go_nogo_initial_settings
+# 200ns:  Setting dtmf_recvr_core_rtl1_tessent_tdr_sri_ctrl_inst.all_test to 1
+# 2500ns: Pattern_set go_nogo
+# 2500ns:  Setting up MemoryBist controller RAM_128x16_TEST_INST_dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst
+# 2500ns:  Releasing asynchronous reset
+# 2500ns:  Setting up MemoryBist controller RAM_256x16_TEST_INST_1_dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst
+# 2500ns:  Releasing asynchronous reset
+# 2500ns:  Setting up MemoryBist controller dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst
+# 2500ns:  Releasing asynchronous reset
+# 2500ns:  Setting up MemoryBist controller dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst
+# 2500ns:  Releasing asynchronous reset
+# 2500ns: Start clock monitoring on:  dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst.BIST_CLK
+# 2500ns: Start clock monitoring on:  dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst.BIST_CLK
+# 2500ns: Start clock monitoring on:  RAM_256x16_TEST_INST_1.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst.BIST_CLK
+# 2500ns: Start clock monitoring on:  RAM_128x16_TEST_INST.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst.BIST_CLK
+# 2693.900ns: Clock monitoring passed: RAM_128x16_TEST_INST.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst.BIST_CLK.  Period = 16.000000ns as expected (within 1.00% margin of 16.000000ns) 
+# 2693.900ns: Clock monitoring passed: RAM_256x16_TEST_INST_1.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst.BIST_CLK.  Period = 16.000000ns as expected (within 1.00% margin of 16.000000ns) 
+# 2693.900ns: Clock monitoring passed: dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst.BIST_CLK.  Period = 16.000000ns as expected (within 1.00% margin of 16.000000ns) 
+# 2693.900ns: Clock monitoring passed: dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst.BIST_CLK.  Period = 16.000000ns as expected (within 1.00% margin of 16.000000ns) 
+# 40000ns:  Checking GO is FAIL before execution
+# 40000ns:  Checking DONE is FAIL before execution
+# 40000ns:  Starting MemoryBist controller execution : RAM_128x16_TEST_INST_dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst
+# 40000ns:  Checking GO is FAIL before execution
+# 40000ns:  Checking DONE is FAIL before execution
+# 40000ns:  Starting MemoryBist controller execution : RAM_256x16_TEST_INST_1_dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst
+# 40000ns:  Checking GO is FAIL before execution
+# 40000ns:  Checking DONE is FAIL before execution
+# 40000ns:  Starting MemoryBist controller execution : dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst
+# 40000ns:  Checking GO is FAIL before execution
+# 40000ns:  Checking DONE is FAIL before execution
+# 40000ns:  Starting MemoryBist controller execution : dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst
+# 76800ns:  Checking GO is PASS after execution completion
+# 76800ns:  Checking DONE is PASS after execution completion
+# 224700ns:  Checking GO is PASS after execution completion
+# 224700ns:  Checking DONE is PASS after execution completion
+# 224700ns:  Checking GO is PASS after execution completion
+# 224700ns:  Checking DONE is PASS after execution completion
+# 317500ns:  Checking GO is PASS after execution completion
+# 317500ns:  Checking DONE is PASS after execution completion
+# 324100ns:  Checking MISR registers of ROM instance m1 with default signature 0b110111111100010010011011
+# 324100ns:  Checking GO_ID bits are PASS
+# 324100ns:  Checking GO_ID bits are PASS
+# 324100ns:  Checking GO_ID bits are PASS
+# 
+# Simulation finished at time 357401
+# Number of miscompares            =           0
+# Number of 0/1 compares           =         280
+# Number of Z compares             =           0
+# 
+# No error between simulated and expected patterns
+# 
+# ** Note: $finish    : ./patterns_directory/MemoryBist_P1.v(2409)
+#    Time: 357402 ns  Iteration: 1  Instance: /TB
+# End time: 19:32:10 on Nov 17,2026, Elapsed time: 0:00:14
+# Errors: 0, Warnings: 1
+if [ $? != 0 ] ; then xitval=-1; fi
+
+if [ $xitval -ne 0 ]; then
+  echo "Simulation failed"
+fi
+
+exit $xitval
+exit0

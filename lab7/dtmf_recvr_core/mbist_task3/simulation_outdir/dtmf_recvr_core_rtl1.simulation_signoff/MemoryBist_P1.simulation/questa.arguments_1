@@ -1,0 +1,9 @@
+ -v ../../../../../library/standard_cells/verilog/adk.v
+ -v ../../../../../library/memories/SYNC_1RW_256x16.v
+ -v ../../../../../library/memories/SYNC_1RW_256x16_defect.v
+ -v ../../../../../library/memories/SYNC_1RW_64Kx8.v
+ -v ../../../../../library/memories/SYNC_1RW_8Kx16.v
+ -v ../../../../../library/memories/pllclk.v
+ -v ../../../../../library/memories/ram_256x16A.v
+ -v ../../../../../library/memories/rom_512x16A.v
+ -v $TESSENT_HOME/lnx-x86/lib64/hdleng/lib/dft_sim.v

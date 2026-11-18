@@ -1,0 +1,6 @@
+# Script to create .db file
+
+lc_shell <<!
+read_lib ../liberty/adk.lib
+write_lib adk_typ -format db -output ./adk.db
+exit

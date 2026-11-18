@@ -1,0 +1,1 @@
+libcomp ../verilog/adk.v -verilog -dofile libcomp.do -log libcomp.log -rep 

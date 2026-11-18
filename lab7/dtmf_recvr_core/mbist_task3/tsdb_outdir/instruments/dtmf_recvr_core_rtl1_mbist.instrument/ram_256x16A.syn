@@ -1,0 +1,39 @@
+/*
+----------------------------------------------------------------------------------
+-                                                                                -
+-  Unpublished work. Copyright 2022 Siemens                                      -
+-                                                                                -
+-  This material contains trade secrets or otherwise confidential                -
+-  information owned by Siemens Industry Software Inc. or its affiliates         -
+-  (collectively, SISW), or its licensors. Access to and use of this             -
+-  information is strictly limited as set forth in the Customer's                -
+-  applicable agreements with SISW.                                              -
+-                                                                                -
+----------------------------------------------------------------------------------
+-  File created by: Tessent Shell                                                -
+-          Version: 2022.4                                                       -
+-       Created on: Tue Nov 17 19:22:26 IST 2026                                 -
+----------------------------------------------------------------------------------
+
+
+*/
+`celldefine
+module ram_256x16A (
+    
+    CLK,
+    WEN,
+    CEN,
+    A,
+    D,
+    Q
+
+);
+input           CLK;
+input           WEN;
+input           CEN;
+input  [7:0]    A;
+input  [15:0]   D;
+output [15:0]   Q;
+
+endmodule
+`endcelldefine

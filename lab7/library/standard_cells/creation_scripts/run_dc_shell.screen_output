@@ -1,0 +1,78 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+          Version I-2013.12-SP2 for RHEL64 -- Mar 04, 2014
+               Copyright (c) 1988-2014 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+enable_write_lib_mode
+Warning: This dc_shell session is for library operations only. You should not perform optimization on the design. Please exit when you are finished with the library operation. (UIL-93)
+1
+read_lib ./adk.lib
+Reading '/wv/donr/techlib_adk.tnt/4.5_work_in_progress/liberty/adk.lib' ...
+Warning: Line 19834, Cell 'cgand', Cell(cgand): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Information: Line 19834, Cell 'cgand', Derived ICG type for cell 'cgand' is 'latch_posedge_precontrol'. (LIBG-265)
+Warning: Line 19962, Cell 'cgor', Cell(cgor): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Information: Line 19962, Cell 'cgor', Derived ICG type for cell 'cgor' is 'latch_negedge_precontrol'. (LIBG-265)
+Warning: Line 20090, Cell 'cgand0', Cell(cgand0): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 20214, Cell 'cgor0', Cell(cgor0): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 21009, Cell 'sync_cell', Cell(sync_cell): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 21173, Cell 'scan_sync_cell', Cell(scan_sync_cell): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 21463, Cell 'sync_cell_rst', Cell(sync_cell_rst): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 21632, Cell 'scan_sync_cell_rst', Cell(scan_sync_cell_rst): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 21933, Cell 'sync_cell_set', Cell(sync_cell_set): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 22102, Cell 'scan_sync_cell_set', Cell(scan_sync_cell_set): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 22403, Cell 'sync_cell_set_rst', Cell(sync_cell_set_rst): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 22578, Cell 'scan_sync_cell_set_rst', Cell(scan_sync_cell_set_rst): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 22894, Cell 'nck_sync_cell', Cell(nck_sync_cell): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 23058, Cell 'nck_scan_sync_cell', Cell(nck_scan_sync_cell): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 23348, Cell 'nck_sync_cell_rst', Cell(nck_sync_cell_rst): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 23517, Cell 'nck_scan_sync_cell_rst', Cell(nck_scan_sync_cell_rst): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 23818, Cell 'nck_sync_cell_set', Cell(nck_sync_cell_set): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 23987, Cell 'nck_scan_sync_cell_set', Cell(nck_scan_sync_cell_set): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 24288, Cell 'nck_sync_cell_set_rst', Cell(nck_sync_cell_set_rst): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Warning: Line 24463, Cell 'nck_scan_sync_cell_set_rst', Cell(nck_scan_sync_cell_set_rst): The function cannot be recognized 
+	during functional optimization by Design Compiler.  (LIBG-205)
+Technology library 'adk_typ' read successfully
+1
+write_lib adk_typ -f db -o adk.db
+Wrote the 'adk_typ' library to '/wv/donr/techlib_adk.tnt/4.5_work_in_progress/liberty/adk.db' successfully.
+1
+1
+dc_shell> dc_shell> 
+Thank you...

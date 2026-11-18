@@ -1,0 +1,7 @@
+config ICLNetwork_configuration;
+  design TB;
+  default liblist dut_work tsdb_ijtag_graybox;
+
+  instance TB.DUT_inst use     tsdb_ijtag_graybox.dtmf_recvr_core;
+  instance TB.DUT_inst liblist tsdb_ijtag_graybox dut_work;
+endconfig

@@ -1,0 +1,200 @@
+set simulation_dict {
+  version 2
+  top_design_logical_library "work"
+  patterns {
+    ICLNetwork {
+      testbench_module_name      TB
+      current_design_view        ijtag_graybox
+      top_design_instance_name   DUT_inst
+      top_module_name_list {}
+      extra_simulation_file_list {}
+      simulation_macro_list {}
+      lower_instances {}
+      file_list {
+         "ICLNetwork.pdl"
+         "ICLNetwork.v"
+         "ICLNetwork.v.0.vec"
+         "ICLNetwork.v.cfg"
+         "ICLNetwork.v.po.name"
+      }
+      icl_time "Tue Nov 17 19:26:02 IST 2026"
+      sim_data_files ok
+    }
+    MemoryBist_P1 {
+      testbench_module_name      TB
+      current_design_view        full
+      top_design_instance_name   DUT_inst
+      top_module_name_list {}
+      extra_simulation_file_list {}
+      simulation_macro_list {}
+      lower_instances {}
+      rom_content_file_list {
+         "../../../romcontent.cfg"
+      }
+      file_list {
+         "MemoryBist_P1.pdl"
+         "MemoryBist_P1.v"
+         "MemoryBist_P1.v.0.vec"
+         "MemoryBist_P1.v.cfg"
+         "MemoryBist_P1.v.po.name"
+      }
+      icl_time "Tue Nov 17 19:26:02 IST 2026"
+      sim_data_files ok
+    }
+    MemoryBist_ParallelRetentionTest_P1 {
+      testbench_module_name      TB
+      current_design_view        full
+      top_design_instance_name   DUT_inst
+      top_module_name_list {}
+      extra_simulation_file_list {}
+      simulation_macro_list {}
+      lower_instances {}
+      file_list {
+         "MemoryBist_ParallelRetentionTest_P1.pdl"
+         "MemoryBist_ParallelRetentionTest_P1.v"
+         "MemoryBist_ParallelRetentionTest_P1.v.0.vec"
+         "MemoryBist_ParallelRetentionTest_P1.v.cfg"
+         "MemoryBist_ParallelRetentionTest_P1.v.po.name"
+      }
+      icl_time "Tue Nov 17 19:26:02 IST 2026"
+      sim_data_files ok
+    }
+  }
+
+  design_source_dictionary {
+    read1 {
+      format       "verilog_2001"
+      work_library "work"
+
+      files {
+        "../../../../rtl/timescale.h"
+        "../../../../rtl/accum_stat.v"
+        "../../../../rtl/alu_32.v"
+        "../../../../rtl/arb.v"
+        "../../../../rtl/conv_subreg.v"
+        "../../../../rtl/data_bus_mach.v"
+        "../../../../rtl/data_sample_mux.v"
+        "../../../../rtl/decode_i.v"
+        "../../../../rtl/digit_reg.v"
+        "../../../../rtl/dma.v"
+        "../../dft_inserted_designs/dtmf_recvr_core_rtl1.dft_inserted_design/modified_rtl_files/dtmf_recvr_core.v"
+        "../../../../rtl/execute_i.v"
+        "../../../../rtl/m16x16.v"
+        "../../../../rtl/mult_32_dp.v"
+        "../../../../rtl/port_bus_mach.v"
+        "../../../../rtl/power_manager.v"
+        "../../../../rtl/prog_bus_mach.v"
+        "../../dft_inserted_designs/dtmf_recvr_core_rtl1.dft_inserted_design/modified_rtl_files/ram_128x16_test.v"
+        "../../dft_inserted_designs/dtmf_recvr_core_rtl1.dft_inserted_design/modified_rtl_files/ram_256x16_test.v"
+        "../../../../rtl/results_conv.v"
+        "../../../../rtl/spi.v"
+        "../../../../rtl/tdsp_core_glue.v"
+        "../../../../rtl/tdsp_core_mach.v"
+        "../../../../rtl/tdsp_core.v"
+        "../../../../rtl/tdsp_data_mux.v"
+        "../../../../rtl/tdsp_ds_cs.v"
+        "../../../../rtl/test_control.v"
+        "../../../../rtl/ulaw_lin_conv.v"
+      }
+      libraries {
+      }
+      extensions {
+      }
+      defines {
+      }
+      incdirs {
+      }
+      options {
+      }
+      is_current_design 1
+      modules_dict {
+        dtmf_recvr_core {needed_in_views {full ijtag_graybox}}
+      }
+    }
+
+    read2 {
+      format       "verilog_2001"
+      work_library "work"
+
+      files {
+        "../../instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_1.v"
+        "../../instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_2.v"
+        "../../instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_3.v"
+        "../../instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_4.v"
+        "../../instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_tdr_sri_ctrl.v"
+      }
+      libraries {
+      }
+      extensions {
+      }
+      defines {
+      }
+      incdirs {
+      }
+      options {
+        "-no_overwrite"
+      }
+      modules_dict {
+        dtmf_recvr_core {needed_in_views {full ijtag_graybox}}
+      }
+    }
+
+    read3 {
+      format       "verilog_2001"
+      work_library "work"
+
+      files {
+        "../../instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_bap.v"
+        "../../instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c1_controller.v"
+        "../../instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1.v"
+        "../../instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c2_controller.v"
+        "../../instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1.v"
+        "../../instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller.v"
+        "../../instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1.v"
+        "../../instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1_MISR_STRAP.v"
+        "../../instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c4_controller.v"
+        "../../instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m1.v"
+        "../../instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m2.v"
+      }
+      libraries {
+      }
+      extensions {
+      }
+      defines {
+      }
+      incdirs {
+      }
+      options {
+        "-no_overwrite"
+      }
+      modules_dict {
+        dtmf_recvr_core {needed_in_views {full ijtag_graybox}}
+      }
+    }
+
+    read4 {
+      format       "verilog_2001"
+      work_library "work"
+
+      files {
+        "../../dft_inserted_designs/dtmf_recvr_core_rtl1.dft_inserted_design/ijtag_graybox/dtmf_recvr_core.v_ijtag_graybox"
+      }
+      libraries {
+      }
+      extensions {
+      }
+      defines {
+      }
+      incdirs {
+      }
+      options {
+        "-ignore_synthesis_off_sections" "off" "-no_lib_rescan" "-pragma_list" ""
+      }
+      is_graybox_view 1
+      modules_dict {
+        dtmf_recvr_core {needed_in_views ijtag_graybox}
+      }
+    }
+    logical_design_library_list { work }
+  }
+}

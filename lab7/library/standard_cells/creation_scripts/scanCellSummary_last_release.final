@@ -1,0 +1,145 @@
+                  Cell Name        Cell Type        Scan Model Status
+ ------------------------------------------------------------------------------
+
+                        GND    Combinational         FAIL: not simulated 
+                  TP3_AND_N   Scan flip-flop            Certified 
+                  TP3_AND_P   Scan flip-flop            Certified 
+                  TP3_OBS_N   Scan flip-flop            Certified 
+                  TP3_OBS_P   Scan flip-flop            Certified 
+                   TP3_OR_N   Scan flip-flop            Certified 
+                   TP3_OR_P   Scan flip-flop            Certified 
+                  TP3_XOR_N   Scan flip-flop            Certified 
+                  TP3_XOR_P   Scan flip-flop            Certified 
+                        VCC    Combinational         FAIL: not simulated 
+                      and02    Combinational            Certified 
+                      and03    Combinational            Certified 
+                      and04    Combinational            Certified 
+                       ao21    Combinational            Certified 
+                       ao22    Combinational            Certified 
+                      ao221    Combinational            Certified 
+                       ao32    Combinational            Certified 
+                      aoi21    Combinational            Certified 
+                      aoi22    Combinational            Certified 
+                     aoi221    Combinational            Certified 
+                     aoi222    Combinational            Certified 
+                      aoi32    Combinational            Certified 
+                     aoi321    Combinational            Certified 
+                     aoi322    Combinational            Certified 
+                      aoi33    Combinational            Certified 
+                     aoi332    Combinational            Certified 
+                     aoi333    Combinational            Certified 
+                     aoi422    Combinational            Certified 
+                      aoi43    Combinational            Certified 
+                      aoi44    Combinational            Certified 
+                      buf02    Combinational            Certified 
+                      buf04    Combinational            Certified 
+                      buf08    Combinational            Certified 
+                      buf12    Combinational            Certified 
+                      buf16    Combinational            Certified 
+                      cgand            Latch            Certified 
+                       cgor            Latch            Certified 
+                clock_and02    Combinational            Certified 
+                clock_buf02    Combinational            Certified 
+                clock_inv01    Combinational            Certified 
+                clock_mux21    Combinational            Certified 
+                 clock_or02    Combinational            Certified 
+                        dff        Flip-flop            Certified 
+                       dffr        Flip-flop            Certified 
+                       dffs        Flip-flop            Certified 
+                      dffsr        Flip-flop            Certified 
+                      fadd1    Combinational            Certified 
+                      hadd1    Combinational            Certified 
+                      inv01    Combinational            Certified 
+                      inv02    Combinational            Certified 
+                      inv04    Combinational            Certified 
+                      inv08    Combinational            Certified 
+                      inv12    Combinational            Certified 
+                      inv16    Combinational            Certified 
+                      iopad    Combinational            Certified 
+                       ipad    Combinational            Certified 
+                   ipad_buf    Combinational            Certified 
+                      latch            Latch            Certified 
+                     latchr            Latch            Certified 
+                     latchs            Latch            Certified 
+                    latchsr            Latch            Certified 
+                      mux21    Combinational            Certified 
+                     nand02    Combinational            Certified 
+                  nand02_2x    Combinational            Certified 
+                     nand03    Combinational            Certified 
+                  nand03_2x    Combinational            Certified 
+                     nand04    Combinational            Certified 
+                  nand04_2x    Combinational            Certified 
+                    nck_dff        Flip-flop            Certified 
+                   nck_dffr        Flip-flop            Certified 
+                   nck_dffs        Flip-flop            Certified 
+                  nck_dffsr        Flip-flop            Certified 
+         nck_scan_sync_cell   Scan flip-flop            Certified 
+     nck_scan_sync_cell_rst   Scan flip-flop            Certified 
+     nck_scan_sync_cell_set   Scan flip-flop            Certified 
+ nck_scan_sync_cell_set_rst   Scan flip-flop            Certified 
+                    nck_sff   Scan flip-flop            Certified 
+                 nck_sff_PD   Scan flip-flop            Certified 
+                   nck_sffr   Scan flip-flop            Certified 
+                nck_sffr_PD   Scan flip-flop            Certified 
+                   nck_sffs   Scan flip-flop            Certified 
+                nck_sffs_PD   Scan flip-flop            Certified 
+                  nck_sffsr   Scan flip-flop            Certified 
+               nck_sffsr_PD   Scan flip-flop            Certified 
+              nck_sync_cell        Flip-flop            Certified 
+          nck_sync_cell_rst        Flip-flop            Certified 
+          nck_sync_cell_set        Flip-flop            Certified 
+      nck_sync_cell_set_rst        Flip-flop            Certified 
+                     nlatch            Latch            Certified 
+                    nlatchr            Latch            Certified 
+                    nlatchs            Latch            Certified 
+                   nlatchsr            Latch            Certified 
+                      nor02    Combinational            Certified 
+                   nor02_2x    Combinational            Certified 
+                    nor02ii    Combinational            Certified 
+                      nor03    Combinational            Certified 
+                   nor03_2x    Combinational            Certified 
+                      nor04    Combinational            Certified 
+                   nor04_2x    Combinational            Certified 
+                      oai21    Combinational            Certified 
+                      oai22    Combinational            Certified 
+                     oai221    Combinational            Certified 
+                     oai222    Combinational            Certified 
+                      oai32    Combinational            Certified 
+                     oai321    Combinational            Certified 
+                     oai322    Combinational            Certified 
+                      oai33    Combinational            Certified 
+                     oai332    Combinational            Certified 
+                     oai333    Combinational            Certified 
+                     oai422    Combinational            Certified 
+                      oai43    Combinational            Certified 
+                      oai44    Combinational            Certified 
+                       opad    Combinational            Certified 
+                   opad_and    Combinational            Certified 
+                       or02    Combinational            Certified 
+                       or03    Combinational            Certified 
+                       or04    Combinational            Certified 
+             scan_sync_cell   Scan flip-flop            Certified 
+         scan_sync_cell_rst   Scan flip-flop            Certified 
+         scan_sync_cell_set   Scan flip-flop            Certified 
+     scan_sync_cell_set_rst   Scan flip-flop            Certified 
+                        sff   Scan flip-flop            Certified 
+                     sff_PD   Scan flip-flop            Certified 
+                       sffr   Scan flip-flop            Certified 
+                    sffr_PD   Scan flip-flop            Certified 
+                       sffs   Scan flip-flop            Certified 
+                    sffs_PD   Scan flip-flop            Certified 
+                      sffsr   Scan flip-flop            Certified 
+                   sffsr_PD   Scan flip-flop            Certified 
+                  sync_cell        Flip-flop            Certified 
+              sync_cell_rst        Flip-flop            Certified 
+              sync_cell_set        Flip-flop            Certified 
+          sync_cell_set_rst        Flip-flop            Certified 
+                      tri01    Combinational            Certified 
+                     trib04    Combinational            Certified 
+                     trib08    Combinational            Certified 
+                      xnor2    Combinational            Certified 
+                   xnor2_2x    Combinational            Certified 
+                      xor02    Combinational            Certified 
+                    xor2_2x    Combinational            Certified 
+
+ ------------------------------------------------------------------------------

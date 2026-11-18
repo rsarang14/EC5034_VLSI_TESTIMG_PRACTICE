@@ -1,0 +1,25 @@
+# //  Questa Sim
+# //  Version 2022.4 linux Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim.wlf opened as dataset "vsim"
+set c /TB/DUT_inst/dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst
+# /TB/DUT_inst/dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst
+add wave $c/MBISTPG_EN $c/MBISTPG_GO $c/MBISTPG_DONE $c/BIST_COLLAR_EN0 $c/BIST_COLLAR_EN1
+foreach s {Q CLK CEN WEN A D} { add wave /TB/DUT_inst/RAM_256x16_TEST_INST_3/RAM_256x16_INST/$s }
+wave zoom range 233000000ps 233300000ps
+# {233 us} {233300 ns}
+wave zoom range 233000000ps 233300000ps
+# {233 us} {233300 ns}
+wave zoom full
+# {0 ps} {375272100 ps}

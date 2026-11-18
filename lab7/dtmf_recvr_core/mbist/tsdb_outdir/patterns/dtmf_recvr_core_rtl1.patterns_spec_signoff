@@ -1,0 +1,75 @@
+//-------------------------------------------------
+//  File created by: Tessent Shell
+//          Version: 2022.4
+//       Created on: Sat Oct 24 02:54:59 IST 2026
+//-------------------------------------------------
+
+
+PatternsSpecification(dtmf_recvr_core,rtl1,signoff) {
+  Patterns(ICLNetwork) {
+    ICLNetworkVerify(dtmf_recvr_core) {
+    }
+  }
+  Patterns(MemoryBist_P1) {
+    DftControlSettings {
+      all_test : 1;
+    }
+    ClockPeriods {
+      refclk : 8.0ns;
+    }
+    TestStep(go_nogo) {
+      MemoryBist {
+        run_mode : run_time_prog;
+        reduced_address_count : on;
+        Controller(RAM_128x16_TEST_INST_dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst) {
+          DiagnosisOptions {
+            compare_go : on;
+            compare_go_id : on;
+          }
+        }
+        Controller(dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst) {
+          DiagnosisOptions {
+            compare_go : on;
+            compare_go_id : on;
+          }
+        }
+        Controller(dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst) {
+          DiagnosisOptions {
+            compare_go : on;
+            compare_misr : on;
+          }
+          MemoryInterface(m1) {
+            expected_rom_signature : auto;
+          }
+        }
+      }
+    }
+  }
+  Patterns(MemoryBist_ParallelRetentionTest_P1) {
+    DftControlSettings {
+      all_test : 1;
+    }
+    ClockPeriods {
+      refclk : 8.0ns;
+    }
+    TestStep(ParallelRetentionTest) {
+      MemoryBist {
+        run_mode : hw_default;
+        parallel_retention_time : 0;
+        reduced_address_count : on;
+        Controller(RAM_128x16_TEST_INST_dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst) {
+          parallel_retention_group : 1;
+          DiagnosisOptions {
+            compare_go_id : on;
+          }
+        }
+        Controller(dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst) {
+          parallel_retention_group : 1;
+          DiagnosisOptions {
+            compare_go_id : on;
+          }
+        }
+      }
+    }
+  }
+}

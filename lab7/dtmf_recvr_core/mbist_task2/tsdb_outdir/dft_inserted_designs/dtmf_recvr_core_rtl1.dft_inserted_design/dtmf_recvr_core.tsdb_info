@@ -1,0 +1,23 @@
+//-------------------------------------------------
+//  File created by: Tessent Shell
+//          Version: 2022.4
+//       Created on: Tue Nov 17 18:36:43 IST 2026
+//-------------------------------------------------
+
+
+TsdbInfo(dtmf_recvr_core,rtl1) {
+  tessent_tool_version : 2022.4;
+  tessent_meta_version : 10;
+  version : 3;
+  creation_date : Tue Nov 17 13:06:43 GMT 2026;
+  creation_user : l210;
+  creation_step : process_dft_specification;
+  level : physical_block;
+  icl_extraction_needed : On;
+  library_name : work;
+  gate_extension : vg;
+  interface_has_external_dependencies : 0;
+  OpenedTsdbDirectories {
+    /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir;
+  }
+}

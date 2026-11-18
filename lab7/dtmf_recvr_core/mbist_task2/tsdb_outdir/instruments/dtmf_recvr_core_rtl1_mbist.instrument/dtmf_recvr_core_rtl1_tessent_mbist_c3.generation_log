@@ -1,0 +1,209 @@
+membistipg c3 -configfile /tmp/.tessent.tmp.l213.c2slab.iiitdm.ac.in.l210.402245/scratch/membistipg_workdir/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller/c3.membist  -library /tmp/.tessent.tmp.l213.c2slab.iiitdm.ac.in.l210.402245/scratch/membistipg_workdir/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller/MemLibs/rom_512x16A.lib -clockPeriod 16 -failureLimit 4096 -compStat sharedwithgo -usemulticyclepaths on -parallelStaticRetentionTest on -controllertype programmable -extension v -structuralExtension vg -bak off -flow tessent_shell -designName dtmf_recvr_core -pass_id rtl1 -scratch_dir "/tmp/.tessent.tmp.l213.c2slab.iiitdm.ac.in.l210.402245/scratch/membistipg_workdir" -outDir "/home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument" -log membistipg.log_c3 -multithreading -xortreecapacity 3 
+
+***************************************************************************************************
+*                                                                                                 *
+* This material contains trade secrets or otherwise confidential                                  *
+* information owned by Siemens Industry Software Inc. or its affiliates                           *
+* (collectively, "SISW"), or its licensors. Access to and use of this                             *
+* information is strictly limited as set forth in the Customer's                                  *
+* applicable agreements with SISW.                                                                *
+*                                                                                                 *
+* Unpublished work. Copyright 2022 Siemens                                                        *
+*                                                                                                 *
+* RESTRICTED RIGHTS USE (SHORT FORM)                                                              *
+*                                                                                                 *
+***************************************************************************************************
+
+
+***************************************************************************************************
+*                                                                                                 *
+*                                        membistipGenerate                                        *
+*                                         Version 2022.4                                          *
+*                               (optimized for 64-bit architecture)                               *
+*                                                                                                 *
+***************************************************************************************************
+
+ Parsing command line options...
+ Reading the configuration file /tmp/.tessent.tmp.l213.c2slab.iiitdm.ac.in.l210.402245/scratch/membistipg_workdir/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller/c3.membist.
+ Reading the library file /tmp/.tessent.tmp.l213.c2slab.iiitdm.ac.in.l210.402245/scratch/membistipg_workdir/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller/MemLibs/rom_512x16A.lib.
+   Calculating signature for ROM rom_512x16A with collar MemoryCollar(m1)...
+   Reading in hexadecimal ROM contents file romcontent.cfg.
+     Signature:  24'hDFC49B
+
+
+
+Checked out mttsmemorybistf from mttsmemorybist_c.
+Checked out mttsmemstdprog from mttsmemorybist_c.
+Warning [PPHW01] : REF#000000 : The controller cannot support diagnostic capabilities because all memories are of type ROM. Changing the ETPlanner property CompStat from SHAREDWITHGO to Off
+
+Warning [PPHW01] : Parallel Retention Test support is only available for the following built-in algorithms: 
+                   SMarch, SMarchCHKB, SMarchCHKBci, SMarchCHKBcil, SMarchCHKBvcd. The controller does 
+                   not implement one of the above algorithms. Parallel Retention Test support will be 
+                   turned Off.
+Warning [PPHW01] : The property StopOnErrorLimitAutoIncrement On can be use only when FailureLimit value 
+                   is bigger than 0. Setting StopOnErrorLimitAutoIncrement to Off. 
+Warning [PPHW01] : You have not specified the property NumberOfDataRegisterBits. The controller is HardProgrammable 
+                   and only specifies algorithms from the SMarch/SMarchCHKB family. Setting the size 
+                   of the expect and write data registers to the minimum value of 2 bits.
+
+User Options:                           
+  Working Directory:                    /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/
+  Source Directory:                     /home/mentor/Tessent2022.4
+  Configuration File:                   dtmf_recvr_core.membistpg
+  Memory Library File:                  /tmp/.tessent.tmp.l213.c2slab.iiitdm.ac.in.l210.402245/scratch/membistipg_workdir/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller/MemLibs/rom_512x16A.lib
+  Output Directory:                     /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument
+  Log File:                             /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/membistipg.log_c3
+  Language:                             VERILOG
+  Extension:                            v
+  Structural Extension:                 vg
+  Collar Generation:                    ON
+  Controller Generation:                ON
+  CompStat:                             OFF
+  Scan Model Generation:                ON
+  Scan Chains:                          PREP
+  Clock Period:                         16 ns
+  Xor Tree Capacity:                    3
+  Use MultiCycle Paths:                 ON
+  Include Test Pattern Library:         ON
+  Algorithm Summary:                    OFF
+
+Including Algorithms from the Test Pattern Library...
+  Including the Library Test Pattern READONLY.
+
+Controller Options:                     
+  Controller Type:                      Programmable
+  Soft-Algorithm Instructions:          0
+  SoftAlgorithmAddressMinMax:           No
+  EnableAEqualsBCommand:                No
+  X0 Address Segment Bits:              0
+  Y0 Address Segment Bits:              0
+  InvertDataWithAddressBitRange:        0
+  Data Register Bits:                   2
+  Delay Counter Bits:                   0
+  CounterA Bits:                        0
+  Stop-On-Nth-Error Counter Bits:       0
+
+Validating all user specified algorithms and any included algorithms from the library of test patterns...
+
+Warning [PPHW01] : REF#10400005 : MemoryController(C3)::Algorithm(READONLY)::TestRegisterSetup::DataPolarityEnable:ON is ignored since the physical data map does not exist.
+
+  Calculating the run length for algorithm READONLY...
+    Run Length Summary for Algorithm READONLY and OperationSet ROM used in Step 0 with BitSlice 1
+      Instruction(NOOPERATION)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        4.0
+      Instruction(READ)
+        Total Instruction Executions:        1024.0
+        Total Clocks:                        2048.0
+      Instruction(COMPAREMISR)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Total Clocks:                          2054.0
+      Total Time(@16ns period):              32.864 us
+      Max Number of Strobes:                 1024.0
+
+Memory Configurations:                  
+
+Memory:                                 m1
+
+  Status Information
+  ------------------
+
+  Address Counter
+  ---------------
+  RowAddress[4:0] Countrange:           Maximum[5'b11111]
+                                        Minimum[5'b00000]
+  ColumnAddress[3:0] Countrange:        Maximum[4'b1111]
+                                        Minimum[4'b0000]
+
+  Function Data Bus  Data Register Bit  Port
+  ----------------   -----------------  ----
+  d[15] (OUTPUT)     EXPECT[1]          Q[15]
+  d[14] (OUTPUT)     EXPECT[0]          Q[14]
+  d[13] (OUTPUT)     EXPECT[1]          Q[13]
+  d[12] (OUTPUT)     EXPECT[0]          Q[12]
+  d[11] (OUTPUT)     EXPECT[1]          Q[11]
+  d[10] (OUTPUT)     EXPECT[0]          Q[10]
+  d[9] (OUTPUT)      EXPECT[1]          Q[9]
+  d[8] (OUTPUT)      EXPECT[0]          Q[8]
+  d[7] (OUTPUT)      EXPECT[1]          Q[7]
+  d[6] (OUTPUT)      EXPECT[0]          Q[6]
+  d[5] (OUTPUT)      EXPECT[1]          Q[5]
+  d[4] (OUTPUT)      EXPECT[0]          Q[4]
+  d[3] (OUTPUT)      EXPECT[1]          Q[3]
+  d[2] (OUTPUT)      EXPECT[0]          Q[2]
+  d[1] (OUTPUT)      EXPECT[1]          Q[1]
+  d[0] (OUTPUT)      EXPECT[0]          Q[0]
+
+  Function Address Bus             Logical Bit         Port
+  --------------------             -----------         ----
+  Address[8]                       RowAddress[4]       A[8]
+  Address[7]                       RowAddress[3]       A[7]
+  Address[6]                       RowAddress[2]       A[6]
+  Address[5]                       RowAddress[1]       A[5]
+  Address[4]                       RowAddress[0]       A[4]
+  Address[3]                       ColumnAddress[3]    A[3]
+  Address[2]                       ColumnAddress[2]    A[2]
+  Address[1]                       ColumnAddress[1]    A[1]
+  Address[0]                       ColumnAddress[0]    A[0]
+
+  Test Port                        Logical Read/Write Ports
+  ---------                        ------------------------
+  0                                (All ports)
+
+
+Summary of Operations                   
+---------------------
+
+  OperationSetFamily:                   DEFAULT
+
+    OperationSet:                       ROM
+
+      Operation:                        READ
+        Tick:                           12
+        SELECT:                         11
+        STROBEDATAOUT:                  01
+
+      Operation:                        COMPAREMISR
+        Tick:                           12
+        SELECT:                         11
+        STROBEDATAOUT:                  00
+
+      Operation:                        NOOPERATION
+        Tick:                           1234
+        SELECT:                         1111
+        STROBEDATAOUT:                  0000
+
+
+ Generating design files...
+   Registering dtmf_recvr_core_rtl1_tessent_mbist_c3_controller.v for generation.
+   Registering dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1.v for generation.
+   Registering dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1.icl for generation.
+   Registering dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1_MISR_STRAP.v for generation.
+   Registering rom_512x16A.scan for generation.
+   Registering rom_512x16A.syn for generation.
+   Registering dtmf_recvr_core_rtl1_tessent_mbist_c3_controller.gtool_info for generation.
+   Registering dtmf_recvr_core_rtl1_tessent_mbist_c3_controller.icl for generation.
+   Registering dtmf_recvr_core_rtl1_tessent_mbist_c3_controller.pdl for generation.
+   Registering dtmf_recvr_core_rtl1_tessent_mbist_c3_controller.tcd for generation.
+   Registering dtmf_recvr_core_rtl1_tessent_mbist_c3.designa for generation.
+   Generating controller module:                     /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller.v
+   Generating interface module:                      /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1.v
+   Generating interface ICL:                         /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1.icl
+   Generating MISR strap module:                     /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1_MISR_STRAP.v
+   Generating memory scan model:                     /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/rom_512x16A.scan
+   Generating memory synthesis model:                /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/rom_512x16A.syn
+   Generating gtool_info file:                       /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller.gtool_info
+   Generating ICL file:                              /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller.icl
+   Generating PDL file:                              /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller.pdl
+   Generating Tessent Instrument Description file:   /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller.tcd
+   Generating designa file:                          /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3.designa
+
+ Error Summary:
+
+	Total Warnings	: 5
+
+ Log file is /home/l210/L210/work/EC23I2015/LAB7/dtmf_recvr_core/mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/membistipg.log_c3.
+
+ Done.
+

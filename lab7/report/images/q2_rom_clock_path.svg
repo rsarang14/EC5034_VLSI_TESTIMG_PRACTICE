@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 420" width="1100" height="420" font-family="Arial, Helvetica, sans-serif">
+  <rect width="1100" height="420" fill="#ffffff"/>
+  <text x="550" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#111">Q2: ROM clock path (memory CLK back to the test_control block) - dtmf_recvr_core</text>
+
+  <!-- refclk primary input -->
+  <text x="20" y="157" font-size="14" fill="#111">refclk</text>
+  <text x="12" y="192" font-size="11" fill="#555">(primary input,</text>
+  <text x="12" y="206" font-size="11" fill="#555">8 ns)</text>
+  <line x1="95" y1="165" x2="150" y2="165" stroke="#111" stroke-width="2"/>
+  <polygon points="150,159 162,165 150,171" fill="#111"/>
+
+  <!-- PLLCLK_INST -->
+  <rect x="162" y="120" width="170" height="90" fill="#eef4ff" stroke="#2b5fb3" stroke-width="2"/>
+  <text x="247" y="148" text-anchor="middle" font-size="15" font-weight="bold" fill="#111">PLLCLK_INST</text>
+  <text x="247" y="168" text-anchor="middle" font-size="12" fill="#333">module pllclk</text>
+  <text x="247" y="190" text-anchor="middle" font-size="12" fill="#333">refclk in, clk2x out</text>
+
+  <!-- net clk -->
+  <line x1="332" y1="165" x2="440" y2="165" stroke="#111" stroke-width="2"/>
+  <text x="386" y="155" text-anchor="middle" font-size="14" font-weight="bold" fill="#c0392b">clk</text>
+  <text x="386" y="190" text-anchor="middle" font-size="11" fill="#555">(= clk2x)</text>
+
+  <!-- TEST_CONTROL_INST block -->
+  <rect x="440" y="75" width="290" height="190" fill="#fff8e6" stroke="#b9770e" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="585" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#111">TEST_CONTROL_INST</text>
+  <text x="585" y="116" text-anchor="middle" font-size="12" fill="#333">module test_control</text>
+
+  <!-- mux -->
+  <polygon points="520,135 600,155 600,215 520,235" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="545" y="190" text-anchor="middle" font-size="12" fill="#111">0</text>
+  <text x="545" y="165" text-anchor="middle" font-size="12" fill="#111">1</text>
+  <text x="575" y="192" text-anchor="middle" font-size="12" font-weight="bold" fill="#111">MUX</text>
+  <text x="585" y="256" text-anchor="middle" font-size="11" fill="#333">rtlc0_7/muxinst (Z)</text>
+
+  <!-- inputs to mux: clk (0), scan_clk (1) -->
+  <line x1="440" y1="165" x2="440" y2="205" stroke="#111" stroke-width="2"/>
+  <line x1="440" y1="205" x2="520" y2="205" stroke="#111" stroke-width="2"/>
+  <polygon points="508,199 520,205 508,211" fill="#111"/>
+  <line x1="450" y1="150" x2="520" y2="150" stroke="#111" stroke-width="2"/>
+  <polygon points="508,144 520,150 508,156" fill="#111"/>
+  <text x="445" y="143" font-size="12" fill="#111">scan_clk</text>
+  <text x="400" y="228" font-size="11" fill="#555"></text>
+
+  <!-- test_mode select -->
+  <line x1="560" y1="300" x2="560" y2="226" stroke="#111" stroke-width="2"/>
+  <polygon points="554,238 560,226 566,238" fill="#111"/>
+  <text x="560" y="318" text-anchor="middle" font-size="13" fill="#111">test_mode</text>
+  <text x="560" y="335" text-anchor="middle" font-size="11" fill="#555">(select: 1 = scan_clk, 0 = clk)</text>
+
+  <!-- net m_clk -->
+  <line x1="600" y1="185" x2="730" y2="185" stroke="#111" stroke-width="2"/>
+  <line x1="730" y1="185" x2="830" y2="185" stroke="#111" stroke-width="2"/>
+  <polygon points="818,179 830,185 818,191" fill="#111"/>
+  <text x="780" y="175" text-anchor="middle" font-size="14" font-weight="bold" fill="#c0392b">m_clk</text>
+  <text x="710" y="292" text-anchor="middle" font-size="12" fill="#333">m_clk = test_mode ? scan_clk : clk</text>
+
+  <!-- ROM -->
+  <rect x="830" y="140" width="240" height="90" fill="#eaf7ee" stroke="#1e8449" stroke-width="2"/>
+  <text x="950" y="168" text-anchor="middle" font-size="15" font-weight="bold" fill="#111">ROM_512x16_0_INST</text>
+  <text x="950" y="188" text-anchor="middle" font-size="12" fill="#333">module rom_512x16A</text>
+  <text x="950" y="210" text-anchor="middle" font-size="12" fill="#333">pin CLK  (memory clock)</text>
+
+  <!-- DRC note -->
+  <rect x="90" y="360" width="920" height="48" fill="#f4f4f4" stroke="#999"/>
+  <text x="550" y="380" text-anchor="middle" font-size="13" fill="#111">DFT_C1: source tracing from ROM_512x16_0_INST/CLK stops at the mux output (TEST_CONTROL_INST/rtlc0_7/muxinst/Z)</text>
+  <text x="550" y="398" text-anchor="middle" font-size="13" fill="#111">because test_mode is unknown and clk is not related to refclk yet. Fixed by add_clocks m_clk (-freq_divider 2) and add_dft_control_points test_mode.</text>
+</svg>

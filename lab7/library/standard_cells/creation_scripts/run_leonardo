@@ -1,0 +1,18 @@
+#!/bin/csh
+
+###################################
+## Compile AMI SST/Leo libraries ##
+###################################
+## 
+## Velocity library -- adk.lgn
+##
+## Leonardo Library -- adk.syn
+##
+###################################
+
+echo "Creating Spectrum and Velocity Libraries"
+
+syngen ../adk.lib.leonardo ../adk.lgn > syngen.log
+
+lGen ../adk.lgn ../adk.syn > lGen.log
+

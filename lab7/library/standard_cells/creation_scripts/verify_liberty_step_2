@@ -1,0 +1,1 @@
+lcverify verify_liberty_step_1.atpglib ../verilog/adk.v

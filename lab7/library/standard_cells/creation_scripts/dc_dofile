@@ -1,0 +1,3 @@
+enable_write_lib_mode
+read_lib ./adk.lib
+write_lib adk_typ -f db -o adk.db

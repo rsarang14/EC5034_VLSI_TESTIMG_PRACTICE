@@ -1,0 +1,16 @@
+
+Note: The tools to create a leonardo library will only run on a Linux system.
+
+run       <-- script to create leonardo library from ../adk.lib liberty file
+lGen      <-- application to create synthesis library
+syngen    <-- application to create lgn 
+adk.lgn   <-- temp file
+
+Note: The following environment settings are required to run lGen
+
+setenv LM_LICENSE_FILE 1717@wv-lic-02
+setenv MGC_HOME /wv/hdl/ls/2013a/ixl/
+/wv/hdl/ls/2013a/ixl/pkgs/leonardo.ixl/bin/Linux/lGen adk.lgn adk.syn
+
+
+

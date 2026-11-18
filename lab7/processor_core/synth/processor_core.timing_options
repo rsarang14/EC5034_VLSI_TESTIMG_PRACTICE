@@ -1,0 +1,1 @@
+set processor_core_tck_period      20.0; # No units allowed, nanoseconds assumed

@@ -1,0 +1,4 @@
+ETLibCertify (adk) {
+                SimModelFile: ../verilog/adk.v;
+                MTCellLib: ./adk.tcelllib;
+} // End of ETLibCertify wrapper

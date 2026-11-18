@@ -1,0 +1,2731 @@
+/*
+----------------------------------------------------------------------------------
+-                                                                                -
+-  Unpublished work. Copyright 2022 Siemens                                      -
+-                                                                                -
+-  This material contains trade secrets or otherwise confidential                -
+-  information owned by Siemens Industry Software Inc. or its affiliates         -
+-  (collectively, SISW), or its licensors. Access to and use of this             -
+-  information is strictly limited as set forth in the Customer's                -
+-  applicable agreements with SISW.                                              -
+-                                                                                -
+----------------------------------------------------------------------------------
+-  File created by: Tessent Shell                                                -
+-          Version: 2022.4                                                       -
+-       Created on: Tue Nov 17 19:21:24 IST 2026                                 -
+----------------------------------------------------------------------------------
+
+
+*/
+   
+Core(dtmf_recvr_core_rtl1_tessent_mbist_c2_controller) {    
+    MemoryBistController {
+        Version         : 58;
+        ControllerType  : HardProgrammable;
+        use_multicycle_paths  : ON;
+        asynchronous_interface_present : "off";
+        NumberOfInstructions    : 0;
+        NumberOfDataRegisterBits: 2;
+        ConnectionInfo { 
+            SerialInterface     : ON;
+            MemoryReset         : Off;
+            UseAsyncReset       : Off;
+            ParallelRetentionTest   : Always;
+            CompStatAllowed : Off;
+            FailureLimit    : 4096;
+            StopOnErrorLimitAutoIncrement    : ON;
+            DaisyChain      : ON;
+            CompStatIDMuxing    : Never;
+        } 
+        FreezeTestPortAllowed   : Off;
+        controller_flop_count  : 119;
+        interface_flop_count   : 41;
+        RedundancyAnalysis  : Off;
+        SelfRepair          : Off;
+        ErrorCollectionAllowed  : Off;
+        SOEOptimizeVersion          : 1;
+        SOEWithCompStatMuxAllowed   : Off;
+        ROMDiagnostic             : Off;
+        FunctionalDebugMode       : Off;
+        enable_resume_diagnosis   : OFF;
+        PSRTWithFreezeStepAllowed   : On;
+        PSRTGroup   : On;
+        CompStatConnectionTest  : Off;
+        SelectiveParallelMemoryTest : On;
+        EnableAddressSegmentX0Y0    : Off;
+        SoftAlgorithmAddressMinMax  : Off;
+        SharedAddressRegisters : Off;
+        PipelineControllerOutputs : Off;
+        StopOnErrorLimitAutoIncrement : On;
+      
+        AllowCommonAlgorithmForStepRange    : On;
+        AllowCommonOperationSetForStepRange : On;
+        AllowCommonDataPatternForStepRange  : On;
+        ParallelRetentionTest   : ON;
+        CounterA                : 0;
+        DelayCounter            : 0;
+        EnableAEqualsBCommand   : OFF;
+        DataPolarityPresent     : 0;
+        InvertDataWithAddressBitRange : 0;
+        ColumnBits              : 4;
+        RowBits                 : 4;
+        BankBits                : 0;
+        MaxX0Bits               : 0;
+        MaxY0Bits               : 0;
+        RamBist                 : On;
+        HSDLNames {
+            InstructionPointer  : %BP%_INST_POINTER_REG[5:0];
+            RepeatLoopACounter  : %BP%_REPEATLOOP_A_CNTR_REG[1:0];
+            RepeatLoopBCounter  : %BP%_REPEATLOOP_B_CNTR_REG[1:0];
+            OperationCycleCounter : %BP%_JCNT[2:0];
+            ErrorCounter        : %BP%_STOP_ERROR_CNT_REG[11:0];
+        }
+        AddressRegister ( A ) {
+                HSDLName(Row,3,0)   : %BP%_A_ADD_REG_X[3:0];
+                HSDLName(Column,3,0) : %BP%_A_ADD_REG_Y[3:0];
+        } 
+        AddressRegister ( B ) {
+                HSDLName(Row,3,0)   : %BP%_B_ADD_REG_X[3:0];
+                HSDLName(Column,3,0) : %BP%_B_ADD_REG_Y[3:0];
+        } 
+        StepCounter ( 0 ) { 
+            MemoryContentValue  : 2'b00;
+            DefaultAlgorithm    : SMARCHCHKBCIL;
+            DefaultOperationSet : SYNC;
+            DefaultRunTime(All) : 11290; 
+            DefaultRunTime(All_Approximated) : 11366.0;
+            DefaultRunTime(StartToPause) : 528; 
+            DefaultRunTime(StartToPause_Approximated) : 540.0;
+            DefaultRunTime(PauseToPause) : 512; 
+            DefaultRunTime(PauseToPause_Approximated) : 528.0;
+            DefaultRunTime(PauseToEnd) : 512; 
+            DefaultRunTime(PauseToEnd_Approximated) : 532.0;
+            DefaultRunTime(StartToPauseReducedAddressCount) : 36;
+            DefaultRunTime(PauseToPauseReducedAddressCount) : 24;
+            DefaultRunTime(PauseToEndReducedAddressCount) : 24;
+            DefaultRunTime(ReducedAddressCount) : 224;
+            DefaultRunTime(MemoryReset) : 536.0;
+            NumPorts    : 1;
+            SameAddressRange  : On;
+            Latency     : 0;
+            Address(Row) {
+                AddressBits     : 4;
+                DefaultMin      : 0;
+                DefaultMax      : 15;
+            }
+            Address(Column) {
+                AddressBits     : 4;
+                DefaultMin      : 0;
+                DefaultMax      : 15;
+            }
+            MemoryCollar        : M1;
+        } 
+        MemoryCollar ( m1 ) { 
+            MemoryModuleName    : ram_256x16A;
+            MemoryIDIndex         : 0;
+            MemoryTemplate        : ram_256x16A;
+            LogicalPorts          : 1RW;
+            NumPorts              : 1;
+            milliwatts_per_mhz    : 1.2;
+            number_of_words       : 256;
+            BitGrouping         : 1;
+            PipelineDepth       : 0;
+            NumberOfBistDataPipelineStages : 0;
+            Latency             : 2;
+            Address(Row) {
+                DefaultMin      : 0;
+                DefaultMax      : 15;
+            }
+            Address(Column) {
+                DefaultMin      : 0;
+                DefaultMax      : 15;
+            }
+            PortCounter ( 0 ) {
+                Comparator ( 1 ) {
+                    HSDLName    : GO_ID_REG[0];
+                    BitCounter(0,0) : 0,0;
+                }
+                Comparator ( 2 ) {
+                    HSDLName    : GO_ID_REG[1];
+                    BitCounter(0,0) : 1,1;
+                }
+                Comparator ( 3 ) {
+                    HSDLName    : GO_ID_REG[2];
+                    BitCounter(0,0) : 2,2;
+                }
+                Comparator ( 4 ) {
+                    HSDLName    : GO_ID_REG[3];
+                    BitCounter(0,0) : 3,3;
+                }
+                Comparator ( 5 ) {
+                    HSDLName    : GO_ID_REG[4];
+                    BitCounter(0,0) : 4,4;
+                }
+                Comparator ( 6 ) {
+                    HSDLName    : GO_ID_REG[5];
+                    BitCounter(0,0) : 5,5;
+                }
+                Comparator ( 7 ) {
+                    HSDLName    : GO_ID_REG[6];
+                    BitCounter(0,0) : 6,6;
+                }
+                Comparator ( 8 ) {
+                    HSDLName    : GO_ID_REG[7];
+                    BitCounter(0,0) : 7,7;
+                }
+                Comparator ( 9 ) {
+                    HSDLName    : GO_ID_REG[8];
+                    BitCounter(0,0) : 8,8;
+                }
+                Comparator ( 10 ) {
+                    HSDLName    : GO_ID_REG[9];
+                    BitCounter(0,0) : 9,9;
+                }
+                Comparator ( 11 ) {
+                    HSDLName    : GO_ID_REG[10];
+                    BitCounter(0,0) : 10,10;
+                }
+                Comparator ( 12 ) {
+                    HSDLName    : GO_ID_REG[11];
+                    BitCounter(0,0) : 11,11;
+                }
+                Comparator ( 13 ) {
+                    HSDLName    : GO_ID_REG[12];
+                    BitCounter(0,0) : 12,12;
+                }
+                Comparator ( 14 ) {
+                    HSDLName    : GO_ID_REG[13];
+                    BitCounter(0,0) : 13,13;
+                }
+                Comparator ( 15 ) {
+                    HSDLName    : GO_ID_REG[14];
+                    BitCounter(0,0) : 14,14;
+                }
+                Comparator ( 16 ) {
+                    HSDLName    : GO_ID_REG[15];
+                    BitCounter(0,0) : 15,15;
+                }
+                Port(Read) {
+                    Map(Data) {
+                      Equations {
+                        Q[15]  : (d(15));
+                        Q[14]  : (d(14));
+                        Q[13]  : (d(13));
+                        Q[12]  : (d(12));
+                        Q[11]  : (d(11));
+                        Q[10]  : (d(10));
+                        Q[9]  : (d(9));
+                        Q[8]  : (d(8));
+                        Q[7]  : (d(7));
+                        Q[6]  : (d(6));
+                        Q[5]  : (d(5));
+                        Q[4]  : (d(4));
+                        Q[3]  : (d(3));
+                        Q[2]  : (d(2));
+                        Q[1]  : (d(1));
+                        Q[0]  : (d(0));
+                      } 
+                    } 
+                    Map(ComplexAddress) {
+                      Equations {
+                        RowAddress[0]    : (r(0));
+                        RowAddress[1]    : (r(1));
+                        RowAddress[2]    : (r(2));
+                        RowAddress[3]    : (r(3));
+                        ColumnAddress[0] : (c(0));
+                        ColumnAddress[1] : (c(1));
+                        ColumnAddress[2] : (c(2));
+                        ColumnAddress[3] : (c(3));
+                      }
+                    }
+                    Map(AddressPort) {
+                      Equations {
+                        RowAddress[3]    : A[7];
+                        RowAddress[2]    : A[6];
+                        RowAddress[1]    : A[5];
+                        RowAddress[0]    : A[4];
+                        ColumnAddress[3] : A[3];
+                        ColumnAddress[2] : A[2];
+                        ColumnAddress[1] : A[1];
+                        ColumnAddress[0] : A[0];
+                      } 
+                    } 
+                } 
+                Port(Write) {
+                    Map(Data) {
+                      Equations {
+                        D[15]  : (d(15));
+                        D[14]  : (d(14));
+                        D[13]  : (d(13));
+                        D[12]  : (d(12));
+                        D[11]  : (d(11));
+                        D[10]  : (d(10));
+                        D[9]  : (d(9));
+                        D[8]  : (d(8));
+                        D[7]  : (d(7));
+                        D[6]  : (d(6));
+                        D[5]  : (d(5));
+                        D[4]  : (d(4));
+                        D[3]  : (d(3));
+                        D[2]  : (d(2));
+                        D[1]  : (d(1));
+                        D[0]  : (d(0));
+                      } 
+                    } 
+                    Map(ComplexAddress) {
+                      Equations {
+                        RowAddress[0]    : (r(0));
+                        RowAddress[1]    : (r(1));
+                        RowAddress[2]    : (r(2));
+                        RowAddress[3]    : (r(3));
+                        ColumnAddress[0] : (c(0));
+                        ColumnAddress[1] : (c(1));
+                        ColumnAddress[2] : (c(2));
+                        ColumnAddress[3] : (c(3));
+                      }
+                    }
+                    Map(AddressPort) {
+                      Equations {
+                        RowAddress[3]    : A[7];
+                        RowAddress[2]    : A[6];
+                        RowAddress[1]    : A[5];
+                        RowAddress[0]    : A[4];
+                        ColumnAddress[3] : A[3];
+                        ColumnAddress[2] : A[2];
+                        ColumnAddress[1] : A[1];
+                        ColumnAddress[0] : A[0];
+                      } 
+                    } 
+                } 
+            } 
+        } 
+        Algorithm ( SMARCHCHKBCIL ) { 
+            Type        : IC; 
+            AllowMultiSizeMemParallelTest   : ON;
+            TargetMemory                    : ALLCOMPATIBLE;
+            TreatBankAsRowMSB               : OFF;
+            TestRegisterSetup { 
+                AddressGenerator {
+                    AddressRegister ( A ) {
+                        LoadRowAddress      : 4'b0000;
+                        LoadColumnAddress   : 4'b0000;
+                        NumberX0Bits        : 0; 
+                        NumberY0Bits        : 0; 
+                        ZCarryIn     : None; 
+                        X1CarryIn     : Y1CARRYOUT;
+                        X0CarryIn     : None; 
+                        Y1CarryIn     : NONE;
+                        Y0CarryIn     : None; 
+                    } 
+                    AddressRegister ( B ) {
+                        LoadRowAddress      : 4'b0000;
+                        LoadColumnAddress   : 4'b0000;
+                        NumberX0Bits        : 0; 
+                        NumberY0Bits        : 0; 
+                        ZCarryIn     : None; 
+                        X1CarryIn     : NONE;
+                        X0CarryIn     : None; 
+                        Y1CarryIn     : X1CARRYOUT;
+                        Y0CarryIn     : None; 
+                    } 
+                } 
+                DataGenerator {
+                    LoadWriteData           : 2'b10;
+                    LoadExpectData          : 2'b10;
+                    InvertDataWithRowBit    : r[0]; 
+                    InvertDataWithColumnBit : None;
+                } 
+                LoadCounterA_EndCount       : 0;
+                LoadDelayCounter_EndCount   : 0; 
+                OperationSetSelect          : SYNC; 
+            } 
+            MicroProgram { 
+                Instruction ( INST0_IDLE_PH_1 ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_A;
+                    BranchToInstruction     : INST0_IDLE_PH_1;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : NOOPERATION;
+                    WriteDataCmd            : One;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Hold;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS1_PH_2 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_A;
+                    BranchToInstruction     : INS1_PH_2;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : DataReg;
+                    InhibitDataCompare      : On;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : One;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Hold;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS2_PH_2 ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_A;
+                    BranchToInstruction     : INS2_PH_2;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : One;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : One;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Hold;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS3_PH_3 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_A;
+                    BranchToInstruction     : INS3_PH_3;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : One;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Zero;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Hold;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS4_PH_3 ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_A;
+                    BranchToInstruction     : INS4_PH_3;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Zero;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READ;
+                    WriteDataCmd            : Zero;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Hold;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS5_IDLE_PH_4 ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_A;
+                    BranchToInstruction     : INS5_IDLE_PH_4;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Zero;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : NOOPERATION;
+                    WriteDataCmd            : Zero;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Hold;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS6_PH_5 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : On; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_A;
+                    BranchToInstruction     : INS6_PH_5;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : DataReg;
+                    InhibitDataCompare      : On;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Increment;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : On;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : On;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS7_PH_5.5 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : On; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_A;
+                    BranchToInstruction     : INS7_PH_5.5;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Increment;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : On;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : On;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS8_PH_6 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : On; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_A;
+                    BranchToInstruction     : INS8_PH_6;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : InverseDataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Increment;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : On;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : On;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS9_PH_6.5 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : On; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_A;
+                    BranchToInstruction     : INS9_PH_6.5;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : InverseDataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : InverseDataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Increment;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : On;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : On;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS10_PH_7 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : On; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_A;
+                    BranchToInstruction     : INS10_PH_7;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : InverseDataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Increment;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : On;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : On;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INST11_IDLE_PH_8 ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_A;
+                    BranchToInstruction     : INST11_IDLE_PH_8;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Zero;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : NOOPERATION;
+                    WriteDataCmd            : Zero;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Hold;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS12_PH_9 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS12_PH_9;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : On;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Reset_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Hold;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS13_PH_9 ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS13_PH_9;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READ;
+                    WriteDataCmd            : Reset_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS14_PH_10 ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS14_PH_10;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Zero;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : WRITE;
+                    WriteDataCmd            : Reset_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Increment;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : On;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : On;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS15_PH_11 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS15_PH_11;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Set_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Hold;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS16_PH_11 ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS15_PH_11;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Set_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Increment;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : On;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : On;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                        RepeatLoop ( A ) {
+                            BranchToInstruction         : INS15_PH_11;
+                            Repeat {
+                                AddressSequence         : NoChange;
+                                WriteDataSequence       : Inverse;
+                                ExpectDataSequence      : Inverse;
+                                InhibitLastAddressCount : On;
+                                InhibitDataCompare      : Off;
+                            }
+                        }
+                    } 
+                } 
+                Instruction ( INS17_PH_13 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS17_PH_13;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Set_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Hold;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS18_PH_13 ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS17_PH_13;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READ;
+                    WriteDataCmd            : Set_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Decrement;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Decrement;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : On;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : On;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                        RepeatLoop ( B ) {
+                            BranchToInstruction         : INS17_PH_13;
+                            Repeat {
+                                AddressSequence         : NoChange;
+                                WriteDataSequence       : Inverse;
+                                ExpectDataSequence      : Inverse;
+                                InhibitLastAddressCount : On;
+                                InhibitDataCompare      : Off;
+                            }
+                        }
+                    } 
+                } 
+                Instruction ( INS19_PH_15.1_STARTROW ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS19_PH_15.1_STARTROW;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Set_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS20_PH_15.2_STARTROW ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS20_PH_15.2_STARTROW;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READ;
+                    WriteDataCmd            : Zero;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Decrement;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS21_PH_15.3_STARTROW ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS21_PH_15.3_STARTROW;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Reset_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS22_PH_15.1 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS22_PH_15.1;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Set_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Decrement;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS23_PH_15.2 ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS23_PH_15.2;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READ;
+                    WriteDataCmd            : Zero;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS24_PH_15.3 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS22_PH_15.1;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Reset_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Increment;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : On;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS25_PH_15.1_NEXTROW ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS20_PH_15.2_STARTROW;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Set_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Increment;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : On;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS26_PH_15.2_LASTROW_FIRSTLOC ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS26_PH_15.2_LASTROW_FIRSTLOC;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READ;
+                    WriteDataCmd            : Zero;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Decrement;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS27_PH_15.3_LASTROW_FIRSTLOC ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS27_PH_15.3_LASTROW_FIRSTLOC;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Reset_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS28_PH_15.1_LASTROW ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS28_PH_15.1_LASTROW;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Set_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Decrement;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS29_PH_15.2_LASTROW ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS29_PH_15.2_LASTROW;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READ;
+                    WriteDataCmd            : Zero;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS30_PH_15.3_LASTROW ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS28_PH_15.1_LASTROW;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Reset_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Increment;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : On;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS31_PH_16 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS31_PH_16;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Zero;
+                    InhibitDataCompare      : On;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Set_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Hold;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS32_PH_16 ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS32_PH_16;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READ;
+                    WriteDataCmd            : Set_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS33_PH_17 ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS33_PH_17;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Zero;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : WRITE;
+                    WriteDataCmd            : Set_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Increment;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : On;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : On;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS34_PH_18.1_STARTROW ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS34_PH_18.1_STARTROW;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Reset_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS35_PH_18.2_STARTROW ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS35_PH_18.2_STARTROW;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READ;
+                    WriteDataCmd            : Zero;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Decrement;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS36_PH_18.3_STARTROW ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS36_PH_18.3_STARTROW;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Set_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS37_PH_18.1 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS37_PH_18.1;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Reset_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Decrement;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS38_PH_18.2 ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS38_PH_18.2;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READ;
+                    WriteDataCmd            : Zero;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS39_PH_18.3 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS37_PH_18.1;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Set_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Increment;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : On;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS40_PH_18.1_NEXTROW ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS35_PH_18.2_STARTROW;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Reset_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Increment;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : On;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS41_PH_18.2_LASTROW_FIRSTLOC ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS41_PH_18.2_LASTROW_FIRSTLOC;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READ;
+                    WriteDataCmd            : Zero;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Decrement;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS42_PH_18.3_LASTROW_FIRSTLOC ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS42_PH_18.3_LASTROW_FIRSTLOC;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Set_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS43_PH_18.1_LASTROW ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS43_PH_18.1_LASTROW;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Reset_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Decrement;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS44_PH_18.2_LASTROW ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS44_PH_18.2_LASTROW;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READ;
+                    WriteDataCmd            : Zero;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS45_PH_18.3_LASTROW ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS43_PH_18.1_LASTROW;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Reset_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : Set_DataReg;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Increment;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : On;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS46_PH_19 ) { 
+                    ApplyToBitSlice         : On;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS46_PH_19;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Set_DataReg;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : READMODIFYWRITE;
+                    WriteDataCmd            : MemoryContent;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Hold;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS47_PH_19 ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS47_PH_19;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Zero;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : WRITE;
+                    WriteDataCmd            : MemoryContent;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Hold;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : Off;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : Off;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+                Instruction ( INS48_PH_20 ) { 
+                    ApplyToBitSlice         : Off;
+                    CheckerBoard            : Off; 
+                    DisableMemoriesWithoutWriteEnable      : Off;
+                    DisableMemoriesWithoutGroupWriteEnable : Off;
+                    DisableMemoriesWithoutReadEnable       : Off;
+                    DisableMemoriesWithoutOutputEnable     : Off;
+                    DisableMemoriesWithoutSelect           : Off;
+                    Add_Reg_A_Equals_B      : Off;
+                    AddressSelectCmd        : Select_B;
+                    BranchToInstruction     : INS48_PH_20;
+                    CounterACmd             : Hold;
+                    DelayCounterCmd         : Hold; 
+                    ExpectDataCmd           : Zero;
+                    InhibitDataCompare      : Off;
+                    InhibitLastAddressCount : Off;
+                    InhibitRefresh          : Off; 
+                    OperationSelect         : WRITE;
+                    WriteDataCmd            : MemoryContent;
+                    ZAddressCmd      : Hold; 
+                    X1AddressCmd      : Increment;
+                    X0AddressCmd      : Hold; 
+                    Y1AddressCmd      : Increment;
+                    Y0AddressCmd      : Hold; 
+                    NextConditions {
+                        Z_EndCount : Off; 
+                        X1_EndCount : On;
+                        X0_EndCount : Off; 
+                        Y1_EndCount : On;
+                        Y0_EndCount : Off; 
+                        CounterAEndCount        : Off;
+                        DelayCounterEndCount    : Off; 
+                    } 
+                } 
+            } 
+        } 
+        OperationSet ( SYNC ) { 
+            OperationSetForResumeDiagnosis  : SYNC_STRETCHED;
+            Operation ( NOOPERATION ) { 
+                Tick { 
+                    Activate                        : Off;
+                    Precharge                       : Off;
+                    Refresh                         : Off;
+                    Select                          : On;
+                    OutputEnable                    : Off;
+                    RAS                             : Off;
+                    CAS                             : Off;
+                    WriteEnable                     : Off;
+                    User0                           : Off;
+                    User1                           : Off;
+                    User2                           : Off;
+                    User3                           : Off;
+                    User4                           : Off;
+                    User5                           : Off;
+                    User6                           : Off;
+                    User7                           : Off;
+                    User8                           : Off;
+                    User9                           : Off;
+                    User10                          : Off;
+                    User11                          : Off;
+                    User12                          : Off;
+                    User13                          : Off;
+                    User14                          : Off;
+                    User15                          : Off;
+                    User16                          : Off;
+                    User17                          : Off;
+                    User18                          : Off;
+                    User19                          : Off;
+                    User20                          : Off;
+                    User21                          : Off;
+                    User22                          : Off;
+                    User23                          : Off;
+                    Address                         : Row;
+                    Data                            : Z;
+                    AddressForce                    : Off;
+                    ColumnAddressCount              : Off;
+                    RowAddressCount                 : Off;
+                    SwitchAddressRegister           : Off;
+                    ConcurrentWriteRowAddress       : Off;
+                    ConcurrentWriteColumnAddress    : Off;
+                    ConcurrentWriteDataPolarity     : NoChange;
+                    ConcurrentWriteEnable           : Off;
+                    ATD                             : Off;
+                    ShadowReadAddress               : Off;
+                    ShadowReadEnable                : Off;
+                    ReadEnable                      : Off;
+                    EvenGroupWriteEnable            : Off;
+                    OddGroupWriteEnable             : Off;
+                    ConcurrentReadRowAddress        : Off;
+                    ConcurrentReadColumnAddress     : Off;
+                    ConcurrentReadEnable            : Off;
+                    InvertExpectData                : Off;
+                    InvertWriteData                 : Off;
+                    ConcurrentEvenGroupWriteEnable  : On;
+                    ConcurrentOddGroupWriteEnable   : On;
+                } 
+                Tick { 
+                    Activate                        : Off;
+                    Precharge                       : Off;
+                    Refresh                         : Off;
+                    Select                          : On;
+                    OutputEnable                    : Off;
+                    RAS                             : Off;
+                    CAS                             : Off;
+                    WriteEnable                     : Off;
+                    User0                           : Off;
+                    User1                           : Off;
+                    User2                           : Off;
+                    User3                           : Off;
+                    User4                           : Off;
+                    User5                           : Off;
+                    User6                           : Off;
+                    User7                           : Off;
+                    User8                           : Off;
+                    User9                           : Off;
+                    User10                          : Off;
+                    User11                          : Off;
+                    User12                          : Off;
+                    User13                          : Off;
+                    User14                          : Off;
+                    User15                          : Off;
+                    User16                          : Off;
+                    User17                          : Off;
+                    User18                          : Off;
+                    User19                          : Off;
+                    User20                          : Off;
+                    User21                          : Off;
+                    User22                          : Off;
+                    User23                          : Off;
+                    Address                         : Row;
+                    Data                            : Z;
+                    AddressForce                    : Off;
+                    ColumnAddressCount              : Off;
+                    RowAddressCount                 : Off;
+                    SwitchAddressRegister           : Off;
+                    ConcurrentWriteRowAddress       : Off;
+                    ConcurrentWriteColumnAddress    : Off;
+                    ConcurrentWriteDataPolarity     : NoChange;
+                    ConcurrentWriteEnable           : Off;
+                    ATD                             : Off;
+                    ShadowReadAddress               : Off;
+                    ShadowReadEnable                : Off;
+                    ReadEnable                      : Off;
+                    EvenGroupWriteEnable            : Off;
+                    OddGroupWriteEnable             : Off;
+                    ConcurrentReadRowAddress        : Off;
+                    ConcurrentReadColumnAddress     : Off;
+                    ConcurrentReadEnable            : Off;
+                    InvertExpectData                : Off;
+                    InvertWriteData                 : Off;
+                    ConcurrentEvenGroupWriteEnable  : On;
+                    ConcurrentOddGroupWriteEnable   : On;
+                } 
+                Tick { 
+                    Activate                        : Off;
+                    Precharge                       : Off;
+                    Refresh                         : Off;
+                    Select                          : On;
+                    OutputEnable                    : Off;
+                    RAS                             : Off;
+                    CAS                             : Off;
+                    WriteEnable                     : Off;
+                    User0                           : Off;
+                    User1                           : Off;
+                    User2                           : Off;
+                    User3                           : Off;
+                    User4                           : Off;
+                    User5                           : Off;
+                    User6                           : Off;
+                    User7                           : Off;
+                    User8                           : Off;
+                    User9                           : Off;
+                    User10                          : Off;
+                    User11                          : Off;
+                    User12                          : Off;
+                    User13                          : Off;
+                    User14                          : Off;
+                    User15                          : Off;
+                    User16                          : Off;
+                    User17                          : Off;
+                    User18                          : Off;
+                    User19                          : Off;
+                    User20                          : Off;
+                    User21                          : Off;
+                    User22                          : Off;
+                    User23                          : Off;
+                    Address                         : Row;
+                    Data                            : Z;
+                    AddressForce                    : Off;
+                    ColumnAddressCount              : Off;
+                    RowAddressCount                 : Off;
+                    SwitchAddressRegister           : Off;
+                    ConcurrentWriteRowAddress       : Off;
+                    ConcurrentWriteColumnAddress    : Off;
+                    ConcurrentWriteDataPolarity     : NoChange;
+                    ConcurrentWriteEnable           : Off;
+                    ATD                             : Off;
+                    ShadowReadAddress               : Off;
+                    ShadowReadEnable                : Off;
+                    ReadEnable                      : Off;
+                    EvenGroupWriteEnable            : Off;
+                    OddGroupWriteEnable             : Off;
+                    ConcurrentReadRowAddress        : Off;
+                    ConcurrentReadColumnAddress     : Off;
+                    ConcurrentReadEnable            : Off;
+                    InvertExpectData                : Off;
+                    InvertWriteData                 : Off;
+                    ConcurrentEvenGroupWriteEnable  : On;
+                    ConcurrentOddGroupWriteEnable   : On;
+                } 
+                Tick { 
+                    Activate                        : Off;
+                    Precharge                       : Off;
+                    Refresh                         : Off;
+                    Select                          : On;
+                    OutputEnable                    : Off;
+                    RAS                             : Off;
+                    CAS                             : Off;
+                    WriteEnable                     : Off;
+                    User0                           : Off;
+                    User1                           : Off;
+                    User2                           : Off;
+                    User3                           : Off;
+                    User4                           : Off;
+                    User5                           : Off;
+                    User6                           : Off;
+                    User7                           : Off;
+                    User8                           : Off;
+                    User9                           : Off;
+                    User10                          : Off;
+                    User11                          : Off;
+                    User12                          : Off;
+                    User13                          : Off;
+                    User14                          : Off;
+                    User15                          : Off;
+                    User16                          : Off;
+                    User17                          : Off;
+                    User18                          : Off;
+                    User19                          : Off;
+                    User20                          : Off;
+                    User21                          : Off;
+                    User22                          : Off;
+                    User23                          : Off;
+                    Address                         : Row;
+                    Data                            : Z;
+                    AddressForce                    : Off;
+                    ColumnAddressCount              : Off;
+                    RowAddressCount                 : Off;
+                    SwitchAddressRegister           : Off;
+                    ConcurrentWriteRowAddress       : Off;
+                    ConcurrentWriteColumnAddress    : Off;
+                    ConcurrentWriteDataPolarity     : NoChange;
+                    ConcurrentWriteEnable           : Off;
+                    ATD                             : Off;
+                    ShadowReadAddress               : Off;
+                    ShadowReadEnable                : Off;
+                    ReadEnable                      : Off;
+                    EvenGroupWriteEnable            : Off;
+                    OddGroupWriteEnable             : Off;
+                    ConcurrentReadRowAddress        : Off;
+                    ConcurrentReadColumnAddress     : Off;
+                    ConcurrentReadEnable            : Off;
+                    InvertExpectData                : Off;
+                    InvertWriteData                 : Off;
+                    ConcurrentEvenGroupWriteEnable  : On;
+                    ConcurrentOddGroupWriteEnable   : On;
+                } 
+            } 
+            Operation ( WRITE ) { 
+                Tick { 
+                    Activate                        : Off;
+                    Precharge                       : Off;
+                    Refresh                         : Off;
+                    Select                          : On;
+                    OutputEnable                    : Off;
+                    RAS                             : Off;
+                    CAS                             : Off;
+                    WriteEnable                     : On;
+                    User0                           : Off;
+                    User1                           : Off;
+                    User2                           : Off;
+                    User3                           : Off;
+                    User4                           : Off;
+                    User5                           : Off;
+                    User6                           : Off;
+                    User7                           : Off;
+                    User8                           : Off;
+                    User9                           : Off;
+                    User10                          : Off;
+                    User11                          : Off;
+                    User12                          : Off;
+                    User13                          : Off;
+                    User14                          : Off;
+                    User15                          : Off;
+                    User16                          : Off;
+                    User17                          : Off;
+                    User18                          : Off;
+                    User19                          : Off;
+                    User20                          : Off;
+                    User21                          : Off;
+                    User22                          : Off;
+                    User23                          : Off;
+                    Address                         : Row;
+                    Data                            : Z;
+                    AddressForce                    : Off;
+                    ColumnAddressCount              : Off;
+                    RowAddressCount                 : Off;
+                    SwitchAddressRegister           : Off;
+                    ConcurrentWriteRowAddress       : Off;
+                    ConcurrentWriteColumnAddress    : Off;
+                    ConcurrentWriteDataPolarity     : NoChange;
+                    ConcurrentWriteEnable           : Off;
+                    ATD                             : Off;
+                    ShadowReadAddress               : Off;
+                    ShadowReadEnable                : Off;
+                    ReadEnable                      : Off;
+                    EvenGroupWriteEnable            : Off;
+                    OddGroupWriteEnable             : Off;
+                    ConcurrentReadRowAddress        : Off;
+                    ConcurrentReadColumnAddress     : Off;
+                    ConcurrentReadEnable            : Off;
+                    InvertExpectData                : Off;
+                    InvertWriteData                 : Off;
+                    ConcurrentEvenGroupWriteEnable  : On;
+                    ConcurrentOddGroupWriteEnable   : On;
+                } 
+                Tick { 
+                    Activate                        : Off;
+                    Precharge                       : Off;
+                    Refresh                         : Off;
+                    Select                          : On;
+                    OutputEnable                    : Off;
+                    RAS                             : Off;
+                    CAS                             : Off;
+                    WriteEnable                     : On;
+                    User0                           : Off;
+                    User1                           : Off;
+                    User2                           : Off;
+                    User3                           : Off;
+                    User4                           : Off;
+                    User5                           : Off;
+                    User6                           : Off;
+                    User7                           : Off;
+                    User8                           : Off;
+                    User9                           : Off;
+                    User10                          : Off;
+                    User11                          : Off;
+                    User12                          : Off;
+                    User13                          : Off;
+                    User14                          : Off;
+                    User15                          : Off;
+                    User16                          : Off;
+                    User17                          : Off;
+                    User18                          : Off;
+                    User19                          : Off;
+                    User20                          : Off;
+                    User21                          : Off;
+                    User22                          : Off;
+                    User23                          : Off;
+                    Address                         : Row;
+                    Data                            : Z;
+                    AddressForce                    : Off;
+                    ColumnAddressCount              : Off;
+                    RowAddressCount                 : Off;
+                    SwitchAddressRegister           : Off;
+                    ConcurrentWriteRowAddress       : Off;
+                    ConcurrentWriteColumnAddress    : Off;
+                    ConcurrentWriteDataPolarity     : NoChange;
+                    ConcurrentWriteEnable           : Off;
+                    ATD                             : Off;
+                    ShadowReadAddress               : Off;
+                    ShadowReadEnable                : Off;
+                    ReadEnable                      : Off;
+                    EvenGroupWriteEnable            : Off;
+                    OddGroupWriteEnable             : Off;
+                    ConcurrentReadRowAddress        : Off;
+                    ConcurrentReadColumnAddress     : Off;
+                    ConcurrentReadEnable            : Off;
+                    InvertExpectData                : Off;
+                    InvertWriteData                 : Off;
+                    ConcurrentEvenGroupWriteEnable  : On;
+                    ConcurrentOddGroupWriteEnable   : On;
+                } 
+            } 
+            Operation ( READ ) { 
+                Tick { 
+                    Activate                        : Off;
+                    Precharge                       : Off;
+                    Refresh                         : Off;
+                    Select                          : On;
+                    OutputEnable                    : Off;
+                    RAS                             : Off;
+                    CAS                             : Off;
+                    WriteEnable                     : Off;
+                    User0                           : Off;
+                    User1                           : Off;
+                    User2                           : Off;
+                    User3                           : Off;
+                    User4                           : Off;
+                    User5                           : Off;
+                    User6                           : Off;
+                    User7                           : Off;
+                    User8                           : Off;
+                    User9                           : Off;
+                    User10                          : Off;
+                    User11                          : Off;
+                    User12                          : Off;
+                    User13                          : Off;
+                    User14                          : Off;
+                    User15                          : Off;
+                    User16                          : Off;
+                    User17                          : Off;
+                    User18                          : Off;
+                    User19                          : Off;
+                    User20                          : Off;
+                    User21                          : Off;
+                    User22                          : Off;
+                    User23                          : Off;
+                    Address                         : Row;
+                    Data                            : Z;
+                    AddressForce                    : Off;
+                    ColumnAddressCount              : Off;
+                    RowAddressCount                 : Off;
+                    SwitchAddressRegister           : Off;
+                    ConcurrentWriteRowAddress       : Off;
+                    ConcurrentWriteColumnAddress    : Off;
+                    ConcurrentWriteDataPolarity     : NoChange;
+                    ConcurrentWriteEnable           : Off;
+                    ATD                             : Off;
+                    ShadowReadAddress               : Off;
+                    ShadowReadEnable                : Off;
+                    ReadEnable                      : Off;
+                    EvenGroupWriteEnable            : Off;
+                    OddGroupWriteEnable             : Off;
+                    ConcurrentReadRowAddress        : Off;
+                    ConcurrentReadColumnAddress     : Off;
+                    ConcurrentReadEnable            : Off;
+                    InvertExpectData                : Off;
+                    InvertWriteData                 : Off;
+                    ConcurrentEvenGroupWriteEnable  : On;
+                    ConcurrentOddGroupWriteEnable   : On;
+                } 
+                Tick { 
+                    Activate                        : Off;
+                    Precharge                       : Off;
+                    Refresh                         : Off;
+                    Select                          : On;
+                    OutputEnable                    : Off;
+                    RAS                             : Off;
+                    CAS                             : Off;
+                    WriteEnable                     : Off;
+                    User0                           : Off;
+                    User1                           : Off;
+                    User2                           : Off;
+                    User3                           : Off;
+                    User4                           : Off;
+                    User5                           : Off;
+                    User6                           : Off;
+                    User7                           : Off;
+                    User8                           : Off;
+                    User9                           : Off;
+                    User10                          : Off;
+                    User11                          : Off;
+                    User12                          : Off;
+                    User13                          : Off;
+                    User14                          : Off;
+                    User15                          : Off;
+                    User16                          : Off;
+                    User17                          : Off;
+                    User18                          : Off;
+                    User19                          : Off;
+                    User20                          : Off;
+                    User21                          : Off;
+                    User22                          : Off;
+                    User23                          : Off;
+                    Address                         : Row;
+                    Data                            : Z;
+                    AddressForce                    : Off;
+                    ColumnAddressCount              : Off;
+                    RowAddressCount                 : Off;
+                    SwitchAddressRegister           : Off;
+                    ConcurrentWriteRowAddress       : Off;
+                    ConcurrentWriteColumnAddress    : Off;
+                    ConcurrentWriteDataPolarity     : NoChange;
+                    ConcurrentWriteEnable           : Off;
+                    ATD                             : Off;
+                    ShadowReadAddress               : Off;
+                    ShadowReadEnable                : Off;
+                    ReadEnable                      : Off;
+                    EvenGroupWriteEnable            : Off;
+                    OddGroupWriteEnable             : Off;
+                    ConcurrentReadRowAddress        : Off;
+                    ConcurrentReadColumnAddress     : Off;
+                    ConcurrentReadEnable            : Off;
+                    InvertExpectData                : Off;
+                    InvertWriteData                 : Off;
+                    ConcurrentEvenGroupWriteEnable  : On;
+                    ConcurrentOddGroupWriteEnable   : On;
+                    StrobeDataOut;                 
+                } 
+            } 
+            Operation ( READMODIFYWRITE ) { 
+                Tick { 
+                    Activate                        : Off;
+                    Precharge                       : Off;
+                    Refresh                         : Off;
+                    Select                          : On;
+                    OutputEnable                    : Off;
+                    RAS                             : Off;
+                    CAS                             : Off;
+                    WriteEnable                     : Off;
+                    User0                           : Off;
+                    User1                           : Off;
+                    User2                           : Off;
+                    User3                           : Off;
+                    User4                           : Off;
+                    User5                           : Off;
+                    User6                           : Off;
+                    User7                           : Off;
+                    User8                           : Off;
+                    User9                           : Off;
+                    User10                          : Off;
+                    User11                          : Off;
+                    User12                          : Off;
+                    User13                          : Off;
+                    User14                          : Off;
+                    User15                          : Off;
+                    User16                          : Off;
+                    User17                          : Off;
+                    User18                          : Off;
+                    User19                          : Off;
+                    User20                          : Off;
+                    User21                          : Off;
+                    User22                          : Off;
+                    User23                          : Off;
+                    Address                         : Row;
+                    Data                            : Z;
+                    AddressForce                    : Off;
+                    ColumnAddressCount              : Off;
+                    RowAddressCount                 : Off;
+                    SwitchAddressRegister           : Off;
+                    ConcurrentWriteRowAddress       : Off;
+                    ConcurrentWriteColumnAddress    : Off;
+                    ConcurrentWriteDataPolarity     : NoChange;
+                    ConcurrentWriteEnable           : Off;
+                    ATD                             : Off;
+                    ShadowReadAddress               : Off;
+                    ShadowReadEnable                : Off;
+                    ReadEnable                      : Off;
+                    EvenGroupWriteEnable            : Off;
+                    OddGroupWriteEnable             : Off;
+                    ConcurrentReadRowAddress        : Off;
+                    ConcurrentReadColumnAddress     : Off;
+                    ConcurrentReadEnable            : Off;
+                    InvertExpectData                : Off;
+                    InvertWriteData                 : Off;
+                    ConcurrentEvenGroupWriteEnable  : On;
+                    ConcurrentOddGroupWriteEnable   : On;
+                } 
+                Tick { 
+                    Activate                        : Off;
+                    Precharge                       : Off;
+                    Refresh                         : Off;
+                    Select                          : On;
+                    OutputEnable                    : Off;
+                    RAS                             : Off;
+                    CAS                             : Off;
+                    WriteEnable                     : On;
+                    User0                           : Off;
+                    User1                           : Off;
+                    User2                           : Off;
+                    User3                           : Off;
+                    User4                           : Off;
+                    User5                           : Off;
+                    User6                           : Off;
+                    User7                           : Off;
+                    User8                           : Off;
+                    User9                           : Off;
+                    User10                          : Off;
+                    User11                          : Off;
+                    User12                          : Off;
+                    User13                          : Off;
+                    User14                          : Off;
+                    User15                          : Off;
+                    User16                          : Off;
+                    User17                          : Off;
+                    User18                          : Off;
+                    User19                          : Off;
+                    User20                          : Off;
+                    User21                          : Off;
+                    User22                          : Off;
+                    User23                          : Off;
+                    Address                         : Row;
+                    Data                            : Z;
+                    AddressForce                    : Off;
+                    ColumnAddressCount              : Off;
+                    RowAddressCount                 : Off;
+                    SwitchAddressRegister           : Off;
+                    ConcurrentWriteRowAddress       : Off;
+                    ConcurrentWriteColumnAddress    : Off;
+                    ConcurrentWriteDataPolarity     : NoChange;
+                    ConcurrentWriteEnable           : Off;
+                    ATD                             : Off;
+                    ShadowReadAddress               : Off;
+                    ShadowReadEnable                : Off;
+                    ReadEnable                      : Off;
+                    EvenGroupWriteEnable            : Off;
+                    OddGroupWriteEnable             : Off;
+                    ConcurrentReadRowAddress        : Off;
+                    ConcurrentReadColumnAddress     : Off;
+                    ConcurrentReadEnable            : Off;
+                    InvertExpectData                : Off;
+                    InvertWriteData                 : Off;
+                    ConcurrentEvenGroupWriteEnable  : On;
+                    ConcurrentOddGroupWriteEnable   : On;
+                    StrobeDataOut;                 
+                } 
+            } 
+            Operation ( WRITEREAD ) { 
+                Tick { 
+                    Activate                        : Off;
+                    Precharge                       : Off;
+                    Refresh                         : Off;
+                    Select                          : On;
+                    OutputEnable                    : Off;
+                    RAS                             : Off;
+                    CAS                             : Off;
+                    WriteEnable                     : On;
+                    User0                           : Off;
+                    User1                           : Off;
+                    User2                           : Off;
+                    User3                           : Off;
+                    User4                           : Off;
+                    User5                           : Off;
+                    User6                           : Off;
+                    User7                           : Off;
+                    User8                           : Off;
+                    User9                           : Off;
+                    User10                          : Off;
+                    User11                          : Off;
+                    User12                          : Off;
+                    User13                          : Off;
+                    User14                          : Off;
+                    User15                          : Off;
+                    User16                          : Off;
+                    User17                          : Off;
+                    User18                          : Off;
+                    User19                          : Off;
+                    User20                          : Off;
+                    User21                          : Off;
+                    User22                          : Off;
+                    User23                          : Off;
+                    Address                         : Row;
+                    Data                            : Z;
+                    AddressForce                    : Off;
+                    ColumnAddressCount              : Off;
+                    RowAddressCount                 : Off;
+                    SwitchAddressRegister           : Off;
+                    ConcurrentWriteRowAddress       : Off;
+                    ConcurrentWriteColumnAddress    : Off;
+                    ConcurrentWriteDataPolarity     : NoChange;
+                    ConcurrentWriteEnable           : Off;
+                    ATD                             : Off;
+                    ShadowReadAddress               : Off;
+                    ShadowReadEnable                : Off;
+                    ReadEnable                      : Off;
+                    EvenGroupWriteEnable            : Off;
+                    OddGroupWriteEnable             : Off;
+                    ConcurrentReadRowAddress        : Off;
+                    ConcurrentReadColumnAddress     : Off;
+                    ConcurrentReadEnable            : Off;
+                    InvertExpectData                : Off;
+                    InvertWriteData                 : Off;
+                    ConcurrentEvenGroupWriteEnable  : On;
+                    ConcurrentOddGroupWriteEnable   : On;
+                } 
+                Tick { 
+                    Activate                        : Off;
+                    Precharge                       : Off;
+                    Refresh                         : Off;
+                    Select                          : On;
+                    OutputEnable                    : Off;
+                    RAS                             : Off;
+                    CAS                             : Off;
+                    WriteEnable                     : Off;
+                    User0                           : Off;
+                    User1                           : Off;
+                    User2                           : Off;
+                    User3                           : Off;
+                    User4                           : Off;
+                    User5                           : Off;
+                    User6                           : Off;
+                    User7                           : Off;
+                    User8                           : Off;
+                    User9                           : Off;
+                    User10                          : Off;
+                    User11                          : Off;
+                    User12                          : Off;
+                    User13                          : Off;
+                    User14                          : Off;
+                    User15                          : Off;
+                    User16                          : Off;
+                    User17                          : Off;
+                    User18                          : Off;
+                    User19                          : Off;
+                    User20                          : Off;
+                    User21                          : Off;
+                    User22                          : Off;
+                    User23                          : Off;
+                    Address                         : Row;
+                    Data                            : Z;
+                    AddressForce                    : Off;
+                    ColumnAddressCount              : Off;
+                    RowAddressCount                 : Off;
+                    SwitchAddressRegister           : Off;
+                    ConcurrentWriteRowAddress       : Off;
+                    ConcurrentWriteColumnAddress    : Off;
+                    ConcurrentWriteDataPolarity     : NoChange;
+                    ConcurrentWriteEnable           : Off;
+                    ATD                             : Off;
+                    ShadowReadAddress               : Off;
+                    ShadowReadEnable                : Off;
+                    ReadEnable                      : Off;
+                    EvenGroupWriteEnable            : Off;
+                    OddGroupWriteEnable             : Off;
+                    ConcurrentReadRowAddress        : Off;
+                    ConcurrentReadColumnAddress     : Off;
+                    ConcurrentReadEnable            : Off;
+                    InvertExpectData                : Off;
+                    InvertWriteData                 : Off;
+                    ConcurrentEvenGroupWriteEnable  : On;
+                    ConcurrentOddGroupWriteEnable   : On;
+                } 
+            } 
+        } 
+    } 
+} 

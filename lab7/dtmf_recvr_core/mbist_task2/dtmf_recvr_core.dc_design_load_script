@@ -1,0 +1,59 @@
+set_db hdl_language v2001
+set_db hdl_use_current_dir_before_hdl_search_path true
+
+# From file ../mbist_task2/tsdb_outdir/dft_inserted_designs/dtmf_recvr_core_rtl1.dft_inserted_design/dtmf_recvr_core.design_source_dictionary
+
+read_hdl -language v2001 -library work { \
+      "../rtl/timescale.h" \
+      "../rtl/accum_stat.v" \
+      "../rtl/alu_32.v" \
+      "../rtl/arb.v" \
+      "../rtl/conv_subreg.v" \
+      "../rtl/data_bus_mach.v" \
+      "../rtl/data_sample_mux.v" \
+      "../rtl/decode_i.v" \
+      "../rtl/digit_reg.v" \
+      "../rtl/dma.v" \
+      "../mbist_task2/tsdb_outdir/dft_inserted_designs/dtmf_recvr_core_rtl1.dft_inserted_design/modified_rtl_files/dtmf_recvr_core.v" \
+      "../rtl/execute_i.v" \
+      "../rtl/m16x16.v" \
+      "../rtl/mult_32_dp.v" \
+      "../rtl/port_bus_mach.v" \
+      "../rtl/power_manager.v" \
+      "../rtl/prog_bus_mach.v" \
+      "../mbist_task2/tsdb_outdir/dft_inserted_designs/dtmf_recvr_core_rtl1.dft_inserted_design/modified_rtl_files/ram_128x16_test.v" \
+      "../mbist_task2/tsdb_outdir/dft_inserted_designs/dtmf_recvr_core_rtl1.dft_inserted_design/modified_rtl_files/ram_256x16_test.v" \
+      "../rtl/results_conv.v" \
+      "../rtl/spi.v" \
+      "../rtl/tdsp_core_glue.v" \
+      "../rtl/tdsp_core_mach.v" \
+      "../rtl/tdsp_core.v" \
+      "../rtl/tdsp_data_mux.v" \
+      "../rtl/tdsp_ds_cs.v" \
+      "../rtl/test_control.v" \
+      "../rtl/ulaw_lin_conv.v" \
+   } 
+
+read_hdl -language v2001 -library work { \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_1.v" \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_2.v" \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_3.v" \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_sib_4.v" \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_ijtag.instrument/dtmf_recvr_core_rtl1_tessent_tdr_sri_ctrl.v" \
+   } 
+
+read_hdl -language v2001 -library work { \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_bap.v" \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c1_controller.v" \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1.v" \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c2_controller.v" \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1.v" \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller.v" \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1.v" \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1_MISR_STRAP.v" \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c4_controller.v" \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m1.v" \
+      "../mbist_task2/tsdb_outdir/instruments/dtmf_recvr_core_rtl1_mbist.instrument/dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m2.v" \
+   } 
+
+ 

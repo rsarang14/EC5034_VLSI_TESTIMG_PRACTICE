@@ -1,0 +1,56 @@
+//-------------------------------------------------
+//  File created by: Tessent Shell
+//          Version: 2022.4
+//       Created on: Tue Nov 17 18:38:37 IST 2026
+//-------------------------------------------------
+
+
+Core(dtmf_recvr_core) {
+  DesignInfo {
+    design_id : rtl1;
+    design_level : physical_block;
+    ChildBlockModules {
+    }
+    Clocks {
+      Clock(refclk) {
+        domain_label : refclk;
+        type : async_source;
+        base_period : 8.00ns;
+        period : 8.0;
+      }
+      Clock(TEST_CONTROL_INST/m_clk) {
+        domain_label : m_clk;
+        type : generated;
+        period : 16.000;
+        pseudo_port_name : "";
+        reference : refclk;
+        parent_source : refclk;
+        inverted_relative_to_parent_source : 0;
+        final_source : refclk;
+        freq_divider : 2;
+      }
+      Clock(TEST_CONTROL_INST/m_ram_clk) {
+        domain_label : m_ram_clk;
+        type : generated;
+        period : 16.000;
+        pseudo_port_name : "";
+        reference : refclk;
+        parent_source : refclk;
+        inverted_relative_to_parent_source : 0;
+        final_source : refclk;
+        freq_divider : 2;
+      }
+      Clock(TEST_CONTROL_INST/m_dsram_clk) {
+        domain_label : m_dsram_clk;
+        type : generated;
+        period : 16.000;
+        pseudo_port_name : "";
+        reference : refclk;
+        parent_source : refclk;
+        inverted_relative_to_parent_source : 0;
+        final_source : refclk;
+        freq_divider : 2;
+      }
+    }
+  }
+}

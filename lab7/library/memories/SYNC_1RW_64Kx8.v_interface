@@ -1,0 +1,30 @@
+// SYNC 1RW Memory
+// Configured as 8Kx16 for hierarchical test case 
+// Mentor Graphics
+// =====================================
+`timescale 1 ns/10 ps
+`celldefine
+module SYNC_1RW_64Kx8 (
+   Q,
+   CLK,
+   CEN,
+   WEN,
+   A,
+   D,
+   OEN
+);
+   parameter		   BITS = 8;
+   parameter		   word_depth = 65536;
+   //parameter		   addr_width = 16;
+   parameter		   wordz = {BITS{1'bz}};
+   parameter		   wordx = {BITS{1'bx}};
+
+   output [7:0] Q;
+   input CLK;
+   input CEN;
+   input WEN;
+   input [15:0] A;
+   input [7:0] D;
+   input OEN;
+endmodule
+`endcelldefine

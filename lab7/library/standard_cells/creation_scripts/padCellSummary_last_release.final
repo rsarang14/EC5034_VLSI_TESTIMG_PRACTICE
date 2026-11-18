@@ -1,0 +1,9 @@
+ Cell Name        Direction    Pad Cell Status
+ ------------------------------------------------
+
+    iopad            Inout       Certified 
+     ipad            Input       Certified 
+ ipad_buf            Input       Certified 
+     opad           Output       Certified 
+
+ ------------------------------------------------

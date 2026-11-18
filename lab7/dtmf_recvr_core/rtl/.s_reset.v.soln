@@ -1,0 +1,15 @@
+module s_reset (reset_in, test_mode,  reset_out, clock);
+
+input reset_in, clock, test_mode;
+
+output reset_out;
+
+reg reset_out_int;
+
+assign reset_out = test_mode ? reset_in : reset_out_int;
+
+always @(posedge clock) begin
+  reset_out_int <= reset_in;
+end
+
+endmodule

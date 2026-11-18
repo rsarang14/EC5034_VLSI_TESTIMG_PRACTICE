@@ -1,0 +1,20 @@
+/home/dftbld/nightly/latest_tot/installDir-adt/inhouse/bin/tessent -shell -dofile verify_liberty_step_1.do -log verify_liberty_step_1.log -replace
+//  Tessent Shell  2017.1-snapshot_2017.01.16_04.01    Mon Jan 16 04:09:18 GMT 2017
+//                Copyright 2011-2017 Mentor Graphics Corporation
+//
+//                           All Rights Reserved.
+//
+//    THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION WHICH
+//  IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS AND IS
+//                        SUBJECT TO LICENSE TERMS.
+//
+//  Mentor Graphics software executing under x86-64 Linux on Mon Jan 16 16:57:56 PST 2017.
+//  64 bit version
+//  Host: stssled03 (16 x 2.7 GHz, 48258 MB RAM, 119999 MB Swap)
+//
+//  command: read_liberty ../liberty/adk.lib
+reading ../liberty/adk.lib...
+//  Warning: Cell opad_and has following errors:
+//               - toPad function could not be determined
+//  command: write_cell_library verify_liberty_step_1.atpglib -include_liberty_models -rep
+//  command: exit 

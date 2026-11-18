@@ -1,0 +1,148 @@
+.................
+.................
+STEP 0 of creating a new ADK/<new_dir> set of files -- Creating directory & copying some files.
+.................
+.................
+mkdir 4.<next_number>_work_in_progress
+cp -r 4.<current_number>_work_in_progress/creation_scripts  4.<next_number>_work_in_progress
+cp -r 4.<current_number>/verilog  4.<next_number>_work_in_progress/verilog
+
+Edit 4.<next_number>_work_in_progress/verilog/verilog.v
+to create any new modules.
+
+cd 4.<next_number>_work_in_progress/creation_scripts  for all subsequent steps until the NEXT_TO_LAST_STEP
+
+.................
+.................
+STEP 1 of creating a new ADK/<new_dir> set of files
+.................
+.................
+run_libcomp
+
+This creates a local libcomp.atpglib file from the ../verilog/adk.v  file, 
+   as well as important output files to examine.
+Examine the screen output or end of file verify.results to ensure all models have 100% coverage, no mismatches.
+Currently, that looks like the lines between double quotes below:
+"
+***** Fault (pessimistic) Coverage Summary by Decile ***** 
+ See file fault_coverage_0_to_10_percent_models for a list
+ of models in 0 to 10% decile, etc. for each nonNULL decile.
+   100%      --  143 models.
+---------------------------------------------------------
+---------------------------------------------------------
+Verification Summary:
+   143 Total Models
+ALL PASSED for all patterns.
+"
+
+.................
+.................
+STEP 2 of creating a new ADK/<new_dir> set of files
+.................
+.................
+Before making this run, add any tessent attributes (if needed) for new cells to cell.map in this directory.
+Send mail to don_ross@mentor.com  if you are in doubt.
+
+run_fs_tessent
+diff fs_tessent_last_release.log  fs_tessent.log
+
+.................
+.................
+OPTIONAL STEP 3 of creating a new ADK/<new_dir> set of files.  Verify pad.lib, scang.lib, cell.lib
+.................
+.................
+Some LV applications consume pad.lib, scang.lib, cell.lib created from tessent cell library just built.
+However, more and more are using TCL or library API, so this is becoming an optional step.
+
+CAVEAT: JF's active Low enable clock gaters (cgand0 & cgor0) are not supported by scang.
+Therefore, run_all is no longer valid, and has been moved to run_all.obsolete
+
+cgand0 and cgor0 must be commented out of the adk.tcelllib for etlibgen to succeed.
+
+Step3 A.
+Manually comment out model cgand0 as well as model cgor0 in local adk.tcelllib using /* */
+Note that ../adk.tcelllib can be moved to tessent/adk.tcelllib if all steps OK.
+
+Step3 B.
+run_etlibcertify
+
+At the bottom of etlibcertify.log, that file will name two outDir/ logs that should be examined or diffed against :
+scanCellSummary_last_release.final
+padCellSummary_last_release.final
+
+If OK. (no or expected changes)
+ mv the new .final files to local files of above name (clean destroys them otherwise).
+
+.................
+.................
+STEP 4 of creating a new ADK/<new_dir> set of files.  Verifying the Liberty.
+.................
+.................
+First, make corresponding changes to the liberty/adk.lib file.  There is no automation to do this.
+
+Second, verify that DC accepts it using (in the same directory as the new ADK Liberty file):
+run_dc_shell
+
+See run_dc_shell for comments on how to check that everything is OK.
+
+CAVEAT: This reuses fastscan.do.cat and overwrites sim.log from run_libcomp, so make sure
+        you are done with run_libcomp results, and have examined sim.log before doing this step.
+        run_libcomp is the first step of run_all.
+
+Third, verify Liberty against the Verilog by :
+A. run/source verify_liberty_step_1  to create only_liberty.atpglib
+B. edit fastscan.do.cat from earlier run_libcomp run and change :
+   write netlist design.v -verilog -rep -positional   to :
+   write netlist design.v -verilog -rep
+C. run/source verify_liberty_step_2  to verify Liberty against Verilog
+   Check bottom of sim.log to ensure no simulation mismatches.
+   Note that any Liberty with statetables (clock gaters and synchronizer_cells) will have 0% coverage,
+     and that verification is meaningless for those, because ATPG produced only X (dont compare) for them.
+
+Fourth, if everything OK :
+mv adk.lib ../liberty/adk.lib  in new directory.
+
+Hopefully, there will be another README created by Jack Zhamkochyan and others on how to create the other files.
+mv adk.db ../synopsys.adk.db
+  only if those other README files do not exist.  We have never used the .db from my run_dc_shell so far.
+
+.................
+.................
+STEP 5 of creating a new ADK/<new_dir> set of files.  To help person doing next release.
+.................
+.................
+run clean in this directory to cleanup the intermediate files created.
+mv fs_tessent.log fs_tessent_last_release.log  // So next person has something to compare to.
+
+
+.................
+.................
+STEP 6 of creating a new ADK/<new_dir> set of files.  Edit & move adk.tcelllib to final location.
+.................
+.................
+cd ..   
+   (so now just above creation_scripts/ directory) -- there you will see adk.tcelllib
+
+Edit adk.tcelllib and very near the top, change "dft_cell_selection ( default )" to "dft_cell_selection ( adk_typ )".
+  Note that this adk.tcelllib was created equal to one in creation_scripts/ but was not edited to do etlibcertify run, so safer to use it.
+
+Then move that file adk.tcelllib to tessent/adk.tcelllib in new directory :
+mv adk.tcelllib tessent/adk.tcelllib
+
+
+.................
+.................
+STEP 7 of creating a new ADK/<new_dir> set of files.
+.................
+.................
+cp -r 4.<current_number>/synthesis_helpers 4.<new_number>_work_in_progress
+
+
+If it does not already exist :
+mkdir 4.<new_number>_work_in_progress/synopsys
+
+cp 4.<current_number>/synopsys/*.setup 4.<new_number>_work_in_progress/synopsys
+Edit the 2 .setup files and change 4.<current_number> to 4.<new_number> in those 2 files.
+
+
+Notify Jack Zhamkochyan that another rev is needed, or follow the other README files to complete the release.

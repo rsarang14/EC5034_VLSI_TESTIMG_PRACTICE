@@ -1,0 +1,141 @@
+{
+ "filetype": "conformal-table",
+ "data": [
+  {
+   "Object": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_ADD_Y1_CMD_REG1_reg",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_ADD_X1_CMD_REG1_reg",
+   "LEC representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_ADD_X1_CMD_REG1_reg",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_LOOP_CMD_REG0_reg",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_ADD_X1_CMD_REG1_reg",
+   "LEC representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_ADD_X1_CMD_REG1_reg",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/RAM_128x16_TEST_INST/dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_LOOP_CMD_REG1_reg",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/RAM_128x16_TEST_INST_dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_ADD_Y1_CMD_REG0_reg",
+   "LEC representative": "/RAM_128x16_TEST_INST/dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_ADD_Y1_CMD_REG0_reg",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_LOOP_CMD_REG1_reg",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_ADD_Y1_CMD_REG0_reg",
+   "LEC representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_ADD_Y1_CMD_REG0_reg",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/TDSP_CORE_INST/DATA_BUS_MACH_INST/bus_request_reg",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/TDSP_CORE_INST_DATA_BUS_MACH_INST_as_reg",
+   "LEC representative": "/TDSP_CORE_INST/DATA_BUS_MACH_INST/as_reg",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/TDSP_CORE_INST/DECODE_INST/read_port_reg",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/TDSP_CORE_INST_DECODE_INST/go_port_reg",
+   "LEC representative": "/TDSP_CORE_INST/DECODE_INST/go_port_reg",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_INH_LAST_ADDR_CNT_REG0_reg",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_BRANCH_POINTER_REG0_reg",
+   "LEC representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_BRANCH_POINTER_REG0_reg",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_NEXT_CONDITIONS_REG0_reg",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_BRANCH_POINTER_REG0_reg",
+   "LEC representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_BRANCH_POINTER_REG0_reg",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_NEXT_CONDITIONS_REG1_reg",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_BRANCH_POINTER_REG0_reg",
+   "LEC representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_BRANCH_POINTER_REG0_reg",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_NEXT_CONDITIONS_REG3_reg",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_BRANCH_POINTER_REG0_reg",
+   "LEC representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_BRANCH_POINTER_REG0_reg",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_OP_SELECT_CMD_REG0_reg",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_BRANCH_POINTER_REG1_reg",
+   "LEC representative": "/dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_BRANCH_POINTER_REG1_reg",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  }
+ ],
+ "cols": [
+  {
+   "key": "Object"
+  },
+  {
+   "key": "Type"
+  },
+  {
+   "key": "Design"
+  },
+  {
+   "key": "User Setup representative"
+  },
+  {
+   "key": "LEC representative"
+  },
+  {
+   "key": "User Setup phase"
+  },
+  {
+   "key": "LEC phase"
+  }
+ ],
+ "sort": [
+  "-highlite"
+ ]
+}

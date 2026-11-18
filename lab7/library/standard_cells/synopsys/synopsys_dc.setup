@@ -1,0 +1,39 @@
+set search_path "../prerequisites/techlib_adk.tnt/4.5/synopsys ../../prerequisites/techlib_adk.tnt/4.5/synopsys ../../../prerequisites/techlib_adk.tnt/4.5/synopsys ../../../../prerequisites/techlib_adk.tnt/4.5/synopsys $search_path"
+set target_library "adk.db"
+set link_library "* adk.db"
+set_dont_use adk_typ/clock*
+set_dont_use adk_typ/*sff*
+
+# UID-341 Unresolved references.
+suppress_message UID-341
+
+# The following to make 'stscache' happy
+namespace eval substitute_command_procs {
+  proc _get_object_name_proc { object } { return $object }
+  proc _get_object_name_proc { p args } { return $p }
+}
+foreach {command_name substitute_name} {
+    foreach_in_collection foreach
+    index_collection lindex
+    sizeof_collection llength
+    append_to_collection lappend
+    get_clocks ::substitute_command_procs::_get_clocks_proc
+    get_object_name ::substitute_command_procs::_get_object_name_proc
+  } {
+  if { [info commands $command_name] eq "" } {
+    interp alias {} $command_name {} $substitute_name
+  }
+}
+
+# Setting 'hdlin_enable_upf_compatible_naming', when possible"
+# First, fake app var 'sh_product_version when 'stscache' runs
+if { ![info exists sh_product_version] } { set sh_product_version "V-0-01" }
+# Second, older versions of 'dc_shell' don't support 'get_app_var' - use 'set' instead (2007.03, for example)
+set VL [split [[expr {[info commands get_app_var] eq "" ? "set" : "get_app_var"}] sh_product_version] {.-}]
+
+# Now, set 'hdlin_enable_upf_compatible_naming' when running in 'dc_shell' and version used is > 2011.09
+if { [lindex $VL 1] > 2011 || [lindex $VL 1] == 2011 && [string trimleft [lindex $VL 2] 0] > 9 } {
+  puts "SETUP: hdlin_enable_upf_compatible_naming set to 'true'"
+  set_app_var hdlin_enable_upf_compatible_naming true
+}
+

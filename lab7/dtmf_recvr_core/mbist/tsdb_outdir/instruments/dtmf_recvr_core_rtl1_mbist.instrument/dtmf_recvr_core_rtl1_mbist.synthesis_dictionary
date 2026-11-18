@@ -1,0 +1,98 @@
+#--------------------------------------------------------------------------
+#
+#  Unpublished work. Copyright 2022 Siemens
+#
+#  This material contains trade secrets or otherwise confidential 
+#  information owned by Siemens Industry Software Inc. or its affiliates 
+#  (collectively, SISW), or its licensors. Access to and use of this 
+#  information is strictly limited as set forth in the Customer's 
+#  applicable agreements with SISW.
+#
+#--------------------------------------------------------------------------
+#  File created by: Tessent Shell
+#          Version: 2022.4
+#       Created on: Sat Oct 24 02:51:36 IST 2026
+#--------------------------------------------------------------------------
+
+set synthesis_dictionary {
+  designs_dictionary {
+    dtmf_recvr_core_rtl1_tessent_mbist_bap {
+      output_files {
+        dtmf_recvr_core_rtl1_tessent_mbist_bap.vg {
+          module_name_list {
+            dtmf_recvr_core_rtl1_tessent_mbist_bap dtmf_recvr_core_rtl1_tessent_mbist_bap_tdr
+            dtmf_recvr_core_rtl1_tessent_mbist_bap_sib* dtmf_recvr_core_rtl1_tessent_mbist_bap_ctl_sib*
+          }
+        }
+      }
+      size_only_prefix_list tessent_persistent_cell_
+    }
+    dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_assembly {
+      dont_touch_list {}
+      sdc {
+        file_name dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_assembly.sdc
+        proc_list {tessent_set_default_variables tessent_create_functional_clocks tessent_constrain_dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_assembly_non_modal}
+      }
+      size_only_prefix_list tessent_persistent_cell_
+      output_files {
+        dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1.vg {
+          module_name_list {
+            dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1 dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1_STATUS
+          }
+        }
+        dtmf_recvr_core_rtl1_tessent_mbist_c1_controller.vg {
+          module_name_list {dtmf_recvr_core_rtl1_tessent_mbist_c1_controller dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_ctl_comp dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_pointer_cntrl dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_add_format dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_add_gen dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_fsm dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_signal_gen dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_data_gen}
+        }
+      }
+    }
+    dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1 {
+      output_files {
+        dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1.vg {
+          module_name_list {
+            dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1 dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1_STATUS
+          }
+        }
+      }
+      size_only_prefix_list tessent_persistent_cell_
+    }
+    dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_assembly {
+      dont_touch_list dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1
+      sdc {
+        file_name dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_assembly.sdc
+        proc_list {tessent_set_default_variables tessent_create_functional_clocks tessent_constrain_dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_assembly_non_modal}
+      }
+      size_only_prefix_list tessent_persistent_cell_
+      output_files {
+        dtmf_recvr_core_rtl1_tessent_mbist_c2_controller.vg {
+          module_name_list {dtmf_recvr_core_rtl1_tessent_mbist_c2_controller dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_ctl_comp dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_pointer_cntrl dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_add_format dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_add_gen dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_fsm dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_signal_gen dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_repeat_loop_cntrl dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_data_gen}
+        }
+      }
+    }
+    dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_assembly {
+      dont_touch_list dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1_MISR_STRAP
+      sdc {
+        file_name dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_assembly.sdc
+        proc_list {tessent_set_default_variables tessent_create_functional_clocks tessent_constrain_dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_assembly_non_modal}
+      }
+      size_only_prefix_list tessent_persistent_cell_
+      output_files {
+        dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1.vg {
+          module_name_list {
+            dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1 dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1_MISR
+          }
+        }
+        dtmf_recvr_core_rtl1_tessent_mbist_c3_controller.vg {
+          module_name_list {dtmf_recvr_core_rtl1_tessent_mbist_c3_controller dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_pointer_cntrl dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_add_format dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_add_gen dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_fsm dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_signal_gen dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_repeat_loop_cntrl}
+        }
+      }
+    }
+  }
+  design_source_dictionary {
+    read1 {
+      format verilog_2001
+      files {dtmf_recvr_core_rtl1_tessent_mbist_bap.v dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_assembly.v dtmf_recvr_core_rtl1_tessent_mbist_c1_controller.v dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1.v dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_assembly.v dtmf_recvr_core_rtl1_tessent_mbist_c2_controller.v dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1.v dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_assembly.v dtmf_recvr_core_rtl1_tessent_mbist_c3_controller.v dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1.v dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1_MISR_STRAP.v}
+      work_library work
+    }
+  }
+  file_to_concatenate_list dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1_MISR_STRAP.v
+}

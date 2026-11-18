@@ -1,0 +1,221 @@
+puts "" 
+puts "===========" 
+puts " Important " 
+puts "===========" 
+puts "The dft_summary_dictionary file will be retired in a future release." 
+puts "A new tool command will be implemented to generate the same information." 
+puts "" 
+
+set dft_summary {
+  dtmf_recvr_core {
+    mentor::memory_bist::DftSpecification {
+      SummaryInfo {
+        version 1
+        current_design dtmf_recvr_core
+        DesignInstance {
+          - {
+            DesignId {
+              rtl1 {
+                Controller {
+                  RAM_128x16_TEST_INST/dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst {
+                    bist_clock_period_ns 16.0
+                    bist_clock_connection TEST_CONTROL_INST/m_ram_clk
+                    reference_clock_connection refclk
+                    reference_clock_period_ns 8.0
+                    module_name dtmf_recvr_core_rtl1_tessent_mbist_c1_controller
+                    design_instance RAM_128x16_TEST_INST/dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst
+                    bap_module_name dtmf_recvr_core_rtl1_tessent_mbist_bap
+                    bap_design_instance dtmf_recvr_core_rtl1_tessent_mbist_bap_inst
+                    bist_port {dtmf_recvr_core_rtl1_tessent_mbist_bap_inst/bistEn[0]}
+                    Step {
+                      0 {
+                        StepInfo {
+                          power_mw 75.00
+                          run_time_ns 180640.0
+                          test_cycles 11290
+                          comparator_location per_interface
+                        }
+                        MemoryInstance {
+                          RAM_128x16_TEST_INST/RAM_128x16_INST {
+                            power_mw 75.00
+                            interface_id m1
+                            template /Core(ram_256x16A)/Memory
+                            type sram
+                            object_id instance:0
+                            MemoryInterfaceInfo {
+                              design_instance RAM_128x16_TEST_INST/RAM_128x16_INST_interface_inst
+                              module_name dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1
+                            }
+                            logical_ports 1RW
+                            test_ports 1
+                          }
+                        }
+                      }
+                    }
+                    power_mw 75.00
+                    run_time_ns 180640.0
+                    test_cycles 11290
+                    soft_operation_count 0
+                    flop_count 119
+                    soft_instruction_count 0
+                    soft_operation_length 0
+                    soft_operation_max_strobe_data_out_pipelines 0
+                    soft_operation_signals {}
+                  }
+                  RAM_256x16_TEST_INST_1/dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst {
+                    bist_clock_period_ns 16.0
+                    bist_clock_connection TEST_CONTROL_INST/m_dsram_clk
+                    reference_clock_connection refclk
+                    reference_clock_period_ns 8.0
+                    module_name dtmf_recvr_core_rtl1_tessent_mbist_c2_controller
+                    design_instance RAM_256x16_TEST_INST_1/dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst
+                    bap_module_name dtmf_recvr_core_rtl1_tessent_mbist_bap
+                    bap_design_instance dtmf_recvr_core_rtl1_tessent_mbist_bap_inst
+                    bist_port {dtmf_recvr_core_rtl1_tessent_mbist_bap_inst/bistEn[1]}
+                    Step {
+                      0 {
+                        StepInfo {
+                          power_mw 75.00
+                          run_time_ns 180640.0
+                          test_cycles 11290
+                          comparator_location per_interface
+                        }
+                        MemoryInstance {
+                          RAM_256x16_TEST_INST_1/RAM_256x16_INST {
+                            power_mw 75.00
+                            interface_id m1
+                            template /Core(ram_256x16A)/Memory
+                            type sram
+                            object_id instance:1
+                            MemoryInterfaceInfo {
+                              design_instance RAM_256x16_TEST_INST_1/RAM_256x16_INST_interface_inst
+                              module_name dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1
+                            }
+                            logical_ports 1RW
+                            test_ports 1
+                          }
+                        }
+                      }
+                    }
+                    power_mw 75.00
+                    run_time_ns 180640.0
+                    test_cycles 11290
+                    soft_operation_count 0
+                    flop_count 119
+                    soft_instruction_count 0
+                    soft_operation_length 0
+                    soft_operation_max_strobe_data_out_pipelines 0
+                    soft_operation_signals {}
+                  }
+                  dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst {
+                    bist_clock_period_ns 16.0
+                    bist_clock_connection TEST_CONTROL_INST/m_clk
+                    reference_clock_connection refclk
+                    reference_clock_period_ns 8.0
+                    module_name dtmf_recvr_core_rtl1_tessent_mbist_c3_controller
+                    design_instance dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_inst
+                    bap_module_name dtmf_recvr_core_rtl1_tessent_mbist_bap
+                    bap_design_instance dtmf_recvr_core_rtl1_tessent_mbist_bap_inst
+                    bist_port {dtmf_recvr_core_rtl1_tessent_mbist_bap_inst/bistEn[2]}
+                    Step {
+                      0 {
+                        StepInfo {
+                          power_mw 75.00
+                          run_time_ns 32864.0
+                          test_cycles 2054
+                          comparator_location per_interface
+                        }
+                        MemoryInstance {
+                          ROM_512x16_0_INST {
+                            power_mw 75.00
+                            interface_id m1
+                            template /Core(rom_512x16A)/Memory
+                            type rom
+                            object_id instance:4
+                            MemoryInterfaceInfo {
+                              design_instance ROM_512x16_0_INST_interface_inst
+                              module_name dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1
+                            }
+                            logical_ports 1R
+                            test_ports 1
+                          }
+                        }
+                      }
+                    }
+                    power_mw 75.00
+                    run_time_ns 32864.0
+                    test_cycles 2054
+                    soft_operation_count 0
+                    flop_count 60
+                    soft_instruction_count 0
+                    soft_operation_length 0
+                    soft_operation_max_strobe_data_out_pipelines 0
+                    soft_operation_signals {}
+                  }
+                  dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst {
+                    bist_clock_period_ns 16.0
+                    bist_clock_connection TEST_CONTROL_INST/m_dsram_clk
+                    reference_clock_connection refclk
+                    reference_clock_period_ns 8.0
+                    module_name dtmf_recvr_core_rtl1_tessent_mbist_c4_controller
+                    design_instance dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst
+                    bap_module_name dtmf_recvr_core_rtl1_tessent_mbist_bap
+                    bap_design_instance dtmf_recvr_core_rtl1_tessent_mbist_bap_inst
+                    bist_port {dtmf_recvr_core_rtl1_tessent_mbist_bap_inst/bistEn[3]}
+                    Step {
+                      0 {
+                        StepInfo {
+                          power_mw 150.00
+                          run_time_ns 180640.0
+                          test_cycles 11290
+                          comparator_location per_interface
+                        }
+                        MemoryInstance {
+                          RAM_256x16_TEST_INST_2/RAM_256x16_INST {
+                            power_mw 75.00
+                            interface_id m1
+                            template /Core(ram_256x16A)/Memory
+                            type sram
+                            object_id instance:2
+                            MemoryInterfaceInfo {
+                              design_instance RAM_256x16_TEST_INST_2/RAM_256x16_INST_interface_inst
+                              module_name dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m1
+                            }
+                            logical_ports 1RW
+                            test_ports 1
+                          }
+                          RAM_256x16_TEST_INST_3/RAM_256x16_INST {
+                            power_mw 75.00
+                            interface_id m2
+                            template /Core(ram_256x16A)/Memory
+                            type sram
+                            object_id instance:3
+                            MemoryInterfaceInfo {
+                              design_instance RAM_256x16_TEST_INST_3/RAM_256x16_INST_interface_inst
+                              module_name dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m2
+                            }
+                            logical_ports 1RW
+                            test_ports 1
+                          }
+                        }
+                      }
+                    }
+                    power_mw 150.00
+                    run_time_ns 180640.0
+                    test_cycles 11290
+                    soft_operation_count 0
+                    flop_count 120
+                    soft_instruction_count 0
+                    soft_operation_length 0
+                    soft_operation_max_strobe_data_out_pipelines 0
+                    soft_operation_signals {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

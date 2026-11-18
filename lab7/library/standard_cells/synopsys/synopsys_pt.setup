@@ -1,0 +1,46 @@
+#
+#define library search path
+###########################
+set search_path ". ../prerequisites/techlib_adk.tnt/4.5/synopsys ../../prerequisites/techlib_adk.tnt/4.5/synopsys ../../../prerequisites/techlib_adk.tnt/4.5/synopsys ../../../../prerequisites/techlib_adk.tnt/4.5/synopsys $search_path"
+
+#
+#define link lib and path
+#########################
+read_db adk.db
+set link_path "* adk.db"
+
+#
+# Some useful aliases
+#####################
+alias list_commands             help
+alias report_constraints        report_constraint
+alias report_clocks             report_clock
+alias h                         history
+alias rpt                       report_timing  -delay_type min_max 
+alias all_paths                 report_timing -delay_type max -max_paths 50000 -path_type summary -nosplit -nworst 1
+
+#
+# Variable settings
+###################
+#set sh_new_variable_message true
+set sh_enable_page_mode     true
+set sh_continue_on_error    true
+
+# The following to make 'stscache' happy
+namespace eval substitute_command_procs {
+  proc _get_object_name_proc { object } { return $object }
+  proc _get_object_name_proc { p args } { return $p }
+}
+foreach {command_name substitute_name} {
+    foreach_in_collection foreach
+    index_collection lindex
+    sizeof_collection llength
+    append_to_collection lappend
+    get_clocks ::substitute_command_procs::_get_clocks_proc
+    get_object_name ::substitute_command_procs::_get_object_name_proc
+  } {
+  if { [info commands $command_name] eq "" } {
+    interp alias {} $command_name {} $substitute_name
+  }
+}
+

@@ -1,0 +1,14 @@
+#!/bin/csh
+## ./adk.lib must be Liberty library (adk.typ) for dc_dofile to work.
+## ./adk.lib => adk.db and command.log
+## command.log is fairly useless -- look at screen for Error and Warning messages.
+setenv DCCACHE_DISABLE 1
+/home/stscache/dc_shell/I-2013.12-SP2/bin/dc_shell -f ./dc_dofile
+
+## Check screen output against run_dc_shell.screen_output
+## Note that Warnings about : 
+##  .. The function cannot be recognized during functional optimization .. 
+## are expected for cells using statetables.
+## For cgor and cgand, an Information output line should occur, which means they are OK (recognized as ICGs), as below :
+## Information: Line 19832, Cell 'cgand', Derived ICG type for cell 'cgand' is 'latch_posedge_precontrol'. (LIBG-265)
+

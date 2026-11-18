@@ -1,0 +1,182 @@
+/*
+----------------------------------------------------------------------------------
+-                                                                                -
+-  Unpublished work. Copyright 2022 Siemens                                      -
+-                                                                                -
+-  This material contains trade secrets or otherwise confidential                -
+-  information owned by Siemens Industry Software Inc. or its affiliates         -
+-  (collectively, SISW), or its licensors. Access to and use of this             -
+-  information is strictly limited as set forth in the Customer's                -
+-  applicable agreements with SISW.                                              -
+-                                                                                -
+----------------------------------------------------------------------------------
+-  File created by: Tessent Shell                                                -
+-          Version: 2022.4                                                       -
+-       Created on: Tue Nov 17 19:22:01 IST 2026                                 -
+----------------------------------------------------------------------------------
+
+
+*/
+`ifdef MGC_INHIBIT_MEM_SCAN_MODEL
+`else
+
+`celldefine
+module rom_512x16A (
+    
+    CLK,
+    CEN,
+    A,
+    Q
+
+);
+input           CLK;
+input           CEN;
+input  [8:0]    A;
+output [15:0]   Q;
+
+
+//------------
+//-- Wires  --
+//------------
+// {{{
+wire CLK_BIT0_MUXED;
+wire A_BIT8_MUXED;
+wire A_BIT7_MUXED;
+wire A_BIT6_MUXED;
+wire A_BIT5_MUXED;
+wire A_BIT4_MUXED;
+wire A_BIT3_MUXED;
+wire A_BIT2_MUXED;
+wire A_BIT1_MUXED;
+wire A_BIT0_MUXED;
+wire CEN_BIT0_MUXED;
+wire Q_BIT15_DRIVER;
+wire Q_BIT14_DRIVER;
+wire Q_BIT13_DRIVER;
+wire Q_BIT12_DRIVER;
+wire Q_BIT11_DRIVER;
+wire Q_BIT10_DRIVER;
+wire Q_BIT9_DRIVER;
+wire Q_BIT8_DRIVER;
+wire Q_BIT7_DRIVER;
+wire Q_BIT6_DRIVER;
+wire Q_BIT5_DRIVER;
+wire Q_BIT4_DRIVER;
+wire Q_BIT3_DRIVER;
+wire Q_BIT2_DRIVER;
+wire Q_BIT1_DRIVER;
+wire Q_BIT0_DRIVER;
+// }}}
+
+//---------------
+//-- Main Code --
+//---------------
+
+//-----------------
+//-- Clock ports --
+//-----------------
+// {{{
+assign CLK_BIT0_MUXED  = CLK;
+// }}}
+
+//-------------------
+//-- Address ports --
+//-------------------
+// {{{
+assign A_BIT8_MUXED  = A[8];
+assign A_BIT7_MUXED  = A[7];
+assign A_BIT6_MUXED  = A[6];
+assign A_BIT5_MUXED  = A[5];
+assign A_BIT4_MUXED  = A[4];
+assign A_BIT3_MUXED  = A[3];
+assign A_BIT2_MUXED  = A[2];
+assign A_BIT1_MUXED  = A[1];
+assign A_BIT0_MUXED  = A[0];
+// }}}
+
+//-------------------
+//-- Control ports --
+//-------------------
+// {{{
+assign CEN_BIT0_MUXED  = CEN;
+// }}}
+
+//----------------------
+//-- Data input ports --
+//----------------------
+// {{{
+// }}}
+
+//-----------------------
+//-- Data output ports --
+//-----------------------
+// {{{
+assign Q_BIT15_DRIVER  = 1'bz;
+assign Q_BIT14_DRIVER  = 1'bz;
+assign Q_BIT13_DRIVER  = 1'bz;
+assign Q_BIT12_DRIVER  = 1'bz;
+assign Q_BIT11_DRIVER  = 1'bz;
+assign Q_BIT10_DRIVER  = 1'bz;
+assign Q_BIT9_DRIVER  = 1'bz;
+assign Q_BIT8_DRIVER  = 1'bz;
+assign Q_BIT7_DRIVER  = 1'bz;
+assign Q_BIT6_DRIVER  = 1'bz;
+assign Q_BIT5_DRIVER  = 1'bz;
+assign Q_BIT4_DRIVER  = 1'bz;
+assign Q_BIT3_DRIVER  = 1'bz;
+assign Q_BIT2_DRIVER  = 1'bz;
+assign Q_BIT1_DRIVER  = 1'bz;
+assign Q_BIT0_DRIVER  = 1'bz;
+assign Q[15]    = Q_BIT15_DRIVER;
+assign Q[14]    = Q_BIT14_DRIVER;
+assign Q[13]    = Q_BIT13_DRIVER;
+assign Q[12]    = Q_BIT12_DRIVER;
+assign Q[11]    = Q_BIT11_DRIVER;
+assign Q[10]    = Q_BIT10_DRIVER;
+assign Q[9]     = Q_BIT9_DRIVER;
+assign Q[8]     = Q_BIT8_DRIVER;
+assign Q[7]     = Q_BIT7_DRIVER;
+assign Q[6]     = Q_BIT6_DRIVER;
+assign Q[5]     = Q_BIT5_DRIVER;
+assign Q[4]     = Q_BIT4_DRIVER;
+assign Q[3]     = Q_BIT3_DRIVER;
+assign Q[2]     = Q_BIT2_DRIVER;
+assign Q[1]     = Q_BIT1_DRIVER;
+assign Q[0]     = Q_BIT0_DRIVER;
+// }}}
+
+`ifdef LV_scanmodel
+// {{{
+lv_assumed_mbist_mem_in( A_BIT8_MUXED );
+lv_assumed_mbist_mem_in( A_BIT7_MUXED );
+lv_assumed_mbist_mem_in( A_BIT6_MUXED );
+lv_assumed_mbist_mem_in( A_BIT5_MUXED );
+lv_assumed_mbist_mem_in( A_BIT4_MUXED );
+lv_assumed_mbist_mem_in( A_BIT3_MUXED );
+lv_assumed_mbist_mem_in( A_BIT2_MUXED );
+lv_assumed_mbist_mem_in( A_BIT1_MUXED );
+lv_assumed_mbist_mem_in( A_BIT0_MUXED );
+lv_assumed_mbist_mem_in( CEN_BIT0_MUXED );
+lv_assumed_mbist_mem_out( Q_BIT15_DRIVER );
+lv_assumed_mbist_mem_out( Q_BIT14_DRIVER );
+lv_assumed_mbist_mem_out( Q_BIT13_DRIVER );
+lv_assumed_mbist_mem_out( Q_BIT12_DRIVER );
+lv_assumed_mbist_mem_out( Q_BIT11_DRIVER );
+lv_assumed_mbist_mem_out( Q_BIT10_DRIVER );
+lv_assumed_mbist_mem_out( Q_BIT9_DRIVER );
+lv_assumed_mbist_mem_out( Q_BIT8_DRIVER );
+lv_assumed_mbist_mem_out( Q_BIT7_DRIVER );
+lv_assumed_mbist_mem_out( Q_BIT6_DRIVER );
+lv_assumed_mbist_mem_out( Q_BIT5_DRIVER );
+lv_assumed_mbist_mem_out( Q_BIT4_DRIVER );
+lv_assumed_mbist_mem_out( Q_BIT3_DRIVER );
+lv_assumed_mbist_mem_out( Q_BIT2_DRIVER );
+lv_assumed_mbist_mem_out( Q_BIT1_DRIVER );
+lv_assumed_mbist_mem_out( Q_BIT0_DRIVER );
+// }}}
+`endif
+
+endmodule
+`endcelldefine
+
+`endif

@@ -1,0 +1,2 @@
+create_clock dco_clk -period 3.0 -name dco_clk
+

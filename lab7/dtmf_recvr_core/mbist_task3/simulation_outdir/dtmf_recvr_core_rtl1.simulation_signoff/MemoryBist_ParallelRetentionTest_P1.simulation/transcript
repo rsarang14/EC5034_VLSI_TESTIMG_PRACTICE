@@ -1,0 +1,269 @@
+# vsim -c -lib dut_work -L dut_work -do "log -r /*;run -all; exit" -voptargs="+acc" "+nowarnTFMPC" "+NEWPATH=./patterns_directory" MemoryBist_ParallelRetentionTest_P1_configuration 
+# Start time: 19:32:27 on Nov 17,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "spi(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "arb(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_fsm(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_fsm(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_fsm(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_fsm(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "data_bus_mach(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "tdsp_core_mach(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "power_state(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "port_bus_mach(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "state(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "prog_bus_mach(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "dma(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "results_conv(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim-64
+# //  Version 2022.4 linux_x86_64 Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.MemoryBist_ParallelRetentionTest_P1_configuration(fast)
+# Loading work.TB(fast)
+# Loading work.dtmf_recvr_core(fast)
+# Loading work.power_manager(fast)
+# Loading work.state(fast)
+# Loading work.counter(fast)
+# Loading work.pd_control(fast)
+# Loading work.power_state(fast)
+# Loading work.pllclk(fast)
+# Loading work.test_control(fast)
+# Loading work.rom_512x16A(fast)
+# Loading work.ram_128x16_test(fast)
+# Loading work.ram_256x16A(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller(fast)
+# Loading work.sync_cell_rst(fast)
+# Loading work.dffr(fast)
+# Loading work.cgand(fast)
+# Loading work.clock_mux21(fast)
+# Loading work.and02(fast)
+# Loading work.buf02(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_fsm(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_pointer_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_add_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_add_format(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_signal_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_data_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_ctl_comp(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c1_interface_m1_STATUS(fast)
+# Loading work.mux21(fast)
+# Loading work.ram_256x16_test(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_fsm(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_pointer_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_add_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_add_format(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_signal_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_data_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_repeat_loop_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_ctl_comp(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c2_interface_m1_STATUS(fast)
+# Loading work.ram_256x16_test_2(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m1(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m1_STATUS(fast)
+# Loading work.ram_256x16_test_1(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m2(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_interface_m2_STATUS(fast)
+# Loading work.tdsp_ds_cs(fast)
+# Loading work.data_sample_mux(fast)
+# Loading work.digit_reg(fast)
+# Loading work.results_conv(fast)
+# Loading work.conv_subreg(fast)
+# Loading work.tdsp_data_mux(fast)
+# Loading work.tdsp_core(fast)
+# Loading work.tdsp_core_glue(fast)
+# Loading work.tdsp_core_mach(fast)
+# Loading work.decode_i(fast)
+# Loading work.execute_i(fast)
+# Loading work.prog_bus_mach(fast)
+# Loading work.data_bus_mach(fast)
+# Loading work.port_bus_mach(fast)
+# Loading work.alu_32(fast)
+# Loading work.accum_stat(fast)
+# Loading work.mult_32(fast)
+# Loading work.m16x16(fast)
+# Loading work.ulaw_lin_conv(fast)
+# Loading work.arb(fast)
+# Loading work.dma(fast)
+# Loading work.spi(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_sib_1(fast)
+# Loading work.clock_buf02(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_sib_2(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_sib_3(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_tdr_sri_ctrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_sib_4(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_bap(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_bap_tdr(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_bap_sib(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_bap_ctl_sib(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_controller(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_fsm(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_pointer_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_add_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_add_format(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_signal_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_controller_repeat_loop_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1_MISR(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c3_interface_m1_MISR_STRAP(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_fsm(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_pointer_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_add_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_add_format(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_signal_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_data_gen(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_repeat_loop_cntrl(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_ctl_comp(fast)
+# Loading work.dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_step_counter(fast)
+# log -r /*
+# run -all
+# Found New Path ./patterns_directory
+# 
+# Loading ./patterns_directory/MemoryBist_ParallelRetentionTest_P1.v.po.name
+# 
+# ** Warning: (vsim-7) Failed to open readmem file "romcontent.cfg" in read mode.
+# No such file or directory. (errno = ENOENT)    : ../../../../../library/memories/rom_512x16A.v(29)
+#    Time: 0 ps  Iteration: 0  Instance: /TB/DUT_inst/ROM_512x16_0_INST
+# ROM0 xxxx
+# ROM3 xxxx
+# Loading ./patterns_directory/MemoryBist_ParallelRetentionTest_P1.v.0.vec
+# 
+# 0ns: Pattern_set ParallelRetentionTest__1_StartToPause_initial_settings
+# 200ns:  Setting dtmf_recvr_core_rtl1_tessent_tdr_sri_ctrl_inst.all_test to 1
+# 2500ns: Pattern_set ParallelRetentionTest__1_StartToPause
+# 2500ns:  Setting up MemoryBist controller RAM_128x16_TEST_INST_dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst
+# 2500ns:  Releasing asynchronous reset
+# 2500ns:  Setting up MemoryBist controller RAM_256x16_TEST_INST_1_dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst
+# 2500ns:  Releasing asynchronous reset
+# 2500ns:  Setting up MemoryBist controller dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst
+# 2500ns:  Releasing asynchronous reset
+# 2500ns: Start clock monitoring on:  dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst.BIST_CLK
+# 2500ns: Start clock monitoring on:  RAM_256x16_TEST_INST_1.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst.BIST_CLK
+# 2500ns: Start clock monitoring on:  RAM_128x16_TEST_INST.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst.BIST_CLK
+# 2693.900ns: Clock monitoring passed: RAM_128x16_TEST_INST.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst.BIST_CLK.  Period = 16.000000ns as expected (within 1.00% margin of 16.000000ns) 
+# 2693.900ns: Clock monitoring passed: RAM_256x16_TEST_INST_1.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst.BIST_CLK.  Period = 16.000000ns as expected (within 1.00% margin of 16.000000ns) 
+# 2693.900ns: Clock monitoring passed: dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst.BIST_CLK.  Period = 16.000000ns as expected (within 1.00% margin of 16.000000ns) 
+# 8200ns:  Enabling reduced address simulation
+# 8200ns:  Maintaining BIST inputs to the memory
+# 8200ns:  Enabling parallel retention test : Start to Pause
+# 8200ns:  Enabling reduced address simulation
+# 8200ns:  Maintaining BIST inputs to the memory
+# 8200ns:  Enabling parallel retention test : Start to Pause
+# 8200ns:  Enabling reduced address simulation
+# 8200ns:  Maintaining BIST inputs to the memory
+# 8200ns:  Enabling parallel retention test : Start to Pause
+# 13200ns:  Checking GO is FAIL before execution
+# 13200ns:  Checking DONE is FAIL before execution
+# 13200ns:  Starting MemoryBist controller execution : RAM_128x16_TEST_INST_dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst
+# 13200ns:  Checking GO is FAIL before execution
+# 13200ns:  Checking DONE is FAIL before execution
+# 13200ns:  Starting MemoryBist controller execution : RAM_256x16_TEST_INST_1_dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst
+# 13200ns:  Checking GO is FAIL before execution
+# 13200ns:  Checking DONE is FAIL before execution
+# 13200ns:  Starting MemoryBist controller execution : dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst
+# 18500ns:  Checking GO is PASS after execution completion
+# 18500ns:  Checking DONE is PASS after execution completion
+# 18500ns:  Checking GO is PASS after execution completion
+# 18500ns:  Checking DONE is PASS after execution completion
+# 18500ns:  Checking GO is PASS after execution completion
+# 18500ns:  Checking DONE is PASS after execution completion
+# 25100ns:  Checking GO_ID bits are PASS
+# 25100ns:  Checking GO_ID bits are PASS
+# 25100ns:  Checking GO_ID bits are PASS
+# 54800ns: Pattern_set ParallelRetentionTest__1_PauseToPause
+# 54800ns:  Setting up MemoryBist controller RAM_128x16_TEST_INST_dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst
+# 54800ns:  Releasing asynchronous reset
+# 54800ns:  Setting up MemoryBist controller RAM_256x16_TEST_INST_1_dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst
+# 54800ns:  Releasing asynchronous reset
+# 54800ns:  Setting up MemoryBist controller dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst
+# 54800ns:  Releasing asynchronous reset
+# 54800ns: Start clock monitoring on:  dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst.BIST_CLK
+# 54800ns: Start clock monitoring on:  RAM_256x16_TEST_INST_1.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst.BIST_CLK
+# 54800ns: Start clock monitoring on:  RAM_128x16_TEST_INST.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst.BIST_CLK
+# 54993.900ns: Clock monitoring passed: RAM_128x16_TEST_INST.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst.BIST_CLK.  Period = 16.000000ns as expected (within 1.00% margin of 16.000000ns) 
+# 54993.900ns: Clock monitoring passed: RAM_256x16_TEST_INST_1.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst.BIST_CLK.  Period = 16.000000ns as expected (within 1.00% margin of 16.000000ns) 
+# 54993.900ns: Clock monitoring passed: dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst.BIST_CLK.  Period = 16.000000ns as expected (within 1.00% margin of 16.000000ns) 
+# 58900ns:  Enabling reduced address simulation
+# 58900ns:  Maintaining BIST inputs to the memory
+# 58900ns:  Enabling parallel retention test : Pause to Pause
+# 58900ns:  Enabling reduced address simulation
+# 58900ns:  Maintaining BIST inputs to the memory
+# 58900ns:  Enabling parallel retention test : Pause to Pause
+# 58900ns:  Enabling reduced address simulation
+# 58900ns:  Maintaining BIST inputs to the memory
+# 58900ns:  Enabling parallel retention test : Pause to Pause
+# 63900ns:  Starting MemoryBist controller execution : RAM_128x16_TEST_INST_dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst
+# 63900ns:  Starting MemoryBist controller execution : RAM_256x16_TEST_INST_1_dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst
+# 63900ns:  Starting MemoryBist controller execution : dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst
+# 69000ns:  Checking GO is PASS after execution completion
+# 69000ns:  Checking DONE is PASS after execution completion
+# 69000ns:  Checking GO is PASS after execution completion
+# 69000ns:  Checking DONE is PASS after execution completion
+# 69000ns:  Checking GO is PASS after execution completion
+# 69000ns:  Checking DONE is PASS after execution completion
+# 75600ns:  Checking GO_ID bits are PASS
+# 75600ns:  Checking GO_ID bits are PASS
+# 75600ns:  Checking GO_ID bits are PASS
+# 105300ns: Pattern_set ParallelRetentionTest__1_PauseToEnd
+# 105300ns:  Setting up MemoryBist controller RAM_128x16_TEST_INST_dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst
+# 105300ns:  Releasing asynchronous reset
+# 105300ns:  Setting up MemoryBist controller RAM_256x16_TEST_INST_1_dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst
+# 105300ns:  Releasing asynchronous reset
+# 105300ns:  Setting up MemoryBist controller dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst
+# 105300ns:  Releasing asynchronous reset
+# 105300ns: Start clock monitoring on:  dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst.BIST_CLK
+# 105300ns: Start clock monitoring on:  RAM_256x16_TEST_INST_1.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst.BIST_CLK
+# 105300ns: Start clock monitoring on:  RAM_128x16_TEST_INST.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst.BIST_CLK
+# 105493.900ns: Clock monitoring passed: RAM_128x16_TEST_INST.dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst.BIST_CLK.  Period = 16.000000ns as expected (within 1.00% margin of 16.000000ns) 
+# 105493.900ns: Clock monitoring passed: RAM_256x16_TEST_INST_1.dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst.BIST_CLK.  Period = 16.000000ns as expected (within 1.00% margin of 16.000000ns) 
+# 105493.900ns: Clock monitoring passed: dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst.BIST_CLK.  Period = 16.000000ns as expected (within 1.00% margin of 16.000000ns) 
+# 109400ns:  Enabling reduced address simulation
+# 109400ns:  Maintaining BIST inputs to the memory
+# 109400ns:  Enabling parallel retention test : Pause to End
+# 109400ns:  Enabling reduced address simulation
+# 109400ns:  Maintaining BIST inputs to the memory
+# 109400ns:  Enabling parallel retention test : Pause to End
+# 109400ns:  Enabling reduced address simulation
+# 109400ns:  Maintaining BIST inputs to the memory
+# 109400ns:  Enabling parallel retention test : Pause to End
+# 114400ns:  Starting MemoryBist controller execution : RAM_128x16_TEST_INST_dtmf_recvr_core_rtl1_tessent_mbist_c1_controller_inst
+# 114400ns:  Starting MemoryBist controller execution : RAM_256x16_TEST_INST_1_dtmf_recvr_core_rtl1_tessent_mbist_c2_controller_inst
+# 114400ns:  Starting MemoryBist controller execution : dtmf_recvr_core_rtl1_tessent_mbist_c4_controller_inst
+# 119500ns:  Checking GO is PASS after execution completion
+# 119500ns:  Checking DONE is PASS after execution completion
+# 119500ns:  Checking GO is PASS after execution completion
+# 119500ns:  Checking DONE is PASS after execution completion
+# 119500ns:  Checking GO is PASS after execution completion
+# 119500ns:  Checking DONE is PASS after execution completion
+# 126100ns:  Checking GO_ID bits are PASS
+# 126100ns:  Checking GO_ID bits are PASS
+# 126100ns:  Checking GO_ID bits are PASS
+# 
+# Simulation finished at time 155801
+# Number of miscompares            =           0
+# Number of 0/1 compares           =         573
+# Number of Z compares             =           0
+# 
+# No error between simulated and expected patterns
+# 
+# ** Note: $finish    : ./patterns_directory/MemoryBist_ParallelRetentionTest_P1.v(2053)
+#    Time: 155802 ns  Iteration: 1  Instance: /TB
+# End time: 19:32:34 on Nov 17,2026, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 2

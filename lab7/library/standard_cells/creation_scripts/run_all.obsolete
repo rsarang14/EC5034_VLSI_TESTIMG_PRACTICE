@@ -1,0 +1,15 @@
+#!/bin/csh
+## 
+## libcomp adk.v -verilog ==>  libcomp.atpglib
+##
+run_libcomp
+##
+## fastscan -lib libcomp.atpglib -model all -lib cell map
+##   write cell library adk.tcelllib -replace
+##
+run_fs_tessent
+## 
+## Run additional library verification
+##
+run_etlibcertify
+
