@@ -1,0 +1,566 @@
+                          CONFORMAL (R)
+                   Version 20.20-s200 (01-Feb-2021) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2020. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 2117 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Command: tclmode
+In Tcl mode already.
+// Command: set_screen_display -noprogress
+0
+// Command: set_dofile_abort exit
+0
+// Command: set lec_version [regsub {(-)[A-Za-z]} $env(LEC_VERSION) ""]
+20.20200
+// Command: set wlec_analyze_dp_flowgraph true
+true
+// Command: set share_dp_analysis         true
+true
+// Command: set lec_version_required "19.10100"
+19.10100
+// Command: if {$lec_version >= $lec_version_required &&
+//              $wlec_analyze_dp_flowgraph} {
+//              set DATAPATH_SOLVER_OPTION "-flowgraph"
+//          } elseif {$share_dp_analysis} {
+//              set DATAPATH_SOLVER_OPTION "-share"
+//          } else {
+//              set DATAPATH_SOLVER_OPTION ""
+//          }
+-flowgraph
+// Command: tcl_set_command_name_echo on
+// Command: set_log_file fvmap2final.log -replace
+0
+// Command: usage -auto -elapse
+CPU time     : 0.05    seconds
+Elapse time  : 2       seconds
+Memory usage : 71.89   M bytes
+0
+// Command: set_verification_information fv_map_dtmf_recvr_core_gatesv_db
+// Verification information is set to /home/l210/L210/work/EC23I2015/LAB9/dtmf_recvr_core/synth/fv_map_dtmf_recvr_core_gatesv_db.
+// Advanced reporting is enabled and the output is written to /home/l210/L210/work/EC23I2015/LAB9/dtmf_recvr_core/synth/fv_map_dtmf_recvr_core_gatesv_db
+0
+// Command: read_implementation_information fv/dtmf_recvr_core -golden fv_map -revised dtmf_recvr_core_gatesv
+// Reading implementation information from fv/dtmf_recvr_core ...
+================================================================================
+          Information Category                         Count
+--------------------------------------------------------------------------------
+     Sequential instance phase                          2108
+       Sequential optimization                             0
+        Sequential duplication                             0
+         Boundary optimization                            29
+            Synthesis equation                             2
+    Combinational loop breaker                             0
+                       Mapping                             0
+================================================================================
+// Note: Read implementation information successfully.
+0
+// Command: set_parallel_option -threads 1,4 -norelease_license
+// Number of threads is set to 1,4.
+0
+// Command: set_compare_options -threads 1,4
+Set computing threads of compare to 1,4.
+0
+// Command: set env(RC_VERSION)     "20.11-s111_1"
+20.11-s111_1
+// Command: set env(CDN_SYNTH_ROOT) "/home/install/GENUS201/tools.lnx86"
+/home/install/GENUS201/tools.lnx86
+// Command: set CDN_SYNTH_ROOT      "/home/install/GENUS201/tools.lnx86"
+/home/install/GENUS201/tools.lnx86
+// Command: set env(CW_DIR) "/home/install/GENUS201/tools.lnx86/lib/chipware"
+/home/install/GENUS201/tools.lnx86/lib/chipware
+// Command: set CW_DIR      "/home/install/GENUS201/tools.lnx86/lib/chipware"
+/home/install/GENUS201/tools.lnx86/lib/chipware
+// Command: set_undefined_cell black_box -noascend -both
+0
+// Command: add_notranslate_modules -library -both ram_256x16A rom_512x16A pllclk
+0
+// Command: add_search_path ../../library/gsclib045 ../../library/timing_custom -library -both
+0
+// Command: read_library -liberty -both /home/l210/L210/work/EC23I2015/LAB9/dtmf_recvr_core/synth/../../library/gsclib045/slow_vdd1v0_basicCells_hvt.lib /home/l210/L210/work/EC23I2015/LAB9/dtmf_recvr_core/synth/../../library/timing_custom/ram_256x16A_slow_syn.lib /home/l210/L210/work/EC23I2015/LAB9/dtmf_recvr_core/synth/../../library/timing_custom/rom_512x16A_slow_syn.lib /home/l210/L210/work/EC23I2015/LAB9/dtmf_recvr_core/synth/../../library/timing_custom/pllclk_slow.lib
+// Parsing file /home/l210/L210/work/EC23I2015/LAB9/dtmf_recvr_core/synth/../../library/gsclib045/slow_vdd1v0_basicCells_hvt.lib ...
+// Parsing file /home/l210/L210/work/EC23I2015/LAB9/dtmf_recvr_core/synth/../../library/timing_custom/ram_256x16A_slow_syn.lib ...
+// Parsing file /home/l210/L210/work/EC23I2015/LAB9/dtmf_recvr_core/synth/../../library/timing_custom/rom_512x16A_slow_syn.lib ...
+// Parsing file /home/l210/L210/work/EC23I2015/LAB9/dtmf_recvr_core/synth/../../library/timing_custom/pllclk_slow.lib ...
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:1)
+// Warning: (RTL9.21) Liberty cell with interface_timing attribute set to true was not an empty cell (occurrence:2)
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:16)
+// Note: (HRC1.2) Module/entity is not translated (blackboxed) (occurrence:3)
+// Note: Read Liberty library successfully
+0
+// Command: read_design -verilog95   -golden -lastmod -noelab fv/dtmf_recvr_core/fv_map.v.gz
+// Parsing file fv/dtmf_recvr_core/fv_map.v.gz ...
+0
+// Command: elaborate_design -golden -root {dtmf_recvr_core}
+// Golden root module is set to 'dtmf_recvr_core'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:94)
+// Warning: (RTL19.1) Identifier is a reserved keyword and might conflict in designs with mixed languages (occurrence:3)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:77)
+// Warning: Total black box modules referenced in Golden = 3
+0
+// Command: read_design -verilog95   -revised -lastmod -noelab work/task3/dtmf_recvr_core_gates.v
+// Parsing file work/task3/dtmf_recvr_core_gates.v ...
+0
+// Command: elaborate_design -revised -root {dtmf_recvr_core}
+// Revised root module is set to 'dtmf_recvr_core'
+// Warning: (RTL2.2) Variable is referenced but never assigned (occurrence:50)
+// Warning: (RTL2.5) Net is referenced without an assignment. Design verification will be based on set_undriven_signal setting (occurrence:54)
+// Warning: (RTL2.13) Undriven pin is detected (occurrence:42)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:68)
+// Warning: (RTL19.1) Identifier is a reserved keyword and might conflict in designs with mixed languages (occurrence:3)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:64)
+// Warning: Total black box modules referenced in Revised = 3
+// Warning: There are 42 undriven nets in Revised
+// Warning: There are 42 undriven pins in Revised
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules        94              92
+Library-cells       6935            6966
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT      *        38                   44
+OUTPUT     *        32                   38
+INOUT                5                    5
+--------------------------------------------
+AND        *      4046                 5390
+BUF        *        72                   67
+DFF                983                  983
+DLAT                66                   66
+INV        *      3610                 4117
+NAND       *      1907                 1834
+NOR        *      1731                 1697
+OR         *      2803                 3454
+WIRE                11                   11
+XNOR       *       238                  212
+XOR        *       142                  169
+------ word-level --------------------------
+BBOX                 6                    6
+--------------------------------------------
+Total            15615                18006
+
+0
+// Command: report_black_box
+SYSTEM: (G R) pllclk
+SYSTEM: (G R) ram_256x16A
+SYSTEM: (G R) rom_512x16A
+0
+// Command: set_flatten_model -seq_constant
+0
+// Command: set_flatten_model -seq_constant_x_to 0
+0
+// Command: set_flatten_model -nodff_to_dlat_zero
+0
+// Command: set_flatten_model -nodff_to_dlat_feedback
+0
+// Command: set_flatten_model -hier_seq_merge
+0
+// Command: set_flatten_model -gated_clock
+0
+// Command: add_pin_constraints 0 {scan_en} -golden
+0
+// Command: add_pin_constraints 0 {scan_en} -revised
+0
+// Command: add_pin_constraints 0 {test_mode} -golden
+0
+// Command: add_pin_constraints 0 {test_mode} -revised
+0
+// Command: add_ignored_outputs {dft_sdo_1} -revised
+0
+// Command: add_ignored_outputs {dft_sdo_2} -revised
+0
+// Command: add_ignored_outputs {dft_sdo_3} -revised
+0
+// Command: add_ignored_outputs {dft_sdo_4} -revised
+0
+// Command: add_ignored_outputs {dft_sdo_5} -revised
+0
+// Command: add_ignored_outputs {dft_sdo_6} -revised
+0
+// Command: set lec_version_required "20.10100"
+20.10100
+// Command: if {$lec_version >= $lec_version_required} {
+//              check_verification_information
+//          }
+// Command: check_verification_information
+Checking Sequential constant...
+Checking Sequential merge...
+Checking Synthesis equation...
+================================================================================
+Implementation Information Check Summary: 
+--------------------------------------------------------------------------------
+Total Sequential Constants:     0
+  Name Collision:               0
+  Name Ambiguous:               0
+  Name not Found:               0
+--------------------------------------------------------------------------------
+Total Sequential Merges:        0
+  Name Collision:               0
+  Name Ambiguous:               0
+  Name not Found:               0
+  Merge Target:
+    Name Ambiguous:             0
+    Name not Found:             0
+--------------------------------------------------------------------------------
+Total Synthesis Equations:      2
+  Module not Found:             0
+  Equation Conflict:            0
+  Empty Equation:               0
+================================================================================
+0
+// Command: set_analyze_option -auto -report_map
+0
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling (auto) mapped 2098 out of 2098 DFF/DLATs
+// (F18) Converted 1 DFF/DLAT(s) in (G) to ZERO/ONE
+// (F14) Remodeled 679 gated-clock DFF/DLAT(s)
+// (F39) Added 5 output Z gates
+// (F18) Converted 1 DFF/DLAT(s) in (R) to ZERO/ONE
+// (F14) Remodeled 679 gated-clock DFF/DLAT(s)
+// (F39) Added 5 output Z gates
+// (F28) Converted 42 internal output port(s) to inout port(s)
+CPU time     : 0.66    seconds
+Elapse time  : 3       seconds
+Memory usage : 153.42  M bytes
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 1148
+// Revised key points = 1154
+// Mapping key points ...
+// Warning: Primary input 'dft_sdi_1' in Revised has no correspondence in Golden
+// Warning: Primary input 'dft_sdi_2' in Revised has no correspondence in Golden
+// Warning: Primary input 'dft_sdi_3' in Revised has no correspondence in Golden
+// Warning: Primary input 'dft_sdi_4' in Revised has no correspondence in Golden
+// Warning: Primary input 'dft_sdi_5' in Revised has no correspondence in Golden
+// Warning: Primary input 'dft_sdi_6' in Revised has no correspondence in Golden
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   Z      BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            46     37     775    8      10     6         882     
+--------------------------------------------------------------------------------
+Revised           46     37     775    8      10     6         882     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       208    58        266     
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   PI     DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Extra             6      0      0         6       
+Unreachable       0      208    58        266     
+================================================================================
+CPU time     : 0.80    seconds
+Elapse time  : 3       seconds
+Memory usage : 154.31  M bytes
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   Z      BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            46     37     775    8      10     6         882     
+--------------------------------------------------------------------------------
+Revised           46     37     775    8      10     6         882     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       208    58        266     
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   PI     DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Extra             6      0      0         6       
+Unreachable       0      208    58        266     
+================================================================================
+// Automatic setup finished.
+0
+CPU time     : 1.05    seconds
+Elapse time  : 4       seconds
+Memory usage : 155.06  M bytes
+// Command: report_unmapped_points -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       208    58        266     
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   PI     DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Extra             6      0      0         6       
+Unreachable       0      208    58        266     
+================================================================================
+0
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+0
+// Command: add_compared_points -all
+// 826 compared points added to compare list
+0
+// Command: compare
+================================================================================
+Compared points      PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           37     775    8      6         826     
+================================================================================
+0
+CPU time     : 1.71    seconds
+Elapse time  : 13      seconds
+Memory usage : 160.60  M bytes
+// Command: report_compare_data -class nonequivalent -class abort -class notcompared
+0 Non-equivalent point(s) reported
+0 Abort point(s) reported
+0 Not-compared point(s) reported
+0 compared point(s) reported
+================================================================================
+Compared points      PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           37     775    8      6         826     
+================================================================================
+0
+// Command: report_verification -verbose
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      0
+     Tri-stated output:                                        checked
+     Revised X signals set to E:                               yes
+     Floating signals tied to Z:                               yes
+     Command "add clock" for clock-gating:                     not used
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 1
+     All primary outputs are mapped:                           yes
+     Not-mapped DFF/DLAT is detected:                          no
+     All mapped points are added as compare points:            yes
+     All compared points are compared:                         yes
+     User added black box:                                     no
+     Black box mapped with different module name:              no
+     Empty module is not black boxed:                          no
+     Command "add ignore outputs" used:                        yes *
+     Always false constraints detected:                        no
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+     Change gate type:                                         no
+     Change wire:                                              no
+     Primary input added by user:                              no
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  1
+     Multiple clocks in the design:                            yes *
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        0
+     Duplicate module definition:                              no
+     Black box due to undefined cells:                         no
+     Golden design has abnormal ratio of unreachable gates:    no
+     Ratio of golden unreachable gates:                        5%
+     Revised design has abnormal ratio of unreachable gates:   no
+     Ratio of revised unreachable gates:                       4%
+     All primary input bus ordering is consistent:             yes
+     All primary output bus ordering is consistent:            yes
+     DFF/DLAT not compared due to disabled clock port(s):        0
+--------------------------------------------------------------------------------
+6. Compare Results:                                                        PASS
+     Number of EQ compare points:                              826
+     Number of NON-EQ compare points:                          0
+     Number of Aborted compare points:                         0
+     Number of Uncompared compare points :                     0
+================================================================================
+pass
+// Command: report_statistics
+Mapping and compare statistics
+================================================================================
+                     Compare Result       Golden            Revised
+--------------------------------------------------------------------------------
+Root module name                          dtmf_recvr_core   dtmf_recvr_core   
+
+Primary inputs                                46                 52
+   Mapped                                     46                 46
+      Extra                                    0                  6
+
+Tri-state (Z) key points                      10                 10
+   Mapped                                     10                 10
+
+Primary outputs                               37                 37
+   Mapped                                     37                 37
+      Equivalent                 37
+
+Black-box key points                           6                  6
+   Mapped                                      6                  6
+      Equivalent                  6
+
+State key points                            1049               1049
+   Mapped                                    783                783
+      Equivalent                783
+   Unmapped                                  266                266
+      Unreachable                            266                266
+================================================================================
+0
+// Command: write_verification_information
+// Verification information is written to fv_map_dtmf_recvr_core_gatesv_db.
+0
+// Command: report_verification_information
+// Generating reports on verification information at /home/l210/L210/work/EC23I2015/LAB9/dtmf_recvr_core/synth/fv_map_dtmf_recvr_core_gatesv_db...
+LEC run scores:
+================================================================================
+Step                Score     Range          
+--------------------------------------------------------------------------------
+result_status       10        10             
+runtime             10        10             
+mapping             10        10             
+sequential_constant 10        10             
+sequential_merge    5         10             
+sequential_phase    10        10             
+datapath_analysis   5         10             
+combinational_loop  5         10             
+mismatch_detection  5         10             
+overall             70        90             
+================================================================================
+LEC results versus attributes:
+================================================================================
+Attribute           Total     Inconsistency  Combined Table                
+--------------------------------------------------------------------------------
+sequential_constant 2         0              sequential_constant.json      
+sequential_merge    0         0                                            
+sequential_phase    783       0              sequential_phase.json         
+================================================================================
+The tables can be viewed directly using web interface.
+// Done with reporting verification information.
+0
+// Command: set lec_version_required "18.20330"
+18.20330
+// Command: if {$lec_version >= $lec_version_required} {
+//              report_implementation_information
+//          }
+// Command: report_implementation_information
+// Reporting implementation information...
+// Information summary:
+================================================================================
+        Information Category     Total      Used    Unused  Rejected     Abort
+--------------------------------------------------------------------------------
+   Sequential instance phase      2108      2098        10         0         0
+               Phase mapping         0         0         0         0         0
+         Sequential constant         0         0         0         0         0
+            Sequential merge         0         0         0         0         0
+      Sequential unreachable         0         0         0         0         0
+      Sequential duplication         0         0         0         0         0
+       Boundary optimization        29         0        29         0         0
+          Synthesis equation         2         2         0         0         0
+  Combinational loop breaker         0         0         0         0         0
+================================================================================
+0
+// Command: puts "No of compare points = [get_compare_points -count]"
+// Command: get_compare_points -count
+No of compare points = 826
+// Command: puts "No of diff points    = [get_compare_points -NONequivalent -count]"
+// Command: get_compare_points -NONequivalent -count
+No of diff points    = 0
+// Command: puts "No of abort points   = [get_compare_points -abort -count]"
+// Command: get_compare_points -abort -count
+No of abort points   = 0
+// Command: puts "No of unknown points = [get_compare_points -unknown -count]"
+// Command: get_compare_points -unknown -count
+No of unknown points = 0
+// Command: if {[get_compare_points -count] == 0} {
+//              puts "---------------------------------"
+//              puts "ERROR: No compare points detected"
+//              puts "---------------------------------"
+//          }
+// Command: get_compare_points -count
+// Command: if {[get_compare_points -NONequivalent -count] > 0} {
+//              puts "------------------------------------"
+//              puts "ERROR: Different Key Points detected"
+//              puts "------------------------------------"
+//          }
+// Command: get_compare_points -NONequivalent -count
+// Command: if {[get_compare_points -abort -count] > 0} {
+//              puts "-----------------------------"
+//              puts "ERROR: Abort Points detected "
+//              puts "-----------------------------"
+//          }
+// Command: get_compare_points -abort -count
+// Command: if {[get_compare_points -unknown -count] > 0} {
+//              puts "----------------------------------"
+//              puts "ERROR: Unknown Key Points detected"
+//              puts "----------------------------------"
+//          }
+// Command: get_compare_points -unknown -count
+// Command: set lec_version_required "19.10100"
+19.10100
+// Command: if {$lec_version >= $lec_version_required} {
+//          analyze_results -logfiles fvmap2final.log
+//          }
+// Command: analyze_results -logfiles fvmap2final.log
+// Analyzing logfile 'fvmap2final.log'
+// Warning: Analyze results collects information from the log file but does not
+//          qualify the execution or completeness of the run.
+// Logfile Results
+================================================================================
+|                  Conformal Version |20.20-s200 
+|                        Root Module |dtmf_recvr_core 
+|                           CPU Time |1.0 sec
+|                       Elapsed Time |13.0 sec
+|                             Memory |160.6 MB
+|              Power Grid Comparison |N/A 
+|               Power Intent Compare |N/A 
+|           Supply Power Consistency |N/A 
+|        Retention Power Consistency |N/A 
+|             Compare Power Crossing |N/A 
+|                     LEC Comparison |PASS 
+|                 Flatten Comparison |PASS 
+|            Hierarchical Comparison |N/A 
+|    Hierarchical Comparison Modules |N/A 
+|                      Logfile Lines |494 
+|                       Logfile Name |fvmap2final.log 
+|              Logfile Modified Time |Fri Nov 20 22:46:12 2026 
+|         Implementation Information |fv/dtmf_recvr_core 
+|       Set Verification Information |/home/l210/L210/work/EC23I2015/LAB9/dtmf_recvr_core/synth/fv_map_dtmf_recvr_core_gatesv_db 
+|      Read Verification Information |N/A 
+|                   Analysis Elapsed |0.0 sec
+|                    Dynamic Flatten |N/A 
+|                    Runtime / #Gate |0.00 sec. 
+|    Low-power Rule Check Occurrence |N/A
+|Matched back-to-back isolation cell |N/A 
+|            Time-consuming commands | 1. compare: 9.0s(69.23%) (execute 1 time(s))
+|                                    | 2. usage: 2.0s(15.38%) (execute 1 time(s))
+|                                    | 3. set_system_mode lec: 2.0s(15.38%) (execute 1 time(s))
+================================================================================
+               
+// Compare Strategy
+Compare #1: compare (line: 301)
+// Compare Settings:
+================================================================================
+|(default setting)   | 
+|Compare Result      | PASS
+================================================================================
+               
+// Resource usages of analysis: Cpu=0.04s Mem=114MB
+0
+// Command: vpxmode
+// Command: exit -f

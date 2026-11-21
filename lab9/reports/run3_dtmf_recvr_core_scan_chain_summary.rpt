@@ -1,0 +1,45 @@
+Reporting 6 scan chains (muxed_scan)
+ 
+Chain 1: AutoChain_1 
+  scan_in:      dft_sdi_1 
+  scan_out:     dft_sdo_1   
+  shift_enable: scan_en (active high) 
+  clock_domain: scan_clk (edge: mixed)
+  length: 191
+------------------------
+Chain 2: AutoChain_2 
+  scan_in:      dft_sdi_2 
+  scan_out:     dft_sdo_2   
+  shift_enable: scan_en (active high) 
+  clock_domain: ijtag_tck (edge: mixed)
+  length: 21
+------------------------
+Chain 3: AutoChain_3 
+  scan_in:      dft_sdi_3 
+  scan_out:     dft_sdo_3   
+  shift_enable: scan_en (active high) 
+  clock_domain: scan_clk (edge: rise)
+  length: 191
+------------------------
+Chain 4: AutoChain_4 
+  scan_in:      dft_sdi_4 
+  scan_out:     dft_sdo_4   
+  shift_enable: scan_en (active high) 
+  clock_domain: scan_clk (edge: rise)
+  length: 191
+------------------------
+Chain 5: AutoChain_5 
+  scan_in:      dft_sdi_5 
+  scan_out:     dft_sdo_5   
+  shift_enable: scan_en (active high) 
+  clock_domain: scan_clk (edge: rise)
+  length: 191
+------------------------
+Chain 6: AutoChain_6 
+  scan_in:      dft_sdi_6 
+  scan_out:     dft_sdo_6   
+  shift_enable: scan_en (active high) 
+  clock_domain: scan_clk (edge: rise)
+  length: 191
+------------------------
+

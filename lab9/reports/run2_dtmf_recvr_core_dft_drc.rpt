@@ -1,0 +1,46 @@
+Detected 2 DFT rule violation(s)
+	Summary of check_dft_rules
+	**************************
+	Number of usable scan cells: 48
+Clock Rule Violations:
+---------------------
+	  Internally driven clock net: 0
+	      Tied constant clock net: 2
+	           Undriven clock net: 0
+	Conflicting async & clock net: 0
+	              Misc. clock net: 0
+
+Async. set/reset Rule Violations:
+--------------------------------
+	Internally driven async net: 0
+	      Tied active async net: 0
+	         Undriven async net: 0
+	            Misc. async net: 0
+
+   Total number of DFT violations: 2
+
+Clock Violation
+# 0 <vid_0_clock>: clock signal driven to a constant value in module 'RC_CG_MOD_45', net 'ck_out', inst/pin 'dtmf_recvr_core_rtl1_tessent_sib_sti_inst/RC_CG_HIER_INST54/RC_CGIC_INST/ECK'   [CLOCK-02]
+  Effective fanin cone:
+    dtmf_recvr_core_rtl1_tessent_sib_sti_inst/RC_CG_HIER_INST54/RC_CGIC_INST/ECK 
+ 
+Clock Violation
+# 1 <vid_1_clock>: clock signal driven to a constant value in module 'dtmf_recvr_core_rtl1_tessent_sib_1', net 'ltest_clk_buf', inst/pin 'dtmf_recvr_core_rtl1_tessent_sib_sti_inst/occ_ctrl_so_retimed_reg/CKN'   [CLOCK-02]
+ 
+Violations sorted by type and number of affected registers
+Note - a register may be violating multiple DFT rules.
+	Violation #0 <vid_0_clock> affects  4 registers
+	Violation #1 <vid_1_clock> affects  3 registers
+ 
+Total number of Test Clock Domains: 3
+  DFT Test Clock Domain: scan_clk
+	Test Clock 'scan_clk' (Positive edge) has 829 registers
+	Test Clock 'scan_clk' (Negative edge) has   6 registers
+  DFT Test Clock Domain: p_clk
+  DFT Test Clock Domain: ijtag_tck
+	Test Clock 'ijtag_tck' (Positive edge) has   7 registers
+	Test Clock 'ijtag_tck' (Negative edge) has  14 registers
+Number of user specified non-Scan registers:   0
+    Number of registers that fail DFT rules:   7
+    Number of registers that pass DFT rules: 856
+Percentage of total registers that are scannable: 99.2%
