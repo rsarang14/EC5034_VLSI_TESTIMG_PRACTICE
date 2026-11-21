@@ -1,0 +1,499 @@
+Starting Command: report_test_structures 
+
+INFO (TDA-005): Command Line Invocation: 
+            report_test_structures -reportscanchain all -testmode FULLSCAN -workdir /home/l210/L210/work/EC23I2015/LAB_10/counter_system/synth/counter_system_atpg -stdout summary  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 20.12-s002_1, built Feb 26 2021 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /home/l210/L210/work/EC23I2015/LAB_10/counter_system/synth/counter_system_atpg/testresults/logs/log_report_test_structures_FULLSCAN_112126115255-164842000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Saturday Nov 21 11:52:55 2026  IST
+            Host machine is l213.c2slab.iiitdm.ac.in, x86_64 running Linux 4.18.0-425.3.1.el8.x86_64.
+            This job is process number 130576.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /home/l210/L210/work/EC23I2015/LAB_10/counter_system/synth/counter_system_atpg
+            -TESTMODE FULLSCAN
+
+            -LOGFILE /home/l210/L210/work/EC23I2015/LAB_10/counter_system/synth/counter_system_atpg/testresults/logs/log_report_test_structures_FULLSCAN_112126115255-164842000
+            -STDOUT summary
+            -reportscanchain all
+[end TDA_009]
+INFO (TFW-117): Modus checked out a modus_atpg license.  [end TFW_117] 
+
+INFO (TLM-055): Design Summary
+                --------------
+
+Hierarchical Model:                  Flattened Model:
+         13,655  Blocks                       9,293  Blocks
+         40,870  Pins                         9,315  Nodes
+         25,185  Nets
+
+Primary Inputs:                      Primary Outputs:
+         48  Input Only                        56  Output Only
+          0  Input/Output                       0  Input/Output
+         48  Total Inputs                      56  Total Outputs
+
+Tied Nets:                           Dotted Nets:
+        293  Tied to 0                          0  Two-State
+         45  Tied to 1                          0  Three-State
+         24  Tied to X                          0  Total Dotted Nets
+        362  Total Tied Nets
+
+Selected Primitive Functions:
+          0  Clock Chopper (CHOP) primitives 
+          2  RAMs
+          0  ROMs
+          0  TSDs
+          0  Resistors
+          0  Transistors
+         24  MUX2s
+         55  Latches
+
+
+         76  Rising  Edge Flop
+        254  Rising  Edge Flop w/Reset Port
+          8  Rising  Edge Flop w/Set Port
+         15  Rising  Edge Flop w/Set-Dominant and Reset Port
+        353  Total Flops
+
+      1,734  Technology Library Cell Instances
+
+[end TLM_055] 
+
+Information for Test Mode:  FULLSCAN
+-------------------------
+
+         Scan Type = GSD
+
+
+
+
+Control/Observe Chain Information for Test Mode:  FULLSCAN
+-----------------------------------------------
+
+     4 Control Chains (0 Control Only)
+     4 Observe Chains (0 Observe Only)
+     4 Chains are Control and Observe
+
+  Longest Scan Chain: 244 bits
+  Average Scan Chain Length: 76 bits
+
+
+  Control Chain: 1
+    Fed by: Scan-In
+    Number of Control Points: 1
+      Control Point Pin Index/Name           1/port:dft_sdi_1    Pipeline Stages: 0 
+    Load Point Pin Index/Name  1/port:dft_sdi_1
+    Length: 3
+    Scan Section: Scan_Section_Sequence
+  Observe Chain: 1
+    Number of Observe Points: 1
+      Observe Point Pin Index/Name          96/port:dft_sdo_1    Pipeline Stages: 0 
+    Unload Point Pin Index/Name  96/port:dft_sdo_1
+    Unload Point In Phase with Load Point
+    Length: 3
+    Scan Section: Scan_Section_Sequence
+
+    Position     Type  Block Index  IO Phase  ObserveChn  ObservePos  Block Name
+    --------  -------  -----------  --------  ----------  ----------  ----------
+           1   rDFF_c         8514        ++           1           3  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MEM0_BIST_COLLAR_SI_RetimeOut_reg
+           2   rDFF_c         8540        ++           1           2  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MEM0_BIST_COLLAR_SO_RetimeIn_reg
+           3   rDFF_c         8566        ++           1           1  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MEM1_BIST_COLLAR_SI_RetimeOut_reg
+
+
+  Control Chain: 2
+    Fed by: Scan-In
+    Number of Control Points: 1
+      Control Point Pin Index/Name           2/port:dft_sdi_2    Pipeline Stages: 0 
+    Load Point Pin Index/Name  2/port:dft_sdi_2
+    Length: 244
+    Scan Section: Scan_Section_Sequence
+  Observe Chain: 2
+    Number of Observe Points: 1
+      Observe Point Pin Index/Name          97/port:dft_sdo_2    Pipeline Stages: 0 
+    Unload Point Pin Index/Name  97/port:dft_sdo_2
+    Unload Point Inverted from Load Point
+    Length: 244
+    Scan Section: Scan_Section_Sequence
+
+    Position     Type  Block Index  IO Phase  ObserveChn  ObservePos  Block Name
+    --------  -------  -----------  --------  ----------  ----------  ----------
+           1   rDFF_c         2747        +-           2         244  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AX_ADD_REG_reg[0]
+           2   rDFF_c         2825        +-           2         243  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AX_ADD_REG_reg[1]
+           3   rDFF_c         2851        +-           2         242  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AX_ADD_REG_reg[2]
+           4   rDFF_c         2877        +-           2         241  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AX_ADD_REG_reg[3]
+           5   rDFF_c         2903        +-           2         240  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AX_ADD_REG_reg[4]
+           6   rDFF_c         2929        +-           2         239  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AX_ADD_REG_reg[5]
+           7   rDFF_c         2955        +-           2         238  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AX_ADD_REG_reg[6]
+           8   rDFF_c         2981        +-           2         237  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AX_ADD_REG_reg[7]
+           9   rDFF_c         3007        +-           2         236  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AX_ADD_REG_reg[8]
+          10   rDFF_c         3033        +-           2         235  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AX_ADD_REG_reg[9]
+          11   rDFF_c         2773        +-           2         234  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AX_ADD_REG_reg[10]
+          12   rDFF_c         2799        +-           2         233  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AX_ADD_REG_reg[11]
+          13   rDFF_c         3059        +-           2         232  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AY_ADD_REG_reg[0]
+          14   rDFF_c         3085        +-           2         231  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AY_ADD_REG_reg[1]
+          15   rDFF_c         3111        +-           2         230  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AY_ADD_REG_reg[2]
+          16   rDFF_c         3137        +-           2         229  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\AY_ADD_REG_reg[3]
+          17   rDFF_c         3163        +-           2         228  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BX_ADD_REG_reg[0]
+          18   rDFF_c         3241        +-           2         227  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BX_ADD_REG_reg[1]
+          19   rDFF_c         3267        +-           2         226  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BX_ADD_REG_reg[2]
+          20   rDFF_c         3293        +-           2         225  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BX_ADD_REG_reg[3]
+          21   rDFF_c         3319        +-           2         224  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BX_ADD_REG_reg[4]
+          22   rDFF_c         3345        +-           2         223  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BX_ADD_REG_reg[5]
+          23   rDFF_c         3371        +-           2         222  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BX_ADD_REG_reg[6]
+          24   rDFF_c         3397        +-           2         221  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BX_ADD_REG_reg[7]
+          25   rDFF_c         3423        +-           2         220  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BX_ADD_REG_reg[8]
+          26   rDFF_c         3449        +-           2         219  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BX_ADD_REG_reg[9]
+          27   rDFF_c         3189        +-           2         218  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BX_ADD_REG_reg[10]
+          28   rDFF_c         3215        +-           2         217  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BX_ADD_REG_reg[11]
+          29   rDFF_c         3475        +-           2         216  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BY_ADD_REG_reg[0]
+          30   rDFF_c         3501        +-           2         215  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BY_ADD_REG_reg[1]
+          31   rDFF_c         3527        +-           2         214  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BY_ADD_REG_reg[2]
+          32   rDFF_c         3553        +-           2         213  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_ADD_GEN.\BY_ADD_REG_reg[3]
+          33   rDFF_c         5635        +-           2         212  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.tessent_persistent_cell_MBIST_NTC_RETIMING_CELL_FL1.ntc_retiming_q_reg_reg
+          34   rDFF_c         5661        +-           2         211  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.tessent_persistent_cell_MBIST_NTC_RETIMING_CELL_FL1.q_reg
+          35   rDFF_c         4348        +-           2         210  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.BIST_DONE_R_reg
+          36   rDFF_c         4374        +-           2         209  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.ERROR_CNT_LT2_REG_reg
+          37   rDFF_c         4572        +-           2         208  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\ERROR_CNT_REG_reg[0]
+          38   rDFF_c         4650        +-           2         207  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\ERROR_CNT_REG_reg[1]
+          39   rDFF_c         4676        +-           2         206  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\ERROR_CNT_REG_reg[2]
+          40   rDFF_c         4702        +-           2         205  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\ERROR_CNT_REG_reg[3]
+          41   rDFF_c         4728        +-           2         204  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\ERROR_CNT_REG_reg[4]
+          42   rDFF_c         4754        +-           2         203  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\ERROR_CNT_REG_reg[5]
+          43   rDFF_c         4780        +-           2         202  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\ERROR_CNT_REG_reg[6]
+          44   rDFF_c         4806        +-           2         201  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\ERROR_CNT_REG_reg[7]
+          45   rDFF_c         4832        +-           2         200  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\ERROR_CNT_REG_reg[8]
+          46   rDFF_c         4858        +-           2         199  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\ERROR_CNT_REG_reg[9]
+          47   rDFF_c         4598        +-           2         198  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\ERROR_CNT_REG_reg[10]
+          48   rDFF_c         4624        +-           2         197  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\ERROR_CNT_REG_reg[11]
+          49   rDFF_c         4400        +-           2         196  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.ESOE_RESET_reg
+          50   rDFF_c         4426        +-           2         195  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.FL1_STICKY_R_reg
+          51   rDFF_c         4452        +-           2         194  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.FL1_SYNC_reg
+          52   rDFF_c         4884        +-           2         193  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\FL_CNT_REG_reg[0]
+          53   rDFF_c         4962        +-           2         192  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\FL_CNT_REG_reg[1]
+          54   rDFF_c         4988        +-           2         191  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\FL_CNT_REG_reg[2]
+          55   rDFF_c         5014        +-           2         190  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\FL_CNT_REG_reg[3]
+          56   rDFF_c         5040        +-           2         189  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\FL_CNT_REG_reg[4]
+          57   rDFF_c         5066        +-           2         188  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\FL_CNT_REG_reg[5]
+          58   rDFF_c         5092        +-           2         187  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\FL_CNT_REG_reg[6]
+          59   rDFF_c         5118        +-           2         186  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\FL_CNT_REG_reg[7]
+          60   rDFF_c         5144        +-           2         185  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\FL_CNT_REG_reg[8]
+          61   rDFF_c         5170        +-           2         184  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\FL_CNT_REG_reg[9]
+          62   rDFF_c         4910        +-           2         183  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\FL_CNT_REG_reg[10]
+          63   rDFF_c         4936        +-           2         182  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.\FL_CNT_REG_reg[11]
+          64   rDFF_c         4480        +-           2         181  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.FREEZE_STOP_ERROR_reg
+          65   rDFF_c         4546        +-           2         180  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_CTL_COMP.STOP_ON_ERROR_reg
+          66   rDFF_c         5750        +-           2         179  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_DATA_GEN.\EDATA_REG_reg[0]
+          67   rDFF_c         5776        +-           2         178  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_DATA_GEN.\EDATA_REG_reg[1]
+          68   rDFF_c         5802        +-           2         177  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_DATA_GEN.\WDATA_REG_reg[0]
+          69   rDFF_c         5828        +-           2         176  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_DATA_GEN.\WDATA_REG_reg[1]
+          70   rDFF_c         5698        +-           2         175  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_DATA_GEN.X_ADDR_BIT_SEL_REG_reg
+          71   rDFF_c         5724        +-           2         174  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_DATA_GEN.Y_ADDR_BIT_SEL_REG_reg
+          72   rDFF_c         6014        +-           2         173  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_FSM.PAUSETOEND_ALGO_MODE_REG_reg
+          73   rDFF_c         6050        +-           2         172  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_FSM.\RUNTEST_EN_REG_reg[0]
+          74   rDFF_c         6076        +-           2         171  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_FSM.\RUNTEST_EN_REG_reg[1]
+          75   rDFF_c         6102        +-           2         170  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_FSM.\RUNTEST_EN_REG_reg[2]
+          76   rDFF_c         6128        +-           2         169  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_FSM.\RUNTEST_EN_REG_reg[3]
+          77   rDFF_c         6154        +-           2         168  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_FSM.\STATE_reg[0]
+          78   rDFF_c         6180        +-           2         167  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_FSM.\STATE_reg[1]
+          79   rDFF_c         6206        +-           2         166  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_FSM.\STATE_reg[2]
+          80   rDFF_c         6343        +-           2         165  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_ADD_REG_SELECT_REG1_reg
+          81   rDFF_c         6369        +-           2         164  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_ADD_X1_CMD_REG0_reg
+          82   rDFF_c         6395        +-           2         163  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_ADD_X1_CMD_REG1_reg
+          83   rDFF_c         6421        +-           2         162  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_ADD_Y1_CMD_REG0_reg
+          84   rDFF_c         6447        +-           2         161  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_ADD_Y1_CMD_REG1_reg
+          85   rDFF_c         6473        +-           2         160  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_BRANCH_POINTER_REG0_reg
+          86   rDFF_c         6499        +-           2         159  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_BRANCH_POINTER_REG1_reg
+          87   rDFF_c         6525        +-           2         158  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_BRANCH_POINTER_REG2_reg
+          88   rDFF_c         6551        +-           2         157  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_BRANCH_POINTER_REG3_reg
+          89   rDFF_c         6577        +-           2         156  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_BRANCH_POINTER_REG4_reg
+          90   rDFF_c         6603        +-           2         155  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_BRANCH_POINTER_REG5_reg
+          91   rDFF_c         6629        +-           2         154  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_EDATA_CMD_REG0_reg
+          92   rDFF_c         6655        +-           2         153  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_EDATA_CMD_REG1_reg
+          93   rDFF_c         6681        +-           2         152  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_EDATA_CMD_REG3_reg
+          94   rDFF_c         6707        +-           2         151  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_INH_DATA_CMP_REG0_reg
+          95   rDFF_c         6733        +-           2         150  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_LOOP_CMD_REG0_reg
+          96   rDFF_c         6759        +-           2         149  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_NEXT_CONDITIONS_REG0_reg
+          97   rDFF_c         6785        +-           2         148  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_NEXT_CONDITIONS_REG1_reg
+          98   rDFF_c         6811        +-           2         147  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_NEXT_CONDITIONS_REG3_reg
+          99   rDFF_c         6837        +-           2         146  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_OP_SELECT_CMD_REG0_reg
+         100   rDFF_c         6863        +-           2         145  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_OP_SELECT_CMD_REG1_reg
+         101   rDFF_c         6889        +-           2         144  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_WDATA_CMD_REG0_reg
+         102   rDFF_c         6915        +-           2         143  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_WDATA_CMD_REG1_reg
+         103   rDFF_c         6941        +-           2         142  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.EXECUTE_WDATA_CMD_REG3_reg
+         104   rDFF_c         7013        +-           2         141  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.\INST_POINTER_reg[0]
+         105   rDFF_c         7039        +-           2         140  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.\INST_POINTER_reg[1]
+         106   rDFF_c         7065        +-           2         139  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.\INST_POINTER_reg[2]
+         107   rDFF_c         7091        +-           2         138  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.\INST_POINTER_reg[3]
+         108   rDFF_c         7117        +-           2         137  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.\INST_POINTER_reg[4]
+         109   rDFF_c         7143        +-           2         136  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.\INST_POINTER_reg[5]
+         110   rDFF_c         6967        +-           2         135  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_POINTER_CNTRL.LAST_STATE_DONE_REG_reg
+         111   rDFF_c         8032        +-           2         134  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_REPEAT_LOOP_CNTRL.\LOOP_A_CNTR_reg[0]
+         112   rDFF_c         8058        +-           2         133  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_REPEAT_LOOP_CNTRL.\LOOP_A_CNTR_reg[1]
+         113   rDFF_c         8084        +-           2         132  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_REPEAT_LOOP_CNTRL.\LOOP_B_CNTR_reg[0]
+         114   rDFF_c         8110        +-           2         131  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_REPEAT_LOOP_CNTRL.\LOOP_B_CNTR_reg[1]
+         115   rDFF_c         8351        +-           2         130  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_SIGNAL_GEN.\JCNT_reg[0]
+         116   rDFF_c         8377        +-           2         129  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_SIGNAL_GEN.\JCNT_reg[1]
+         117   rDFF_c         8403        +-           2         128  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_SIGNAL_GEN.\JCNT_reg[2]
+         118   rDFF_c         8289        +-           2         127  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_SIGNAL_GEN.LAST_TICK_REG_reg
+         119   rDFF_c         8315        +-           2         126  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MBISTPG_SIGNAL_GEN.OPSET_SELECT_REG_reg
+         120   rDFF_c         9020        +-           2         125  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.tessent_persistent_cell_MBIST_NTC_RETIMING_CELL_CLK_EN.ntc_retiming_q_reg_reg
+         121   rDFF_c         9046        +-           2         124  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.tessent_persistent_cell_MBIST_NTC_RETIMING_CELL_CLK_EN.q_reg
+         122   rDFF_c         9073        +-           2         123  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.tessent_persistent_cell_MBIST_NTC_RETIMING_CELL_TESTDATA_SELECT.ntc_retiming_q_reg_reg
+         123   rDFF_c         9099        +-           2         122  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.tessent_persistent_cell_MBIST_NTC_RETIMING_CELL_TESTDATA_SELECT.q_reg
+         124   rDFF_c         2440        +-           2         121  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.ALGO_SEL_CNT_REG_reg
+         125   rDFF_c         2466        +-           2         120  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.BIST_DONE_PIPE1_reg
+         126   rDFF_c         2492        +-           2         119  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.BIST_DONE_PIPE2_reg
+         127   rDFF_c         2518        +-           2         118  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.BIST_EN_RETIME2_reg
+         128   rDFF_c         2544        +-           2         117  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.BIST_SI_PIPELINE_reg
+         129   rDFF_c         2570        +-           2         116  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.BIST_SO_PIPELINE_reg
+         130   rDFF_c         2596        +-           2         115  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.CMP_EN_MASK_EN_reg
+         131   rDFF_c         2622        +-           2         114  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.CMP_EN_MASK_reg
+         132   rDFF_c         2648        +-           2         113  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.CMP_EN_R_reg
+         133   rDFF_c         2674        +-           2         112  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.DIAG_EN_R_reg
+         134   rDFF_c         2700        +-           2         111  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.GO_EN_reg
+         135   rDFF_s         8706        +-           2         110  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.\MEM_SELECT_REG_reg[0]
+         136   rDFF_s         8734        -+           2         109  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.\MEM_SELECT_REG_reg[1]
+         137   rDFF_c         8592        +-           2         108  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.MICROCODE_EN_REG_reg
+         138   rDFF_c         8628        +-           2         107  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.REDUCED_ADDR_CNT_EN_REG_reg
+         139   rDFF_c         8654        +-           2         106  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.SELECT_COMMON_DATA_PAT_REG_reg
+         140   rDFF_c         8680        +-           2         105  inst:counter_system_rtl1_tessent_mbist_c1_controller_inst.SELECT_COMMON_OPSET_REG_reg
+         141   rDFF_c        10363        +-           2         104  inst:u1_interface_inst.MBISTPG_STATUS.CMP_EN_R_reg
+         142   rDFF_c        10415        +-           2         103  inst:u1_interface_inst.MBISTPG_STATUS.\ERROR_R1_reg[0]
+         143   rDFF_c        10389        +-           2         102  inst:u1_interface_inst.MBISTPG_STATUS.GO_EN_reg
+         144   rDFF_c        10443        +-           2         101  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[0]
+         145   rDFF_c        10625        +-           2         100  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[1]
+         146   rDFF_c        10651        +-           2          99  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[2]
+         147   rDFF_c        10677        +-           2          98  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[3]
+         148   rDFF_c        10703        +-           2          97  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[4]
+         149   rDFF_c        10729        +-           2          96  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[5]
+         150   rDFF_c        10755        +-           2          95  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[6]
+         151   rDFF_c        10781        +-           2          94  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[7]
+         152   rDFF_c        10807        +-           2          93  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[8]
+         153   rDFF_c        10833        +-           2          92  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[9]
+         154   rDFF_c        10469        +-           2          91  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[10]
+         155   rDFF_c        10495        +-           2          90  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[11]
+         156   rDFF_c        10521        +-           2          89  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[12]
+         157   rDFF_c        10547        +-           2          88  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[13]
+         158   rDFF_c        10573        +-           2          87  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[14]
+         159   rDFF_c        10599        +-           2          86  inst:u1_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[15]
+         160   rDFF_c        10310        +-           2          85  inst:u1_interface_inst.BIST_INPUT_SELECT_reg
+         161   rDFF_c        10336        +-           2          84  inst:u1_interface_inst.FREEZE_STOP_ERROR_EARLY_R_reg
+         162   rDFF_c        11163        +-           2          83  inst:u1_interface_inst.\Q_SCAN_IN_reg[0]
+         163   rDFF_c        11345        +-           2          82  inst:u1_interface_inst.\Q_SCAN_IN_reg[1]
+         164   rDFF_c        11371        +-           2          81  inst:u1_interface_inst.\Q_SCAN_IN_reg[2]
+         165   rDFF_c        11397        +-           2          80  inst:u1_interface_inst.\Q_SCAN_IN_reg[3]
+         166   rDFF_c        11423        +-           2          79  inst:u1_interface_inst.\Q_SCAN_IN_reg[4]
+         167   rDFF_c        11449        +-           2          78  inst:u1_interface_inst.\Q_SCAN_IN_reg[5]
+         168   rDFF_c        11475        +-           2          77  inst:u1_interface_inst.\Q_SCAN_IN_reg[6]
+         169   rDFF_c        11501        +-           2          76  inst:u1_interface_inst.\Q_SCAN_IN_reg[7]
+         170   rDFF_c        11527        +-           2          75  inst:u1_interface_inst.\Q_SCAN_IN_reg[8]
+         171   rDFF_c        11553        +-           2          74  inst:u1_interface_inst.\Q_SCAN_IN_reg[9]
+         172   rDFF_c        11189        +-           2          73  inst:u1_interface_inst.\Q_SCAN_IN_reg[10]
+         173   rDFF_c        11215        +-           2          72  inst:u1_interface_inst.\Q_SCAN_IN_reg[11]
+         174   rDFF_c        11241        +-           2          71  inst:u1_interface_inst.\Q_SCAN_IN_reg[12]
+         175   rDFF_c        11267        +-           2          70  inst:u1_interface_inst.\Q_SCAN_IN_reg[13]
+         176   rDFF_c        11293        +-           2          69  inst:u1_interface_inst.\Q_SCAN_IN_reg[14]
+         177   rDFF_c        11319        +-           2          68  inst:u1_interface_inst.\Q_SCAN_IN_reg[15]
+         178   rDFF_c        11579        +-           2          67  inst:u1_interface_inst.\SCAN_OBS_FLOPS_reg[0]
+         179   rDFF_c        11605        +-           2          66  inst:u1_interface_inst.\SCAN_OBS_FLOPS_reg[1]
+         180   rDFF_c        11631        +-           2          65  inst:u1_interface_inst.\SCAN_OBS_FLOPS_reg[2]
+         181   rDFF_c        11657        +-           2          64  inst:u1_interface_inst.\SCAN_OBS_FLOPS_reg[3]
+         182   rDFF_c        12406        +-           2          63  inst:u2_interface_inst.MBISTPG_STATUS.CMP_EN_R_reg
+         183   rDFF_c        12458        +-           2          62  inst:u2_interface_inst.MBISTPG_STATUS.\ERROR_R1_reg[0]
+         184   rDFF_c        12432        +-           2          61  inst:u2_interface_inst.MBISTPG_STATUS.GO_EN_reg
+         185   rDFF_c        12486        +-           2          60  inst:u2_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[0]
+         186   rDFF_c        12512        +-           2          59  inst:u2_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[1]
+         187   rDFF_c        12538        +-           2          58  inst:u2_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[2]
+         188   rDFF_c        12564        +-           2          57  inst:u2_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[3]
+         189   rDFF_c        12590        +-           2          56  inst:u2_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[4]
+         190   rDFF_c        12616        +-           2          55  inst:u2_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[5]
+         191   rDFF_c        12642        +-           2          54  inst:u2_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[6]
+         192   rDFF_c        12668        +-           2          53  inst:u2_interface_inst.MBISTPG_STATUS.\GO_ID_REG_reg[7]
+         193   rDFF_c        12353        +-           2          52  inst:u2_interface_inst.BIST_INPUT_SELECT_reg
+         194   rDFF_c        12379        +-           2          51  inst:u2_interface_inst.FREEZE_STOP_ERROR_EARLY_R_reg
+         195   rDFF_c        12872        +-           2          50  inst:u2_interface_inst.\Q_SCAN_IN_reg[0]
+         196   rDFF_c        12898        +-           2          49  inst:u2_interface_inst.\Q_SCAN_IN_reg[1]
+         197   rDFF_c        12924        +-           2          48  inst:u2_interface_inst.\Q_SCAN_IN_reg[2]
+         198   rDFF_c        12950        +-           2          47  inst:u2_interface_inst.\Q_SCAN_IN_reg[3]
+         199   rDFF_c        12976        +-           2          46  inst:u2_interface_inst.\Q_SCAN_IN_reg[4]
+         200   rDFF_c        13002        +-           2          45  inst:u2_interface_inst.\Q_SCAN_IN_reg[5]
+         201   rDFF_c        13028        +-           2          44  inst:u2_interface_inst.\Q_SCAN_IN_reg[6]
+         202   rDFF_c        13054        +-           2          43  inst:u2_interface_inst.\Q_SCAN_IN_reg[7]
+         203   rDFF_c        13080        +-           2          42  inst:u2_interface_inst.\SCAN_OBS_FLOPS_reg[0]
+         204   rDFF_c        13106        +-           2          41  inst:u2_interface_inst.\SCAN_OBS_FLOPS_reg[1]
+         205   rDFF_c        13132        +-           2          40  inst:u2_interface_inst.\SCAN_OBS_FLOPS_reg[2]
+         206   rDFF_c        13158        +-           2          39  inst:u2_interface_inst.\SCAN_OBS_FLOPS_reg[3]
+         207   rDFF_c        13184        +-           2          38  inst:u2_interface_inst.\SCAN_OBS_FLOPS_reg[4]
+         208   rDFF_c        13210        +-           2          37  inst:u2_interface_inst.\SCAN_OBS_FLOPS_reg[5]
+         209   rDFF_c           21        +-           2          36  inst:\u_counter_lfsr_u_counter_count_reg[0]
+         210   rDFF_c           47        +-           2          35  inst:\u_counter_lfsr_u_counter_count_reg[1]
+         211   rDFF_c           73        +-           2          34  inst:\u_counter_lfsr_u_counter_count_reg[2]
+         212   rDFF_c           99        +-           2          33  inst:\u_counter_lfsr_u_counter_count_reg[3]
+         213   rDFF_c          125        +-           2          32  inst:\u_counter_lfsr_u_counter_count_reg[4]
+         214   rDFF_c          151        +-           2          31  inst:\u_counter_lfsr_u_counter_count_reg[5]
+         215   rDFF_c          177        +-           2          30  inst:\u_counter_lfsr_u_counter_count_reg[6]
+         216   rDFF_c          203        +-           2          29  inst:\u_counter_lfsr_u_counter_count_reg[7]
+         217   rDFF_s          229        +-           2          28  inst:\u_counter_lfsr_u_lfsr_value_reg[0]
+         218   rDFF_c          257        -+           2          27  inst:\u_counter_lfsr_u_lfsr_value_reg[1]
+         219   rDFF_c          283        -+           2          26  inst:\u_counter_lfsr_u_lfsr_value_reg[2]
+         220   rDFF_c          309        -+           2          25  inst:\u_counter_lfsr_u_lfsr_value_reg[3]
+         221   rDFF_s          335        -+           2          24  inst:\u_counter_lfsr_u_lfsr_value_reg[4]
+         222   rDFF_s          363        +-           2          23  inst:\u_counter_lfsr_u_lfsr_value_reg[5]
+         223   rDFF_s          391        -+           2          22  inst:\u_counter_lfsr_u_lfsr_value_reg[6]
+         224   rDFF_s          419        +-           2          21  inst:\u_counter_lfsr_u_lfsr_value_reg[7]
+         225   rDFF_c          447        -+           2          20  inst:\u_counter_shift_u_shift_reg_data_reg[0]
+         226   rDFF_c          629        -+           2          19  inst:\u_counter_shift_u_shift_reg_data_reg[1]
+         227   rDFF_c          655        -+           2          18  inst:\u_counter_shift_u_shift_reg_data_reg[2]
+         228   rDFF_c          681        -+           2          17  inst:\u_counter_shift_u_shift_reg_data_reg[3]
+         229   rDFF_c          707        -+           2          16  inst:\u_counter_shift_u_shift_reg_data_reg[4]
+         230   rDFF_c          733        -+           2          15  inst:\u_counter_shift_u_shift_reg_data_reg[5]
+         231   rDFF_c          759        -+           2          14  inst:\u_counter_shift_u_shift_reg_data_reg[6]
+         232   rDFF_c          785        -+           2          13  inst:\u_counter_shift_u_shift_reg_data_reg[7]
+         233   rDFF_c          811        -+           2          12  inst:\u_counter_shift_u_shift_reg_data_reg[8]
+         234   rDFF_c          837        -+           2          11  inst:\u_counter_shift_u_shift_reg_data_reg[9]
+         235   rDFF_c          473        -+           2          10  inst:\u_counter_shift_u_shift_reg_data_reg[10]
+         236   rDFF_c          499        -+           2           9  inst:\u_counter_shift_u_shift_reg_data_reg[11]
+         237   rDFF_c          525        -+           2           8  inst:\u_counter_shift_u_shift_reg_data_reg[12]
+         238   rDFF_c          551        -+           2           7  inst:\u_counter_shift_u_shift_reg_data_reg[13]
+         239   rDFF_c          577        -+           2           6  inst:\u_counter_shift_u_shift_reg_data_reg[14]
+         240   rDFF_c          603        -+           2           5  inst:\u_counter_shift_u_shift_reg_data_reg[15]
+         241   rDFF_c          863        -+           2           4  inst:\u_counter_shift_u_shift_reg_pos_reg[0]
+         242   rDFF_c          889        -+           2           3  inst:\u_counter_shift_u_shift_reg_pos_reg[1]
+         243   rDFF_c          915        -+           2           2  inst:\u_counter_shift_u_shift_reg_pos_reg[2]
+         244   rDFF_c          941        -+           2           1  inst:\u_counter_shift_u_shift_reg_pos_reg[3]
+
+
+  Control Chain: 3
+    Fed by: Scan-In
+    Number of Control Points: 1
+      Control Point Pin Index/Name           3/port:dft_sdi_3    Pipeline Stages: 0 
+    Load Point Pin Index/Name  3/port:dft_sdi_3
+    Length: 29
+    Scan Section: Scan_Section_Sequence
+  Observe Chain: 3
+    Number of Observe Points: 1
+      Observe Point Pin Index/Name          98/port:dft_sdo_3    Pipeline Stages: 0 
+    Unload Point Pin Index/Name  98/port:dft_sdo_3
+    Unload Point Inverted from Load Point
+    Length: 29
+    Scan Section: Scan_Section_Sequence
+
+    Position     Type  Block Index  IO Phase  ObserveChn  ObservePos  Block Name
+    --------  -------  -----------  --------  ----------  ----------  ----------
+           1  rDFF_cS         1134        +-           3          29  inst:counter_system_rtl1_tessent_mbist_bap_inst.counter_system_rtl1_tessent_mbist_controller_sib_ctl_bypass_inst.sib_latch_reg
+           2  rDFF_cS         1190        -+           3          28  inst:counter_system_rtl1_tessent_mbist_bap_inst.counter_system_rtl1_tessent_mbist_controller_sib_ctl_bypass_inst.to_enable_int_reg
+           3  rDFF_cS         1279        +-           3          27  inst:counter_system_rtl1_tessent_mbist_bap_inst.counter_system_rtl1_tessent_mbist_controller_sib_inst0.sib_latch_reg
+           4  rDFF_cS         1355        -+           3          26  inst:counter_system_rtl1_tessent_mbist_bap_inst.counter_system_rtl1_tessent_mbist_controller_sib_inst0.to_enable_int_reg
+           5  rDFF_cS         1424        +-           3          25  inst:counter_system_rtl1_tessent_mbist_bap_inst.counter_system_rtl1_tessent_mbist_controller_sib_tdr_bypass_inst.sib_latch_reg
+           6  rDFF_cS         1480        -+           3          24  inst:counter_system_rtl1_tessent_mbist_bap_inst.counter_system_rtl1_tessent_mbist_controller_sib_tdr_bypass_inst.to_enable_int_reg
+           7   rDFF_c         1995        -+           3          23  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.tdr_latch0_reg
+           8   rDFF_c         2153        -+           3          22  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.tdr_latch1_reg
+           9   rDFF_c         2179        -+           3          21  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.tdr_latch2_reg
+          10   rDFF_c         2205        -+           3          20  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.tdr_latch3_reg
+          11   rDFF_c         2231        -+           3          19  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.tdr_latch4_reg
+          12   rDFF_c         2257        -+           3          18  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.tdr_latch5_reg
+          13   rDFF_c         2283        -+           3          17  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.tdr_latch6_reg
+          14   rDFF_c         2309        -+           3          16  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.tdr_latch7_reg
+          15   rDFF_c         2335        -+           3          15  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.tdr_latch8_reg
+          16   rDFF_c         2361        -+           3          14  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.tdr_latch9_reg
+          17   rDFF_s         2021        -+           3          13  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.tdr_latch10_reg
+          18   rDFF_c         2049        +-           3          12  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.tdr_latch11_reg
+          19   rDFF_c         2075        +-           3          11  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.tdr_latch12_reg
+          20   rDFF_c         2101        +-           3          10  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.tdr_latch13_reg
+          21   rDFF_c         2127        +-           3           9  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.tdr_latch14_reg
+          22  rDFF_cS          983        +-           3           8  inst:counter_system_rtl1_tessent_mbist_bap_inst.BIST_HOLD_latch_reg
+          23  rDFF_cS         1019        -+           3           7  inst:counter_system_rtl1_tessent_mbist_bap_inst.\fromBist_retime_reg[0]
+          24  rDFF_cS         1546        +-           3           6  inst:counter_system_rtl1_tessent_mbist_bap_inst.retiming_so_reg
+          25  rDFF_cS         1055        -+           3           5  inst:counter_system_rtl1_tessent_mbist_bap_inst.\toBist_reg[0]
+          26  rDFF_cS         9171        +-           3           4  inst:counter_system_rtl1_tessent_sib_mbist_inst.sib_latch_reg
+          27  rDFF_cS         9227        -+           3           3  inst:counter_system_rtl1_tessent_sib_mbist_inst.to_enable_int_reg
+          28  rDFF_cS         9571        -+           3           2  inst:counter_system_rtl1_tessent_sib_sti_inst.sib_latch_reg
+          29  rDFF_cS         9666        +-           3           1  inst:counter_system_rtl1_tessent_sib_sti_inst.to_enable_int_reg
+
+
+  Control Chain: 4
+    Fed by: Scan-In
+    Number of Control Points: 1
+      Control Point Pin Index/Name           4/port:dft_sdi_4    Pipeline Stages: 0 
+    Load Point Pin Index/Name  4/port:dft_sdi_4
+    Length: 26
+    Scan Section: Scan_Section_Sequence
+  Observe Chain: 4
+    Number of Observe Points: 1
+      Observe Point Pin Index/Name          99/port:dft_sdo_4    Pipeline Stages: 0 
+    Unload Point Pin Index/Name  99/port:dft_sdo_4
+    Unload Point In Phase with Load Point
+    Length: 26
+    Scan Section: Scan_Section_Sequence
+
+    Position     Type  Block Index  IO Phase  ObserveChn  ObservePos  Block Name
+    --------  -------  -----------  --------  ----------  ----------  ----------
+           1     rDFF         1170        ++           4          26  inst:counter_system_rtl1_tessent_mbist_bap_inst.counter_system_rtl1_tessent_mbist_controller_sib_ctl_bypass_inst.sib_reg
+           2     rDFF         1315        ++           4          25  inst:counter_system_rtl1_tessent_mbist_bap_inst.counter_system_rtl1_tessent_mbist_controller_sib_inst0.sib_reg
+           3     rDFF         1335        ++           4          24  inst:counter_system_rtl1_tessent_mbist_bap_inst.counter_system_rtl1_tessent_mbist_controller_sib_inst0.tdr_reg
+           4     rDFF         1460        ++           4          23  inst:counter_system_rtl1_tessent_mbist_bap_inst.counter_system_rtl1_tessent_mbist_controller_sib_tdr_bypass_inst.sib_reg
+           5     rDFF         1603        ++           4          22  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.\tdr_reg[0]
+           6     rDFF         1723        ++           4          21  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.\tdr_reg[1]
+           7     rDFF         1743        ++           4          20  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.\tdr_reg[2]
+           8     rDFF         1763        ++           4          19  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.\tdr_reg[3]
+           9     rDFF         1783        ++           4          18  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.\tdr_reg[4]
+          10     rDFF         1803        ++           4          17  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.\tdr_reg[5]
+          11     rDFF         1823        ++           4          16  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.\tdr_reg[6]
+          12     rDFF         1843        ++           4          15  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.\tdr_reg[7]
+          13     rDFF         1863        ++           4          14  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.\tdr_reg[8]
+          14     rDFF         1883        ++           4          13  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.\tdr_reg[9]
+          15     rDFF         1623        ++           4          12  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.\tdr_reg[10]
+          16     rDFF         1643        ++           4          11  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.\tdr_reg[11]
+          17     rDFF         1663        ++           4          10  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.\tdr_reg[12]
+          18     rDFF         1683        ++           4           9  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.\tdr_reg[13]
+          19     rDFF         1703        ++           4           8  inst:counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.\tdr_reg[14]
+          20     rDFF         9207        ++           4           7  inst:counter_system_rtl1_tessent_sib_mbist_inst.sib_reg
+                              9162        +#                          inst:counter_system_rtl1_tessent_sib_mbist_inst.retiming_so_reg
+          21     rDFF         9274        ++           4           6  inst:counter_system_rtl1_tessent_sib_sti_inst.\ltest_ce_se_ue_reg[0]
+          22     rDFF         9294        ++           4           5  inst:counter_system_rtl1_tessent_sib_sti_inst.\ltest_ce_se_ue_reg[1]
+          23     rDFF         9463        ++           4           4  inst:counter_system_rtl1_tessent_sib_sti_inst.ltest_to_reset_reg
+          24     rDFF         9483        ++           4           3  inst:counter_system_rtl1_tessent_sib_sti_inst.ltest_to_sel_reg
+                              9454        +#                          inst:counter_system_rtl1_tessent_sib_sti_inst.ltest_so_retiming_reg
+          25     rDFF         9503        ++           4           2  inst:counter_system_rtl1_tessent_sib_sti_inst.ltest_to_si_reg
+                              9553        +#                          inst:counter_system_rtl1_tessent_sib_sti_inst.retiming_ltest_to_si_reg
+          26     rDFF         9607        ++           4           1  inst:counter_system_rtl1_tessent_sib_sti_inst.sib_reg
+                              9562        +#                          inst:counter_system_rtl1_tessent_sib_sti_inst.retiming_so_reg
+
+
+Report completed.
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            8,192,304  bytes
+
+                      CPU Time =    0:00:00.00
+                  Elapsed Time =    0:00:00.02                    [end TDA_001]
+
+     Date Ended:  Saturday Nov 21 11:52:59 2026  IST
+
+INFO (TFW-119): Modus checked in a modus_atpg license.  [end TFW_119] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TFW-117): Modus checked out a modus_atpg license.   
+      1 INFO (TFW-119): Modus checked in a modus_atpg license.   
+      1 INFO (TLM-055): Design Summary
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

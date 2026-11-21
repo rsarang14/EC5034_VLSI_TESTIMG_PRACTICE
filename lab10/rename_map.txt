@@ -1,0 +1,24 @@
+synth/run_lab10.tcl  ->  syn/run1_run.tcl
+synth/run_lab10.log  ->  syn/run1_genus.log
+synth/run_lab10_t5.tcl  ->  syn/run2_run.tcl
+synth/run_lab10_t5.log  ->  syn/run2_genus.log
+synth/include_libraries.v  ->  syn/include_libraries.v
+synth/SYNC_1RW_256x16.atpg.v  ->  syn/SYNC_1RW_256x16.atpg.v
+synth/SYNC_1RW_64Kx8.atpg.v  ->  syn/SYNC_1RW_64Kx8.atpg.v
+synth/counter_system_atpg/runmodus.atpg.tcl  ->  atpg_run1/runmodus.atpg.tcl
+synth/counter_system_atpg/testresults/logs/log_build_model  ->  atpg_run1/logs/log_build_model
+synth/counter_system_atpg/testresults/logs/log_build_testmode_FULLSCAN  ->  atpg_run1/logs/log_build_testmode_FULLSCAN
+synth/counter_system_atpg/testresults/logs/log_verify_test_structures_FULLSCAN  ->  atpg_run1/logs/log_verify_test_structures_FULLSCAN
+synth/counter_system_atpg/testresults/logs/log_report_test_structures_FULLSCAN  ->  atpg_run1/logs/log_report_test_structures_FULLSCAN
+synth/counter_system_atpg/testresults/logs/log_build_faultmodel  ->  atpg_run1/logs/log_build_faultmodel
+synth/counter_system_atpg/testresults/logs/log_create_logic_tests_FULLSCAN_counter_system_atpg  ->  atpg_run1/logs/log_create_logic_tests_FULLSCAN_counter_system_atpg
+synth/counter_system_atpg/ncverilog_FULLSCAN.log  ->  sim/run1_ncverilog_FULLSCAN.log
+synth/counter_system_atpg_6chains/runmodus.atpg.tcl  ->  atpg_run2/runmodus.atpg.tcl
+synth/counter_system_atpg_6chains/testresults/logs/log_build_model  ->  atpg_run2/logs/log_build_model
+synth/counter_system_atpg_6chains/testresults/logs/log_build_testmode_FULLSCAN  ->  atpg_run2/logs/log_build_testmode_FULLSCAN
+synth/counter_system_atpg_6chains/testresults/logs/log_verify_test_structures_FULLSCAN  ->  atpg_run2/logs/log_verify_test_structures_FULLSCAN
+synth/counter_system_atpg_6chains/testresults/logs/log_report_test_structures_FULLSCAN  ->  atpg_run2/logs/log_report_test_structures_FULLSCAN
+synth/counter_system_atpg_6chains/testresults/logs/log_build_faultmodel  ->  atpg_run2/logs/log_build_faultmodel
+synth/counter_system_atpg_6chains/testresults/logs/log_create_logic_tests_FULLSCAN_counter_system_atpg  ->  atpg_run2/logs/log_create_logic_tests_FULLSCAN_counter_system_atpg
+synth/counter_system_atpg_6chains/ncverilog_FULLSCAN.log  ->  sim/run2_ncverilog_FULLSCAN.log
+/c/Users/ragha/Desktop/VLSI Testing Practice/lab10/lab10_report.pdf  ->  EC23I2015_Lab_10.pdf

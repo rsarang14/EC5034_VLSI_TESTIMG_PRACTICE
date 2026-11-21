@@ -1,0 +1,306 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper, margin=2.3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage[colorlinks=true, linkcolor=navy, urlcolor=navy]{hyperref}
+
+\definecolor{navy}{HTML}{1F3A5F}
+\definecolor{teal}{HTML}{1B7F79}
+\definecolor{amber}{HTML}{C77D0A}
+\definecolor{brick}{HTML}{B03A2E}
+\definecolor{leaf}{HTML}{2E7D32}
+\definecolor{paper}{HTML}{F6F7F9}
+
+\setlength{\parskip}{0.55em}
+\setlength{\parindent}{0pt}
+\renewcommand{\arraystretch}{1.25}
+\setlist{itemsep=0.2em, topsep=0.3em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{navy}{Lab 10 -- ATPG with Modus on counter\_system}}
+\fancyhead[R]{\small R Sarang -- EC23I2015}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\titleformat{\section}{\Large\bfseries\color{navy}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{teal}}{\thesubsection}{0.6em}{}
+\let\oldus\_
+\renewcommand{\_}{\oldus\hspace{0pt}}
+\newcommand{\code}[1]{\texttt{\small #1}}
+
+\lstset{basicstyle=\ttfamily\fontsize{7}{8.4}\selectfont, breaklines=true, breakatwhitespace=false,
+  columns=fullflexible, keepspaces=true, frame=single, rulecolor=\color{navy!40},
+  backgroundcolor=\color{paper}, xleftmargin=2pt, xrightmargin=2pt, aboveskip=4pt, belowskip=4pt}
+
+\newtcolorbox{resultbox}[1][Result]{enhanced, breakable, colback=leaf!8, colframe=leaf, fonttitle=\bfseries,
+  title={#1}, boxrule=0.6pt, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt}
+\newtcolorbox{probbox}[1][The problem]{enhanced, breakable, colback=brick!7, colframe=brick, fonttitle=\bfseries,
+  title={#1}, boxrule=0.6pt, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt}
+
+\title{\vspace{-1em}\textbf{\color{navy}Lab 10: ATPG with Cadence Modus on the Scan-Inserted \code{counter\_system}}\\[2pt]
+\large ATPG scripts, memory models, pattern generation, simulation and a 6-chain re-run}
+\author{\textbf{R Sarang}\quad|\quad Roll No: EC23I2015\\ EC5034 -- VLSI Testing Practice}
+\date{\today}
+
+\begin{document}
+\maketitle
+\vspace{-1.2em}
+
+\begin{tcolorbox}[enhanced, colback=paper, colframe=navy!40, boxrule=0.5pt, arc=2pt]
+\textbf{Report at a glance}
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item \textbf{Flow:} Genus (\code{write\_dft\_atpg}) $\rightarrow$ Modus (memory models, ATPG) $\rightarrow$ Xcelium (pattern simulation).
+  \item \textbf{Run 1 (4 chains, Task 3/4):} testmode coverage \textbf{95.61\,\%} adjusted, \textbf{133} test sequences, simulation \textbf{0 miscompares} over 44\,383 compares.
+  \item \textbf{Run 2 (6 chains, Task 5):} longest chain drops from \textbf{244} to \textbf{55} bits, \textbf{135} tests, \textbf{0 miscompares} over 45\,319 compares.
+  \item Modus and Genus agree on chain count, chain lengths and the first and last flop of every chain.
+\end{itemize}
+\end{tcolorbox}
+
+\tableofcontents
+\newpage
+
+% =====================================================================
+\section{Design and Flow}
+
+The design is the Lab 8 \code{counter\_system} with MBIST, clock gating and muxed scan, with two memories
+(\code{SYNC\_1RW\_256x16} and \code{SYNC\_1RW\_64Kx8}). The standard-cell library is gsclib045 HVT
+(\code{slow\_vdd1v0\_basicCells\_hvt}). The Lab 8 database was copied (\code{cp -r}) into
+\code{LAB\_10/counter\_system} so the Lab 8 results stay intact.
+
+\begin{center}\small
+\begin{tabular}{@{}cp{3.4cm}p{9.2cm}@{}}
+\toprule
+\textbf{Task} & \textbf{Title} & \textbf{What was done} \\ \midrule
+1 & ATPG scripts & Lab 8 Task 3 script plus \code{write\_dft\_atpg}; Genus run writes the Modus scripts \\
+2 & Memory models & Modus \code{build\_memory\_model} GUI for both memories, \code{include\_libraries.v} \\
+3 & ATPG & \code{modus -file counter\_system\_atpg/runmodus.atpg.tcl}, answers Q1 to Q12 from the logs \\
+4 & Simulation & \code{run\_fullscan\_sim} (Xcelium), answers Q13 to Q15 \\
+5 & Updated scan & Mixed clock edges, at least 6 chains, new ATPG directory, re-run, comparison \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Scripts: \code{run\_lab10.tcl}, \code{run\_lab10\_t5.tcl} (Genus); \code{runmodus.atpg.tcl} in each ATPG directory (Modus).
+Logs: \code{run\_lab10.log}, \code{run\_lab10\_t5.log}, \code{counter\_system\_atpg*/testresults/logs/}, and
+\code{counter\_system\_atpg*/ncverilog\_FULLSCAN.log}.
+
+% =====================================================================
+\section{Task 1: Generate the ATPG Scripts}
+
+\code{run\_lab10.tcl} is a copy of the Lab 8 Task 3 script (\code{run\_task3.tcl}, the final scan flow) with this line
+appended at the end:
+
+\begin{lstlisting}
+write_dft_atpg -directory ${DESIGN}_atpg -library ./include_libraries.v
+\end{lstlisting}
+
+Genus ran with \code{genus -f run\_lab10.tcl -log run\_lab10.log} and wrote \code{counter\_system\_atpg/} with
+\code{runmodus.atpg.tcl}, \code{run\_fullscan\_sim}, \code{run\_fullscan\_sim\_sdf},
+\code{counter\_system.test\_netlist.v} and \code{counter\_system.FULLSCAN.pinassign}. The handout calls the Modus script
+\code{runmodus\_atpg.run.tcl}; the generated name is \code{runmodus.atpg.tcl}.
+The script reads the library through \code{-techlib ./include\_libraries.v} (with \code{-allowmissingmodules yes}),
+writes parallel Verilog vectors, and commits the tests to the experiment \code{counter\_system\_atpg}.
+
+\begin{resultbox}[Genus DFT summary]
+305 registers: \textbf{302 pass} DFT rules, 3 fail (DFT-301, tied-constant clock \code{ltest\_clk\_buf} in \code{tessent\_sib\_1}),
+99.0\,\% scannable. Both memories are reported as logic abstracts (VRO-14), which is why Modus needs ATPG models for them.
+\end{resultbox}
+
+% =====================================================================
+\section{Task 2: ATPG Models for the Memories}
+
+Modus was started from \code{synth/} (\code{modus}, then \code{build\_memory\_model}). Each memory has one RW port. Settings:
+
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Field} & \textbf{SYNC\_1RW\_256x16} & \textbf{SYNC\_1RW\_64Kx8} \\ \midrule
+\# Ports / Latch type / Faults on internal logic & 1 / Flop / Boundary & 1 / Flop / Boundary \\
+\# Addr pins, \# Data pins & 8, 16 & 16, 8 \\
+Min / Max address & 0 / 255 & 0 / 65535 \\
+Address, Data out, Data in & A[7:0], Q[15:0], D[15:0] & A[15:0], Q[7:0], D[7:0] \\
+Read enable, Read clock, Output enable & CEN, CLK, OEN & CEN, CLK, OEN \\
+Write enable, Write clock & WEN, CLK & WEN, CLK \\
+Pin order & \multicolumn{2}{l}{A, Q, CLK, CEN, WEN, D, OEN (Q output, rest input)} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The R/W Operations tab is left at its defaults (rising-edge read and write, write-then-read, one write and one read enable).
+Both models were written with \textbf{File $\rightarrow$ Generate Verilog} as \code{SYNC\_1RW\_256x16.atpg.v} and
+\code{SYNC\_1RW\_64Kx8.atpg.v} in \code{synth/}. \code{include\_libraries.v} includes the standard-cell Verilog and both
+models. The handout's \code{/home/ec5002\_lab/...} library path is not valid on this server, so the Lab 10 local copy of the
+same file is used.
+
+% =====================================================================
+\section{Task 3: ATPG (Run 1, 4 Scan Chains)}
+
+\code{modus -file counter\_system\_atpg/runmodus.atpg.tcl} ran every step (build\_model, build\_testmode, verify, report,
+build\_faultmodel, create\_logic\_tests, write\_vectors, commit\_tests) without errors. The handout's
+\code{log\_build\_fault\_model} is the file \code{log\_build\_faultmodel}.
+
+\begin{center}\small
+\begin{tabular}{@{}cp{5.4cm}p{7.4cm}@{}}
+\toprule
+\textbf{Q} & \textbf{Question} & \textbf{Answer} \\ \midrule
+1 & Blackboxes & \textbf{0}. No blackbox message; the memories are built as 2 RAM primitives from the \code{.atpg.v} models. \\
+2 & Errors & \textbf{0} (\code{*E} count is 0 in build\_model and build\_faultmodel). \\
+3 & Severe warnings & \textbf{1}: TEI-239, an optimistic description for the library UDP \code{altos\_dff\_sr\_1}. \\
+4 & Controllable and observable chains & \textbf{4} (TTM-357); same as the Genus report. \\
+5 & Active and inactive logic & \textbf{87.29\,\%} active, \textbf{12.71\,\%} inactive, 0\,\% constraint (TTM-347 warns it is below 96\,\%). \\
+6 & Chain lengths & \textbf{3, 244, 29, 26} (302 bits, average 76, longest 324\,\% of average); identical to Genus. \\
+7 & Number of flip-flops & Modus: \textbf{353} flops (302 in scan chains) and 55 latches (131 inactive latches, TSV-390). Genus: 305 registers (302 scannable, 3 fail). The 302 scan bits agree; Modus counts 48 extra flops outside the chains. \\
+8 & First and last flop of each chain & Same in Modus and Genus (table below). \\
+9 & Faults & Total static \textbf{12\,724} (global), 11\,661 in testmode. Collapsed \textbf{8\,702} (global), \textbf{7\,972} in testmode; 730 collapsed faults are inactive. \\
+10 & Tested and redundant & Testmode: 11\,661 faults, \textbf{11\,032 tested}, 94 possibly tested, \textbf{123 redundant}, 412 untested. \\
+11 & Adjusted test coverage & \textbf{95.61\,\%} in testmode (TCov 94.61\,\%); global 87.55\,\%. \\
+12 & Test patterns & \textbf{133} test sequences (1 scan and 132 logic). \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Q8: first and last flop per chain (Genus and Modus agree)}
+\begin{center}\footnotesize
+\begin{tabular}{@{}cp{7.1cm}p{6.1cm}@{}}
+\toprule
+\textbf{Chain} & \textbf{First flop} & \textbf{Last flop} \\ \midrule
+1 & \code{...c1\_controller\_inst/MEM0\_BIST\_COLLAR\_SI\_RetimeOut\_reg} & \code{...c1\_controller\_inst/MEM1\_BIST\_COLLAR\_SI\_RetimeOut\_reg} \\
+2 & \code{...MBISTPG\_ADD\_GEN/AX\_ADD\_REG\_reg[0]} & \code{u\_counter\_shift\_u\_shift\_reg\_pos\_reg[3]} \\
+3 & \code{...mbist\_controller\_sib\_ctl\_bypass\_inst/sib\_latch\_reg} & \code{...sib\_sti\_inst/to\_enable\_int\_reg} \\
+4 & \code{...mbist\_controller\_sib\_ctl\_bypass\_inst/sib\_reg} & \code{...sib\_sti\_inst/sib\_reg} \\
+\bottomrule
+\end{tabular}
+\end{center}
+Modus also lists unnumbered \code{retiming\_so\_reg} entries (marked \code{+\#}); these are retiming flops on the unload path
+and not scan positions.
+
+\begin{probbox}[Why the chains are unbalanced]
+Genus splits the chains by clock and edge: chains 1 and 2 use \code{clk} (fall, rise) and chains 3 and 4 use \code{ijtag\_tck}
+(fall, rise). Almost all registers are rising-edge \code{clk} flops, so one chain carries 244 of the 302 bits. Task 5 removes
+this restriction.
+\end{probbox}
+
+% =====================================================================
+\section{Task 4: Simulating the Generated Patterns}
+
+\code{./counter\_system\_atpg/run\_fullscan\_sim} runs Xcelium (\code{xrun}) on the test netlist with the scan and logic
+vector files. Result:
+
+\begin{center}\small
+\begin{tabular}{@{}cp{5.4cm}p{7.4cm}@{}}
+\toprule
+\textbf{Q} & \textbf{Question} & \textbf{Answer} \\ \midrule
+13 & Good compares and miscompares & \textbf{44\,383 good, 0 miscompares} (133 of 133 tests passed, 0 failed). \\
+14 & Tests against Q12 & 133 tests simulated, equal to the 133 test sequences from ATPG. \\
+15 & Cycles and simulation time & \textbf{531 cycles} (6 for the scan file, 525 for the logic file), \textbf{42\,480 ns}. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{probbox}[Environment issue: xrun not found]
+The first run stopped with \emph{Can't find 64 bit executable /home/install/MODUS201/tools/bin/64bit/xrun}. The Cadence launcher
+resolved its install directory from the first PATH entry, which is MODUS201. Fix (csh, no script edit):
+\code{setenv PATH /home/install/XCELIUM2009/tools/bin:/home/install/XCELIUM2009/bin:\$\{PATH\}; rehash}. Setting
+\code{CDS\_INST\_DIR} alone did not help. Modus itself must be started from the original bash shell, because it
+segfaulted in the shell with the changed PATH.
+\end{probbox}
+
+% =====================================================================
+\section{Task 5: Mixed Clock Edges and at Least 6 Scan Chains}
+
+\code{run\_lab10.tcl} was copied to \code{run\_lab10\_t5.tcl} with two changes: the two Lab 9 attributes were added after
+\code{set\_db dft\_prefix dft\_}, and the output directory was renamed so the Task 3 results are not overwritten.
+
+\begin{lstlisting}
+set_db [current_design] .dft_mix_clock_edges_in_scan_chains true
+set_db [current_design] .dft_min_number_of_scan_chains 6
+...
+write_dft_atpg -directory ${DESIGN}_atpg_6chains -library ./include_libraries.v
+\end{lstlisting}
+
+Because \code{setup.tcl} writes reports and the netlist to fixed names, the Task 1 outputs were backed up first
+(\code{work/reports\_task1}, \code{counter\_system\_task1.vg}) and the Task 5 outputs afterwards (\code{work/reports\_task5},
+\code{counter\_system\_task5.vg}). The DFT summary is unchanged (302 of 305 registers pass).
+
+\begin{resultbox}[Genus result]
+\textbf{6 scan chains}, lengths \textbf{50, 55, 50, 49, 49, 49} (302 bits). Chain 1 (\code{clk}) and chain 2 (\code{ijtag\_tck}) mix clock
+edges. The longest chain falls from 244 to 55 bits.
+\end{resultbox}
+
+\subsection*{Comparison of Q1 to Q5}
+\begin{center}\small
+\begin{tabular}{@{}clll@{}}
+\toprule
+\textbf{Q} & \textbf{Question} & \textbf{Run 1 (4 chains)} & \textbf{Run 2 (6 chains, mixed edges)} \\ \midrule
+1 & Blackboxes & 0 & 0 \\
+2 & Errors & 0 & 0 \\
+3 & Severe warnings & 1 (TEI-239) & 1 (TEI-239) \\
+4 & Controllable and observable chains & 4 (same as Genus) & \textbf{6} (same as Genus) \\
+5 & Active / inactive logic & 87.29\,\% / 12.71\,\% & 87.29\,\% / 12.71\,\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Only Q4 changes. Blackboxes, errors, the severe warning and the active-logic split depend on the design and the models, not on how the
+flops are grouped into chains.
+
+\subsection*{Simulation of run 2 against run 1}
+\begin{center}\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+ & \textbf{Run 1} & \textbf{Run 2} \\ \midrule
+Tests (all passed) & 133 & 135 \\
+Total cycles & 531 & 545 \\
+Simulation time & 42\,480 ns & 43\,600 ns \\
+Good compares / miscompares & 44\,383 / 0 & 45\,319 / 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Run 2 needs two more tests and 14 more cycles than run 1 even though the longest chain is much shorter. The generated script writes
+\emph{parallel} Verilog vectors, and the logic file takes about 4 cycles per test (525 cycles for 132 tests), so the shift length
+barely appears in these cycle counts; the totals follow the number of tests instead. Both runs pass with no miscompares, so the
+patterns are correct for both scan configurations.
+
+% =====================================================================
+\section{Changes Beyond Path Edits}
+
+\begin{center}\small
+\begin{tabular}{@{}cp{6cm}p{6.6cm}@{}}
+\toprule
+\textbf{\#} & \textbf{Change} & \textbf{Reason} \\ \midrule
+1 & Copied Lab 8 with \code{cp -r}, not \code{mv} & Keep Lab 8 results intact \\
+2 & Copied \code{run\_task3.tcl} to \code{run\_lab10.tcl} & Final scan flow; Lab 8 script untouched \\
+3 & Memory model settings (Flop, Boundary, Min/Max address, default R/W tab) & Handout example; Min/Max filled in for each memory \\
+4 & Pin order follows the handout, not the \code{.v\_interface} header order & Modus only needs names and types \\
+5 & Std-cell library path in \code{include\_libraries.v} & Handout path does not exist on this server \\
+6 & PATH change for \code{xrun} (csh) & Launcher resolved to MODUS201 \\
+7 & \code{run\_lab10\_t5.tcl} with two \code{set\_db} lines and a new ATPG directory & Task 5 requirements \\
+8 & Backups \code{reports\_task1}, \code{reports\_task5}, \code{counter\_system\_task1.vg}, \code{counter\_system\_task5.vg} & \code{setup.tcl} writes to fixed names \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The Genus runs also rewrote \code{../lec/fvmap2final1.tcl} and \code{fv/} (Lab 8 LEC files); they are not Lab 10 deliverables.
+
+\section{Deliverables}
+\begin{itemize}[leftmargin=1.4em]
+  \item \textbf{Synthesis scripts and logs:} \code{run\_lab10.tcl}, \code{run\_lab10\_t5.tcl}, \code{run\_lab10.log}, \code{run\_lab10\_t5.log},
+        \code{reports\_task1/}, \code{reports\_task5/}.
+  \item \textbf{ATPG scripts, reports and logs:} \code{counter\_system\_atpg/} and \code{counter\_system\_atpg\_6chains/}
+        (\code{runmodus.atpg.tcl}, \code{testresults/logs/}).
+  \item \textbf{Simulation results:} \code{ncverilog\_FULLSCAN.log} in each ATPG directory.
+  \item \textbf{Memory models:} \code{SYNC\_1RW\_256x16.atpg.v}, \code{SYNC\_1RW\_64Kx8.atpg.v}, \code{include\_libraries.v}.
+\end{itemize}
+
+\end{document}

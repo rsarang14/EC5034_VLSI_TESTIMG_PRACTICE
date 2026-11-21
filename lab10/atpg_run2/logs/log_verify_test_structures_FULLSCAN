@@ -1,0 +1,237 @@
+Starting Command: verify_test_structures 
+
+INFO (TDA-005): Command Line Invocation: 
+            verify_test_structures -xclockanalysis yes -testmode FULLSCAN -workdir /home/l210/L210/work/EC23I2015/LAB_10/counter_system/synth/counter_system_atpg_6chains -messagecount TSV-016=10,TSV-024=10,TSV-315=10,TSV-027=10 -stdout summary  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 20.12-s002_1, built Feb 26 2021 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /home/l210/L210/work/EC23I2015/LAB_10/counter_system/synth/counter_system_atpg_6chains/testresults/logs/log_verify_test_structures_FULLSCAN_112126122316-269028000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Saturday Nov 21 12:23:16 2026  IST
+            Host machine is l213.c2slab.iiitdm.ac.in, x86_64 running Linux 4.18.0-425.3.1.el8.x86_64.
+            This job is process number 147501.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /home/l210/L210/work/EC23I2015/LAB_10/counter_system/synth/counter_system_atpg_6chains
+            -TESTMODE FULLSCAN
+
+            -messagecount TSV-016=10,TSV-024=10,TSV-315=10,TSV-027=10
+            -xclockanalysis yes
+            -LOGFILE /home/l210/L210/work/EC23I2015/LAB_10/counter_system/synth/counter_system_atpg_6chains/testresults/logs/log_verify_test_structures_FULLSCAN_112126122316-269028000
+            -STDOUT summary
+[end TDA_009]
+INFO (TSV-900): verify_test_structures processing has started Sat Nov 21 12:23:16 2026    [end TSV_900] 
+INFO (TFW-117): Modus checked out a modus_atpg license.  [end TFW_117] 
+------------------- verify_test_structures Process Preview ---------------------
+  apply constraints ...................................... constraints=yes    
+  Print 1 message per source of clock race ............... limitcisource=yes  
+  Print 1 Message per capture of clock race .............. limitcicapture=yes 
+  Check for mutually exclusive gating logic (MEG) ........ megraces=yes       
+  Use raise message severity attributes if they exist .... raisemsgsev=no    
+  Reporting options ...................................... report[option]=yes/no 
+    Process Preview ......................................   preview=yes     
+    Circuit Statistics ...................................   circuit=yes      
+    Message Summary ......................................   summary=yes      
+    Specific Messages ....................................   specific=yes     
+    Tests Status .........................................   status=no       
+    Output File Names and Size ...........................   filestats=yes    
+    Display messages for cloaked objects .................   cloakedobj=no   
+  Rerun verify_test_structures test(s) ................... reruntests=no     
+  Use message suppression attributes if they exist ....... suppressmsg=no    
+  Test selected .......................................... test[option]=yes/no 
+    Analyze test clock control of memory elements ........   testclockusage=yes 
+    Analyze three-state drivers for contention ...........   tsdcontention=yes 
+    Analyze feedback loops and keeper devices ............   feedback=yes 
+    Analyze clock choppers ...............................   clockchopper=yes 
+    Analyze flip-flop and latch scan characteristics .....   latchusage=yes 
+    Analyze explicit fixed value latches .................   explicitfvlatch=yes 
+    Analyze potential clock signal races .................   clocksignalraces=yes 
+    Analyze internal scan chains .........................   internalscanchains=yes 
+
+--------------------Circuit Statistics--------------------
+
+INFO (TLM-055): Design Summary
+                --------------
+
+Hierarchical Model:                  Flattened Model:
+         13,655  Blocks                       9,297  Blocks
+         40,887  Pins                         9,319  Nodes
+         25,203  Nets
+
+Primary Inputs:                      Primary Outputs:
+         50  Input Only                        58  Output Only
+          0  Input/Output                       0  Input/Output
+         50  Total Inputs                      58  Total Outputs
+
+Tied Nets:                           Dotted Nets:
+        293  Tied to 0                          0  Two-State
+         45  Tied to 1                          0  Three-State
+         24  Tied to X                          0  Total Dotted Nets
+        362  Total Tied Nets
+
+Selected Primitive Functions:
+          0  Clock Chopper (CHOP) primitives 
+          2  RAMs
+          0  ROMs
+          0  TSDs
+          0  Resistors
+          0  Transistors
+         24  MUX2s
+         55  Latches
+
+
+         76  Rising  Edge Flop
+        254  Rising  Edge Flop w/Reset Port
+          8  Rising  Edge Flop w/Set Port
+         15  Rising  Edge Flop w/Set-Dominant and Reset Port
+        353  Total Flops
+
+      1,734  Technology Library Cell Instances
+
+[end TLM_055] 
+
+Test Function Pin Information for Test Mode:  FULLSCAN
+-------------------------------------------
+
+          5  SC    (System  Clock)             Pins
+          0  PC    (P Shift Clock)             Pins
+          3  EC    (E Shift Clock)             Pins
+
+          0  OSC   (Oscillator)                Pins
+
+          1  TI    (Test Inhibit)              Pins
+          1  SE    (Scan Enable)               Pins
+          0  CI    (Clock Isolation)           Pins
+          0  OI    (Output Inhibit)            Pins
+
+          6  SI    (Scan Input)                Pins
+          6  SO    (Scan Output)               Pins
+
+  Pin Index    Type Test Function                         Pin Name / Net Name
+  ---------    ---- ----------------------------------    -------------------
+         10      PI  +SC                                  ijtag_reset / ijtag_reset
+         42      PI  +SC                                  reset_n / reset_n
+          0      PI  -EC  -SC                             clk / clk
+         14      PI  -EC  -SC                             ijtag_tck / ijtag_tck
+         43      PI  -EC  -SC                             scan_clk / scan_clk
+         47      PI  +TI                                  test_mode / test_mode
+         44      PI  +SE                                  scan_en / scan_en
+          1      PI   SI                                  dft_sdi_1 / dft_sdi_1
+          2      PI   SI1                                 dft_sdi_2 / dft_sdi_2
+          3      PI   SI2                                 dft_sdi_3 / dft_sdi_3
+          4      PI   SI3                                 dft_sdi_4 / dft_sdi_4
+          5      PI   SI4                                 dft_sdi_5 / dft_sdi_5
+          6      PI   SI5                                 dft_sdi_6 / dft_sdi_6
+         98      PO   SO                                  dft_sdo_1 / dft_sdo_1
+         99      PO   SO1                                 dft_sdo_2 / dft_sdo_2
+        100      PO   SO2                                 dft_sdo_3 / dft_sdo_3
+        101      PO   SO3                                 dft_sdo_4 / dft_sdo_4
+        102      PO   SO4                                 dft_sdo_5 / dft_sdo_5
+        103      PO   SO5                                 dft_sdo_6 / dft_sdo_6
+
+  
+   Analyze test clocks' control of memory elements    
+WARNING (TSV-315): Memory element block counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.RC_CG_HIER_INST1.RC_CGIC_INST.__iNsT2.udp_latch is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.RC_CG_HIER_INST1.RC_CGIC_INST.__iNsT2.udp_latch.P01DCLK during the scan sequence.   [end TSV_315] 
+
+Analyze test clocks' control of memory elements process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.00
+  
+   Analyze three-state drivers for contention 
+
+Analyze three-state drivers for contention process has completed.
+                             CPU time =  0:00:00.01  Elapsed time =  0:00:00.00
+  
+   Analyze feedback loops and keeper devices          
+
+Analyze feedback loops and keeper devices process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.00
+  
+   Analyze clock choppers                             
+
+Analyze clock choppers process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.00
+  
+   Analyze flip-flop and latch scan characteristics   
+INFO (TSV-068): The length of the longest scan chain is 55 bit positions, which is 110% of the average scan chain length 51 (based on 302 total scan chain bits and 6 valid scan chains).   [end TSV_068] 
+INFO (TSV-378): Scan chain beginning at 'pin dft_sdi_1' and ending at 'pin dft_sdo_1' is controllable and observable. The length of the scan chain is 50 bit positions.   [end TSV_378] 
+INFO (TSV-378): Scan chain beginning at 'pin dft_sdi_2' and ending at 'pin dft_sdo_2' is controllable and observable. The length of the scan chain is 55 bit positions.   [end TSV_378] 
+INFO (TSV-378): Scan chain beginning at 'pin dft_sdi_3' and ending at 'pin dft_sdo_3' is controllable and observable. The length of the scan chain is 50 bit positions.   [end TSV_378] 
+INFO (TSV-378): Scan chain beginning at 'pin dft_sdi_4' and ending at 'pin dft_sdo_4' is controllable and observable. The length of the scan chain is 49 bit positions.   [end TSV_378] 
+INFO (TSV-378): Scan chain beginning at 'pin dft_sdi_5' and ending at 'pin dft_sdo_5' is controllable and observable. The length of the scan chain is 49 bit positions.   [end TSV_378] 
+INFO (TSV-378): Scan chain beginning at 'pin dft_sdi_6' and ending at 'pin dft_sdo_6' is controllable and observable. The length of the scan chain is 49 bit positions.   [end TSV_378] 
+INFO (TSV-567): There are 6 controllable scan chains fed by Scan In (SI) primary inputs.   [end TSV_567] 
+INFO (TSV-568): There are 6 observable scan chains feeding to Scan Out (SO) primary outputs.   [end TSV_568] 
+INFO (TSV-569): There are 0 controllable scan chains fed by on-product Pattern Generator(s).   [end TSV_569] 
+INFO (TSV-570): There are 0 observable scan chains feeding to on-product Multiple-Input Signature Register (MISRs).   [end TSV_570] 
+WARNING (TSV-390): There are 131 inactive (non-scan) latches.   [end TSV_390] 
+INFO (TSV-383): There are 3 floating latches.   [end TSV_383] 
+
+Analyze flip-flop and latch scan characteristics process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.00
+  
+   Analyze explicit fixed value latches 
+
+Analyze explicit fixed value latches process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.00
+  
+   Analyze potential clock signal races               
+   Check for mutually exclusive gating logic (MEG)    
+
+Analyze potential clock signal races process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.01
+  
+   Analyze internal scan chains 
+
+Analyze channel inputs for validity process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.00
+
+--------------------File Information----------------------
+          57344 /home/l210/L210/work/EC23I2015/LAB_10/counter_system/synth/counter_system_atpg_6chains/tbdata/TSVmessageFile.FULLSCAN 
+
+INFO (TSV-908): verify_test_structures processing complete.   [end TSV_908] 
+INFO (TFW-119): Modus checked in a modus_atpg license.  [end TFW_119] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            8,921,536  bytes
+
+                      CPU Time =    0:00:00.01
+                  Elapsed Time =    0:00:09.25                    [end TDA_001]
+
+     Date Ended:  Saturday Nov 21 12:23:25 2026  IST
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TFW-117): Modus checked out a modus_atpg license.   
+      1 INFO (TFW-119): Modus checked in a modus_atpg license.   
+      1 INFO (TLM-055): Design Summary
+      1 INFO (TSV-068): The length of the longest scan chain is 55 bit positions, which is 110% of the average scan chain length 51 (based on 302 total scan chain bits and 6 valid scan chains).    
+      6 INFO (TSV-378): Scan chain beginning at 'pin dft_sdi_1' and ending at 'pin dft_sdo_1' is controllable and observable. The length of the scan chain is 50 bit positions.    
+      1 INFO (TSV-383): There are 3 floating latches.    
+      1 INFO (TSV-567): There are 6 controllable scan chains fed by Scan In (SI) primary inputs.    
+      1 INFO (TSV-568): There are 6 observable scan chains feeding to Scan Out (SO) primary outputs.    
+      1 INFO (TSV-569): There are 0 controllable scan chains fed by on-product Pattern Generator(s).    
+      1 INFO (TSV-570): There are 0 observable scan chains feeding to on-product Multiple-Input Signature Register (MISRs).    
+      1 INFO (TSV-900): verify_test_structures processing has started Sat Nov 21 12:23:16 2026     
+      1 INFO (TSV-908): verify_test_structures processing complete.    
+
+  WARNING Messages...
+      1 WARNING (TSV-315): Memory element block counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.RC_CG_HIER_INST1.RC_CGIC_INST.__iNsT2.udp_latch is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin counter_system_rtl1_tessent_mbist_bap_inst.tdr_inst.RC_CG_HIER_INST1.RC_CGIC_INST.__iNsT2.udp_latch.P01DCLK during the scan sequence.    
+      1 WARNING (TSV-390): There are 131 inactive (non-scan) latches.    
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
