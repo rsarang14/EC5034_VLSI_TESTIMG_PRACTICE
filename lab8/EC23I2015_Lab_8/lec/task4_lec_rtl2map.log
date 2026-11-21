@@ -1,0 +1,3246 @@
+                          CONFORMAL (R)
+                   Version 20.20-s200 (01-Feb-2021) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2020. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 2115 days old. You can download the latest version from http://downloads.cadence.com.
+
+0
+// Command: usage -auto -elapse
+CPU time     : 0.05    seconds
+Elapse time  : 39      seconds
+Memory usage : 62.49   M bytes
+0
+// Command: set_verification_information rtl_fv_map_db
+// Verification information is set to /home/l210/L210/work/EC23I2015/lab8/synth/rtl_fv_map_db.
+// Advanced reporting is enabled and the output is written to /home/l210/L210/work/EC23I2015/lab8/synth/rtl_fv_map_db
+0
+// Command: read_implementation_information fv/counter_system -revised fv_map
+// Reading implementation information from fv/counter_system ...
+================================================================================
+          Information Category                         Count
+--------------------------------------------------------------------------------
+     Sequential instance phase                           333
+       Sequential optimization                            17
+        Sequential duplication                             0
+         Boundary optimization                            97
+            Synthesis equation                             0
+    Combinational loop breaker                             0
+                       Mapping                             0
+================================================================================
+// Note: Read implementation information successfully.
+0
+// Command: set_parallel_option -threads 1,4 -norelease_license
+// Number of threads is set to 1,4.
+0
+// Command: set_compare_options -threads 1,4
+Set computing threads of compare to 1,4.
+0
+// Command: set env(RC_VERSION)     "20.11-s111_1"
+20.11-s111_1
+// Command: set env(CDN_SYNTH_ROOT) "/home/install/GENUS201/tools.lnx86"
+/home/install/GENUS201/tools.lnx86
+// Command: set CDN_SYNTH_ROOT      "/home/install/GENUS201/tools.lnx86"
+/home/install/GENUS201/tools.lnx86
+// Command: set env(CW_DIR) "/home/install/GENUS201/tools.lnx86/lib/chipware"
+/home/install/GENUS201/tools.lnx86/lib/chipware
+// Command: set CW_DIR      "/home/install/GENUS201/tools.lnx86/lib/chipware"
+/home/install/GENUS201/tools.lnx86/lib/chipware
+// Command: set_undefined_cell black_box -noascend -both
+0
+// Command: add_search_path ../library/gsclib045_all_v4.8/gsclib045_hvt/timing -library -both
+0
+// Command: read_library -liberty -both /home/l210/L210/work/EC23I2015/lab8/synth/../library/gsclib045_all_v4.8/gsclib045_hvt/timing/slow_vdd1v0_basicCells_hvt.lib /home/l210/L210/work/EC23I2015/lab8/synth/../library/gsclib045_all_v4.8/gsclib045_hvt/timing/slow_vdd1v0_basicCells_hvt.lib
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/synth/../library/gsclib045_all_v4.8/gsclib045_hvt/timing/slow_vdd1v0_basicCells_hvt.lib ...
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/synth/../library/gsclib045_all_v4.8/gsclib045_hvt/timing/slow_vdd1v0_basicCells_hvt.lib ...
+// Note: (FIL1.8) File reads multiple times (occurrence:1)
+// Warning: (RTL9.16) Duplicated operating_condition, the second one is ignored (occurrence:1)
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:2)
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:32)
+// Warning: (IGN3.2) Duplicate modules/entities are detected. Subsequent modules/entities are ignored (occurrence:480)
+// Note: Read Liberty library successfully
+0
+CPU time     : 0.16    seconds
+Elapse time  : 40      seconds
+Memory usage : 87.85   M bytes
+// Command: set_undriven_signal 0 -golden
+0
+// Command: set lec_version_required "16.20100"
+16.20100
+// Command: if {$lec_version >= $lec_version_required} {
+//              set_naming_style genus -golden
+//          } else {
+//              set_naming_style rc -golden
+//          }
+// Command: set_naming_style genus -golden
+0
+// Command: set_naming_rule "%s\[%d\]" -instance_array -golden
+0
+// Command: set_naming_rule "%s_reg" -register -golden
+0
+// Command: set_naming_rule "%L.%s" "%L\[%d\].%s" "%s" -instance -golden
+0
+// Command: set_naming_rule "%L.%s" "%L\[%d\].%s" "%s" -variable -golden
+0
+// Command: set lec_version_required "17.10200"
+17.10200
+// Command: if {$lec_version >= $lec_version_required} {
+//              set_naming_rule -ungroup_separator {_} -golden
+//          }
+// Command: set_naming_rule -ungroup_separator _ -golden
+0
+// Command: set lec_version_required "17.20301"
+17.20301
+// Command: if {$lec_version >= $lec_version_required} {
+//              set_hdl_options -const_port_extend
+//          }
+// Command: set_hdl_options -const_port_extend
+0
+// Command: set_hdl_options -VERILOG_INCLUDE_DIR "src:sep:cwd"
+0
+// Command: delete_search_path -all -design -golden
+0
+// Command: add_search_path /home/l210/L210/work/EC23I2015/lab8/synth/../rtl -design -golden
+0
+// Command: read_design  -define SYNTHESIS  -merge bbox -golden -lastmod -noelab -verilog2k  /home/l210/L210/work/EC23I2015/lab8/rtl/updown_counter.v /home/l210/L210/work/EC23I2015/lab8/rtl/shift_register.v /home/l210/L210/work/EC23I2015/lab8/rtl/lfsr.v /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/modified_rtl_files/counter_system.v /home/l210/L210/work/EC23I2015/lab8/rtl/counter_shift.v /home/l210/L210/work/EC23I2015/lab8/rtl/counter_lfsr.v
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/rtl/updown_counter.v ...
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/rtl/shift_register.v ...
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/rtl/lfsr.v ...
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/modified_rtl_files/counter_system.v ...
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/rtl/counter_shift.v ...
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/rtl/counter_lfsr.v ...
+0
+// Command: delete_search_path -all -design -golden
+0
+// Command: add_search_path /home/l210/L210/work/EC23I2015/lab8/synth/../rtl -design -golden
+0
+// Command: read_design  -define SYNTHESIS  -merge bbox -golden -lastmod -noelab -verilog2k  /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_cells.instrument/counter_system_rtl1_tessent_clk_mux2.v /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_cells.instrument/counter_system_rtl1_tessent_posedge_synchronizer_reset.v
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_cells.instrument/counter_system_rtl1_tessent_clk_mux2.v ...
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_cells.instrument/counter_system_rtl1_tessent_posedge_synchronizer_reset.v ...
+0
+// Command: delete_search_path -all -design -golden
+0
+// Command: add_search_path /home/l210/L210/work/EC23I2015/lab8/synth/../rtl -design -golden
+0
+// Command: read_design  -define SYNTHESIS  -merge bbox -golden -lastmod -noelab -verilog2k  /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_cells.instrument/counter_system_rtl1_tessent_clk_buf.v
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_cells.instrument/counter_system_rtl1_tessent_clk_buf.v ...
+0
+// Command: delete_search_path -all -design -golden
+0
+// Command: add_search_path /home/l210/L210/work/EC23I2015/lab8/synth/../rtl -design -golden
+0
+// Command: read_design  -define SYNTHESIS  -merge bbox -golden -lastmod -noelab -verilog2k  /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_1.v /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_2.v
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_1.v ...
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_ijtag.instrument/counter_system_rtl1_tessent_sib_2.v ...
+0
+// Command: delete_search_path -all -design -golden
+0
+// Command: add_search_path /home/l210/L210/work/EC23I2015/lab8/synth/../rtl -design -golden
+0
+// Command: read_design  -define SYNTHESIS  -merge bbox -golden -lastmod -noelab -verilog2k  /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_bap.v /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_c1_controller.v /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_c1_interface_m1.v /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_c1_interface_m2.v
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_bap.v ...
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_c1_controller.v ...
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_c1_interface_m1.v ...
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_c1_interface_m2.v ...
+0
+// Command: delete_search_path -all -design -golden
+0
+// Command: add_search_path /home/l210/L210/work/EC23I2015/lab8/synth/../rtl -design -golden
+0
+// Command: read_design  -define SYNTHESIS  -merge bbox -golden -lastmod -noelab -verilog2k  /home/l210/L210/work/EC23I2015/lab8/library/memories/SYNC_1RW_256x16.v_interface /home/l210/L210/work/EC23I2015/lab8/library/memories/SYNC_1RW_64Kx8.v_interface
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/library/memories/SYNC_1RW_256x16.v_interface ...
+// Parsing file /home/l210/L210/work/EC23I2015/lab8/library/memories/SYNC_1RW_64Kx8.v_interface ...
+0
+// Command: elaborate_design -golden -root {counter_system} -rootonly 
+// Golden root module is set to 'counter_system'
+// Warning: (RTL1.5a) Assignment with RHS bit width is greater than LHS bit width (occurrence:1)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:4)
+// Warning: (RTL2.13a) Undriven pin is detected. Module is empty (occurrence:10)
+// Warning: (RTL3.3) Non-constant value assignment is in asynchronous set/reset value (occurrence:1)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:4)
+// Note: (RTL5.6) Case statement with no default (occurrence:17)
+// Warning: (RTL7.10a) Comparison with different data sizes (occurrence:2)
+// Note: (RTL8.2) Latch(es) are inferred due to self assignment (occurrence:4)
+// Warning: (RTL10) Both posedge and negedge are used in different always/process (occurrence:30)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:19)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:18)
+// Note: (VLG6.4) Supported system datapath function call (occurrence:1)
+// Note: (VLG9.2) The `define macro is used (occurrence:6)
+// Warning: (DIR4.1) Design includes one or more HDL directives or pragmas that Conformal does not support (occurrence:35)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:4)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:4)
+// Warning: (IGN2.1) Delay value(s) are ignored (occurrence:10)
+// Warning: (IGN3.4) Duplicate modules/entities are detected. Previous modules/entities are ignored (occurrence:1)
+// Warning: (HRC1.4) Module/entity is empty (blackboxed) (occurrence:2)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:6)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:15)
+// Warning: (HRC3.10b) An input port is declared, but it is not used. Module is empty (occurrence:10)
+// Warning: (HRC3.16) A wire is declared, but not used in the module (occurrence:29)
+// Warning: Total black box modules referenced in Golden = 2
+// Warning: Total black box modules referenced in Golden = 2
+0
+// Command: read_design -verilog95   -revised -lastmod -noelab fv/counter_system/fv_map.v.gz
+// Parsing file fv/counter_system/fv_map.v.gz ...
+0
+// Command: elaborate_design -revised -root {counter_system}
+// Revised root module is set to 'counter_system'
+// Warning: (RTL2.13a) Undriven pin is detected. Module is empty (occurrence:10)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:62)
+// Warning: (HRC1.4) Module/entity is empty (blackboxed) (occurrence:2)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:66)
+// Warning: (HRC3.10b) An input port is declared, but it is not used. Module is empty (occurrence:10)
+// Warning: Total black box modules referenced in Revised = 2
+0
+// Command: uniquify -all -nolib -golden
+Uniquified 2 instance(s) referring to module 'counter_system_rtl1_tessent_posedge_synchronizer_reset' in Golden
+Uniquified 1 instance(s) referring to module 'counter_system_rtl1_tessent_mbist_bap_sib' in Golden
+Uniquified 3 instance(s) referring to module 'counter_system_rtl1_tessent_clk_mux2' in Golden
+Uniquified 2 instance(s) referring to module 'counter_system_rtl1_tessent_clk_buf' in Golden
+Uniquified 4 module(s)
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules        39              51
+Library-cells        727            1753
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT      *        41                   44
+OUTPUT              52                   52
+--------------------------------------------
+AND        *       746                 1435
+BUF        *       129                   56
+DFF        *       322                  305
+DLAT       *         9                   28
+INV        *       407                 1316
+MUX        *      2399                    0
+NAND       *         0                  408
+NOR        *        93                  376
+OR         *       327                  785
+WIRE       *       660                    9
+XNOR       *        22                   75
+XOR        *       227                    5
+------ word-level --------------------------
+ADD        *         3                    0
+EQ         *        31                    0
+GT         *         2                    0
+LT         *         2                    0
+SUBTRACT   *         3                    0
+WAND       *        18                    0
+WINV       *         8                    0
+WMUX       *       525                    0
+WOR        *        10                    0
+WSEL       *        11                    0
+WXOR       *        16                    0
+BBOX                 2                    2
+--------------------------------------------
+Total             5343                 4800
+
+0
+// Command: report_black_box
+SYSTEM: (G R) SYNC_1RW_256x16
+SYSTEM: (G R) SYNC_1RW_64Kx8
+0
+// Command: set_flatten_model -seq_constant
+0
+// Command: set_flatten_model -seq_constant_x_to 0
+0
+// Command: set_flatten_model -nodff_to_dlat_zero
+0
+// Command: set_flatten_model -nodff_to_dlat_feedback
+0
+// Command: set_flatten_model -hier_seq_merge
+0
+// Command: set_flatten_model -gated_clock
+0
+// Command: set_flatten_model -balanced_modeling
+0
+// Command: add_pin_constraints 0 {scan_en} -revised
+0
+// Command: add_pin_constraints 0 {test_mode} -revised
+0
+// Command: set lec_version_required "20.10100"
+20.10100
+// Command: if {$lec_version >= $lec_version_required} {
+//              check_verification_information
+//          }
+// Command: check_verification_information
+Checking Sequential constant...
+Checking Sequential merge...
+Checking Synthesis equation...
+================================================================================
+Implementation Information Check Summary: 
+--------------------------------------------------------------------------------
+Total Sequential Constants:     0
+  Name Collision:               0
+  Name Ambiguous:               0
+  Name not Found:               0
+--------------------------------------------------------------------------------
+Total Sequential Merges:        1
+  Name Collision:               0
+  Name Ambiguous:               0
+  Name not Found:               0
+  Merge Target:
+    Name Ambiguous:             0
+    Name not Found:             0
+--------------------------------------------------------------------------------
+Total Synthesis Equations:      0
+  Module not Found:             0
+  Equation Conflict:            0
+  Empty Equation:               0
+================================================================================
+0
+// Command: set_analyze_option -auto -report_map
+0
+// Command: write_hier_compare_dofile hier_tmp2.lec.do -verbose -noexact_pin_match -constraint -usage \
+//          -replace -balanced_extraction -input_output_pin_equivalence \
+//          -prepend_string "report_design_data; report_unmapped_points -summary; report_unmapped_points -notmapped; analyze_datapath -module -verbose; eval analyze_datapath $DATAPATH_SOLVER_OPTION -verbose"
+// The following settings are used for hierarchical dofile generation:
+// Modeling Options:
+    Auto setup disabled
+// Mapping Method:
+    Name Only
+--------------------------------------------------------------------------------
+// Flattening Golden and Revised designs ...
+--------------------------------------------------------------------------------
+// Read in 1 merge group(s) from verification information.
+// Processing Golden ...
+// Modeling Golden ...
+// (F21) Merged 1 DFF/DLAT(s) due to added instance equivalences (flatten)
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 628 out of 664 DFF/DLATs
+// (F18) Converted 1 DFF/DLAT(s) in (G) to ZERO/ONE
+// (F14) Remodeled 36 gated-clock DFF/DLAT(s)
+// (F18) Converted 2 DFF/DLAT(s) in (R) to ZERO/ONE
+// (F14) Remodeled 202 gated-clock DFF/DLAT(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 426
+// Revised key points = 429
+// Warning: Automatic key point mapping is skipped
+// Note: Comparing instance equivalent points ...
+// Command: compare -nowriteuvi
+Compare results of instance/output/pin equivalences and/or sequential merge      
+================================================================================
+Compared points      DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           1         1       
+================================================================================
+CPU time     : 0.36    seconds
+Elapse time  : 40      seconds
+Memory usage : 135.25  M bytes
+// Command: MAP KEy Points
+// Mapping key points ...
+// Warning: Primary input 'scan_clk' in Revised has no correspondence in Golden
+// Warning: Golden has 16 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            41     52     263    6      2         364     
+--------------------------------------------------------------------------------
+Revised           41     52     263    6      2         364     
+================================================================================
+// Note: A key point group is counted as one key point
+// Golden has 1 key point groups
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       42     3         45      
+Not-mapped        16     0         16      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   PI     DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Extra             1      0      0         1       
+Unreachable       0      42     22        64      
+================================================================================
+// Warning: Key point mapping is incomplete
+--------------------------------------------------------------------------------
+// Starting hierarchical dofile generation ...
+--------------------------------------------------------------------------------
+// Total Matching Module Instance Pairs =  30
+// Module Instantiation Ratio in Golden = 1.00
+// Module Instantiation Ratio in Revised = 1.00
+// Gathering Instance Boundary Information ...
+// Extracting Constraints in Golden ...
+// Extracting Constraints in Revised ...
+// Extracting logic-cone properties of pins ...
+// Balancing Constraints ...
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[7] Q_IN[7]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[6] Q_IN[6]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[5] Q_IN[5]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[4] Q_IN[4]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[3] Q_IN[3]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[2] Q_IN[2]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[1] Q_IN[1]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[0] Q_IN[0]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[7] Q_IN[7]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[6] Q_IN[6]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[5] Q_IN[5]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[4] Q_IN[4]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[3] Q_IN[3]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[2] Q_IN[2]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[1] Q_IN[1]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m2' has input-output equivalent pins: Q[0] Q_IN[0]
+// Golden module 'counter_system_rtl1_tessent_sib_1' has input-output equivalent pins: ijtag_to_tck ijtag_tck
+// Golden module 'counter_system_rtl1_tessent_sib_1' has input-output equivalent pins: ijtag_to_reset ijtag_reset
+// Golden module 'counter_system_rtl1_tessent_sib_1' has input-output equivalent pins: ijtag_to_si ijtag_si
+// Golden module 'counter_system_rtl1_tessent_sib_1' has input-output equivalent pins: ijtag_to_ce ijtag_ce
+// Golden module 'counter_system_rtl1_tessent_sib_1' has input-output equivalent pins: ijtag_to_se ijtag_se
+// Golden module 'counter_system_rtl1_tessent_sib_1' has input-output equivalent pins: ijtag_to_ue ijtag_ue
+// Revised module 'counter_system_rtl1_tessent_sib_1' has input-output equivalent pins: ijtag_to_tck ijtag_tck
+// Revised module 'counter_system_rtl1_tessent_sib_1' has input-output equivalent pins: ijtag_to_reset ijtag_reset
+// Revised module 'counter_system_rtl1_tessent_sib_1' has input-output equivalent pins: ijtag_to_si ijtag_si
+// Revised module 'counter_system_rtl1_tessent_sib_1' has input-output equivalent pins: ijtag_to_ce ijtag_ce
+// Revised module 'counter_system_rtl1_tessent_sib_1' has input-output equivalent pins: ijtag_to_se ijtag_se
+// Revised module 'counter_system_rtl1_tessent_sib_1' has input-output equivalent pins: ijtag_to_ue ijtag_ue
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[15] Q_IN[15]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[14] Q_IN[14]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[13] Q_IN[13]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[12] Q_IN[12]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[11] Q_IN[11]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[10] Q_IN[10]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[9] Q_IN[9]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[8] Q_IN[8]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[7] Q_IN[7]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[6] Q_IN[6]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[5] Q_IN[5]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[4] Q_IN[4]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[3] Q_IN[3]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[2] Q_IN[2]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[1] Q_IN[1]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[0] Q_IN[0]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[15] Q_IN[15]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[14] Q_IN[14]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[13] Q_IN[13]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[12] Q_IN[12]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[11] Q_IN[11]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[10] Q_IN[10]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[9] Q_IN[9]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[8] Q_IN[8]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[7] Q_IN[7]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[6] Q_IN[6]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[5] Q_IN[5]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[4] Q_IN[4]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[3] Q_IN[3]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[2] Q_IN[2]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[1] Q_IN[1]
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_interface_m1' has input-output equivalent pins: Q[0] Q_IN[0]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_controller' has input-output equivalent pins: BIST_COLLAR_HOLD BIST_HOLD
+// Revised module 'counter_system_rtl1_tessent_mbist_c1_controller' has input-output equivalent pins: BIST_COLLAR_HOLD BIST_HOLD
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl' has input-output equivalent pins: ADD_Y1_CMD_MODIFIED[1] ADD_Y1_CMD[1]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl' has input-output equivalent pins: ADD_Y1_CMD_MODIFIED[0] LOOP_CMD[1]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl' has input-output equivalent pins: ADD_X1_CMD_MODIFIED[1] ADD_X1_CMD[1]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl' has input-output equivalent pins: ADD_X1_CMD_MODIFIED[0] ADD_X1_CMD[0]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl' has input-output equivalent pins: WDATA_CMD_MODIFIED[3] WDATA_CMD[3]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl' has input-output equivalent pins: WDATA_CMD_MODIFIED[1] WDATA_CMD[1]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl' has input-output equivalent pins: EDATA_CMD_MODIFIED[3] EDATA_CMD[3]
+// Golden module 'counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl' has input-output equivalent pins: EDATA_CMD_MODIFIED[1] EDATA_CMD[1]
+// Extracted 70 input-output pin equivalences
+// Extracted equivalences (Input-Output) using medium effort
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_mbist_c1_controller_pointer_cntrl
+    Instance counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_POINTER_CNTRL
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_mbist_c1_interface_m2
+    Instance u2_interface_inst
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_mbist_bap_tdr
+    Instance counter_system_rtl1_tessent_mbist_bap_inst/tdr_inst
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_mbist_c1_interface_m2_STATUS
+    Instance u2_interface_inst/MBISTPG_STATUS
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_sib_1
+    Instance counter_system_rtl1_tessent_sib_sti_inst
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_mbist_c1_controller_ctl_comp
+    Instance counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_CTL_COMP
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_mbist_c1_controller_data_gen
+    Instance counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_DATA_GEN
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_mbist_c1_controller_fsm
+    Instance counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_FSM
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_mbist_c1_interface_m1
+    Instance u1_interface_inst
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_mbist_c1_controller_signal_gen
+    Instance counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_SIGNAL_GEN
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_mbist_c1_controller
+    Instance counter_system_rtl1_tessent_mbist_c1_controller_inst
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_mbist_bap
+    Instance counter_system_rtl1_tessent_mbist_bap_inst
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl
+    Instance counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_REPEAT_LOOP_CNTRL
+ADD_Y1_CMD[1]  (KP<--)(REP)  UVI: U
+  label pin ADD_Y1_CMD[1] as unreachable by uvi.
+ADD_Y1_CMD[0]  (KP<--)  EQ_REP: +LOOP_CMD[1] UVI: U
+  label pin ADD_Y1_CMD[0] as unreachable by uvi.
+ADD_X1_CMD[1]  (KP<--)(REP)  UVI: U
+  label pin ADD_X1_CMD[1] as unreachable by uvi.
+ADD_X1_CMD[0]  (KP<--)(REP)  UVI: U
+  label pin ADD_X1_CMD[0] as unreachable by uvi.
+WDATA_CMD[3]  (KP<--)(REP)  UVI: U
+  label pin WDATA_CMD[3] as unreachable by uvi.
+WDATA_CMD[1]  (KP<--)(REP)  UVI: U
+  label pin WDATA_CMD[1] as unreachable by uvi.
+EDATA_CMD[3]  (KP<--)(REP)  UVI: U
+  label pin EDATA_CMD[3] as unreachable by uvi.
+EDATA_CMD[1]  (KP<--)(REP)  UVI: U
+  label pin EDATA_CMD[1] as unreachable by uvi.
+ADD_Y1_CMD_MODIFIED[0] (REP)  IOEQ: +LOOP_CMD[1] UVI: IOEQ: +ADD_Y1_CMD[0]
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_mbist_c1_controller_add_gen
+    Instance counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_ADD_GEN
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_mbist_c1_interface_m1_STATUS
+    Instance u1_interface_inst/MBISTPG_STATUS
+// Checking constraints with verification information ...
+Module: counter_system_rtl1_tessent_mbist_bap_ctl_sib
+    Instance counter_system_rtl1_tessent_mbist_bap_inst/counter_system_rtl1_tessent_mbist_controller_sib_inst0
+// Checking 9 constraints in verification information.
+//   Extracted 9 constraints successfully.
+// Resolving Constraints ...
+// Writing hierarchical dofile ...
+# The following modules are not written  because they have been added as black box:
+# SYNC_1RW_256x16 (G)
+# SYNC_1RW_64Kx8 (G)
+# SYNC_1RW_256x16 (R)
+# SYNC_1RW_64Kx8 (R)
+# The following Golden modules are not written because of non-matching
+# instance names in Revised:
+# updown_counter_WIDTH16 (Instance: u_counter_shift/u_counter) (G)
+# updown_counter_WIDTH8 (Instance: u_counter_lfsr/u_counter) (G)
+# shift_register_WIDTH16 (Instance: u_counter_shift/u_shift_reg) (G)
+# counter_shift_COUNTER_WIDTH16 (Instance: u_counter_shift) (G)
+# counter_lfsr_COUNTER_WIDTH8 (Instance: u_counter_lfsr) (G)
+# The following module pairs are not written because of number of primitive
+# instances less than 50:
+# counter_system_rtl1_tessent_mbist_bap_sib, prim-cnt = 16 (G) and counter_system_rtl1_tessent_mbist_bap_sib, prim-cnt = 43 (R)
+# counter_system_rtl1_tessent_posedge_synchronizer_reset_1, prim-cnt = 3 (G) and counter_system_rtl1_tessent_posedge_synchronizer_reset_1, prim-cnt = 12 (R)
+# counter_system_rtl1_tessent_posedge_synchronizer_reset_2, prim-cnt = 3 (G) and counter_system_rtl1_tessent_posedge_synchronizer_reset_2, prim-cnt = 12 (R)
+# counter_system_rtl1_tessent_clk_mux2_2, prim-cnt = 1 (G) and counter_system_rtl1_tessent_clk_mux2_2, prim-cnt = 10 (R)
+# counter_system_rtl1_tessent_mbist_bap_sib_1, prim-cnt = 16 (G) and counter_system_rtl1_tessent_mbist_bap_sib_1, prim-cnt = 42 (R)
+# counter_system_rtl1_tessent_clk_buf, prim-cnt = 1 (G) and counter_system_rtl1_tessent_clk_buf, prim-cnt = 1 (R)
+# counter_system_rtl1_tessent_posedge_synchronizer_reset, prim-cnt = 3 (G) and counter_system_rtl1_tessent_posedge_synchronizer_reset, prim-cnt = 12 (R)
+# counter_system_rtl1_tessent_clk_mux2, prim-cnt = 1 (G) and counter_system_rtl1_tessent_clk_mux2, prim-cnt = 6 (R)
+# counter_system_rtl1_tessent_sib_2, prim-cnt = 17 (G) and counter_system_rtl1_tessent_sib_2, prim-cnt = 45 (R)
+# counter_system_rtl1_tessent_clk_buf_2, prim-cnt = 1 (G) and counter_system_rtl1_tessent_clk_buf_2, prim-cnt = 1 (R)
+# counter_system_rtl1_tessent_clk_buf_1, prim-cnt = 1 (G) and counter_system_rtl1_tessent_clk_buf_1, prim-cnt = 1 (R)
+# counter_system_rtl1_tessent_clk_mux2_1, prim-cnt = 1 (G) and counter_system_rtl1_tessent_clk_mux2_1, prim-cnt = 10 (R)
+# counter_system_rtl1_tessent_clk_mux2_3, prim-cnt = 1 (G) and counter_system_rtl1_tessent_clk_mux2_3, prim-cnt = 10 (R)
+4 modules are not written because they have been added as black box
+13 module pairs are not written because of primitive instances less than 50
+// Note: Use the option '-threshold' to allow writing out modules with primitive instances less than 50
+17 module pairs are written for hierarchical comparison
+0
+// Command: run_hier_compare hier_tmp2.lec.do -dynamic_hierarchy
+// Command: set_toplevel_constraints reset -Revised
+0
+// Command: set_toplevel_constraints pin_constraints scan_en -constraint 0 -Revised
+0
+// Command: set_toplevel_constraints pin_constraints test_mode -constraint 0 -Revised
+0
+// Command: vpxmode
+// Command: delete set_seq_merge
+// Command: set_seq_merge /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_ADD_Y1_CMD_REG0_reg  /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_POINTER_CNTRL/EXECUTE_LOOP_CMD_REG1_reg -Golden
+// Command: tclmode
+// Running Module counter_system_rtl1_tessent_sib_1 and counter_system_rtl1_tessent_sib_1
+// Command: set_root_module counter_system_rtl1_tessent_sib_1 -Golden
+0
+// Command: set_root_module counter_system_rtl1_tessent_sib_1 -Revised
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_sib_sti_inst -Golden
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_sib_sti_inst -Revised
+0
+// Command: report_black_box -NOHidden
+0
+// Applying constraints to module boundaries ...
+// 15 Golden and 16 Revised pins constrained to constant value
+// 16 Golden and 17 Revised pins marked as unreachable
+// 6 Golden and 6 Revised pin equivalences applied
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 30 out of 31 DFF/DLATs
+// (F18) Converted 1 DFF/DLAT(s) in (G) to ZERO/ONE
+// (F18) Converted 2 DFF/DLAT(s) in (R) to ZERO/ONE
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 31
+// Revised key points = 32
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Golden            8      8      3      1         20      
+--------------------------------------------------------------------------------
+Revised           8      8      3      1         20      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       8      3         11      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       8      4         12      
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Golden            8      8      3      1         20      
+--------------------------------------------------------------------------------
+Revised           8      8      3      1         20      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       8      3         11      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       8      4         12      
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         3               4
+Library-cells         10              53
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT      *        19                   20
+OUTPUT              13                   13
+--------------------------------------------
+AND        *        15                   42
+BUF        *         7                    6
+DFF                 11                   11
+DLAT       *         4                    5
+INV        *        10                   49
+MUX        *        19                    0
+NAND       *         0                   15
+NOR        *         0                    2
+OR         *         4                   25
+WIRE       *         3                    2
+------ word-level --------------------------
+WMUX       *         2                    0
+--------------------------------------------
+Total               73                  157
+
+// Command: report_unmapped_points -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       8      3         11      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       8      4         12      
+================================================================================
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 12 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Equivalent           8      3      1         12      
+================================================================================
+CPU time     : 0.66    seconds
+Elapse time  : 156     seconds
+Memory usage : 150.03  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_sib_1 -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_sib_1 -module -hier -Revised
+0
+// Command: usage
+CPU time     : 0.66    seconds
+Memory usage : 151.15  M bytes
+0
+Processed 1 out of 17 module pairs	EQ: 1	NEQ: 0	ABORT: 0
+// Running Module counter_system_rtl1_tessent_mbist_bap_tdr and counter_system_rtl1_tessent_mbist_bap_tdr
+// Command: set_root_module counter_system_rtl1_tessent_mbist_bap_tdr -Golden
+0
+// Command: set_root_module counter_system_rtl1_tessent_mbist_bap_tdr -Revised
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_bap_inst/tdr_inst -Golden
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_bap_inst/tdr_inst -Revised
+0
+// Command: report_black_box -NOHidden
+0
+// Applying constraints to module boundaries ...
+// 1 Golden and 4 Revised pins constrained to constant value
+// 4 Golden and 5 Revised pins marked as unreachable
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 60 out of 62 DFF/DLATs
+// (F14) Remodeled 30 gated-clock DFF/DLAT(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 54
+// Revised key points = 56
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            7      17     30        54      
+--------------------------------------------------------------------------------
+Revised           7      17     30        54      
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            7      17     30        54      
+--------------------------------------------------------------------------------
+Revised           7      17     30        54      
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         1               3
+Library-cells          3              55
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT      *         8                    9
+OUTPUT              20                   20
+--------------------------------------------
+AND        *         5                   95
+DFF                 30                   30
+DLAT       *         0                    2
+INV        *         3                   68
+MUX        *        45                    0
+NAND       *         0                    1
+OR         *         1                   51
+WIRE       *        19                    0
+------ word-level --------------------------
+WMUX       *         2                    0
+--------------------------------------------
+Total              103                  247
+
+// Command: report_unmapped_points -summary
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 47 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           17     30        47      
+================================================================================
+CPU time     : 4.76    seconds
+Elapse time  : 164     seconds
+Memory usage : 154.29  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_bap_tdr -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_bap_tdr -module -hier -Revised
+0
+// Command: usage
+CPU time     : 4.76    seconds
+Memory usage : 154.29  M bytes
+0
+Processed 2 out of 17 module pairs	EQ: 2	NEQ: 0	ABORT: 0
+// Running Module counter_system_rtl1_tessent_mbist_bap_ctl_sib and counter_system_rtl1_tessent_mbist_bap_ctl_sib
+// Command: set_root_module counter_system_rtl1_tessent_mbist_bap_ctl_sib -Golden
+0
+// Command: set_root_module counter_system_rtl1_tessent_mbist_bap_ctl_sib -Revised
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_bap_inst/counter_system_rtl1_tessent_mbist_controller_sib_inst0 -Golden
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_bap_inst/counter_system_rtl1_tessent_mbist_controller_sib_inst0 -Revised
+0
+// Command: report_black_box -NOHidden
+0
+// Applying constraints to module boundaries ...
+// 0 Golden and 1 Revised pins constrained to constant value
+// 1 Golden and 1 Revised pins marked as unreachable
+// 1 Golden and 0 Revised pin equivalences applied
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 8 out of 8 DFF/DLATs
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            11     3      4         18      
+--------------------------------------------------------------------------------
+Revised           11     3      4         18      
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            11     3      4         18      
+--------------------------------------------------------------------------------
+Revised           11     3      4         18      
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         1               1
+Library-cells          0              17
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT               11                   11
+OUTPUT               4                    4
+--------------------------------------------
+AND        *         4                   20
+DFF                  4                    4
+INV        *         3                   21
+MUX        *         6                    0
+NAND       *         0                    6
+NOR        *         0                    1
+OR         *         0                    9
+WIRE       *         4                    0
+--------------------------------------------
+Total               21                   61
+
+// Command: report_unmapped_points -summary
+There is no unmapped point
+// Command: report_unmapped_points -notmapped
+There is no unmapped point
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 7 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           3      4         7       
+================================================================================
+CPU time     : 4.88    seconds
+Elapse time  : 165     seconds
+Memory usage : 154.41  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_bap_ctl_sib -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_bap_ctl_sib -module -hier -Revised
+0
+// Command: usage
+CPU time     : 4.88    seconds
+Memory usage : 154.41  M bytes
+0
+Processed 3 out of 17 module pairs	EQ: 3	NEQ: 0	ABORT: 0
+// Running Module counter_system_rtl1_tessent_mbist_bap and counter_system_rtl1_tessent_mbist_bap
+// Command: set_root_module counter_system_rtl1_tessent_mbist_bap -Golden
+// Warning: Total black box modules referenced in Golden = 2
+0
+// Command: set_root_module counter_system_rtl1_tessent_mbist_bap -Revised
+// Warning: Total black box modules referenced in Revised = 2
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_bap_inst -Golden
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_bap_inst -Revised
+0
+// Command: report_black_box -NOHidden
+HIER: (G R) counter_system_rtl1_tessent_mbist_bap_ctl_sib
+HIER: (G R) counter_system_rtl1_tessent_mbist_bap_tdr
+0
+// Applying constraints to module boundaries ...
+// 8 Golden and 9 Revised pins constrained to constant value
+// 12 Golden and 13 Revised pins marked as unreachable
+// 1 Golden and 1 Revised pin equivalences applied
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 22 out of 22 DFF/DLATs
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            10     18     10     1      2         41      
+--------------------------------------------------------------------------------
+Revised           10     18     10     1      2         41      
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            10     18     10     1      2         41      
+--------------------------------------------------------------------------------
+Revised           10     18     10     1      2         41      
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         7               7
+Library-cells         18              52
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT      *        14                   15
+OUTPUT              26                   26
+--------------------------------------------
+AND        *        21                   45
+BUF        *        19                   17
+DFF                 10                   10
+DLAT                 1                    1
+INV        *        14                   54
+MUX        *         7                    0
+NAND       *         0                   10
+NOR        *         0                    5
+OR         *         3                   19
+WIRE       *         9                    6
+------ word-level --------------------------
+BBOX                 2                    2
+--------------------------------------------
+Total               86                  169
+
+// Command: report_unmapped_points -summary
+There is no unmapped point
+// Command: report_unmapped_points -notmapped
+There is no unmapped point
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 31 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           18     10     1      2         31      
+================================================================================
+CPU time     : 6.48    seconds
+Elapse time  : 169     seconds
+Memory usage : 154.43  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_bap -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_bap -module -hier -Revised
+0
+// Command: usage
+CPU time     : 6.48    seconds
+Memory usage : 154.43  M bytes
+0
+Processed 4 out of 17 module pairs	EQ: 4	NEQ: 0	ABORT: 0
+// Running Module counter_system_rtl1_tessent_mbist_c1_controller_fsm and counter_system_rtl1_tessent_mbist_c1_controller_fsm
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller_fsm -Golden
+0
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller_fsm -Revised
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_FSM -Golden
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_FSM -Revised
+0
+// Command: report_black_box -NOHidden
+0
+// Applying constraints to module boundaries ...
+// 0 Golden and 2 Revised pins constrained to constant value
+// 1 Golden and 2 Revised pins marked as unreachable
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 16 out of 17 DFF/DLATs
+// (F14) Remodeled 4 gated-clock DFF/DLAT(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 22
+// Revised key points = 23
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            7      7      8         22      
+--------------------------------------------------------------------------------
+Revised           7      7      8         22      
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            7      7      8         22      
+--------------------------------------------------------------------------------
+Revised           7      7      8         22      
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         1               2
+Library-cells         11              45
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT      *         7                    8
+OUTPUT               8                    8
+--------------------------------------------
+AND        *        41                   30
+DFF                  8                    8
+DLAT       *         0                    1
+INV        *        12                   36
+MUX        *        14                    0
+NAND       *         0                    7
+NOR        *         4                   14
+OR         *        25                   15
+WIRE       *         5                    0
+------ word-level --------------------------
+WMUX       *         6                    0
+WSEL       *         5                    0
+--------------------------------------------
+Total              109                  111
+
+// Command: report_unmapped_points -summary
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 15 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           7      8         15      
+================================================================================
+CPU time     : 7.01    seconds
+Elapse time  : 173     seconds
+Memory usage : 155.39  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller_fsm -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller_fsm -module -hier -Revised
+0
+// Command: usage
+CPU time     : 7.01    seconds
+Memory usage : 156.37  M bytes
+0
+Processed 5 out of 17 module pairs	EQ: 5	NEQ: 0	ABORT: 0
+// Running Module counter_system_rtl1_tessent_mbist_c1_controller_pointer_cntrl and counter_system_rtl1_tessent_mbist_c1_controller_pointer_cntrl
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller_pointer_cntrl -Golden
+0
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller_pointer_cntrl -Revised
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_POINTER_CNTRL -Golden
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_POINTER_CNTRL -Revised
+0
+// Command: report_black_box -NOHidden
+0
+// Applying constraints to module boundaries ...
+// 14 Golden and 24 Revised pins constrained to constant value
+// 20 Golden and 24 Revised pins marked as unreachable
+// 5 Golden and 0 Revised pin equivalences applied
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// (F21) Merged 1 DFF/DLAT(s) due to added instance equivalences (flatten)
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 62 out of 65 DFF/DLATs
+// (F14) Remodeled 29 gated-clock DFF/DLAT(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 72
+// Revised key points = 70
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            18     19     31        68      
+--------------------------------------------------------------------------------
+Revised           18     19     31        68      
+================================================================================
+// Note: A key point group is counted as one key point
+// Golden has 1 key point groups
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       3         3       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            18     19     31        68      
+--------------------------------------------------------------------------------
+Revised           18     19     31        68      
+================================================================================
+// Note: A key point group is counted as one key point
+// Golden has 1 key point groups
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       3         3       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         1               3
+Library-cells        453             299
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT      *        28                   29
+OUTPUT              32                   32
+--------------------------------------------
+AND        *        74                  110
+BUF                  6                    6
+DFF        *        32                   31
+DLAT       *         0                    2
+INV        *        42                  169
+MUX        *      1662                    0
+NAND       *         0                  104
+NOR        *        42                   92
+OR         *        12                   83
+WIRE       *        41                    0
+XNOR       *         0                    4
+XOR        *        12                    0
+------ word-level --------------------------
+EQ         *         2                    0
+GT         *         1                    0
+LT         *         1                    0
+WAND       *         2                    0
+WMUX       *       440                    0
+WSEL       *         1                    0
+--------------------------------------------
+Total             1923                  601
+
+// Command: report_unmapped_points -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       3         3       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 50 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           19     31        50      
+================================================================================
+Compare results of instance/output/pin equivalences and/or sequential merge      
+================================================================================
+Compared points      DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           1         1       
+================================================================================
+CPU time     : 7.33    seconds
+Elapse time  : 176     seconds
+Memory usage : 157.50  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller_pointer_cntrl -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller_pointer_cntrl -module -hier -Revised
+0
+// Command: usage
+CPU time     : 7.33    seconds
+Memory usage : 157.50  M bytes
+0
+Processed 6 out of 17 module pairs	EQ: 6	NEQ: 0	ABORT: 0
+// Running Module counter_system_rtl1_tessent_mbist_c1_controller_add_gen and counter_system_rtl1_tessent_mbist_c1_controller_add_gen
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller_add_gen -Golden
+0
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller_add_gen -Revised
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_ADD_GEN -Golden
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_ADD_GEN -Revised
+0
+// Command: report_black_box -NOHidden
+0
+// Applying constraints to module boundaries ...
+// 5 Golden and 6 Revised pins constrained to constant value
+// 5 Golden and 6 Revised pins marked as unreachable
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 64 out of 66 DFF/DLATs
+// (F14) Remodeled 32 gated-clock DFF/DLAT(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 67
+// Revised key points = 69
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            16     19     32        67      
+--------------------------------------------------------------------------------
+Revised           16     19     32        67      
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            16     19     32        67      
+--------------------------------------------------------------------------------
+Revised           16     19     32        67      
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         1               3
+Library-cells         66             244
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT      *        20                   21
+OUTPUT              20                   20
+--------------------------------------------
+AND        *       129                  166
+BUF        *        82                   16
+DFF                 32                   32
+DLAT       *         0                    2
+INV        *        49                  141
+MUX        *       162                    0
+NAND       *         0                   87
+NOR        *        14                   71
+OR         *        90                   88
+WIRE       *        55                    0
+XNOR       *         0                    2
+XOR        *        46                    0
+------ word-level --------------------------
+EQ         *         3                    0
+WAND       *         8                    0
+WINV       *         4                    0
+WMUX       *        21                    0
+WOR        *         8                    0
+WSEL       *         2                    0
+WXOR       *         4                    0
+--------------------------------------------
+Total              659                  605
+
+// Command: report_unmapped_points -summary
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 51 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           19     32        51      
+================================================================================
+CPU time     : 7.52    seconds
+Elapse time  : 178     seconds
+Memory usage : 158.96  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller_add_gen -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller_add_gen -module -hier -Revised
+0
+// Command: usage
+CPU time     : 7.53    seconds
+Memory usage : 158.96  M bytes
+0
+Processed 7 out of 17 module pairs	EQ: 7	NEQ: 0	ABORT: 0
+// Running Module counter_system_rtl1_tessent_mbist_c1_controller_signal_gen and counter_system_rtl1_tessent_mbist_c1_controller_signal_gen
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller_signal_gen -Golden
+0
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller_signal_gen -Revised
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_SIGNAL_GEN -Golden
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_SIGNAL_GEN -Revised
+0
+// Command: report_black_box -NOHidden
+0
+// Applying constraints to module boundaries ...
+// 3 Golden and 5 Revised pins constrained to constant value
+// 5 Golden and 6 Revised pins marked as unreachable
+// 1 Golden and 0 Revised pin equivalences applied
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 10 out of 11 DFF/DLATs
+// (F14) Remodeled 3 gated-clock DFF/DLAT(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 22
+// Revised key points = 23
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            12     5      5         22      
+--------------------------------------------------------------------------------
+Revised           12     5      5         22      
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            12     5      5         22      
+--------------------------------------------------------------------------------
+Revised           12     5      5         22      
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         1               2
+Library-cells          4              30
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT      *        16                   17
+OUTPUT               6                    6
+--------------------------------------------
+AND        *        29                   20
+DFF                  5                    5
+DLAT       *         0                    1
+INV                 21                   21
+MUX        *        11                    0
+NAND       *         0                    7
+NOR        *         3                   13
+OR         *        15                    8
+WIRE       *        21                    0
+------ word-level --------------------------
+WINV       *         1                    0
+WMUX       *         3                    0
+--------------------------------------------
+Total              105                   75
+
+// Command: report_unmapped_points -summary
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 10 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           5      5         10      
+================================================================================
+CPU time     : 7.66    seconds
+Elapse time  : 180     seconds
+Memory usage : 159.04  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller_signal_gen -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller_signal_gen -module -hier -Revised
+0
+// Command: usage
+CPU time     : 7.66    seconds
+Memory usage : 159.04  M bytes
+0
+Processed 8 out of 17 module pairs	EQ: 8	NEQ: 0	ABORT: 0
+// Running Module counter_system_rtl1_tessent_mbist_c1_controller_data_gen and counter_system_rtl1_tessent_mbist_c1_controller_data_gen
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller_data_gen -Golden
+0
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller_data_gen -Revised
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_DATA_GEN -Golden
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_DATA_GEN -Revised
+0
+// Command: report_black_box -NOHidden
+0
+// Applying constraints to module boundaries ...
+// 2 Golden and 21 Revised pins constrained to constant value
+// 20 Golden and 21 Revised pins marked as unreachable
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 12 out of 13 DFF/DLATs
+// (F14) Remodeled 4 gated-clock DFF/DLAT(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 43
+// Revised key points = 26
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            14     5      6         25      
+--------------------------------------------------------------------------------
+Revised           14     5      6         25      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       18        18      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            14     5      6         25      
+--------------------------------------------------------------------------------
+Revised           14     5      6         25      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       18        18      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         1               2
+Library-cells         19              56
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT      *        34                   35
+OUTPUT               5                    5
+--------------------------------------------
+AND        *        54                   26
+BUF        *         5                    1
+DFF                  6                    6
+DLAT       *         0                    1
+INV        *        17                   33
+MUX        *        13                    0
+NAND       *         0                   19
+NOR        *        16                   10
+OR         *        22                   25
+WIRE       *        17                    0
+XNOR       *         0                    2
+XOR        *        11                    1
+------ word-level --------------------------
+WAND       *         2                    0
+WINV       *         2                    0
+WMUX       *         4                    0
+WSEL       *         2                    0
+WXOR       *         8                    0
+--------------------------------------------
+Total              161                  124
+
+// Command: report_unmapped_points -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       18        18      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 11 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           5      6         11      
+================================================================================
+CPU time     : 7.82    seconds
+Elapse time  : 183     seconds
+Memory usage : 159.04  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller_data_gen -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller_data_gen -module -hier -Revised
+0
+// Command: usage
+CPU time     : 7.82    seconds
+Memory usage : 159.04  M bytes
+0
+Processed 9 out of 17 module pairs	EQ: 9	NEQ: 0	ABORT: 0
+// Running Module counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl and counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl -Golden
+0
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl -Revised
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_REPEAT_LOOP_CNTRL -Golden
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_REPEAT_LOOP_CNTRL -Revised
+0
+// Command: report_black_box -NOHidden
+0
+// Applying constraints to module boundaries ...
+// 14 Golden and 35 Revised pins constrained to constant value
+// 35 Golden and 34 Revised pins marked as unreachable
+// 12 Golden and 0 Revised pin equivalences applied
+// Command: set_system_mode lec
+// Processing Golden ...
+// Input-output equivalent pin added: LOOP_CMD[1]
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 8 out of 8 DFF/DLATs
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 34
+// Revised key points = 26
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            15     7      4         26      
+--------------------------------------------------------------------------------
+Revised           15     7      4         26      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       8         8       
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            15     7      4         26      
+--------------------------------------------------------------------------------
+Revised           15     7      4         26      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       8         8       
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         1               1
+Library-cells         15              51
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT               32                   32
+OUTPUT              24                   24
+--------------------------------------------
+AND        *        29                   23
+DFF                  4                    4
+INV        *        10                   26
+MUX        *        51                    0
+NAND       *         0                   19
+NOR        *         5                   15
+OR                  14                   14
+WIRE       *        46                    0
+XNOR       *         0                    4
+XOR        *        16                    0
+------ word-level --------------------------
+EQ         *         2                    0
+WMUX       *        13                    0
+--------------------------------------------
+Total              175                  105
+
+// Command: report_unmapped_points -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       8         8       
+================================================================================
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 11 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           7      4         11      
+================================================================================
+CPU time     : 7.98    seconds
+Elapse time  : 185     seconds
+Memory usage : 159.07  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl -module -hier -Revised
+0
+// Command: usage
+CPU time     : 7.98    seconds
+Memory usage : 159.07  M bytes
+0
+Processed 10 out of 17 module pairs	EQ: 10	NEQ: 0	ABORT: 0
+// Running Module counter_system_rtl1_tessent_mbist_c1_controller_ctl_comp and counter_system_rtl1_tessent_mbist_c1_controller_ctl_comp
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller_ctl_comp -Golden
+0
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller_ctl_comp -Revised
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_CTL_COMP -Golden
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst/MBISTPG_CTL_COMP -Revised
+0
+// Command: report_black_box -NOHidden
+0
+// Applying constraints to module boundaries ...
+// 1 Golden and 5 Revised pins constrained to constant value
+// 4 Golden and 5 Revised pins marked as unreachable
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 66 out of 70 DFF/DLATs
+// (F14) Remodeled 24 gated-clock DFF/DLAT(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 59
+// Revised key points = 61
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            18     6      33        57      
+--------------------------------------------------------------------------------
+Revised           18     6      33        57      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       4         4       
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            18     6      33        57      
+--------------------------------------------------------------------------------
+Revised           18     6      33        57      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       4         4       
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         2               6
+Library-cells          8             157
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT      *        21                   22
+OUTPUT               7                    7
+--------------------------------------------
+AND        *        42                  140
+DFF                 33                   33
+DLAT       *         0                    4
+INV        *        32                  131
+MUX        *        88                    0
+NAND       *         0                   31
+NOR        *         1                   40
+OR         *        11                   76
+WIRE       *         5                    0
+XNOR       *         0                   11
+XOR        *        22                    1
+------ word-level --------------------------
+LT         *         1                    0
+WMUX       *         7                    0
+--------------------------------------------
+Total              234                  467
+
+// Command: report_unmapped_points -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       4         4       
+================================================================================
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 39 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           6      33        39      
+================================================================================
+CPU time     : 8.21    seconds
+Elapse time  : 189     seconds
+Memory usage : 159.40  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller_ctl_comp -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller_ctl_comp -module -hier -Revised
+0
+// Command: usage
+CPU time     : 8.22    seconds
+Memory usage : 159.40  M bytes
+0
+Processed 11 out of 17 module pairs	EQ: 11	NEQ: 0	ABORT: 0
+// Running Module counter_system_rtl1_tessent_mbist_c1_controller and counter_system_rtl1_tessent_mbist_c1_controller
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller -Golden
+// Warning: Total black box modules referenced in Golden = 7
+0
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_controller -Revised
+// Warning: Total black box modules referenced in Revised = 7
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst -Golden
+0
+// Command: set_module_property -instance /counter_system_rtl1_tessent_mbist_c1_controller_inst -Revised
+0
+// Command: report_black_box -NOHidden
+HIER: (G R) counter_system_rtl1_tessent_mbist_c1_controller_add_gen
+HIER: (G R) counter_system_rtl1_tessent_mbist_c1_controller_ctl_comp
+HIER: (G R) counter_system_rtl1_tessent_mbist_c1_controller_data_gen
+HIER: (G R) counter_system_rtl1_tessent_mbist_c1_controller_fsm
+HIER: (G R) counter_system_rtl1_tessent_mbist_c1_controller_pointer_cntrl
+HIER: (G R) counter_system_rtl1_tessent_mbist_c1_controller_repeat_loop_cntrl
+HIER: (G R) counter_system_rtl1_tessent_mbist_c1_controller_signal_gen
+0
+// Applying constraints to module boundaries ...
+// 3 Golden and 4 Revised pins constrained to constant value
+// 4 Golden and 5 Revised pins marked as unreachable
+// 1 Golden and 1 Revised pin equivalences applied
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 50 out of 51 DFF/DLATs
+// (F14) Remodeled 4 gated-clock DFF/DLAT(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 97
+// Revised key points = 98
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            21     44     24     1      7         97      
+--------------------------------------------------------------------------------
+Revised           21     44     24     1      7         97      
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            21     44     24     1      7         97      
+--------------------------------------------------------------------------------
+Revised           21     44     24     1      7         97      
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules        12              12
+Library-cells         21             113
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT      *        24                   25
+OUTPUT              45                   45
+--------------------------------------------
+AND        *        49                   95
+BUF                  8                    8
+DFF                 24                   24
+DLAT       *         1                    2
+INV        *        35                   88
+MUX        *        18                    0
+NAND       *         0                   12
+NOR        *         0                   24
+OR         *         6                   39
+WIRE       *       102                    1
+------ word-level --------------------------
+GT         *         1                    0
+WMUX       *         2                    0
+BBOX                 7                    7
+--------------------------------------------
+Total              250                  300
+
+// Command: report_unmapped_points -summary
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 76 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           44     24     1      7         76      
+================================================================================
+CPU time     : 8.46    seconds
+Elapse time  : 192     seconds
+Memory usage : 160.73  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_controller -module -hier -Revised
+0
+// Command: usage
+CPU time     : 8.47    seconds
+Memory usage : 160.73  M bytes
+0
+Processed 12 out of 17 module pairs	EQ: 12	NEQ: 0	ABORT: 0
+// Running Module counter_system_rtl1_tessent_mbist_c1_interface_m1_STATUS and counter_system_rtl1_tessent_mbist_c1_interface_m1_STATUS
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_interface_m1_STATUS -Golden
+0
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_interface_m1_STATUS -Revised
+0
+// Command: set_module_property -instance /u1_interface_inst/MBISTPG_STATUS -Golden
+0
+// Command: set_module_property -instance /u1_interface_inst/MBISTPG_STATUS -Revised
+0
+// Command: report_black_box -NOHidden
+0
+// Applying constraints to module boundaries ...
+// 1 Golden and 3 Revised pins constrained to constant value
+// 4 Golden and 3 Revised pins marked as unreachable
+// 1 Golden and 0 Revised pin equivalences applied
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 38 out of 38 DFF/DLATs
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 53
+// Revised key points = 52
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            29     4      19        52      
+--------------------------------------------------------------------------------
+Revised           29     4      19        52      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            29     4      19        52      
+--------------------------------------------------------------------------------
+Revised           29     4      19        52      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         1               1
+Library-cells         19              91
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT               31                   31
+OUTPUT               5                    5
+--------------------------------------------
+AND        *        76                  111
+DFF                 19                   19
+INV        *        29                   98
+MUX        *        18                    0
+NAND       *         0                   20
+NOR        *         0                   14
+OR         *        42                   72
+WIRE       *        19                    0
+------ word-level --------------------------
+WAND       *         1                    0
+WMUX       *         1                    0
+WOR        *         1                    0
+--------------------------------------------
+Total              203                  334
+
+// Command: report_unmapped_points -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 23 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           4      19        23      
+================================================================================
+CPU time     : 8.69    seconds
+Elapse time  : 196     seconds
+Memory usage : 161.30  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_interface_m1_STATUS -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_interface_m1_STATUS -module -hier -Revised
+0
+// Command: usage
+CPU time     : 8.70    seconds
+Memory usage : 161.30  M bytes
+0
+Processed 13 out of 17 module pairs	EQ: 13	NEQ: 0	ABORT: 0
+// Running Module counter_system_rtl1_tessent_mbist_c1_interface_m1 and counter_system_rtl1_tessent_mbist_c1_interface_m1
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_interface_m1 -Golden
+// Warning: Total black box modules referenced in Golden = 1
+0
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_interface_m1 -Revised
+// Warning: Total black box modules referenced in Revised = 1
+0
+// Command: set_module_property -instance /u1_interface_inst -Golden
+0
+// Command: set_module_property -instance /u1_interface_inst -Revised
+0
+// Command: report_black_box -NOHidden
+HIER: (G R) counter_system_rtl1_tessent_mbist_c1_interface_m1_STATUS
+0
+// Applying constraints to module boundaries ...
+// 5 Golden and 6 Revised pins constrained to constant value
+// 11 Golden and 12 Revised pins marked as unreachable
+// 16 Golden and 16 Revised pin equivalences applied
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 46 out of 46 DFF/DLATs
+// (F14) Remodeled 21 gated-clock DFF/DLAT(s)
+// (F14) Remodeled 21 gated-clock DFF/DLAT(s)
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            77     44     2      1      1         125     
+--------------------------------------------------------------------------------
+Revised           77     44     2      1      1         125     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       20        20      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       20        20      
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            77     44     2      1      1         125     
+--------------------------------------------------------------------------------
+Revised           77     44     2      1      1         125     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       20        20      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       20        20      
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         3               3
+Library-cells         28             151
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT      *        82                   83
+OUTPUT              48                   48
+--------------------------------------------
+AND        *        34                  161
+BUF                  1                    1
+DFF                 22                   22
+DLAT                 1                    1
+INV        *        46                  105
+MUX        *        78                    0
+NAND       *         0                   13
+NOR        *         0                   15
+OR         *        17                   77
+WIRE       *       171                    0
+XNOR       *         0                   24
+XOR        *        55                    1
+------ word-level --------------------------
+EQ         *        16                    0
+WAND       *         2                    0
+WMUX       *         5                    0
+WXOR       *         2                    0
+BBOX                 1                    1
+--------------------------------------------
+Total              426                  421
+
+// Command: report_unmapped_points -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       20        20      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       20        20      
+================================================================================
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 48 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           44     2      1      1         48      
+================================================================================
+CPU time     : 10.07   seconds
+Elapse time  : 200     seconds
+Memory usage : 161.60  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_interface_m1 -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_interface_m1 -module -hier -Revised
+0
+// Command: usage
+CPU time     : 10.07   seconds
+Memory usage : 161.60  M bytes
+0
+Processed 14 out of 17 module pairs	EQ: 14	NEQ: 0	ABORT: 0
+// Running Module counter_system_rtl1_tessent_mbist_c1_interface_m2_STATUS and counter_system_rtl1_tessent_mbist_c1_interface_m2_STATUS
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_interface_m2_STATUS -Golden
+0
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_interface_m2_STATUS -Revised
+0
+// Command: set_module_property -instance /u2_interface_inst/MBISTPG_STATUS -Golden
+0
+// Command: set_module_property -instance /u2_interface_inst/MBISTPG_STATUS -Revised
+0
+// Command: report_black_box -NOHidden
+0
+// Applying constraints to module boundaries ...
+// 1 Golden and 3 Revised pins constrained to constant value
+// 4 Golden and 3 Revised pins marked as unreachable
+// 1 Golden and 0 Revised pin equivalences applied
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 22 out of 22 DFF/DLATs
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 37
+// Revised key points = 36
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            21     4      11        36      
+--------------------------------------------------------------------------------
+Revised           21     4      11        36      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            21     4      11        36      
+--------------------------------------------------------------------------------
+Revised           21     4      11        36      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         1               1
+Library-cells         11              55
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT               23                   23
+OUTPUT               5                    5
+--------------------------------------------
+AND        *        44                   62
+DFF                 11                   11
+INV        *        21                   56
+MUX        *        10                    0
+NAND       *         0                   14
+NOR        *         0                    9
+OR         *        26                   39
+WIRE       *        11                    0
+------ word-level --------------------------
+WAND       *         1                    0
+WMUX       *         1                    0
+WOR        *         1                    0
+--------------------------------------------
+Total              123                  191
+
+// Command: report_unmapped_points -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 15 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           4      11        15      
+================================================================================
+CPU time     : 10.29   seconds
+Elapse time  : 204     seconds
+Memory usage : 161.60  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_interface_m2_STATUS -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_interface_m2_STATUS -module -hier -Revised
+0
+// Command: usage
+CPU time     : 10.30   seconds
+Memory usage : 161.60  M bytes
+0
+Processed 15 out of 17 module pairs	EQ: 15	NEQ: 0	ABORT: 0
+// Running Module counter_system_rtl1_tessent_mbist_c1_interface_m2 and counter_system_rtl1_tessent_mbist_c1_interface_m2
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_interface_m2 -Golden
+// Warning: Total black box modules referenced in Golden = 1
+0
+// Command: set_root_module counter_system_rtl1_tessent_mbist_c1_interface_m2 -Revised
+// Warning: Total black box modules referenced in Revised = 1
+0
+// Command: set_module_property -instance /u2_interface_inst -Golden
+0
+// Command: set_module_property -instance /u2_interface_inst -Revised
+0
+// Command: report_black_box -NOHidden
+HIER: (G R) counter_system_rtl1_tessent_mbist_c1_interface_m2_STATUS
+0
+// Applying constraints to module boundaries ...
+// 5 Golden and 6 Revised pins constrained to constant value
+// 13 Golden and 14 Revised pins marked as unreachable
+// 8 Golden and 8 Revised pin equivalences applied
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 34 out of 34 DFF/DLATs
+// (F14) Remodeled 15 gated-clock DFF/DLAT(s)
+// (F14) Remodeled 15 gated-clock DFF/DLAT(s)
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            77     36     2      1      1         117     
+--------------------------------------------------------------------------------
+Revised           77     36     2      1      1         117     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       14        14      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       14        14      
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            77     36     2      1      1         117     
+--------------------------------------------------------------------------------
+Revised           77     36     2      1      1         117     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       14        14      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       14        14      
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         3               3
+Library-cells         20             128
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT      *        82                   83
+OUTPUT              42                   42
+--------------------------------------------
+AND        *        28                  129
+BUF                  1                    1
+DFF                 16                   16
+DLAT                 1                    1
+INV        *        30                   84
+MUX        *        54                    0
+NAND       *         0                   13
+NOR        *         0                   12
+OR         *        17                   64
+WIRE       *       115                    0
+XNOR       *         0                   22
+XOR        *        37                    1
+------ word-level --------------------------
+EQ         *         8                    0
+WAND       *         2                    0
+WMUX       *         5                    0
+WXOR       *         2                    0
+BBOX                 1                    1
+--------------------------------------------
+Total              300                  344
+
+// Command: report_unmapped_points -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       14        14      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       14        14      
+================================================================================
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// 40 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           36     2      1      1         40      
+================================================================================
+CPU time     : 10.55   seconds
+Elapse time  : 207     seconds
+Memory usage : 161.76  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_interface_m2 -module -hier -Golden
+0
+// Command: add_black_box counter_system_rtl1_tessent_mbist_c1_interface_m2 -module -hier -Revised
+0
+// Command: usage
+CPU time     : 10.55   seconds
+Memory usage : 161.76  M bytes
+0
+Processed 16 out of 17 module pairs	EQ: 16	NEQ: 0	ABORT: 0
+// Running Module counter_system and counter_system
+// Command: set_root_module counter_system -Golden
+// Warning: Total black box modules referenced in Golden = 18
+0
+// Command: set_root_module counter_system -Revised
+// Warning: Total black box modules referenced in Revised = 18
+0
+// Command: set_module_property -instance / -Golden
+0
+// Command: set_module_property -instance / -Revised
+0
+// Command: report_black_box -NOHidden
+HIER: (G R) counter_system_rtl1_tessent_mbist_bap
+HIER: (G R) counter_system_rtl1_tessent_mbist_c1_controller
+HIER: (G R) counter_system_rtl1_tessent_mbist_c1_interface_m1
+HIER: (G R) counter_system_rtl1_tessent_mbist_c1_interface_m2
+HIER: (G R) counter_system_rtl1_tessent_sib_1
+SYSTEM: (G R) SYNC_1RW_256x16
+SYSTEM: (G R) SYNC_1RW_64Kx8
+0
+// Applying constraints to module boundaries ...
+// 0 Golden and 1 Revised pins marked as unreachable
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 80 out of 100 DFF/DLATs
+// (F14) Remodeled 36 gated-clock DFF/DLAT(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 156
+// Revised key points = 145
+// Mapping key points ...
+// Warning: Golden has 16 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            41     52     39     1      7         140     
+--------------------------------------------------------------------------------
+Revised           41     52     39     1      7         140     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Not-mapped        16        16      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   PI     DLAT      Total   
+--------------------------------------------------------------------------------
+Extra             1      0         1       
+Unreachable       0      4         4       
+================================================================================
+// Warning: Key point mapping is incomplete
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            41     52     39     1      7         140     
+--------------------------------------------------------------------------------
+Revised           41     52     39     1      7         140     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Not-mapped        16        16      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   PI     DLAT      Total   
+--------------------------------------------------------------------------------
+Extra             1      0         1       
+Unreachable       0      4         4       
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules        15              13
+Library-cells         21             156
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT      *        41                   44
+OUTPUT              52                   52
+--------------------------------------------
+AND        *        72                  160
+DFF        *        55                   39
+DLAT       *         1                    5
+INV        *        33                  136
+MUX        *       143                    0
+NAND       *         0                   30
+NOR        *         8                   39
+OR         *        22                   81
+WIRE       *        17                    0
+XNOR       *        22                    6
+XOR        *        28                    1
+------ word-level --------------------------
+ADD        *         3                    0
+SUBTRACT   *         3                    0
+WINV       *         1                    0
+WMUX       *        13                    0
+WSEL       *         1                    0
+BBOX                 7                    7
+--------------------------------------------
+Total              408                  504
+
+// Command: report_unmapped_points -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Not-mapped        16        16      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   PI     DLAT      Total   
+--------------------------------------------------------------------------------
+Extra             1      0         1       
+Unreachable       0      4         4       
+================================================================================
+// Command: report_unmapped_points -notmapped
+Unmapped point (not-mapped):
+  (G)   110  DFF  /u_counter_shift/u_counter/count_reg[15]
+Unmapped point (not-mapped):
+  (G)   111  DFF  /u_counter_shift/u_counter/count_reg[14]
+Unmapped point (not-mapped):
+  (G)   112  DFF  /u_counter_shift/u_counter/count_reg[13]
+Unmapped point (not-mapped):
+  (G)   113  DFF  /u_counter_shift/u_counter/count_reg[12]
+Unmapped point (not-mapped):
+  (G)   114  DFF  /u_counter_shift/u_counter/count_reg[11]
+Unmapped point (not-mapped):
+  (G)   115  DFF  /u_counter_shift/u_counter/count_reg[10]
+Unmapped point (not-mapped):
+  (G)   116  DFF  /u_counter_shift/u_counter/count_reg[9]
+Unmapped point (not-mapped):
+  (G)   117  DFF  /u_counter_shift/u_counter/count_reg[8]
+Unmapped point (not-mapped):
+  (G)   118  DFF  /u_counter_shift/u_counter/count_reg[7]
+Unmapped point (not-mapped):
+  (G)   119  DFF  /u_counter_shift/u_counter/count_reg[6]
+Unmapped point (not-mapped):
+  (G)   120  DFF  /u_counter_shift/u_counter/count_reg[5]
+Unmapped point (not-mapped):
+  (G)   121  DFF  /u_counter_shift/u_counter/count_reg[4]
+Unmapped point (not-mapped):
+  (G)   122  DFF  /u_counter_shift/u_counter/count_reg[3]
+Unmapped point (not-mapped):
+  (G)   123  DFF  /u_counter_shift/u_counter/count_reg[2]
+Unmapped point (not-mapped):
+  (G)   124  DFF  /u_counter_shift/u_counter/count_reg[1]
+Unmapped point (not-mapped):
+  (G)   125  DFF  /u_counter_shift/u_counter/count_reg[0]
+
+16 unmapped points reported
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Not-mapped        16        16      
+================================================================================
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+// Command: add_compared_points -all
+// Warning: Golden has 16 unmapped key points which will not be compared
+// 99 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF    DLAT   BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           52     39     1      7         99      
+================================================================================
+CPU time     : 10.73   seconds
+Elapse time  : 209     seconds
+Memory usage : 164.83  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+0
+// Command: usage
+CPU time     : 10.73   seconds
+Memory usage : 165.54  M bytes
+0
+Processed 17 out of 17 module pairs	EQ: 17	NEQ: 0	ABORT: 0
+
+================================================================================
+Module Comparison Results
+--------------------------------------------------------------------------------
+Equivalent                     17
+--------------------------------------------------------------------------------
+Total                          17
+--------------------------------------------------------------------------------
+Hierarchical compare : Equivalent 
+================================================================================
+0
+// Command: report_hier_compare_result -dynamicflattened
+0
+// Command: report_verification -hier -verbose
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      1
+     Tri-stated output:                                        checked
+     Revised X signals set to E:                               yes
+     Floating signals tied to Z:                               no *
+     Command "add clock" for clock-gating:                     not used
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 1
+     All primary outputs are mapped:                           yes
+     Not-mapped DFF/DLAT is detected:                          no
+     All mapped points are added as compare points:            yes
+     All compared points are compared:                         yes
+     User added black box:                                     no
+     Black box mapped with different module name:              no
+     Empty module is not black boxed:                          no
+     Command "add ignore outputs" used:                        yes *
+     Always false constraints detected:                        no
+     Verified pin-equivalent outputs are unmapped:             no
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+     Change gate type:                                         no
+     Change wire:                                              no
+     Primary input added by user:                              no
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  1
+     Multiple clocks in the design:                            yes *
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        1
+     Duplicate module definition:                              yes *
+     Black box due to undefined cells:                         no
+     Golden design has abnormal ratio of unreachable gates:    no
+     Ratio of golden unreachable gates:                        3%
+     Revised design has abnormal ratio of unreachable gates:   no
+     Ratio of revised unreachable gates:                       4%
+     All primary input bus ordering is consistent:             yes
+     All primary output bus ordering is consistent:            yes
+     DFF/DLAT not compared due to disabled clock port(s):        0
+--------------------------------------------------------------------------------
+6. Compare Results:                                                        PASS
+     Total Equivalent modules  = 17
+================================================================================
+pass
+// Command: write_verification_information
+// Verification information is written to rtl_fv_map_db.
+0
+// Command: report_verification_information
+// Generating reports on verification information at /home/l210/L210/work/EC23I2015/lab8/synth/rtl_fv_map_db...
+LEC run scores:
+================================================================================
+Step                Score     Range          
+--------------------------------------------------------------------------------
+result_status       10        10             
+runtime             10        10             
+mapping             10        10             
+sequential_constant 10        10             
+sequential_merge    10        10             
+sequential_phase    10        10             
+datapath_analysis   5         10             
+combinational_loop  5         10             
+mismatch_detection  5         10             
+overall             75        90             
+================================================================================
+LEC results versus attributes:
+================================================================================
+Attribute           Total     Inconsistency  Combined Table                
+--------------------------------------------------------------------------------
+sequential_constant 3         0              sequential_constant.json      
+sequential_merge    1         0              sequential_merge.json         
+sequential_phase    269       0              sequential_phase.json         
+================================================================================
+The tables can be viewed directly using web interface.
+// Done with reporting verification information.
+0
+// Command: set lec_version_required "18.20330"
+18.20330
+// Command: if {$lec_version >= $lec_version_required} {
+//              report_implementation_information
+//          }
+// Command: report_implementation_information
+// Reporting implementation information...
+// Information summary:
+================================================================================
+        Information Category     Total      Used    Unused  Rejected     Abort
+--------------------------------------------------------------------------------
+   Sequential instance phase       333       314        19         0         0
+               Phase mapping         0         0         0         0         0
+         Sequential constant         0         0         0         0         0
+            Sequential merge         1         1         0         0         0
+      Sequential unreachable        16         0        16         0         0
+      Sequential duplication         0         0         0         0         0
+       Boundary optimization        97        95         2         0         0
+          Synthesis equation         0         0         0         0         0
+  Combinational loop breaker         0         0         0         0         0
+ HDL indexed expression info         1         0         1         0         0
+================================================================================
+0
+// Command: set_system_mode lec
+0
+// Command: puts "No of compare points = [get_compare_points -count]"
+// Command: get_compare_points -count
+No of compare points = 99
+// Command: puts "No of diff points    = [get_compare_points -NONequivalent -count]"
+// Command: get_compare_points -NONequivalent -count
+No of diff points    = 0
+// Command: puts "No of abort points   = [get_compare_points -abort -count]"
+// Command: get_compare_points -abort -count
+No of abort points   = 0
+// Command: puts "No of unknown points = [get_compare_points -unknown -count]"
+// Command: get_compare_points -unknown -count
+No of unknown points = 0
+// Command: if {[get_compare_points -count] == 0} {
+//              puts "---------------------------------"
+//              puts "ERROR: No compare points detected"
+//              puts "---------------------------------"
+//          }
+// Command: get_compare_points -count
+// Command: if {[get_compare_points -NONequivalent -count] > 0} {
+//              puts "------------------------------------"
+//              puts "ERROR: Different Key Points detected"
+//              puts "------------------------------------"
+//          }
+// Command: get_compare_points -NONequivalent -count
+// Command: if {[get_compare_points -abort -count] > 0} {
+//              puts "-----------------------------"
+//              puts "ERROR: Abort Points detected "
+//              puts "-----------------------------"
+//          }
+// Command: get_compare_points -abort -count
+// Command: if {[get_compare_points -unknown -count] > 0} {
+//              puts "----------------------------------"
+//              puts "ERROR: Unknown Key Points detected"
+//              puts "----------------------------------"
+//          }
+// Command: get_compare_points -unknown -count
+// Command: set lec_version_required "19.10100"
+19.10100
+// Command: if {$lec_version >= $lec_version_required} {
+//          analyze_results -logfiles rtl2map.log
+//          }
+// Command: analyze_results -logfiles rtl2map.log
+// Analyzing logfile 'rtl2map.log'
+// Warning: Analyze results collects information from the log file but does not
+//          qualify the execution or completeness of the run.
+// Logfile Results
+================================================================================
+|                  Conformal Version |20.20-s200 
+|                        Root Module |counter_system 
+|                           CPU Time |10.0 sec
+|                       Elapsed Time |209.0 sec
+|                             Memory |165.54 MB
+|              Power Grid Comparison |N/A 
+|               Power Intent Compare |N/A 
+|           Supply Power Consistency |N/A 
+|        Retention Power Consistency |N/A 
+|             Compare Power Crossing |N/A 
+|                     LEC Comparison |PASS 
+|                 Flatten Comparison |N/A 
+|            Hierarchical Comparison |PASS 
+|    Hierarchical Comparison Modules |17 
+|                      Logfile Lines |3178 
+|                       Logfile Name |rtl2map.log 
+|              Logfile Modified Time |Wed Nov 18 22:22:40 2026 
+|         Implementation Information |fv/counter_system 
+|       Set Verification Information |/home/l210/L210/work/EC23I2015/lab8/synth/rtl_fv_map_db 
+|      Read Verification Information |N/A 
+|                   Analysis Elapsed |0.0 sec
+|                    Dynamic Flatten |0 
+|                    Runtime / #Gate |0.02 sec. 
+|    Low-power Rule Check Occurrence |N/A
+|Matched back-to-back isolation cell |N/A 
+|            Time-consuming commands | 1. usage: 39.0s(97.50%) (execute 1 time(s))
+|                                    | 2. read_library: 1.0s(2.50%) (execute 1 time(s))
+================================================================================
+               
+// Critical Warnings
+================================================================================
+|Count     |Warning
+--------------------------------------------------------------------------------
+|2         |(RTL7.10a) Comparison with different data sizes
+================================================================================
+               
+               
+// Hierarchical Comparison Information
+             
+#1
+// Write Dofile Command          : write_hier_compare_dofile hier_tmp2.lec.do -verbose -noexact_pin_match -constraint -usage  -replace -balanced_extraction -input_output_pin_equivalence  -prepend_string "report_design_data; report_unmapped_points -summary; report_unmapped_points -notmapped; analyze_datapath -module -verbose; eval analyze_datapath $DATAPATH_SOLVER_OPTION -verbose" (line: 301)
+// Run Dofile Command            : run_hier_compare hier_tmp2.lec.do -dynamic_hierarchy (line: 554)
+// Hierarchical Compare Result   : PASS
+           
+// Hierarchical Comparison Statistics
+================================================================================
+|     Modules|       Total|         Max|         Min|         Avg
+--------------------------------------------------------------------------------
+|          17|           0|           0|           0|           0
+================================================================================
+  Modules: Total number of modules.
+  Total: Sum of all module runtimes(sec).
+  Max: Runtime of module with longest runtime.
+  Min: Runtime of module with shortest runtime.
+  Avg: Average runtime of all modules.
+ 
+// Smart LEC Parallel Hierarchical Comparison Analysis
+// Analysis skipped due to brief overall runtime
+               
+// Resource usages of analysis: Cpu=0.07s Mem=115MB
+0
+// Command: vpxmode
+// Command: exit -f

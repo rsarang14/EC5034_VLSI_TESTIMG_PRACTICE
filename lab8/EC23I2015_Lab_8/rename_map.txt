@@ -1,0 +1,29 @@
+mbist/run_mbist_insertion  ->  dft/run_mbist_insertion
+mbist/run_mbist_insertion.log  ->  dft/run_mbist_insertion.log
+task1_results/run.tcl  ->  syn/task1_run.tcl
+task2_results/run.tcl  ->  syn/task2_run.tcl
+task2_results/run_task2c.log  ->  syn/task2_genus.log
+task3_results/run_task3.tcl  ->  syn/task3_run.tcl
+task3_results/run_task3b.log  ->  syn/task3_genus.log
+synth/setup.tcl  ->  syn/setup.tcl
+synth/mbist_postelab.tcl  ->  syn/mbist_postelab.tcl
+task2_results/reports/counter_system_scan_setup_bfr.rpt  ->  reports/task2_counter_system_scan_setup_bfr.rpt
+task2_results/reports/counter_system_scan_chains.rpt  ->  reports/task2_counter_system_scan_chains.rpt
+task3_results/reports/counter_system_scan_chains.rpt  ->  reports/task3_counter_system_scan_chains.rpt
+task2_results/reports/counter_system_scan_setup_aft.rpt  ->  reports/task2_counter_system_scan_setup_aft.rpt
+task3_results/reports/counter_system_scan_setup_aft.rpt  ->  reports/task3_counter_system_scan_setup_aft.rpt
+task2_results/reports/counter_system_scan_chain_summary.rpt  ->  reports/task2_counter_system_scan_chain_summary.rpt
+task3_results/reports/counter_system_scan_chain_summary.rpt  ->  reports/task3_counter_system_scan_chain_summary.rpt
+task2_results/reports/counter_system_scan_registers.rpt  ->  reports/task2_counter_system_scan_registers.rpt
+task3_results/reports/counter_system_scan_registers.rpt  ->  reports/task3_counter_system_scan_registers.rpt
+task3_results/counter_system.vg  ->  netlist/task3_counter_system_scan.v
+lec/fvmap2final1.tcl  ->  lec/task4_lec.do
+task4_results/fvmap2final.log  ->  lec/task4_lec.log
+lec/rtl2fvmap1.tcl  ->  lec/task4_lec_rtl2map.do
+task4_results/rtl2map.log  ->  lec/task4_lec_rtl2map.log
+task4_results/lec_fvmap2final_run.log  ->  lec/task4_lec_run.log
+task4_results/lec_rtl2map_run.log  ->  lec/task4_lec_rtl2map_run.log
+Lab8_Report_EC23I2015.pdf  ->  EC23I2015_Lab_8.pdf
+lab8_changes_log.md  ->  lab8_changes_log.md
+task2_results/run_task2c.log lines 486-534  ->  reports/task2_counter_system_dft_drc.rpt (extracted)
+task3_results/run_task3b.log lines 4210-end of check  ->  reports/task3_counter_system_dft_drc.rpt (extracted)

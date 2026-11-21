@@ -1,0 +1,33 @@
+# Task 3 final DFT DRC (fix_dft_violations + clock-gating test signal)
+# Verbatim lines 4210-4240 of task3_results/run_task3b.log (check_dft_rules output); extracted into a separate file, no edits.
+@file(run_task3.tcl) 53: check_dft_rules
+  Checking DFT rules for 'counter_system' module under 'muxed_scan' style
+
+Detected 1 DFT rule violation(s)
+	Summary of check_dft_rules
+	**************************
+	Number of usable scan cells: 48
+Clock Rule Violations:
+---------------------
+	  Internally driven clock net: 0
+	      Tied constant clock net: 1
+	           Undriven clock net: 0
+	Conflicting async & clock net: 0
+	              Misc. clock net: 0
+
+Async. set/reset Rule Violations:
+--------------------------------
+	Internally driven async net: 0
+	      Tied active async net: 0
+	         Undriven async net: 0
+	            Misc. async net: 0
+
+   Total number of DFT violations: 1
+
+Warning : DFT Clock Rule Violation. [DFT-301]
+        : # 0 <vid_0_clock>: clock signal driven to a constant value in module 'counter_system_rtl1_tessent_sib_1', net 'ltest_clk_buf', inst/pin 'counter_system_rtl1_tessent_sib_sti_inst/occ_ctrl_so_retimed_reg/CKN' (file: /home/l210/L210/work/EC23I2015/lab8/synth/../rtl/../mbist/tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/modified_rtl_files/counter_system.v, line 115) [CLOCK-02]
+  Total number of Test Clock Domains: 3
+  Number of user specified non-Scan registers:   0
+      Number of registers that fail DFT rules:   3
+      Number of registers that pass DFT rules: 302
+  Percentage of total registers that are scannable: 99.0%

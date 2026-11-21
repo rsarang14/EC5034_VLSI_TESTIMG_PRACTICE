@@ -1,0 +1,63 @@
+#! /bin/sh -f
+#\
+exec tessent -shell -log $0.log -replace -dofile "$0"
+
+# Set the context to insert DFT into RTL-level design
+set_context dft -rtl -design_id rtl1
+
+# Set the location of TSDB. Default is at the current working directory
+set_tsdb_output_directory tsdb_outdir
+
+# Read cell library 
+read_cell_library ../library/standard_cells/tessent/slow_vdd1v0_basicCells_hvt.tcelllib
+  
+# Read the memory library model
+set_design_sources -format tcd_memory -y ../library/memories -extension tcd_memory
+
+# Read memory verilog model
+read_verilog ../library/memories/*.v -exclude_from_file_dictionary
+
+# Read the design
+read_verilog -f rtl_file_list
+
+set_current_design counter_system
+
+# Set the design level as physical_block
+set_design_level physical_block
+
+# Specify DFT requirements to insert memory test
+set_dft_specification_requirements -memory_test on 
+
+# Specify the clocks feeding memories
+add_clocks 0 clk -period 10.0ns
+
+check_design_rules
+
+report_memory_instances
+
+# Create and report DFT Specfication that can be modified if necessary
+set spec [create_dft_specification]
+report_config_data $spec
+
+# Generate and insert the hardware
+process_dft_specification
+
+# Extract IJTAG network and create ICL file for the design
+extract_icl
+
+write_design_import_script counter_system.dc_design_load_script -use_relative_path_to ../synth -replace -format genus
+
+
+# Generate patterns to verify the inserted DFT logic
+create_pattern_specification
+process_pattern_specification
+
+set_simulation_library_sources -v ../library/gsclib045_all_v4.8/gsclib045_hvt/verilog/slow_vdd1v0_basicCells_hvt.v -v ../library/memories/*.v
+# Point to the libraries and run the simulation
+run_testbench_simulations -store_simulation_waveforms on
+
+# If simulation fails use the command to see which pattern failed
+#check_testbench_simulations -report_status
+
+exit
+

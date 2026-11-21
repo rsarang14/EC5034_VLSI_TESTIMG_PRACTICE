@@ -1,0 +1,51 @@
+# Task 2 initial DFT DRC (before synthesis)
+# Verbatim lines 486-534 of task2_results/run_task2c.log (check_dft_rules output); extracted into a separate file, no edits.
+@file(run.tcl) 29: check_dft_rules
+  Checking DFT rules for 'counter_system' module under 'muxed_scan' style
+
+Detected 9 DFT rule violation(s)
+	Summary of check_dft_rules
+	**************************
+	Number of usable scan cells: 48
+Clock Rule Violations:
+---------------------
+	  Internally driven clock net: 6
+	      Tied constant clock net: 2
+	           Undriven clock net: 0
+	Conflicting async & clock net: 0
+	              Misc. clock net: 0
+
+Async. set/reset Rule Violations:
+--------------------------------
+	Internally driven async net: 1
+	      Tied active async net: 0
+	         Undriven async net: 0
+	            Misc. async net: 0
+
+   Total number of DFT violations: 9
+
+Warning : DFT Async Rule Violation. [DFT-302]
+        : # 8 <vid_8_async>: async signal driven by a sequential element in module 'counter_system_rtl1_tessent_mbist_bap_tdr', net 'tdr_latch6', inst/pin 'counter_system_rtl1_tessent_mbist_bap_inst/tdr_inst/tdr_latch6_reg/q' (file: /home/l210/L210/work/EC23I2015/lab8/synth/../rtl/../mbist/tsdb_outdir/instruments/counter_system_rtl1_mbist.instrument/counter_system_rtl1_tessent_mbist_bap.v, line 85) [ASYNC-05]
+        : Async signal is not controllable. Affected registers will be excluded from scan design.
+Warning : DFT Clock Rule Violation. [DFT-301]
+        : # 2 <vid_2_clock>: internal or gated clock signal in module 'bmux_24', net 'z', inst/pin 'counter_system_rtl1_tessent_mbist_c1_controller_inst/tessent_persistent_cell_BIST_CLK_INT/mux_25_13/g1/z' (file: /home/l210/L210/work/EC23I2015/lab8/synth/../rtl/../mbist/tsdb_outdir/instruments/counter_system_rtl1_cells.instrument/counter_system_rtl1_tessent_clk_mux2.v, line 25) [CLOCK-05]
+        : Clock signal is not controllable. Affected registers will be excluded from scan design. You might want to define a clock if required, or use report_dft_trace_back to identify the root cause for the non-controllability of a correctly defined clock. The root_node attribute of the DFT Clock Rule Violation is a good starting point for any further debug.
+Warning : DFT Clock Rule Violation. [DFT-301]
+        : # 5 <vid_5_clock>: internal or gated clock signal in module 'counter_system_rtl1_tessent_mbist_c1_interface_m1', net 'BIST_CLK_INT', inst/pin 'u1_interface_inst/tessent_persistent_cell_GATING_BIST_CLK/ECK' (file: /home/l210/L210/work/EC23I2015/lab8/synth/../rtl/../mbist/tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/modified_rtl_files/counter_system.v, line 180) [CLOCK-05]
+Warning : DFT Clock Rule Violation. [DFT-301]
+        : # 4 <vid_4_clock>: internal or gated clock signal in module 'bmux_24', net 'z', inst/pin 'u1_interface_inst/tessent_persistent_cell_BIST_CLK_OR_TCK/mux_25_13/g1/z' (file: /home/l210/L210/work/EC23I2015/lab8/synth/../rtl/../mbist/tsdb_outdir/instruments/counter_system_rtl1_cells.instrument/counter_system_rtl1_tessent_clk_mux2.v, line 25) [CLOCK-05]
+Warning : DFT Clock Rule Violation. [DFT-301]
+        : # 7 <vid_7_clock>: internal or gated clock signal in module 'counter_system_rtl1_tessent_mbist_c1_interface_m2', net 'BIST_CLK_INT', inst/pin 'u2_interface_inst/tessent_persistent_cell_GATING_BIST_CLK/ECK' (file: /home/l210/L210/work/EC23I2015/lab8/synth/../rtl/../mbist/tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/modified_rtl_files/counter_system.v, line 200) [CLOCK-05]
+Warning : DFT Clock Rule Violation. [DFT-301]
+        : # 6 <vid_6_clock>: internal or gated clock signal in module 'bmux_24', net 'z', inst/pin 'u2_interface_inst/tessent_persistent_cell_BIST_CLK_OR_TCK/mux_25_13/g1/z' (file: /home/l210/L210/work/EC23I2015/lab8/synth/../rtl/../mbist/tsdb_outdir/instruments/counter_system_rtl1_cells.instrument/counter_system_rtl1_tessent_clk_mux2.v, line 25) [CLOCK-05]
+Warning : DFT Clock Rule Violation. [DFT-301]
+        : # 3 <vid_3_clock>: internal or gated clock signal in module 'counter_system_rtl1_tessent_mbist_bap', net 'tck_out_gated', inst/pin 'counter_system_rtl1_tessent_mbist_bap_inst/tessent_persistent_cell_GATING_TCK/ECK' (file: /home/l210/L210/work/EC23I2015/lab8/synth/../rtl/../mbist/tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/modified_rtl_files/counter_system.v, line 137) [CLOCK-05]
+Warning : DFT Clock Rule Violation. [DFT-301]
+        : # 0 <vid_0_clock>: clock signal driven to a constant value in module 'counter_system_rtl1_tessent_sib_1', net 'ltest_clk_buf', inst/pin 'counter_system_rtl1_tessent_sib_sti_inst/occ_ctrl_reg[0]/clk' (file: /home/l210/L210/work/EC23I2015/lab8/synth/../rtl/../mbist/tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/modified_rtl_files/counter_system.v, line 115) [CLOCK-02]
+Warning : DFT Clock Rule Violation. [DFT-301]
+        : # 1 <vid_1_clock>: clock signal driven to a constant value in module 'counter_system_rtl1_tessent_sib_1', net 'ltest_clk_buf_neg', inst/pin 'counter_system_rtl1_tessent_sib_sti_inst/g44/z' (file: /home/l210/L210/work/EC23I2015/lab8/synth/../rtl/../mbist/tsdb_outdir/dft_inserted_designs/counter_system_rtl1.dft_inserted_design/modified_rtl_files/counter_system.v, line 115) [CLOCK-02]
+  Total number of Test Clock Domains: 3
+  Number of user specified non-Scan registers:   0
+      Number of registers that fail DFT rules: 215
+      Number of registers that pass DFT rules: 107
+  Percentage of total registers that are scannable: 33%

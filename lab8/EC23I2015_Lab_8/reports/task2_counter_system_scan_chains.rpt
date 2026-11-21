@@ -1,0 +1,38 @@
+Reporting 2 scan chains (muxed_scan)
+ 
+Chain 1: AutoChain_1 
+  scan_in:      dft_sdi_1 
+  scan_out:     dft_sdo_1   
+  shift_enable: scan_en (active high) 
+  clock_domain: ijtag_tck (edge: fall)
+  length: 14
+    bit 1 	counter_system_rtl1_tessent_mbist_bap_inst/counter_system_rtl1_tessent_mbist_controller_sib_ctl_bypass_inst/sib_latch_reg  <ijtag_tck (fall)>  
+    bit 2 	counter_system_rtl1_tessent_mbist_bap_inst/counter_system_rtl1_tessent_mbist_controller_sib_ctl_bypass_inst/to_enable_int_reg  <ijtag_tck (fall)>  
+    bit 3 	counter_system_rtl1_tessent_mbist_bap_inst/counter_system_rtl1_tessent_mbist_controller_sib_inst0/sib_latch_reg  <ijtag_tck (fall)>  
+    bit 4 	counter_system_rtl1_tessent_mbist_bap_inst/counter_system_rtl1_tessent_mbist_controller_sib_inst0/to_enable_int_reg  <ijtag_tck (fall)>  
+    bit 5 	counter_system_rtl1_tessent_mbist_bap_inst/counter_system_rtl1_tessent_mbist_controller_sib_tdr_bypass_inst/sib_latch_reg  <ijtag_tck (fall)>  
+    bit 6 	counter_system_rtl1_tessent_mbist_bap_inst/counter_system_rtl1_tessent_mbist_controller_sib_tdr_bypass_inst/to_enable_int_reg  <ijtag_tck (fall)>  
+    bit 7 	counter_system_rtl1_tessent_mbist_bap_inst/BIST_HOLD_latch_reg  <ijtag_tck (fall)>  
+    bit 8 	counter_system_rtl1_tessent_mbist_bap_inst/fromBist_retime_reg[0]  <ijtag_tck (fall)>  
+    bit 9 	counter_system_rtl1_tessent_mbist_bap_inst/retiming_so_reg  <ijtag_tck (fall)>  
+    bit 10 	counter_system_rtl1_tessent_mbist_bap_inst/toBist_reg[0]  <ijtag_tck (fall)>  
+    bit 11 	counter_system_rtl1_tessent_sib_mbist_inst/sib_latch_reg  <ijtag_tck (fall)>  
+    bit 12 	counter_system_rtl1_tessent_sib_mbist_inst/to_enable_int_reg  <ijtag_tck (fall)>  
+    bit 13 	counter_system_rtl1_tessent_sib_sti_inst/sib_latch_reg  <ijtag_tck (fall)>  
+    bit 14 	counter_system_rtl1_tessent_sib_sti_inst/to_enable_int_reg  <ijtag_tck (fall)>  
+------------------------
+Chain 2: AutoChain_2 
+  scan_in:      dft_sdi_2 
+  scan_out:     dft_sdo_2   
+  shift_enable: scan_en (active high) 
+  clock_domain: ijtag_tck (edge: rise)
+  length: 7
+    bit 1 	counter_system_rtl1_tessent_mbist_bap_inst/counter_system_rtl1_tessent_mbist_controller_sib_ctl_bypass_inst/sib_reg  <ijtag_tck (rise)>  
+    bit 2 	counter_system_rtl1_tessent_mbist_bap_inst/counter_system_rtl1_tessent_mbist_controller_sib_inst0/sib_reg  <ijtag_tck (rise)>  
+    bit 3 	counter_system_rtl1_tessent_mbist_bap_inst/counter_system_rtl1_tessent_mbist_controller_sib_inst0/tdr_reg  <ijtag_tck (rise)>  
+    bit 4 	counter_system_rtl1_tessent_mbist_bap_inst/counter_system_rtl1_tessent_mbist_controller_sib_tdr_bypass_inst/sib_reg  <ijtag_tck (rise)>  
+    bit 5 	counter_system_rtl1_tessent_sib_mbist_inst/sib_reg  <ijtag_tck (rise)>  
+    bit 6 	counter_system_rtl1_tessent_sib_sti_inst/ltest_to_si_reg  <ijtag_tck (rise)>  
+    bit 7 	counter_system_rtl1_tessent_sib_sti_inst/sib_reg  <ijtag_tck (rise)>  
+------------------------
+
